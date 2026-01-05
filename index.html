@@ -3,88 +3,429 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Marea Ferret – Villa avec piscine à Petit Piquey, proche du Bassin et des commerces.">
-  <title>Marea Ferret – Villa Cap Ferret</title>
+  <meta name="description" content="MAREA – Surf Lodge chic au Bassin d'Arcachon. Lodge & Studio a Petit Piquey, Cap Ferret. Piscine, jardin, a 50m du Bassin.">
+  <title>MAREA – Surf Lodge Cap Ferret</title>
   <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="font-sans text-gray-800">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=League+Spartan:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'terracotta': '#C96A4A',
+            'sable': '#EFE6D8',
+            'bassin': '#5E7F8B',
+            'bois': '#4A3A2A',
+            'blanc': '#FAF9F7',
+          },
+          fontFamily: {
+            'display': ['League Spartan', 'system-ui', 'sans-serif'],
+            'serif': ['Cormorant Garamond', 'Georgia', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
 
-<!-- Menu -->
-<nav class="flex justify-center gap-8 py-6 bg-white shadow-md">
-  <a href="index.html" class="hover:text-blue-700">Accueil</a>
-  <a href="lodge.html" class="hover:text-blue-700">Le Lodge</a>
-  <a href="studio.html" class="hover:text-blue-700">Le Studio</a>
-  <a href="#contact" class="hover:text-blue-700">Contact</a>
-  <a href="index-en.html" class="hover:text-gray-500">EN</a>
+    /* Mid-century sunset gradient */
+    .hero-gradient {
+      background: linear-gradient(to bottom,
+        rgba(201, 106, 74, 0.1) 0%,
+        rgba(74, 58, 42, 0.5) 100%);
+    }
+
+    .sunset-glow {
+      background: radial-gradient(ellipse at 50% 100%,
+        rgba(201, 106, 74, 0.3) 0%,
+        transparent 60%);
+    }
+
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #C96A4A;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .card-hover {
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(74, 58, 42, 0.15);
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Mid-century decorative line */
+    .midcentury-line {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, #C96A4A, #5E7F8B);
+    }
+  </style>
+</head>
+<body class="font-serif text-bois bg-blanc">
+
+<!-- Navigation -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-blanc/95 backdrop-blur-sm border-b border-sable">
+  <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center gap-3">
+      <!-- Sunset Icon -->
+      <svg class="w-10 h-10" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 8C26.627 8 32 13.373 32 20H8C8 13.373 13.373 8 20 8Z" fill="#C96A4A"/>
+        <rect x="6" y="22" width="28" height="2" rx="1" fill="#5E7F8B"/>
+        <rect x="10" y="26" width="20" height="2" rx="1" fill="#5E7F8B" opacity="0.7"/>
+        <rect x="14" y="30" width="12" height="2" rx="1" fill="#5E7F8B" opacity="0.4"/>
+      </svg>
+      <span class="font-display text-2xl font-semibold tracking-[0.15em] text-bois">MAREA</span>
+    </a>
+
+    <div class="flex items-center gap-8">
+      <a href="index.html" class="nav-link font-display text-sm tracking-[0.15em] font-medium text-terracotta">ACCUEIL</a>
+      <a href="lodge.html" class="nav-link font-display text-sm tracking-[0.15em] font-medium hover:text-terracotta transition-colors">LE LODGE</a>
+      <a href="studio.html" class="nav-link font-display text-sm tracking-[0.15em] font-medium hover:text-terracotta transition-colors">LE STUDIO</a>
+      <a href="#contact" class="nav-link font-display text-sm tracking-[0.15em] font-medium hover:text-terracotta transition-colors">CONTACT</a>
+      <span class="text-sable">|</span>
+      <a href="index-en.html" class="font-display text-sm tracking-[0.15em] font-light hover:text-terracotta transition-colors">EN</a>
+    </div>
+  </div>
 </nav>
 
 <!-- Hero -->
-<section class="relative h-screen bg-cover bg-center" style="background-image: url('images/hero.jpg');">
-  <div class="absolute inset-0 bg-black bg-opacity-30 flex flex-col justify-center items-center text-center">
-    <h1 class="text-white text-6xl font-serif mb-4">MAREA FERRET</h1>
-    <p class="text-white text-2xl mb-6">Lodge & Studio au Cap Ferret – à 50 m du Bassin</p>
-    <a href="#contact" class="bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-800">Demander disponibilité</a>
+<section class="relative h-screen">
+  <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/hero.jpg');"></div>
+  <div class="absolute inset-0 hero-gradient"></div>
+  <div class="absolute inset-0 sunset-glow"></div>
+  <div class="relative h-full flex flex-col justify-center items-center text-center px-6">
+    <p class="text-blanc/90 font-display text-sm tracking-[0.3em] mb-6 fade-in" style="animation-delay: 0.2s;">
+      SURF LODGE · BASSIN D'ARCACHON
+    </p>
+
+    <!-- Large Sunset Logo -->
+    <div class="fade-in mb-8" style="animation-delay: 0.3s;">
+      <svg class="w-24 h-24 mx-auto" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 8C26.627 8 32 13.373 32 20H8C8 13.373 13.373 8 20 8Z" fill="#C96A4A"/>
+        <rect x="6" y="22" width="28" height="2" rx="1" fill="white" opacity="0.8"/>
+        <rect x="10" y="26" width="20" height="2" rx="1" fill="white" opacity="0.6"/>
+        <rect x="14" y="30" width="12" height="2" rx="1" fill="white" opacity="0.4"/>
+      </svg>
+    </div>
+
+    <h1 class="text-blanc text-6xl md:text-8xl font-display font-semibold tracking-[0.2em] mb-6 fade-in" style="animation-delay: 0.4s;">
+      MAREA
+    </h1>
+    <p class="text-blanc/90 text-xl md:text-2xl font-light max-w-2xl mb-10 fade-in" style="animation-delay: 0.6s;">
+      Lodge & Studio au bord du Bassin
+    </p>
+    <a href="#sejours" class="fade-in border-2 border-blanc text-blanc px-10 py-4 font-display text-sm tracking-[0.2em] font-medium hover:bg-blanc hover:text-bois transition-all duration-300" style="animation-delay: 0.8s;">
+      DECOUVRIR
+    </a>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+    <svg class="w-6 h-6 text-blanc" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+    </svg>
   </div>
 </section>
 
-<!-- À propos -->
-<section class="py-20 px-4 bg-gray-50 text-center">
-  <h2 class="text-4xl font-serif mb-4">L’esprit Marea Ferret</h2>
-  <p class="max-w-2xl mx-auto text-lg">
-    Marea Ferret est une maison pensée pour se retrouver. À Petit Piquey, entre bassin, lumière et douceur de vivre, elle accueille familles et amis pour des séjours inoubliables.
-  </p>
-</section>
-
-<!-- Galerie -->
-<section class="py-20 px-4">
-  <h2 class="text-4xl font-serif text-center mb-8">Galerie</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-    <img src="images/img1.jpg" alt="Salon Marea Ferret" class="w-full h-auto rounded-lg shadow-lg">
-    <img src="images/img2.jpg" alt="Piscine Marea Ferret" class="w-full h-auto rounded-lg shadow-lg">
-    <img src="images/img3.jpg" alt="Chambre principale" class="w-full h-auto rounded-lg shadow-lg">
+<!-- Tagline Section -->
+<section class="py-24 px-6 bg-blanc">
+  <div class="max-w-4xl mx-auto text-center">
+    <div class="midcentury-line mx-auto mb-8"></div>
+    <p class="text-bassin font-display text-sm tracking-[0.2em] mb-6">L'ESPRIT MAREA</p>
+    <h2 class="font-serif text-4xl md:text-5xl text-bois leading-tight mb-8 italic">
+      Une parenthese de douceur au bord du Bassin
+    </h2>
+    <p class="text-lg text-bois/70 leading-relaxed max-w-2xl mx-auto">
+      A Petit Piquey, entre lumiere et horizon, MAREA accueille familles et amis pour des moments partages inoubliables. Un surf lodge chic et chaleureux, a 50 metres du Bassin et de la plage de la Truquette.
+    </p>
   </div>
 </section>
 
-<!-- Infos clés -->
-<section class="py-20 px-4 bg-gray-50 text-center">
-  <h2 class="text-4xl font-serif mb-8">Le lieu</h2>
-  <div class="flex flex-col sm:flex-row justify-center gap-8 max-w-4xl mx-auto">
-    <div><span class="text-2xl">🛏️</span><p>5 chambres – jusqu’à 12 personnes</p></div>
-    <div><span class="text-2xl">👶</span><p>Dortoir enfants 4 lits</p></div>
-    <div><span class="text-2xl">🏊</span><p>Piscine & jardin</p></div>
-    <div><span class="text-2xl">🌊</span><p>50 m du Bassin (plage Truquette)</p></div>
-    <div><span class="text-2xl">🛒</span><p>Commerces à 50 m</p></div>
+<!-- Sejours Cards -->
+<section id="sejours" class="py-24 px-6 bg-sable">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <div class="midcentury-line mx-auto mb-8"></div>
+      <p class="text-bassin font-display text-sm tracking-[0.2em] mb-4">NOS HEBERGEMENTS</p>
+      <h2 class="font-serif text-4xl md:text-5xl text-bois italic">Choisissez votre sejour</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- Lodge Card -->
+      <a href="lodge.html" class="group card-hover bg-blanc overflow-hidden">
+        <div class="aspect-[4/3] overflow-hidden relative">
+          <img src="images/lodge1.jpg" alt="Le Lodge MAREA" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-bois/40 to-transparent"></div>
+        </div>
+        <div class="p-8">
+          <p class="text-bassin font-display text-xs tracking-[0.2em] mb-2">JUSQU'A 12 PERSONNES</p>
+          <h3 class="font-serif text-3xl mb-4 group-hover:text-terracotta transition-colors italic">Le Lodge</h3>
+          <p class="text-bois/70 mb-6">
+            Grand espace avec 5 chambres, jardin privatif et piscine chauffee. L'horizon parfait pour les grandes reunions de famille ou entre amis.
+          </p>
+          <span class="inline-flex items-center font-display text-sm tracking-[0.15em] font-medium text-terracotta">
+            DECOUVRIR
+            <svg class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Studio Card -->
+      <a href="studio.html" class="group card-hover bg-blanc overflow-hidden">
+        <div class="aspect-[4/3] overflow-hidden relative">
+          <img src="images/studio1.jpg" alt="Le Studio MAREA" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-bois/40 to-transparent"></div>
+        </div>
+        <div class="p-8">
+          <p class="text-bassin font-display text-xs tracking-[0.2em] mb-2">2 A 4 PERSONNES</p>
+          <h3 class="font-serif text-3xl mb-4 group-hover:text-terracotta transition-colors italic">Le Studio</h3>
+          <p class="text-bois/70 mb-6">
+            Cocon lumineux et cosy, parfait pour les couples ou petites familles. Une parenthese elegante au coeur du Cap Ferret.
+          </p>
+          <span class="inline-flex items-center font-display text-sm tracking-[0.15em] font-medium text-terracotta">
+            DECOUVRIR
+            <svg class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </span>
+        </div>
+      </a>
+    </div>
   </div>
 </section>
 
-<!-- Pour qui -->
-<section class="py-20 px-4 text-center">
-  <h2 class="text-4xl font-serif mb-4">Pour qui ?</h2>
-  <p class="max-w-2xl mx-auto text-lg">
-    Idéal pour les familles, les séjours entre amis, ou une parenthèse hors saison au calme et au soleil.
-  </p>
-</section>
-
-<!-- Témoignages -->
-<section class="py-20 px-4 bg-gray-50 text-center">
-  <h2 class="text-4xl font-serif mb-8">Ils ont séjourné à Marea Ferret</h2>
-  <div class="max-w-3xl mx-auto space-y-6">
-    <p class="italic">« Une maison lumineuse, parfaitement située, où l’on se sent immédiatement en vacances. » – Famille Laurenti</p>
-    <p class="italic">« Piscine chauffée et chambres confortables, un vrai plaisir pour nos vacances ! » – Amis Mayeux</p>
+<!-- Gallery -->
+<section class="py-24 px-6 bg-blanc">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <div class="midcentury-line mx-auto mb-8"></div>
+      <p class="text-bassin font-display text-sm tracking-[0.2em] mb-4">GALERIE</p>
+      <h2 class="font-serif text-4xl md:text-5xl text-bois italic">Moments de lumiere</h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div class="aspect-square overflow-hidden">
+        <img src="images/img1.jpg" alt="MAREA" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+      </div>
+      <div class="aspect-square overflow-hidden">
+        <img src="images/img2.jpg" alt="Piscine MAREA" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+      </div>
+      <div class="aspect-square overflow-hidden">
+        <img src="images/img3.jpg" alt="Chambre MAREA" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+      </div>
+      <div class="aspect-square overflow-hidden md:col-span-2">
+        <img src="images/lodge2.jpg" alt="Vue MAREA" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+      </div>
+      <div class="aspect-square overflow-hidden">
+        <img src="images/studio3.jpg" alt="Studio MAREA" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- Contact / CTA -->
-<section id="contact" class="py-20 px-4 text-center">
-  <h2 class="text-4xl font-serif mb-4">Envie de séjourner à Marea Ferret ?</h2>
-  <p class="mb-6">Contactez-nous pour vérifier les disponibilités ou discuter directement via WhatsApp.</p>
-  <a href="mailto:contact@mareaferret.com" class="bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-800 mb-4 inline-block">Envoyer un email</a>
-  <br>
-  <a href="https://wa.me/33676886769" target="_blank" class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700">WhatsApp</a>
+<!-- Features -->
+<section class="py-24 px-6 bg-sable">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <div class="midcentury-line mx-auto mb-8"></div>
+      <p class="text-bassin font-display text-sm tracking-[0.2em] mb-4">LE LIEU</p>
+      <h2 class="font-serif text-4xl md:text-5xl text-bois italic">L'horizon parfait</h2>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div class="text-center">
+        <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center border border-bassin/30 rounded-full">
+          <svg class="w-8 h-8 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+          </svg>
+        </div>
+        <h3 class="font-serif text-xl mb-2 italic">5 Chambres</h3>
+        <p class="text-bois/60 text-sm">Jusqu'a 12 personnes</p>
+      </div>
+
+      <div class="text-center">
+        <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center border border-bassin/30 rounded-full">
+          <svg class="w-8 h-8 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+          </svg>
+        </div>
+        <h3 class="font-serif text-xl mb-2 italic">Piscine Chauffee</h3>
+        <p class="text-bois/60 text-sm">Jardin privatif</p>
+      </div>
+
+      <div class="text-center">
+        <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center border border-bassin/30 rounded-full">
+          <svg class="w-8 h-8 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+          </svg>
+        </div>
+        <h3 class="font-serif text-xl mb-2 italic">50m du Bassin</h3>
+        <p class="text-bois/60 text-sm">Plage de la Truquette</p>
+      </div>
+
+      <div class="text-center">
+        <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center border border-bassin/30 rounded-full">
+          <svg class="w-8 h-8 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+          </svg>
+        </div>
+        <h3 class="font-serif text-xl mb-2 italic">Commerces</h3>
+        <p class="text-bois/60 text-sm">A 50 metres</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<footer class="py-8 text-center text-gray-500 text-sm">
-  © 2025 Marea Ferret – Tous droits réservés
+<!-- Testimonials -->
+<section class="py-24 px-6 bg-blanc">
+  <div class="max-w-4xl mx-auto text-center">
+    <div class="midcentury-line mx-auto mb-8"></div>
+    <p class="text-bassin font-display text-sm tracking-[0.2em] mb-4">TEMOIGNAGES</p>
+    <h2 class="font-serif text-4xl md:text-5xl text-bois mb-16 italic">Ils ont sejourne a MAREA</h2>
+
+    <div class="space-y-12">
+      <div>
+        <!-- Sunset icon as quote mark -->
+        <svg class="w-12 h-12 mx-auto mb-6" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 10C25.523 10 30 14.477 30 20H10C10 14.477 14.477 10 20 10Z" fill="#EFE6D8"/>
+          <rect x="8" y="22" width="24" height="2" rx="1" fill="#5E7F8B" opacity="0.5"/>
+          <rect x="12" y="26" width="16" height="1.5" rx="0.75" fill="#5E7F8B" opacity="0.3"/>
+        </svg>
+        <p class="font-serif text-2xl text-bois/80 italic mb-6">
+          Une maison lumineuse, parfaitement situee, ou l'on se sent immediatement en vacances. La douceur du Bassin a portee de main.
+        </p>
+        <p class="font-display text-sm tracking-[0.15em] text-bassin">FAMILLE LAURENTI</p>
+      </div>
+
+      <div class="border-t border-sable pt-12">
+        <svg class="w-12 h-12 mx-auto mb-6" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 10C25.523 10 30 14.477 30 20H10C10 14.477 14.477 10 20 10Z" fill="#EFE6D8"/>
+          <rect x="8" y="22" width="24" height="2" rx="1" fill="#5E7F8B" opacity="0.5"/>
+          <rect x="12" y="26" width="16" height="1.5" rx="0.75" fill="#5E7F8B" opacity="0.3"/>
+        </svg>
+        <p class="font-serif text-2xl text-bois/80 italic mb-6">
+          Piscine chauffee et chambres confortables, un vrai plaisir pour nos vacances en famille. L'esprit slow life qu'on recherchait.
+        </p>
+        <p class="font-display text-sm tracking-[0.15em] text-bassin">AMIS MAYEUX</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact CTA -->
+<section id="contact" class="py-24 px-6 bg-bois text-blanc">
+  <div class="max-w-4xl mx-auto text-center">
+    <div class="w-16 h-16 mx-auto mb-8">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 8C26.627 8 32 13.373 32 20H8C8 13.373 13.373 8 20 8Z" fill="#C96A4A"/>
+        <rect x="6" y="22" width="28" height="2" rx="1" fill="white" opacity="0.6"/>
+        <rect x="10" y="26" width="20" height="2" rx="1" fill="white" opacity="0.4"/>
+        <rect x="14" y="30" width="12" height="2" rx="1" fill="white" opacity="0.2"/>
+      </svg>
+    </div>
+    <p class="text-blanc/60 font-display text-sm tracking-[0.2em] mb-4">CONTACT</p>
+    <h2 class="font-serif text-4xl md:text-5xl mb-6 italic">Envie d'une parenthese a MAREA ?</h2>
+    <p class="text-blanc/70 text-lg mb-10 max-w-xl mx-auto">
+      Contactez-nous pour verifier les disponibilites ou discuter directement via WhatsApp.
+    </p>
+
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <a href="mailto:contact@mareaferret.com" class="inline-flex items-center justify-center px-8 py-4 border-2 border-blanc font-display text-sm tracking-[0.15em] font-medium hover:bg-blanc hover:text-bois transition-all duration-300">
+        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+        </svg>
+        EMAIL
+      </a>
+      <a href="https://wa.me/33676886769" target="_blank" class="inline-flex items-center justify-center px-8 py-4 bg-terracotta text-blanc font-display text-sm tracking-[0.15em] font-medium hover:bg-terracotta/80 transition-all duration-300">
+        <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        WHATSAPP
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-16 px-6 bg-bois border-t border-blanc/10">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-4 gap-12 mb-12">
+      <div class="md:col-span-2">
+        <!-- Footer Logo -->
+        <div class="flex items-center gap-3 mb-6">
+          <svg class="w-10 h-10" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 8C26.627 8 32 13.373 32 20H8C8 13.373 13.373 8 20 8Z" fill="#C96A4A"/>
+            <rect x="6" y="22" width="28" height="2" rx="1" fill="white" opacity="0.6"/>
+            <rect x="10" y="26" width="20" height="2" rx="1" fill="white" opacity="0.4"/>
+            <rect x="14" y="30" width="12" height="2" rx="1" fill="white" opacity="0.2"/>
+          </svg>
+          <span class="font-display text-xl font-semibold tracking-[0.15em] text-blanc">MAREA</span>
+        </div>
+        <p class="text-blanc/60 text-sm leading-relaxed max-w-sm">
+          Surf lodge chic au Bassin d'Arcachon. Lodge & Studio a Petit Piquey, Cap Ferret. L'elegance naturelle pour des moments partages inoubliables.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-blanc font-display text-sm tracking-[0.15em] mb-4">NAVIGATION</h4>
+        <ul class="space-y-2">
+          <li><a href="index.html" class="text-blanc/60 hover:text-terracotta transition-colors text-sm">Accueil</a></li>
+          <li><a href="lodge.html" class="text-blanc/60 hover:text-terracotta transition-colors text-sm">Le Lodge</a></li>
+          <li><a href="studio.html" class="text-blanc/60 hover:text-terracotta transition-colors text-sm">Le Studio</a></li>
+          <li><a href="#contact" class="text-blanc/60 hover:text-terracotta transition-colors text-sm">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-blanc font-display text-sm tracking-[0.15em] mb-4">CONTACT</h4>
+        <ul class="space-y-2 text-sm text-blanc/60">
+          <li>Petit Piquey, Cap Ferret</li>
+          <li>Bassin d'Arcachon, France</li>
+          <li class="pt-2">
+            <a href="mailto:contact@mareaferret.com" class="hover:text-terracotta transition-colors">contact@mareaferret.com</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-blanc/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-blanc/40 text-sm">&copy; 2025 MAREA – Tous droits reserves</p>
+      <div class="flex gap-6">
+        <a href="index-en.html" class="text-blanc/40 hover:text-terracotta text-sm transition-colors">English</a>
+      </div>
+    </div>
+  </div>
 </footer>
 
 </body>
