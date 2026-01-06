@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Le Grand Lodge Maréa – 200m² de plain-pied pour 12 personnes avec 5 chambres, piscine chauffée et jardin au Cap Ferret, Bassin d'Arcachon.">
+  <meta name="description" content="Le Grand Lodge Maréa – 200m² single-story for 12 guests with 5 bedrooms, heated pool and garden in Cap Ferret, Arcachon Bay.">
   <title>Le Grand Lodge – Maréa Surf Lodge</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -96,7 +96,6 @@
       background: linear-gradient(90deg, #F28C28, #F4C430);
     }
 
-    /* Mobile menu */
     .mobile-menu {
       transform: translateX(100%);
       transition: transform 0.3s ease-in-out;
@@ -111,8 +110,7 @@
 <!-- Navigation -->
 <nav class="fixed top-0 left-0 right-0 z-50 bg-blanc/95 backdrop-blur-sm border-b border-sable/20">
   <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-    <!-- Logo -->
-    <a href="index.html" class="flex items-center gap-3">
+    <a href="index-en.html" class="flex items-center gap-3">
       <svg class="w-12 h-12" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="sunsetGradient" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -129,17 +127,15 @@
       <span class="font-display text-2xl font-medium tracking-wide text-bois">maréa</span>
     </a>
 
-    <!-- Desktop Navigation -->
     <div class="hidden md:flex items-center gap-8">
-      <a href="index.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">ACCUEIL</a>
-      <a href="lodge.html" class="nav-link font-sans text-sm tracking-wider font-medium text-sunset-orange">LE LODGE</a>
-      <a href="thenest.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-turquoise transition-colors">THE NEST</a>
-      <a href="contact.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">CONTACT</a>
+      <a href="index-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">HOME</a>
+      <a href="lodge-en.html" class="nav-link font-sans text-sm tracking-wider font-medium text-sunset-orange">THE LODGE</a>
+      <a href="thenest-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-turquoise transition-colors">THE NEST</a>
+      <a href="contact-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">CONTACT</a>
       <span class="text-sable/30">|</span>
-      <a href="lodge-en.html" class="font-sans text-sm tracking-wider font-light hover:text-sunset-orange transition-colors">EN</a>
+      <a href="lodge.html" class="font-sans text-sm tracking-wider font-light hover:text-sunset-orange transition-colors">FR</a>
     </div>
 
-    <!-- Mobile Menu Button -->
     <button id="menuBtn" class="md:hidden p-2 text-bois" aria-label="Menu">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -147,15 +143,14 @@
     </button>
   </div>
 
-  <!-- Mobile Menu -->
   <div id="mobileMenu" class="mobile-menu fixed inset-0 top-[65px] z-40 md:hidden" style="background-color: #FFFEF9;">
     <div class="flex flex-col items-center justify-center h-full gap-8">
-      <a href="index.html" class="font-sans text-lg tracking-wider font-medium text-bois hover:text-sunset-orange transition-colors">ACCUEIL</a>
-      <a href="lodge.html" class="font-sans text-lg tracking-wider font-medium text-sunset-orange">LE LODGE</a>
-      <a href="thenest.html" class="font-sans text-lg tracking-wider font-medium text-bois hover:text-turquoise transition-colors">THE NEST</a>
-      <a href="contact.html" class="font-sans text-lg tracking-wider font-medium text-bois hover:text-sunset-orange transition-colors">CONTACT</a>
+      <a href="index-en.html" class="font-sans text-lg tracking-wider font-medium text-bois hover:text-sunset-orange transition-colors">HOME</a>
+      <a href="lodge-en.html" class="font-sans text-lg tracking-wider font-medium text-sunset-orange">THE LODGE</a>
+      <a href="thenest-en.html" class="font-sans text-lg tracking-wider font-medium text-bois hover:text-turquoise transition-colors">THE NEST</a>
+      <a href="contact-en.html" class="font-sans text-lg tracking-wider font-medium text-bois hover:text-sunset-orange transition-colors">CONTACT</a>
       <div class="border-t border-sable pt-8 mt-4 w-32 text-center">
-        <a href="lodge-en.html" class="font-sans text-sm tracking-wider font-medium text-navy hover:text-sunset-orange transition-colors">ENGLISH</a>
+        <a href="lodge.html" class="font-sans text-sm tracking-wider font-medium text-navy hover:text-sunset-orange transition-colors">FRANÇAIS</a>
       </div>
     </div>
   </div>
@@ -188,10 +183,10 @@
   <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/lodge1.jpg');"></div>
   <div class="absolute inset-0 hero-gradient"></div>
   <div class="relative h-full flex flex-col justify-center items-center text-center px-6">
-    <p class="text-blanc/90 font-sans text-xs md:text-sm tracking-[0.3em] mb-6 fade-in" style="animation-delay: 0.2s;">200 M² · PLAIN-PIED · PISCINE</p>
+    <p class="text-blanc/90 font-sans text-xs md:text-sm tracking-[0.3em] mb-6 fade-in" style="animation-delay: 0.2s;">200 M² · SINGLE-STORY · POOL</p>
     <h1 class="text-blanc text-4xl md:text-7xl font-display font-medium tracking-wide mb-6 fade-in" style="animation-delay: 0.4s;">Le Grand Lodge</h1>
     <p class="text-blanc/90 text-lg md:text-2xl font-light max-w-2xl fade-in" style="animation-delay: 0.6s;">
-      Jusqu'à 12 voyageurs · 5 chambres · À 50m du Bassin
+      Up to 12 guests · 5 bedrooms · 50m from the Bay
     </p>
   </div>
 </section>
@@ -204,17 +199,17 @@
         <div class="midcentury-line mb-8"></div>
         <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-4">LE GRAND LODGE</p>
         <h2 class="font-display text-3xl md:text-5xl text-bois leading-tight mb-8">
-          De beaux volumes lumineux pour se retrouver
+          Beautiful bright spaces to gather
         </h2>
         <p class="text-base md:text-lg text-bois/70 leading-relaxed mb-6 font-light">
-          De plain-pied, l'appartement de 200m² offre un confort idéal pour les séjours en famille ou entre amis. Une maison de vacances élégante et conviviale, idéalement située au cœur de Petit Piquey, l'un des villages les plus recherchés du Cap Ferret.
+          Single-story, the 200m² apartment offers ideal comfort for family stays or gatherings with friends. An elegant and welcoming holiday home, ideally located in the heart of Petit Piquey, one of Cap Ferret's most sought-after villages.
         </p>
         <p class="text-base md:text-lg text-bois/70 leading-relaxed font-light">
-          Idéal pour des vacances sans voiture, entre bassin, plages, vélo et douceur de vivre ferret-capienne.
+          Perfect for car-free holidays, between the bay, beaches, cycling and the gentle Cap Ferret lifestyle.
         </p>
       </div>
       <div class="aspect-[4/5] overflow-hidden">
-        <img src="images/lodge2.jpg" alt="Le Grand Lodge Maréa intérieur" class="w-full h-full object-cover">
+        <img src="images/lodge2.jpg" alt="Le Grand Lodge Maréa interior" class="w-full h-full object-cover">
       </div>
     </div>
   </div>
@@ -225,12 +220,11 @@
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-12 md:mb-16">
       <div class="midcentury-line mx-auto mb-8"></div>
-      <p class="text-sunset-orange font-sans text-xs tracking-[0.2em] mb-4">5 CHAMBRES</p>
-      <h2 class="font-display text-3xl md:text-5xl text-bois">Les espaces nuit</h2>
+      <p class="text-sunset-orange font-sans text-xs tracking-[0.2em] mb-4">5 BEDROOMS</p>
+      <h2 class="font-display text-3xl md:text-5xl text-bois">Sleeping spaces</h2>
     </div>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-      <!-- Suite Mimbeau -->
       <div class="bg-blanc p-5 md:p-6">
         <div class="w-10 h-10 md:w-12 md:h-12 mb-4 flex items-center justify-center border border-sunset-orange/30 rounded-full">
           <svg class="w-5 h-5 md:w-6 md:h-6 text-sunset-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -238,10 +232,9 @@
           </svg>
         </div>
         <h3 class="font-display text-lg md:text-xl mb-2">La Suite Mimbeau</h3>
-        <p class="text-bois/60 text-xs md:text-sm">Lit queen size 160 (twinable), dressing et salle de bain attenante</p>
+        <p class="text-bois/60 text-xs md:text-sm">Queen size bed 160 (twinable), dressing room and en-suite bathroom</p>
       </div>
 
-      <!-- Le Canon -->
       <div class="bg-blanc p-5 md:p-6">
         <div class="w-10 h-10 md:w-12 md:h-12 mb-4 flex items-center justify-center border border-sunset-orange/30 rounded-full">
           <svg class="w-5 h-5 md:w-6 md:h-6 text-sunset-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -249,10 +242,9 @@
           </svg>
         </div>
         <h3 class="font-display text-lg md:text-xl mb-2">Le Canon</h3>
-        <p class="text-bois/60 text-xs md:text-sm">Lit queen size 160 (twinable), salle d'eau cosy attenante</p>
+        <p class="text-bois/60 text-xs md:text-sm">Queen size bed 160 (twinable), cozy en-suite shower room</p>
       </div>
 
-      <!-- L'Horizon -->
       <div class="bg-blanc p-5 md:p-6">
         <div class="w-10 h-10 md:w-12 md:h-12 mb-4 flex items-center justify-center border border-sunset-orange/30 rounded-full">
           <svg class="w-5 h-5 md:w-6 md:h-6 text-sunset-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -261,10 +253,9 @@
           </svg>
         </div>
         <h3 class="font-display text-lg md:text-xl mb-2">L'Horizon</h3>
-        <p class="text-bois/60 text-xs md:text-sm">Lit queen size 160 (twinable), salle de bain attenante</p>
+        <p class="text-bois/60 text-xs md:text-sm">Queen size bed 160 (twinable), en-suite bathroom</p>
       </div>
 
-      <!-- Le Cabanon -->
       <div class="bg-blanc p-5 md:p-6">
         <div class="w-10 h-10 md:w-12 md:h-12 mb-4 flex items-center justify-center border border-sunset-orange/30 rounded-full">
           <svg class="w-5 h-5 md:w-6 md:h-6 text-sunset-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -272,10 +263,9 @@
           </svg>
         </div>
         <h3 class="font-display text-lg md:text-xl mb-2">Le Cabanon</h3>
-        <p class="text-bois/60 text-xs md:text-sm">Bureau cosy avec couchage queen size 160 (twinable) pour 2 personnes</p>
+        <p class="text-bois/60 text-xs md:text-sm">Cozy office with queen size bed 160 (twinable) for 2 people</p>
       </div>
 
-      <!-- Les Moussaillons -->
       <div class="bg-blanc p-5 md:p-6 md:col-span-2 lg:col-span-2">
         <div class="w-10 h-10 md:w-12 md:h-12 mb-4 flex items-center justify-center border border-sunset-orange/30 rounded-full">
           <svg class="w-5 h-5 md:w-6 md:h-6 text-sunset-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -283,14 +273,13 @@
           </svg>
         </div>
         <h3 class="font-display text-lg md:text-xl mb-2">Les Moussaillons</h3>
-        <p class="text-bois/60 text-xs md:text-sm">Dortoir pour 4 enfants avec 2 lits superposés – le paradis des petits moussaillons !</p>
+        <p class="text-bois/60 text-xs md:text-sm">Dormitory for 4 children with 2 bunk beds – paradise for little sailors!</p>
       </div>
     </div>
 
-    <!-- Bathrooms info -->
     <div class="mt-6 md:mt-8 p-4 md:p-6 bg-blanc border-l-4 border-sunset-orange">
       <p class="text-bois/70 text-sm">
-        <span class="font-medium text-bois">4 salles de bains</span> entièrement équipées pour un confort optimal
+        <span class="font-medium text-bois">4 bathrooms</span> fully equipped for optimal comfort
       </p>
     </div>
   </div>
@@ -301,69 +290,67 @@
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-12 md:mb-16">
       <div class="midcentury-line mx-auto mb-8"></div>
-      <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-4">ESPACES DE VIE</p>
-      <h2 class="font-display text-3xl md:text-5xl text-bois">Intérieur & Extérieur</h2>
+      <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-4">LIVING SPACES</p>
+      <h2 class="font-display text-3xl md:text-5xl text-bois">Indoor & Outdoor</h2>
     </div>
 
     <div class="grid md:grid-cols-2 gap-8 md:gap-12">
-      <!-- Interior -->
       <div>
-        <h3 class="font-sans text-sm tracking-wider text-sunset-orange mb-6">INTÉRIEUR</h3>
+        <h3 class="font-sans text-sm tracking-wider text-sunset-orange mb-6">INDOOR</h3>
         <ul class="space-y-4 text-bois/70">
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-sunset-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
             </svg>
-            <span class="text-sm md:text-base">Grand séjour / Salle à manger ouvert sur la terrasse et le jardin</span>
+            <span class="text-sm md:text-base">Large living/dining room open to the terrace and garden</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-sunset-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
             </svg>
-            <span class="text-sm md:text-base">Cuisine entièrement équipée</span>
+            <span class="text-sm md:text-base">Fully equipped kitchen</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-sunset-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
             </svg>
-            <span class="text-sm md:text-base">Espaces buanderie et stockage</span>
+            <span class="text-sm md:text-base">Laundry and storage areas</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-sunset-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
             </svg>
-            <span class="text-sm md:text-base">Plain-pied – idéal pour les familles</span>
+            <span class="text-sm md:text-base">Single-story – ideal for families</span>
           </li>
         </ul>
       </div>
 
-      <!-- Exterior -->
       <div>
-        <h3 class="font-sans text-sm tracking-wider text-sunset-orange mb-6">EXTÉRIEUR</h3>
+        <h3 class="font-sans text-sm tracking-wider text-sunset-orange mb-6">OUTDOOR</h3>
         <ul class="space-y-4 text-bois/70">
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-sunset-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
             </svg>
-            <span class="text-sm md:text-base">Piscine privée chauffée d'Avril à Octobre</span>
+            <span class="text-sm md:text-base">Private heated pool from April to October</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-sunset-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
             </svg>
-            <span class="text-sm md:text-base">Cuisine d'été et grande terrasse pour les repas</span>
+            <span class="text-sm md:text-base">Summer kitchen and large terrace for dining</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-sunset-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
             </svg>
-            <span class="text-sm md:text-base">Jardin arboré, calme et intimiste</span>
+            <span class="text-sm md:text-base">Peaceful, tree-lined garden</span>
           </li>
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-sunset-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
             </svg>
-            <span class="text-sm md:text-base">Accès immédiat aux pistes cyclables</span>
+            <span class="text-sm md:text-base">Immediate access to cycling paths</span>
           </li>
         </ul>
       </div>
@@ -376,8 +363,8 @@
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-12 md:mb-16">
       <div class="midcentury-line mx-auto mb-8"></div>
-      <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-4">LOCALISATION EXCEPTIONNELLE</p>
-      <h2 class="font-display text-3xl md:text-5xl text-bois">Tout à pied</h2>
+      <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-4">EXCEPTIONAL LOCATION</p>
+      <h2 class="font-display text-3xl md:text-5xl text-bois">Everything within walking distance</h2>
     </div>
 
     <div class="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
@@ -388,8 +375,8 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
           </svg>
         </div>
-        <h3 class="font-display text-lg md:text-xl mb-2">50m du Bassin</h3>
-        <p class="text-bois/60 text-xs md:text-sm">Plage de Petit Piquey et la très belle plage Truquette</p>
+        <h3 class="font-display text-lg md:text-xl mb-2">50m from the Bay</h3>
+        <p class="text-bois/60 text-xs md:text-sm">Petit Piquey beach and the beautiful Truquette beach</p>
       </div>
 
       <div class="text-center">
@@ -398,8 +385,8 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
           </svg>
         </div>
-        <h3 class="font-display text-lg md:text-xl mb-2">50m des Commerces</h3>
-        <p class="text-bois/60 text-xs md:text-sm">Boulangeries, supermarché, restaurants, services</p>
+        <h3 class="font-display text-lg md:text-xl mb-2">50m from Shops</h3>
+        <p class="text-bois/60 text-xs md:text-sm">Bakeries, supermarket, restaurants, services</p>
       </div>
 
       <div class="text-center col-span-2 md:col-span-1">
@@ -408,8 +395,8 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
           </svg>
         </div>
-        <h3 class="font-display text-lg md:text-xl mb-2">Pistes Cyclables</h3>
-        <p class="text-bois/60 text-xs md:text-sm">Accès immédiat aux plus beaux spots du Cap Ferret</p>
+        <h3 class="font-display text-lg md:text-xl mb-2">Cycling Paths</h3>
+        <p class="text-bois/60 text-xs md:text-sm">Immediate access to Cap Ferret's best spots</p>
       </div>
     </div>
   </div>
@@ -420,24 +407,24 @@
   <div class="max-w-7xl mx-auto">
     <div class="text-center mb-12 md:mb-16">
       <div class="midcentury-line mx-auto mb-8"></div>
-      <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-4">GALERIE</p>
-      <h2 class="font-display text-3xl md:text-5xl text-bois">Découvrez le Lodge</h2>
+      <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-4">GALLERY</p>
+      <h2 class="font-display text-3xl md:text-5xl text-bois">Discover the Lodge</h2>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
       <div class="aspect-square overflow-hidden">
-        <img src="images/lodge1.jpg" alt="Lodge salon" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+        <img src="images/lodge1.jpg" alt="Lodge living room" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
       </div>
       <div class="aspect-square overflow-hidden">
-        <img src="images/lodge2.jpg" alt="Lodge piscine" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+        <img src="images/lodge2.jpg" alt="Lodge pool" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
       </div>
       <div class="aspect-square overflow-hidden">
-        <img src="images/lodge3.jpg" alt="Lodge chambre" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+        <img src="images/lodge3.jpg" alt="Lodge bedroom" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
       </div>
       <div class="aspect-square overflow-hidden md:col-span-2">
-        <img src="images/img1.jpg" alt="Lodge vue" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+        <img src="images/img1.jpg" alt="Lodge view" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
       </div>
       <div class="aspect-square overflow-hidden">
-        <img src="images/img2.jpg" alt="Lodge extérieur" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+        <img src="images/img2.jpg" alt="Lodge exterior" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
       </div>
     </div>
   </div>
@@ -447,16 +434,16 @@
 <section class="py-16 md:py-24 px-6 bg-turquoise/10">
   <div class="max-w-4xl mx-auto text-center">
     <div class="midcentury-line mx-auto mb-8" style="background: linear-gradient(90deg, #4EC3C7, #2FA4A9);"></div>
-    <p class="text-turquoise-dark font-sans text-xs tracking-[0.2em] mb-4">EN BONUS</p>
+    <p class="text-turquoise-dark font-sans text-xs tracking-[0.2em] mb-4">BONUS</p>
     <h2 class="font-display text-3xl md:text-5xl text-bois mb-8">The Nest</h2>
     <p class="text-base md:text-lg text-bois/70 mb-6 font-light">
-      Possibilité de louer The Nest en complément du Grand Lodge : studio indépendant pouvant loger jusqu'à 4 personnes, parfait pour des grands-parents ou des ados souhaitant leur indépendance.
+      Option to rent The Nest alongside Le Grand Lodge: independent studio that can sleep up to 4 people, perfect for grandparents or teens wanting their independence.
     </p>
     <p class="text-bois/60 mb-10 text-sm">
-      <a href="contact.html" class="text-turquoise hover:underline">Nous contacter</a> pour les tarifs & disponibilités.
+      <a href="contact-en.html" class="text-turquoise hover:underline">Contact us</a> for rates & availability.
     </p>
-    <a href="thenest.html" class="inline-flex items-center font-sans text-sm tracking-wider font-medium text-turquoise hover:text-bois transition-colors">
-      DÉCOUVRIR THE NEST
+    <a href="thenest-en.html" class="inline-flex items-center font-sans text-sm tracking-wider font-medium text-turquoise hover:text-bois transition-colors">
+      DISCOVER THE NEST
       <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
       </svg>
@@ -469,7 +456,7 @@
   <div class="max-w-4xl mx-auto">
     <div class="p-4 md:p-6 bg-blanc border-l-4 border-turquoise">
       <p class="text-bois/70 text-xs md:text-sm">
-        <span class="font-medium text-bois">À savoir :</span> Le Grand Lodge et The Nest font partie d'un ensemble immobilier comprenant 3 autres appartements situés à l'étage. Afin de respecter la tranquillité des lieux et du voisinage, les fêtes et le bruit ne sont pas autorisés.
+        <span class="font-medium text-bois">Please note:</span> Le Grand Lodge and The Nest are part of a property complex with 3 other apartments on the upper floor. To respect the peace of the premises and neighbors, parties and noise are not allowed.
       </p>
     </div>
   </div>
@@ -493,10 +480,10 @@
         <path d="M14 39C14 39 18 41 25 41C32 41 36 39 36 39" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.2"/>
       </svg>
     </div>
-    <p class="text-blanc/60 font-sans text-xs tracking-[0.2em] mb-4">RÉSERVER LE GRAND LODGE</p>
-    <h2 class="font-display text-3xl md:text-5xl mb-6">Intéressé par le Lodge ?</h2>
+    <p class="text-blanc/60 font-sans text-xs tracking-[0.2em] mb-4">BOOK LE GRAND LODGE</p>
+    <h2 class="font-display text-3xl md:text-5xl mb-6">Interested in the Lodge?</h2>
     <p class="text-blanc/70 text-base md:text-lg mb-10 max-w-xl mx-auto font-light">
-      Jusqu'à 12 personnes dans une maison pensée pour la vie des vacances. Contactez-nous pour vérifier les disponibilités.
+      Up to 12 guests in a house designed for holiday living. Contact us to check availability.
     </p>
 
     <div class="flex flex-col sm:flex-row justify-center gap-4">
@@ -538,17 +525,17 @@
           <span class="font-display text-xl font-medium tracking-wide text-blanc">maréa</span>
         </div>
         <p class="text-blanc/60 text-sm leading-relaxed max-w-sm font-light">
-          Surf lodge chic au Bassin d'Arcachon. Le Grand Lodge & The Nest à Petit Piquey, Cap Ferret. L'élégance naturelle pour des moments partagés inoubliables.
+          Chic surf lodge on the Arcachon Bay. Le Grand Lodge & The Nest in Petit Piquey, Cap Ferret. Natural elegance for unforgettable shared moments.
         </p>
       </div>
 
       <div>
         <h4 class="text-blanc font-sans text-sm tracking-wider mb-4">NAVIGATION</h4>
         <ul class="space-y-2">
-          <li><a href="index.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Accueil</a></li>
-          <li><a href="lodge.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Le Grand Lodge</a></li>
-          <li><a href="thenest.html" class="text-blanc/60 hover:text-turquoise transition-colors text-sm">The Nest</a></li>
-          <li><a href="contact.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Contact</a></li>
+          <li><a href="index-en.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Home</a></li>
+          <li><a href="lodge-en.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Le Grand Lodge</a></li>
+          <li><a href="thenest-en.html" class="text-blanc/60 hover:text-turquoise transition-colors text-sm">The Nest</a></li>
+          <li><a href="contact-en.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Contact</a></li>
         </ul>
       </div>
 
@@ -556,7 +543,7 @@
         <h4 class="text-blanc font-sans text-sm tracking-wider mb-4">CONTACT</h4>
         <ul class="space-y-2 text-sm text-blanc/60">
           <li>Petit Piquey, Cap Ferret</li>
-          <li>Bassin d'Arcachon, France</li>
+          <li>Arcachon Bay, France</li>
           <li class="pt-2">
             <a href="mailto:contact@mareaferret.com" class="hover:text-sunset-orange transition-colors">contact@mareaferret.com</a>
           </li>
@@ -565,8 +552,8 @@
     </div>
 
     <div class="border-t border-blanc/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-blanc/40 text-sm">© 2025 Maréa – Tous droits réservés</p>
-      <p class="text-blanc/40 text-xs">Le Grand Lodge et The Nest font partie d'un ensemble immobilier</p>
+      <p class="text-blanc/40 text-sm">© 2025 Maréa – All rights reserved</p>
+      <p class="text-blanc/40 text-xs">Le Grand Lodge and The Nest are part of a property complex</p>
     </div>
   </div>
 </footer>

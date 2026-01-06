@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contactez Maréa – Surf Lodge au Cap Ferret. Réservez Le Grand Lodge ou The Nest pour vos vacances au Bassin d'Arcachon.">
+  <title>Contact – Maréa Surf Lodge</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'sunset-cream': '#FFF8E7',
+            'sunset-yellow': '#F4C430',
+            'sunset-orange': '#F28C28',
+            'sable': '#E8DED1',
+            'bois': '#8B5A2B',
+            'blanc': '#FAF9F7',
+            'ivoire': '#FFFEF9',
+            'navy': '#1E3A5F',
+            'turquoise': '#4EC3C7',
+            'turquoise-dark': '#2FA4A9',
+          },
+          fontFamily: {
+            'display': ['Recoleta', 'Georgia', 'serif'],
+            'sans': ['Montserrat', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @font-face {
+      font-family: 'Recoleta';
+      src: url('https://db.onlinewebfonts.com/t/13b64fe3bc07c9cac3d617f7c359df4a.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Recoleta';
+      src: url('https://db.onlinewebfonts.com/t/ddf1bafece52f4e7be89e19b0e771e10.woff2') format('woff2');
+      font-weight: 500;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Recoleta';
+      src: url('https://db.onlinewebfonts.com/t/a3ed769c4f9c8d8ae8ae03f12d3a9490.woff2') format('woff2');
+      font-weight: 600;
+      font-style: normal;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #F28C28;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .midcentury-line {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, #F28C28, #4EC3C7);
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+    }
+    .mobile-menu.open {
+      transform: translateX(0);
+    }
+
+    /* Form styling */
+    input, select, textarea {
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #F28C28;
+      box-shadow: 0 0 0 3px rgba(242, 140, 40, 0.1);
+    }
+  </style>
+</head>
+<body class="font-sans text-bois bg-blanc">
+
+<!-- Navigation -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-blanc/95 backdrop-blur-sm border-b border-sable/20">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center gap-3">
+      <svg class="w-12 h-12" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="sunsetGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#FFF8E7"/>
+            <stop offset="50%" style="stop-color:#F4C430"/>
+            <stop offset="100%" style="stop-color:#F28C28"/>
+          </linearGradient>
+        </defs>
+        <path d="M25 6C34.389 6 42 13.611 42 23H8C8 13.611 15.611 6 25 6Z" fill="url(#sunsetGradient)"/>
+        <path d="M6 27C6 27 12 30 25 30C38 30 44 27 44 27" stroke="#8B5A2B" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        <path d="M10 33C10 33 15 35.5 25 35.5C35 35.5 40 33 40 33" stroke="#8B5A2B" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.7"/>
+        <path d="M14 39C14 39 18 41 25 41C32 41 36 39 36 39" stroke="#8B5A2B" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.4"/>
+      </svg>
+      <span class="font-display text-2xl font-medium tracking-wide text-bois">maréa</span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <div class="hidden md:flex items-center gap-8">
+      <a href="index.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">ACCUEIL</a>
+      <a href="lodge.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">LE LODGE</a>
+      <a href="thenest.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-turquoise transition-colors">THE NEST</a>
+      <a href="contact.html" class="nav-link font-sans text-sm tracking-wider font-medium text-sunset-orange">CONTACT</a>
+      <span class="text-sable/30">|</span>
+      <a href="contact-en.html" class="font-sans text-sm tracking-wider font-light hover:text-sunset-orange transition-colors">EN</a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button id="menuBtn" class="md:hidden p-2 text-bois" aria-label="Menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="mobile-menu fixed inset-0 top-[65px] z-40 md:hidden" style="background-color: #FFFEF9;">
+    <div class="flex flex-col items-center justify-center h-full gap-8">
+      <a href="index.html" class="font-sans text-lg tracking-wider font-medium text-bois hover:text-sunset-orange transition-colors">ACCUEIL</a>
+      <a href="lodge.html" class="font-sans text-lg tracking-wider font-medium text-bois hover:text-sunset-orange transition-colors">LE LODGE</a>
+      <a href="thenest.html" class="font-sans text-lg tracking-wider font-medium text-bois hover:text-turquoise transition-colors">THE NEST</a>
+      <a href="contact.html" class="font-sans text-lg tracking-wider font-medium text-sunset-orange">CONTACT</a>
+      <div class="border-t border-sable pt-8 mt-4 w-32 text-center">
+        <a href="contact-en.html" class="font-sans text-sm tracking-wider font-medium text-navy hover:text-sunset-orange transition-colors">ENGLISH</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuIcon = document.getElementById('menuIcon');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+    if (mobileMenu.classList.contains('open')) {
+      menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+    } else {
+      menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+    }
+  });
+
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+    });
+  });
+</script>
+
+<!-- Header -->
+<section class="pt-32 pb-16 md:pt-40 md:pb-24 px-6 bg-blanc">
+  <div class="max-w-4xl mx-auto text-center">
+    <div class="midcentury-line mx-auto mb-8"></div>
+    <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-6">CONTACTEZ-NOUS</p>
+    <h1 class="font-display text-4xl md:text-6xl text-bois leading-tight mb-6">
+      Envie d'une parenthèse à Maréa ?
+    </h1>
+    <p class="text-base md:text-lg text-bois/70 leading-relaxed max-w-2xl mx-auto font-light">
+      Nous sommes à votre disposition pour répondre à vos questions, vérifier les disponibilités ou vous aider à organiser votre séjour au Cap Ferret.
+    </p>
+  </div>
+</section>
+
+<!-- Contact Options -->
+<section class="py-12 md:py-16 px-6 bg-sable/20">
+  <div class="max-w-4xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-6">
+      <!-- Email -->
+      <a href="mailto:contact@mareaferret.com" class="group bg-blanc p-6 md:p-8 border border-sable/20 hover:border-sunset-orange/30 transition-all duration-300 text-center">
+        <div class="w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 flex items-center justify-center border border-sunset-orange/30 rounded-full group-hover:bg-sunset-orange/10 transition-colors">
+          <svg class="w-6 h-6 md:w-7 md:h-7 text-sunset-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+          </svg>
+        </div>
+        <h3 class="font-display text-xl md:text-2xl mb-2 group-hover:text-sunset-orange transition-colors">Email</h3>
+        <p class="text-bois/60 text-sm mb-4">Pour toute demande de renseignement</p>
+        <span class="font-sans text-sm text-sunset-orange font-medium">contact@mareaferret.com</span>
+      </a>
+
+      <!-- WhatsApp -->
+      <a href="https://wa.me/33676886769" target="_blank" class="group bg-blanc p-6 md:p-8 border border-sable/20 hover:border-turquoise/30 transition-all duration-300 text-center">
+        <div class="w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 flex items-center justify-center border border-turquoise/30 rounded-full group-hover:bg-turquoise/10 transition-colors">
+          <svg class="w-6 h-6 md:w-7 md:h-7 text-turquoise" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+        </div>
+        <h3 class="font-display text-xl md:text-2xl mb-2 group-hover:text-turquoise transition-colors">WhatsApp</h3>
+        <p class="text-bois/60 text-sm mb-4">Pour une réponse rapide</p>
+        <span class="font-sans text-sm text-turquoise font-medium">+33 6 76 88 67 69</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Reservation Form Section -->
+<section class="py-16 md:py-24 px-6 bg-blanc">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-12">
+      <div class="midcentury-line mx-auto mb-8"></div>
+      <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-4">DEMANDE DE RÉSERVATION</p>
+      <h2 class="font-display text-3xl md:text-4xl text-bois mb-4">Réservez votre séjour</h2>
+      <p class="text-bois/60 text-sm md:text-base">Remplissez le formulaire ci-dessous et nous vous recontacterons rapidement.</p>
+    </div>
+
+    <!-- Form that submits to Google Form -->
+    <form action="https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse" method="POST" target="_blank" class="space-y-6">
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Nom -->
+        <div>
+          <label for="name" class="block font-sans text-sm tracking-wider text-bois/70 mb-2">NOM COMPLET *</label>
+          <input type="text" id="name" name="entry.YOUR_NAME_FIELD" required
+            class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-bois placeholder-bois/40"
+            placeholder="Votre nom">
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label for="email" class="block font-sans text-sm tracking-wider text-bois/70 mb-2">EMAIL *</label>
+          <input type="email" id="email" name="entry.YOUR_EMAIL_FIELD" required
+            class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-bois placeholder-bois/40"
+            placeholder="votre@email.com">
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Téléphone -->
+        <div>
+          <label for="phone" class="block font-sans text-sm tracking-wider text-bois/70 mb-2">TÉLÉPHONE</label>
+          <input type="tel" id="phone" name="entry.YOUR_PHONE_FIELD"
+            class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-bois placeholder-bois/40"
+            placeholder="+33 6 XX XX XX XX">
+        </div>
+
+        <!-- Hébergement -->
+        <div>
+          <label for="property" class="block font-sans text-sm tracking-wider text-bois/70 mb-2">HÉBERGEMENT *</label>
+          <select id="property" name="entry.YOUR_PROPERTY_FIELD" required
+            class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-bois">
+            <option value="">Sélectionnez...</option>
+            <option value="lodge">Le Grand Lodge (jusqu'à 12 pers.)</option>
+            <option value="nest">The Nest (2-4 pers.)</option>
+            <option value="both">Lodge + Nest (jusqu'à 16 pers.)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Date d'arrivée -->
+        <div>
+          <label for="checkin" class="block font-sans text-sm tracking-wider text-bois/70 mb-2">DATE D'ARRIVÉE *</label>
+          <input type="date" id="checkin" name="entry.YOUR_CHECKIN_FIELD" required
+            class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-bois">
+        </div>
+
+        <!-- Date de départ -->
+        <div>
+          <label for="checkout" class="block font-sans text-sm tracking-wider text-bois/70 mb-2">DATE DE DÉPART *</label>
+          <input type="date" id="checkout" name="entry.YOUR_CHECKOUT_FIELD" required
+            class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-bois">
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Nombre d'adultes -->
+        <div>
+          <label for="adults" class="block font-sans text-sm tracking-wider text-bois/70 mb-2">ADULTES *</label>
+          <select id="adults" name="entry.YOUR_ADULTS_FIELD" required
+            class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-bois">
+            <option value="">Sélectionnez...</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12+</option>
+          </select>
+        </div>
+
+        <!-- Nombre d'enfants -->
+        <div>
+          <label for="children" class="block font-sans text-sm tracking-wider text-bois/70 mb-2">ENFANTS</label>
+          <select id="children" name="entry.YOUR_CHILDREN_FIELD"
+            class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-bois">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6+</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Message -->
+      <div>
+        <label for="message" class="block font-sans text-sm tracking-wider text-bois/70 mb-2">MESSAGE</label>
+        <textarea id="message" name="entry.YOUR_MESSAGE_FIELD" rows="4"
+          class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-bois placeholder-bois/40 resize-none"
+          placeholder="Parlez-nous de votre projet de séjour, vos questions..."></textarea>
+      </div>
+
+      <!-- Submit -->
+      <div class="text-center pt-4">
+        <button type="submit"
+          class="inline-flex items-center justify-center px-10 py-4 bg-sunset-orange text-blanc font-sans text-sm tracking-wider font-medium hover:bg-sunset-orange/90 transition-all duration-300">
+          ENVOYER MA DEMANDE
+          <svg class="w-4 h-4 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </button>
+      </div>
+    </form>
+
+    <p class="text-center text-bois/50 text-xs mt-8">
+      * Champs obligatoires. Nous vous répondrons dans les 24h.
+    </p>
+  </div>
+</section>
+
+<!-- Location Info -->
+<section class="py-16 md:py-24 px-6 bg-sable/20">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-12">
+      <div class="midcentury-line mx-auto mb-8"></div>
+      <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-4">LOCALISATION</p>
+      <h2 class="font-display text-3xl md:text-4xl text-bois">Où nous trouver</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div class="space-y-6">
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 flex items-center justify-center border border-sunset-orange/30 rounded-full flex-shrink-0">
+            <svg class="w-5 h-5 text-sunset-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-display text-lg mb-1">Adresse</h3>
+            <p class="text-bois/60 text-sm">Petit Piquey<br>Cap Ferret, Bassin d'Arcachon<br>33950 Lège-Cap-Ferret, France</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 flex items-center justify-center border border-sunset-orange/30 rounded-full flex-shrink-0">
+            <svg class="w-5 h-5 text-sunset-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-display text-lg mb-1">Accès</h3>
+            <p class="text-bois/60 text-sm">À 50m du Bassin et des commerces<br>Pistes cyclables accessibles immédiatement<br>Idéal pour des vacances sans voiture</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 flex items-center justify-center border border-sunset-orange/30 rounded-full flex-shrink-0">
+            <svg class="w-5 h-5 text-sunset-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-display text-lg mb-1">Depuis Bordeaux</h3>
+            <p class="text-bois/60 text-sm">~1h en voiture via l'A660<br>Possibilité de navette depuis la gare d'Arcachon</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map placeholder -->
+      <div class="aspect-square bg-sable/30 flex items-center justify-center">
+        <div class="text-center p-6">
+          <svg class="w-16 h-16 mx-auto mb-4 text-bois/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path>
+          </svg>
+          <p class="text-bois/40 text-sm font-sans">Petit Piquey, Cap Ferret</p>
+          <a href="https://maps.google.com/?q=Petit+Piquey+Cap+Ferret" target="_blank" class="inline-block mt-4 text-sunset-orange text-sm font-sans hover:underline">
+            Voir sur Google Maps →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-12 md:py-16 px-6 bg-bois border-t border-blanc/10">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12">
+      <div class="col-span-2">
+        <div class="flex items-center gap-3 mb-6">
+          <svg class="w-10 h-10" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="sunsetGradientFooter" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#FFF8E7"/>
+                <stop offset="50%" style="stop-color:#F4C430"/>
+                <stop offset="100%" style="stop-color:#F28C28"/>
+              </linearGradient>
+            </defs>
+            <path d="M25 6C34.389 6 42 13.611 42 23H8C8 13.611 15.611 6 25 6Z" fill="url(#sunsetGradientFooter)"/>
+            <path d="M6 27C6 27 12 30 25 30C38 30 44 27 44 27" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+            <path d="M10 33C10 33 15 35.5 25 35.5C35 35.5 40 33 40 33" stroke="white" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.4"/>
+            <path d="M14 39C14 39 18 41 25 41C32 41 36 39 36 39" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.2"/>
+          </svg>
+          <span class="font-display text-xl font-medium tracking-wide text-blanc">maréa</span>
+        </div>
+        <p class="text-blanc/60 text-sm leading-relaxed max-w-sm font-light">
+          Surf lodge chic au Bassin d'Arcachon. Le Grand Lodge & The Nest à Petit Piquey, Cap Ferret. L'élégance naturelle pour des moments partagés inoubliables.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-blanc font-sans text-sm tracking-wider mb-4">NAVIGATION</h4>
+        <ul class="space-y-2">
+          <li><a href="index.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Accueil</a></li>
+          <li><a href="lodge.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Le Grand Lodge</a></li>
+          <li><a href="thenest.html" class="text-blanc/60 hover:text-turquoise transition-colors text-sm">The Nest</a></li>
+          <li><a href="contact.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-blanc font-sans text-sm tracking-wider mb-4">CONTACT</h4>
+        <ul class="space-y-2 text-sm text-blanc/60">
+          <li>Petit Piquey, Cap Ferret</li>
+          <li>Bassin d'Arcachon, France</li>
+          <li class="pt-2">
+            <a href="mailto:contact@mareaferret.com" class="hover:text-sunset-orange transition-colors">contact@mareaferret.com</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-blanc/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-blanc/40 text-sm">© 2025 Maréa – Tous droits réservés</p>
+      <p class="text-blanc/40 text-xs">Le Grand Lodge et The Nest font partie d'un ensemble immobilier</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
