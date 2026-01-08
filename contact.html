@@ -3,30 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contactez Maréa – Surf Lodge au Cap Ferret. Réservez Le Grand Lodge ou The Nest pour vos vacances au Bassin d'Arcachon.">
-  <title>Contact – Maréa Surf Lodge</title>
+  <meta name="description" content="Réservez votre séjour à Maréa - Surf Lodge au Cap Ferret. Vérifiez les disponibilités du Grand Lodge et The Nest. Contact direct par WhatsApp ou email.">
+  <meta name="keywords" content="réservation cap ferret, location vacances bassin arcachon, disponibilités maréa, contact lodge cap ferret">
+  <title>Réservation & Contact – Maréa Surf Lodge Cap Ferret</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Flatpickr pour le calendrier -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/light.css">
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
+            'ocean': '#2C4A62',
+            'ocean-dark': '#1A3B5C',
             'sunset-cream': '#FFF8E7',
             'sunset-yellow': '#F4C430',
             'sunset-orange': '#F28C28',
-            'sable': '#E8DED1',
-            'bois': '#8B5A2B',
-            'blanc': '#FAF9F7',
-            'ivoire': '#FFFEF9',
-            'navy': '#1E3A5F',
+            'brun': '#8B4513',
+            'sable': '#E8DCC8',
+            'sable-dark': '#C4A574',
+            'sable-medium': '#D4B594',
+            'blanc': '#F8F6F3',
+            'taupe': '#8B7355',
             'turquoise': '#4EC3C7',
             'turquoise-dark': '#2FA4A9',
+            'turquoise-light': '#6ED4D8',
+            'turquoise-pastel': '#A8E6E9',
           },
           fontFamily: {
-            'display': ['Recoleta', 'Georgia', 'serif'],
+            'display': ['Georgia', 'serif'],
             'sans': ['Montserrat', 'system-ui', 'sans-serif'],
           }
         }
@@ -87,6 +96,109 @@
       transform: translateX(0);
     }
 
+    /* CTA Pulse animation */
+    @keyframes pulse-cta {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(242, 140, 40, 0.4); }
+      50% { box-shadow: 0 0 0 8px rgba(242, 140, 40, 0); }
+    }
+    .cta-pulse {
+      animation: pulse-cta 2s infinite;
+    }
+
+    /* Flatpickr Custom Styles */
+    .flatpickr-calendar {
+      font-family: 'Montserrat', sans-serif;
+      border: 1px solid #E8DCC8;
+      box-shadow: 0 4px 20px rgba(44, 74, 98, 0.1);
+    }
+    .flatpickr-day.selected,
+    .flatpickr-day.startRange,
+    .flatpickr-day.endRange {
+      background: #F28C28 !important;
+      border-color: #F28C28 !important;
+    }
+    .flatpickr-day.inRange {
+      background: rgba(242, 140, 40, 0.2) !important;
+      border-color: transparent !important;
+      box-shadow: none !important;
+    }
+    .flatpickr-day:hover {
+      background: #E8DED1 !important;
+      border-color: #E8DED1 !important;
+    }
+    .flatpickr-day.disabled,
+    .flatpickr-day.disabled:hover {
+      background: #f0f0f0 !important;
+      color: #ccc !important;
+      text-decoration: line-through;
+      cursor: not-allowed;
+    }
+    .flatpickr-day.booked {
+      background: repeating-linear-gradient(
+        45deg,
+        #f5f5f5,
+        #f5f5f5 2px,
+        #e8e8e8 2px,
+        #e8e8e8 4px
+      ) !important;
+      color: #999 !important;
+      cursor: not-allowed;
+    }
+    .flatpickr-months .flatpickr-month {
+      background: #2C4A62;
+      color: white;
+    }
+    .flatpickr-current-month .flatpickr-monthDropdown-months,
+    .flatpickr-current-month input.cur-year {
+      color: white;
+      font-weight: 500;
+    }
+    .flatpickr-weekdays {
+      background: #F8F6F3;
+    }
+    span.flatpickr-weekday {
+      color: #2C4A62;
+      font-weight: 500;
+    }
+    .flatpickr-months .flatpickr-prev-month,
+    .flatpickr-months .flatpickr-next-month {
+      fill: white;
+    }
+    .flatpickr-months .flatpickr-prev-month:hover,
+    .flatpickr-months .flatpickr-next-month:hover {
+      fill: #F28C28;
+    }
+
+    /* Calendar Legend */
+    .calendar-legend {
+      display: flex;
+      gap: 16px;
+      font-size: 12px;
+      color: #2C4A62;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 2px;
+    }
+    .legend-available { background: white; border: 1px solid #E8DED1; }
+    .legend-selected { background: #F28C28; }
+    .legend-booked {
+      background: repeating-linear-gradient(
+        45deg,
+        #f5f5f5,
+        #f5f5f5 2px,
+        #e8e8e8 2px,
+        #e8e8e8 4px
+      );
+      border: 1px solid #ddd;
+    }
+
     /* Form styling */
     input, select, textarea {
       transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -98,7 +210,7 @@
     }
   </style>
 </head>
-<body class="font-sans text-bois bg-blanc">
+<body class="font-sans text-ocean bg-blanc">
 
 <!-- Navigation -->
 <nav class="fixed top-0 left-0 right-0 z-50 bg-blanc/95 backdrop-blur-sm border-b border-sable/20">
@@ -106,52 +218,56 @@
     <!-- Logo -->
     <a href="index.html" class="flex items-center gap-3">
       <svg class="w-12 h-12" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="sunsetGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" style="stop-color:#FFF8E7"/>
-            <stop offset="50%" style="stop-color:#F4C430"/>
-            <stop offset="100%" style="stop-color:#F28C28"/>
-          </linearGradient>
-        </defs>
-        <path d="M25 6C34.389 6 42 13.611 42 23H8C8 13.611 15.611 6 25 6Z" fill="url(#sunsetGradient)"/>
-        <path d="M6 27C6 27 12 30 25 30C38 30 44 27 44 27" stroke="#8B5A2B" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-        <path d="M10 33C10 33 15 35.5 25 35.5C35 35.5 40 33 40 33" stroke="#8B5A2B" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.7"/>
-        <path d="M14 39C14 39 18 41 25 41C32 41 36 39 36 39" stroke="#8B5A2B" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.4"/>
+        <!-- Sunset arcs -->
+        <path d="M25 8 A 17 17 0 0 1 42 25 H 8 A 17 17 0 0 1 25 8" fill="#F4C430"/>
+        <path d="M25 12 A 13 13 0 0 1 38 25 H 12 A 13 13 0 0 1 25 12" fill="#F28C28"/>
+        <path d="M25 18 A 7 7 0 0 1 32 25 H 18 A 7 7 0 0 1 25 18" fill="#8B4513"/>
+        <!-- Wave lines -->
+        <line x1="5" y1="25" x2="45" y2="25" stroke="#8B4513" stroke-width="2" stroke-linecap="round"/>
+        <line x1="7" y1="30" x2="43" y2="30" stroke="#C4A574" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="10" y1="35" x2="40" y2="35" stroke="#D4B594" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="14" y1="40" x2="36" y2="40" stroke="#E8DCC8" stroke-width="1.2" stroke-linecap="round"/>
       </svg>
-      <span class="font-display text-2xl font-medium tracking-wide text-bois">maréa</span>
+      <span class="font-display text-xl md:text-2xl italic font-semibold text-ocean" style="letter-spacing: -1px;">marea</span>
     </a>
 
     <!-- Desktop Navigation -->
-    <div class="hidden md:flex items-center gap-8">
+    <div class="hidden lg:flex items-center gap-6">
       <a href="index.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">ACCUEIL</a>
       <a href="lodge.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">LE LODGE</a>
       <a href="thenest.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-turquoise transition-colors">THE NEST</a>
       <a href="contact.html" class="nav-link font-sans text-sm tracking-wider font-medium text-sunset-orange">CONTACT</a>
       <span class="text-sable/30">|</span>
       <a href="contact-en.html" class="font-sans text-sm tracking-wider font-light hover:text-sunset-orange transition-colors">EN</a>
+      <a href="#reservation" class="ml-2 bg-sunset-orange text-white px-5 py-2.5 font-sans text-sm tracking-wider font-semibold hover:bg-sunset-orange/90 transition-all cta-pulse">
+        RÉSERVER
+      </a>
     </div>
 
     <!-- Mobile Menu Button -->
-    <button id="menuBtn" class="md:hidden p-2 text-bois" aria-label="Menu">
+    <button id="menuBtn" class="lg:hidden p-2 text-ocean" aria-label="Menu">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
       </svg>
     </button>
   </div>
-
-  <!-- Mobile Menu -->
-  <div id="mobileMenu" class="mobile-menu fixed inset-0 top-[65px] z-40 md:hidden" style="background-color: #FFFEF9;">
-    <div class="flex flex-col items-center justify-center h-full gap-8">
-      <a href="index.html" class="font-sans text-lg tracking-wider font-medium text-bois hover:text-sunset-orange transition-colors">ACCUEIL</a>
-      <a href="lodge.html" class="font-sans text-lg tracking-wider font-medium text-bois hover:text-sunset-orange transition-colors">LE LODGE</a>
-      <a href="thenest.html" class="font-sans text-lg tracking-wider font-medium text-bois hover:text-turquoise transition-colors">THE NEST</a>
-      <a href="contact.html" class="font-sans text-lg tracking-wider font-medium text-sunset-orange">CONTACT</a>
-      <div class="border-t border-sable pt-8 mt-4 w-32 text-center">
-        <a href="contact-en.html" class="font-sans text-sm tracking-wider font-medium text-navy hover:text-sunset-orange transition-colors">ENGLISH</a>
-      </div>
-    </div>
-  </div>
 </nav>
+
+<!-- Mobile Menu (outside nav for z-index) -->
+<div id="mobileMenu" class="mobile-menu fixed inset-0 top-[73px] z-[100] lg:hidden bg-blanc">
+  <div class="flex flex-col items-center justify-center h-full gap-8 px-6">
+    <a href="index.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">ACCUEIL</a>
+    <a href="lodge.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">LE LODGE</a>
+    <a href="thenest.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-turquoise transition-colors">THE NEST</a>
+    <a href="contact.html" class="font-sans text-xl tracking-wider font-medium text-sunset-orange">CONTACT</a>
+    <div class="border-t border-sable pt-8 mt-4 w-32 text-center">
+      <a href="contact-en.html" class="font-sans text-sm tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">ENGLISH</a>
+    </div>
+    <a href="#reservation" class="mt-4 bg-sunset-orange text-white px-8 py-3 font-sans text-sm tracking-wider font-semibold hover:bg-sunset-orange/90 transition-all">
+      RÉSERVER
+    </a>
+  </div>
+</div>
 
 <script>
   const menuBtn = document.getElementById('menuBtn');
@@ -162,8 +278,10 @@
     mobileMenu.classList.toggle('open');
     if (mobileMenu.classList.contains('open')) {
       menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+      document.body.style.overflow = 'hidden';
     } else {
       menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+      document.body.style.overflow = '';
     }
   });
 
@@ -171,246 +289,311 @@
     link.addEventListener('click', () => {
       mobileMenu.classList.remove('open');
       menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+      document.body.style.overflow = '';
     });
   });
 </script>
 
 <!-- Header -->
-<section class="pt-32 pb-16 md:pt-40 md:pb-24 px-6 bg-blanc">
+<section class="pt-32 pb-12 md:pt-40 md:pb-16 px-6 bg-blanc">
   <div class="max-w-4xl mx-auto text-center">
     <div class="midcentury-line mx-auto mb-8"></div>
-    <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-6">CONTACTEZ-NOUS</p>
-    <h1 class="font-display text-4xl md:text-6xl text-bois leading-tight mb-6">
-      Envie d'une parenthèse à Maréa ?
+    <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-6">RÉSERVATION & CONTACT</p>
+    <h1 class="font-display text-4xl md:text-5xl lg:text-6xl text-ocean leading-tight mb-6">
+      Réservez votre séjour à Maréa
     </h1>
-    <p class="text-base md:text-lg text-bois/70 leading-relaxed max-w-2xl mx-auto font-light">
-      Nous sommes à votre disposition pour répondre à vos questions, vérifier les disponibilités ou vous aider à organiser votre séjour au Cap Ferret.
+    <p class="text-base md:text-lg text-ocean/70 leading-relaxed max-w-2xl mx-auto font-light">
+      Vérifiez les disponibilités, sélectionnez vos dates et contactez-nous directement pour organiser votre séjour au Cap Ferret.
     </p>
+  </div>
+</section>
+
+<!-- Reservation Section -->
+<section id="reservation" class="py-12 md:py-20 px-6 bg-sable/30">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-10">
+      <p class="text-sunset-orange font-sans text-xs tracking-[0.2em] mb-3">VÉRIFIEZ LES DISPONIBILITÉS</p>
+      <h2 class="font-display text-2xl md:text-3xl lg:text-4xl text-ocean">Planifiez votre séjour</h2>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-8">
+      <!-- Calendrier visuel -->
+      <div class="bg-blanc p-6 border border-sable/30 shadow-sm">
+        <h3 class="font-display text-xl text-ocean mb-4">Disponibilités</h3>
+
+        <!-- Sélecteur de propriété pour le calendrier -->
+        <div class="mb-4">
+          <label class="block text-sm font-medium text-ocean/70 mb-2">Voir les disponibilités pour :</label>
+          <select id="calendarProperty" class="w-full px-4 py-3 border border-sable bg-white text-ocean text-sm focus:outline-none focus:border-sunset-orange">
+            <option value="lodge">Le Grand Lodge (12 pers.)</option>
+            <option value="nest">The Nest (4 pers.)</option>
+          </select>
+        </div>
+
+        <!-- Calendrier Flatpickr -->
+        <div id="calendarContainer" class="mb-4"></div>
+
+        <!-- Légende -->
+        <div class="calendar-legend flex-wrap justify-center mt-4">
+          <div class="legend-item">
+            <div class="legend-dot legend-available"></div>
+            <span>Disponible</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot legend-selected"></div>
+            <span>Sélectionné</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot legend-booked"></div>
+            <span>Réservé</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulaire de réservation -->
+      <div class="bg-blanc p-6 border border-sable/30 shadow-sm">
+        <h3 class="font-display text-xl text-ocean mb-4">Votre demande</h3>
+
+        <form id="bookingForm" class="space-y-4">
+          <!-- Hébergement -->
+          <div>
+            <label class="block text-sm font-medium text-ocean/70 mb-2">Hébergement</label>
+            <select id="bookingProperty" class="w-full px-4 py-3 border border-sable bg-white text-ocean text-sm focus:outline-none focus:border-sunset-orange">
+              <option value="Le Grand Lodge (12 pers.)">Le Grand Lodge (12 pers.)</option>
+              <option value="The Nest (4 pers.)">The Nest (4 pers.)</option>
+              <option value="Lodge + Nest (16 pers.)">Les deux (16 pers.)</option>
+            </select>
+          </div>
+
+          <!-- Dates -->
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-ocean/70 mb-2">Arrivée</label>
+              <input type="text" id="checkin" placeholder="Sélectionner" readonly class="w-full px-4 py-3 border border-sable bg-sable/20 text-ocean text-sm cursor-default">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-ocean/70 mb-2">Départ</label>
+              <input type="text" id="checkout" placeholder="Sélectionner" readonly class="w-full px-4 py-3 border border-sable bg-sable/20 text-ocean text-sm cursor-default">
+            </div>
+          </div>
+
+          <!-- Voyageurs : Adultes + Enfants -->
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-ocean/70 mb-2">Adultes</label>
+              <select id="adults" class="w-full px-4 py-3 border border-sable bg-white text-ocean text-sm focus:outline-none focus:border-sunset-orange">
+                <option value="1">1 adulte</option>
+                <option value="2" selected>2 adultes</option>
+                <option value="3">3 adultes</option>
+                <option value="4">4 adultes</option>
+                <option value="5">5 adultes</option>
+                <option value="6">6 adultes</option>
+                <option value="7">7 adultes</option>
+                <option value="8">8 adultes</option>
+                <option value="9">9 adultes</option>
+                <option value="10">10 adultes</option>
+                <option value="11">11 adultes</option>
+                <option value="12">12 adultes</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-ocean/70 mb-2">Enfants</label>
+              <select id="children" class="w-full px-4 py-3 border border-sable bg-white text-ocean text-sm focus:outline-none focus:border-sunset-orange">
+                <option value="0" selected>0 enfant</option>
+                <option value="1">1 enfant</option>
+                <option value="2">2 enfants</option>
+                <option value="3">3 enfants</option>
+                <option value="4">4 enfants</option>
+                <option value="5">5 enfants</option>
+                <option value="6">6 enfants</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Tarifs indicatifs -->
+          <div class="bg-sable/30 p-4 text-sm">
+            <p class="font-sans text-xs tracking-wider text-ocean/60 mb-1">TARIFS INDICATIFS</p>
+            <p class="text-ocean">
+              <span class="text-sunset-orange font-semibold">Le Lodge</span> à partir de 500€/nuit ·
+              <span class="text-turquoise font-semibold">The Nest</span> à partir de 100€/nuit
+            </p>
+          </div>
+
+          <!-- Résumé de la sélection -->
+          <div id="bookingSummary" class="hidden bg-sable/20 p-4 border border-sunset-orange/30 text-sm">
+            <p class="font-medium text-ocean mb-2">Récapitulatif :</p>
+            <p id="summaryText" class="text-ocean/70"></p>
+          </div>
+
+          <!-- CTAs -->
+          <div class="space-y-3 pt-2">
+            <button type="button" id="whatsappBtn" class="w-full inline-flex items-center justify-center bg-[#25D366] text-white px-6 py-4 font-sans text-sm tracking-wider font-semibold hover:bg-[#22c55e] transition-all">
+              <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              ENVOYER VIA WHATSAPP
+            </button>
+            <button type="button" id="emailBtn" class="w-full inline-flex items-center justify-center border-2 border-ocean text-ocean px-6 py-4 font-sans text-sm tracking-wider font-medium hover:bg-ocean hover:text-white transition-all">
+              <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+              ENVOYER PAR EMAIL
+            </button>
+          </div>
+
+          <p class="text-center text-ocean/50 text-xs">
+            Nous vous répondrons dans les 24h.
+          </p>
+        </form>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- Contact Options -->
-<section class="py-12 md:py-16 px-6 bg-sable/20">
+<section class="py-12 md:py-16 px-6 bg-blanc">
   <div class="max-w-4xl mx-auto">
-    <div class="grid md:grid-cols-2 gap-6">
+    <div class="text-center mb-10">
+      <div class="midcentury-line mx-auto mb-6"></div>
+      <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-3">AUTRES MOYENS DE CONTACT</p>
+      <h2 class="font-display text-2xl md:text-3xl text-ocean">Nous sommes à votre écoute</h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
       <!-- Email -->
-      <a href="mailto:contact@mareaferret.com" class="group bg-blanc p-6 md:p-8 border border-sable/20 hover:border-sunset-orange/30 transition-all duration-300 text-center">
-        <div class="w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 flex items-center justify-center border border-sunset-orange/30 rounded-full group-hover:bg-sunset-orange/10 transition-colors">
-          <svg class="w-6 h-6 md:w-7 md:h-7 text-sunset-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <a href="mailto:contact@mareaferret.com" class="group bg-blanc p-6 border border-sable/30 hover:border-sunset-orange/50 transition-all duration-300 text-center">
+        <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center border border-sunset-orange/30 rounded-full group-hover:bg-sunset-orange/10 transition-colors">
+          <svg class="w-6 h-6 text-sunset-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
           </svg>
         </div>
-        <h3 class="font-display text-xl md:text-2xl mb-2 group-hover:text-sunset-orange transition-colors">Email</h3>
-        <p class="text-bois/60 text-sm mb-4">Pour toute demande de renseignement</p>
+        <h3 class="font-display text-xl mb-2 group-hover:text-sunset-orange transition-colors">Email</h3>
+        <p class="text-ocean/60 text-sm mb-3">Pour toute demande</p>
         <span class="font-sans text-sm text-sunset-orange font-medium">contact@mareaferret.com</span>
       </a>
 
       <!-- WhatsApp -->
-      <a href="https://wa.me/33676886769" target="_blank" class="group bg-blanc p-6 md:p-8 border border-sable/20 hover:border-turquoise/30 transition-all duration-300 text-center">
-        <div class="w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 flex items-center justify-center border border-turquoise/30 rounded-full group-hover:bg-turquoise/10 transition-colors">
-          <svg class="w-6 h-6 md:w-7 md:h-7 text-turquoise" fill="currentColor" viewBox="0 0 24 24">
+      <a href="https://wa.me/33676886769" target="_blank" class="group bg-blanc p-6 border border-sable/30 hover:border-turquoise/50 transition-all duration-300 text-center">
+        <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center border border-turquoise/30 rounded-full group-hover:bg-turquoise/10 transition-colors">
+          <svg class="w-6 h-6 text-turquoise" fill="currentColor" viewBox="0 0 24 24">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
           </svg>
         </div>
-        <h3 class="font-display text-xl md:text-2xl mb-2 group-hover:text-turquoise transition-colors">WhatsApp</h3>
-        <p class="text-bois/60 text-sm mb-4">Pour une réponse rapide</p>
+        <h3 class="font-display text-xl mb-2 group-hover:text-turquoise transition-colors">WhatsApp</h3>
+        <p class="text-ocean/60 text-sm mb-3">Réponse rapide</p>
         <span class="font-sans text-sm text-turquoise font-medium">+33 6 76 88 67 69</span>
+      </a>
+
+      <!-- Téléphone -->
+      <a href="tel:+33676886769" class="group bg-blanc p-6 border border-sable/30 hover:border-ocean/30 transition-all duration-300 text-center">
+        <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center border border-ocean/30 rounded-full group-hover:bg-ocean/10 transition-colors">
+          <svg class="w-6 h-6 text-ocean" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+          </svg>
+        </div>
+        <h3 class="font-display text-xl mb-2 group-hover:text-ocean transition-colors">Téléphone</h3>
+        <p class="text-ocean/60 text-sm mb-3">Appelez-nous</p>
+        <span class="font-sans text-sm text-ocean font-medium">+33 6 76 88 67 69</span>
       </a>
     </div>
   </div>
 </section>
 
-<!-- Reservation Form Section -->
-<section class="py-16 md:py-24 px-6 bg-blanc">
-  <div class="max-w-3xl mx-auto">
-    <div class="text-center mb-12">
-      <div class="midcentury-line mx-auto mb-8"></div>
-      <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-4">DEMANDE DE RÉSERVATION</p>
-      <h2 class="font-display text-3xl md:text-4xl text-bois mb-4">Réservez votre séjour</h2>
-      <p class="text-bois/60 text-sm md:text-base">Remplissez le formulaire ci-dessous et nous vous recontacterons rapidement.</p>
+<!-- Location Section -->
+<section class="py-12 md:py-20 px-6 bg-sable/20">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-10">
+      <div class="midcentury-line mx-auto mb-6"></div>
+      <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-3">LOCALISATION</p>
+      <h2 class="font-display text-2xl md:text-3xl text-ocean">Où nous trouver</h2>
     </div>
 
-    <!-- Form that submits to Google Form -->
-    <form action="https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse" method="POST" target="_blank" class="space-y-6">
-      <div class="grid md:grid-cols-2 gap-6">
-        <!-- Nom -->
-        <div>
-          <label for="name" class="block font-sans text-sm tracking-wider text-bois/70 mb-2">NOM COMPLET *</label>
-          <input type="text" id="name" name="entry.YOUR_NAME_FIELD" required
-            class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-bois placeholder-bois/40"
-            placeholder="Votre nom">
-        </div>
-
-        <!-- Email -->
-        <div>
-          <label for="email" class="block font-sans text-sm tracking-wider text-bois/70 mb-2">EMAIL *</label>
-          <input type="email" id="email" name="entry.YOUR_EMAIL_FIELD" required
-            class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-bois placeholder-bois/40"
-            placeholder="votre@email.com">
-        </div>
+    <div class="grid lg:grid-cols-2 gap-8 items-start">
+      <!-- Google Maps -->
+      <div class="aspect-[4/3] lg:aspect-square">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2832.5!2d-1.2089!3d44.7456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd54a3c3c5c5c5c5%3A0x0!2s3%20Rue%20Berthelot%2C%2033950%20L%C3%A8ge-Cap-Ferret!5e0!3m2!1sfr!2sfr!4v1234567890"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="w-full h-full">
+        </iframe>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-6">
-        <!-- Téléphone -->
-        <div>
-          <label for="phone" class="block font-sans text-sm tracking-wider text-bois/70 mb-2">TÉLÉPHONE</label>
-          <input type="tel" id="phone" name="entry.YOUR_PHONE_FIELD"
-            class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-bois placeholder-bois/40"
-            placeholder="+33 6 XX XX XX XX">
-        </div>
-
-        <!-- Hébergement -->
-        <div>
-          <label for="property" class="block font-sans text-sm tracking-wider text-bois/70 mb-2">HÉBERGEMENT *</label>
-          <select id="property" name="entry.YOUR_PROPERTY_FIELD" required
-            class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-bois">
-            <option value="">Sélectionnez...</option>
-            <option value="lodge">Le Grand Lodge (jusqu'à 12 pers.)</option>
-            <option value="nest">The Nest (2-4 pers.)</option>
-            <option value="both">Lodge + Nest (jusqu'à 16 pers.)</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-6">
-        <!-- Date d'arrivée -->
-        <div>
-          <label for="checkin" class="block font-sans text-sm tracking-wider text-bois/70 mb-2">DATE D'ARRIVÉE *</label>
-          <input type="date" id="checkin" name="entry.YOUR_CHECKIN_FIELD" required
-            class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-bois">
-        </div>
-
-        <!-- Date de départ -->
-        <div>
-          <label for="checkout" class="block font-sans text-sm tracking-wider text-bois/70 mb-2">DATE DE DÉPART *</label>
-          <input type="date" id="checkout" name="entry.YOUR_CHECKOUT_FIELD" required
-            class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-bois">
-        </div>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-6">
-        <!-- Nombre d'adultes -->
-        <div>
-          <label for="adults" class="block font-sans text-sm tracking-wider text-bois/70 mb-2">ADULTES *</label>
-          <select id="adults" name="entry.YOUR_ADULTS_FIELD" required
-            class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-bois">
-            <option value="">Sélectionnez...</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12+</option>
-          </select>
-        </div>
-
-        <!-- Nombre d'enfants -->
-        <div>
-          <label for="children" class="block font-sans text-sm tracking-wider text-bois/70 mb-2">ENFANTS</label>
-          <select id="children" name="entry.YOUR_CHILDREN_FIELD"
-            class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-bois">
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6+</option>
-          </select>
-        </div>
-      </div>
-
-      <!-- Message -->
-      <div>
-        <label for="message" class="block font-sans text-sm tracking-wider text-bois/70 mb-2">MESSAGE</label>
-        <textarea id="message" name="entry.YOUR_MESSAGE_FIELD" rows="4"
-          class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-bois placeholder-bois/40 resize-none"
-          placeholder="Parlez-nous de votre projet de séjour, vos questions..."></textarea>
-      </div>
-
-      <!-- Submit -->
-      <div class="text-center pt-4">
-        <button type="submit"
-          class="inline-flex items-center justify-center px-10 py-4 bg-sunset-orange text-blanc font-sans text-sm tracking-wider font-medium hover:bg-sunset-orange/90 transition-all duration-300">
-          ENVOYER MA DEMANDE
-          <svg class="w-4 h-4 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-          </svg>
-        </button>
-      </div>
-    </form>
-
-    <p class="text-center text-bois/50 text-xs mt-8">
-      * Champs obligatoires. Nous vous répondrons dans les 24h.
-    </p>
-  </div>
-</section>
-
-<!-- Location Info -->
-<section class="py-16 md:py-24 px-6 bg-sable/20">
-  <div class="max-w-4xl mx-auto">
-    <div class="text-center mb-12">
-      <div class="midcentury-line mx-auto mb-8"></div>
-      <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-4">LOCALISATION</p>
-      <h2 class="font-display text-3xl md:text-4xl text-bois">Où nous trouver</h2>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <!-- Info -->
       <div class="space-y-6">
-        <div class="flex items-start gap-4">
-          <div class="w-10 h-10 flex items-center justify-center border border-sunset-orange/30 rounded-full flex-shrink-0">
-            <svg class="w-5 h-5 text-sunset-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-            </svg>
-          </div>
-          <div>
-            <h3 class="font-display text-lg mb-1">Adresse</h3>
-            <p class="text-bois/60 text-sm">Petit Piquey<br>Cap Ferret, Bassin d'Arcachon<br>33950 Lège-Cap-Ferret, France</p>
-          </div>
-        </div>
-
-        <div class="flex items-start gap-4">
-          <div class="w-10 h-10 flex items-center justify-center border border-sunset-orange/30 rounded-full flex-shrink-0">
-            <svg class="w-5 h-5 text-sunset-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-            </svg>
-          </div>
-          <div>
-            <h3 class="font-display text-lg mb-1">Accès</h3>
-            <p class="text-bois/60 text-sm">À 50m du Bassin et des commerces<br>Pistes cyclables accessibles immédiatement<br>Idéal pour des vacances sans voiture</p>
+        <div class="bg-blanc p-6 border border-sable/30">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 flex items-center justify-center border border-sunset-orange/30 rounded-full flex-shrink-0">
+              <svg class="w-5 h-5 text-sunset-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-display text-lg mb-1">Adresse</h3>
+              <p class="text-ocean/70 text-sm">3 rue Berthelot<br>Petit Piquey<br>33950 Lège-Cap-Ferret, France</p>
+              <a href="https://www.google.com/maps/search/?api=1&query=3+rue+Berthelot+33950+Lège-Cap-Ferret" target="_blank" class="inline-block mt-2 text-sunset-orange text-sm font-medium hover:underline">
+                Ouvrir dans Google Maps →
+              </a>
+            </div>
           </div>
         </div>
 
-        <div class="flex items-start gap-4">
-          <div class="w-10 h-10 flex items-center justify-center border border-sunset-orange/30 rounded-full flex-shrink-0">
-            <svg class="w-5 h-5 text-sunset-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-          </div>
-          <div>
-            <h3 class="font-display text-lg mb-1">Depuis Bordeaux</h3>
-            <p class="text-bois/60 text-sm">~1h en voiture via l'A660<br>Possibilité de navette depuis la gare d'Arcachon</p>
-          </div>
+        <div class="bg-blanc p-6 border border-sable/30">
+          <h3 class="font-display text-lg mb-4">À proximité</h3>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-3 text-sm">
+              <span class="w-8 h-8 flex items-center justify-center bg-turquoise/10 rounded-full flex-shrink-0">
+                <svg class="w-4 h-4 text-turquoise" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </span>
+              <span class="text-ocean/70"><span class="font-medium text-ocean">50m</span> – Bassin d'Arcachon & Plage de la Truquette</span>
+            </li>
+            <li class="flex items-center gap-3 text-sm">
+              <span class="w-8 h-8 flex items-center justify-center bg-turquoise/10 rounded-full flex-shrink-0">
+                <svg class="w-4 h-4 text-turquoise" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </span>
+              <span class="text-ocean/70"><span class="font-medium text-ocean">50m</span> – Commerces & restaurants</span>
+            </li>
+            <li class="flex items-center gap-3 text-sm">
+              <span class="w-8 h-8 flex items-center justify-center bg-turquoise/10 rounded-full flex-shrink-0">
+                <svg class="w-4 h-4 text-turquoise" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </span>
+              <span class="text-ocean/70"><span class="font-medium text-ocean">15 min vélo</span> – Plages océanes</span>
+            </li>
+            <li class="flex items-center gap-3 text-sm">
+              <span class="w-8 h-8 flex items-center justify-center bg-turquoise/10 rounded-full flex-shrink-0">
+                <svg class="w-4 h-4 text-turquoise" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </span>
+              <span class="text-ocean/70"><span class="font-medium text-ocean">1h voiture</span> – Dune du Pilat</span>
+            </li>
+            <li class="flex items-center gap-3 text-sm">
+              <span class="w-8 h-8 flex items-center justify-center bg-turquoise/10 rounded-full flex-shrink-0">
+                <svg class="w-4 h-4 text-turquoise" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </span>
+              <span class="text-ocean/70"><span class="font-medium text-ocean">1h voiture</span> – Bordeaux</span>
+            </li>
+          </ul>
         </div>
-      </div>
 
-      <!-- Map placeholder -->
-      <div class="aspect-square bg-sable/30 flex items-center justify-center">
-        <div class="text-center p-6">
-          <svg class="w-16 h-16 mx-auto mb-4 text-bois/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path>
-          </svg>
-          <p class="text-bois/40 text-sm font-sans">Petit Piquey, Cap Ferret</p>
-          <a href="https://maps.google.com/?q=Petit+Piquey+Cap+Ferret" target="_blank" class="inline-block mt-4 text-sunset-orange text-sm font-sans hover:underline">
-            Voir sur Google Maps →
-          </a>
+        <div class="bg-blanc p-6 border border-sable/30">
+          <h3 class="font-display text-lg mb-3">Depuis Bordeaux</h3>
+          <p class="text-ocean/70 text-sm leading-relaxed">
+            Environ 1h en voiture via l'A660. Possibilité de navette depuis la gare d'Arcachon ou location de vélos sur place.
+          </p>
         </div>
       </div>
     </div>
@@ -418,29 +601,40 @@
 </section>
 
 <!-- Footer -->
-<footer class="py-12 md:py-16 px-6 bg-bois border-t border-blanc/10">
+<footer class="py-12 md:py-16 px-6 bg-ocean border-t border-blanc/10">
   <div class="max-w-6xl mx-auto">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12">
       <div class="col-span-2">
         <div class="flex items-center gap-3 mb-6">
           <svg class="w-10 h-10" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="sunsetGradientFooter" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" style="stop-color:#FFF8E7"/>
-                <stop offset="50%" style="stop-color:#F4C430"/>
-                <stop offset="100%" style="stop-color:#F28C28"/>
-              </linearGradient>
-            </defs>
-            <path d="M25 6C34.389 6 42 13.611 42 23H8C8 13.611 15.611 6 25 6Z" fill="url(#sunsetGradientFooter)"/>
-            <path d="M6 27C6 27 12 30 25 30C38 30 44 27 44 27" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.6"/>
-            <path d="M10 33C10 33 15 35.5 25 35.5C35 35.5 40 33 40 33" stroke="white" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.4"/>
-            <path d="M14 39C14 39 18 41 25 41C32 41 36 39 36 39" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.2"/>
+            <!-- Sunset arcs -->
+            <path d="M25 8 A 17 17 0 0 1 42 25 H 8 A 17 17 0 0 1 25 8" fill="#F4C430"/>
+            <path d="M25 12 A 13 13 0 0 1 38 25 H 12 A 13 13 0 0 1 25 12" fill="#F28C28"/>
+            <path d="M25 18 A 7 7 0 0 1 32 25 H 18 A 7 7 0 0 1 25 18" fill="#8B4513"/>
+            <!-- Wave lines -->
+            <line x1="5" y1="25" x2="45" y2="25" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+            <line x1="7" y1="30" x2="43" y2="30" stroke="white" stroke-width="1.8" stroke-linecap="round" opacity="0.6"/>
+            <line x1="10" y1="35" x2="40" y2="35" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+            <line x1="14" y1="40" x2="36" y2="40" stroke="white" stroke-width="1.2" stroke-linecap="round" opacity="0.2"/>
           </svg>
-          <span class="font-display text-xl font-medium tracking-wide text-blanc">maréa</span>
+          <span class="font-display text-xl italic font-semibold text-blanc" style="letter-spacing: -1px;">marea</span>
         </div>
-        <p class="text-blanc/60 text-sm leading-relaxed max-w-sm font-light">
-          Surf lodge chic au Bassin d'Arcachon. Le Grand Lodge & The Nest à Petit Piquey, Cap Ferret. L'élégance naturelle pour des moments partagés inoubliables.
+        <p class="text-blanc/60 text-sm leading-relaxed max-w-sm font-light mb-6">
+          Surf lodge au Bassin d'Arcachon. Le Grand Lodge & The Nest à Petit Piquey, Cap Ferret.
         </p>
+        <!-- Social Links -->
+        <div class="flex items-center gap-4">
+          <a href="https://instagram.com/mareaferret" target="_blank" class="w-10 h-10 flex items-center justify-center border border-blanc/20 rounded-full hover:border-sunset-orange hover:bg-sunset-orange/10 transition-all">
+            <svg class="w-5 h-5 text-blanc/70 hover:text-sunset-orange" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+          <a href="https://facebook.com/mareaferret" target="_blank" class="w-10 h-10 flex items-center justify-center border border-blanc/20 rounded-full hover:border-sunset-orange hover:bg-sunset-orange/10 transition-all">
+            <svg class="w-5 h-5 text-blanc/70 hover:text-sunset-orange" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+        </div>
       </div>
 
       <div>
@@ -456,10 +650,13 @@
       <div>
         <h4 class="text-blanc font-sans text-sm tracking-wider mb-4">CONTACT</h4>
         <ul class="space-y-2 text-sm text-blanc/60">
-          <li>Petit Piquey, Cap Ferret</li>
-          <li>Bassin d'Arcachon, France</li>
+          <li>3 rue Berthelot</li>
+          <li>33950 Lège-Cap-Ferret</li>
           <li class="pt-2">
             <a href="mailto:contact@mareaferret.com" class="hover:text-sunset-orange transition-colors">contact@mareaferret.com</a>
+          </li>
+          <li>
+            <a href="tel:+33676886769" class="hover:text-sunset-orange transition-colors">+33 6 76 88 67 69</a>
           </li>
         </ul>
       </div>
@@ -467,10 +664,274 @@
 
     <div class="border-t border-blanc/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
       <p class="text-blanc/40 text-sm">© 2025 Maréa – Tous droits réservés</p>
-      <p class="text-blanc/40 text-xs">Le Grand Lodge et The Nest font partie d'un ensemble immobilier</p>
+      <p class="text-blanc/40 text-xs">Le Grand Lodge et The Nest à Petit Piquey, Cap Ferret</p>
     </div>
   </div>
 </footer>
+
+<!-- Mobile Sticky CTA -->
+<div class="fixed bottom-0 left-0 right-0 p-4 bg-blanc/95 backdrop-blur-sm border-t border-sable/20 lg:hidden z-50">
+  <a href="#reservation" class="block w-full bg-sunset-orange text-white text-center py-3 font-sans text-sm tracking-wider font-semibold cta-pulse">
+    RÉSERVER MAINTENANT
+  </a>
+</div>
+
+<!-- Flatpickr Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/fr.js"></script>
+
+<!-- Booking Script -->
+<script>
+  // ============================================
+  // CONFIGURATION GOOGLE SHEETS
+  // ============================================
+  const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwIGsc2nzwAmioJwR2P1vflUNiusSnXapmKu9Yw1uYDz--H37P4gXPZqDLApOZWL0kt/exec';
+
+  // ============================================
+  // DATES RÉSERVÉES (fallback si Google Sheets non configuré)
+  // ============================================
+  let bookedDates = {
+    lodge: [],
+    nest: []
+  };
+
+  // ============================================
+  // CHARGEMENT DEPUIS GOOGLE SHEETS
+  // ============================================
+  async function loadBookingsFromGoogleSheets() {
+    if (!GOOGLE_SHEETS_URL) {
+      console.log('Google Sheets non configuré, utilisation des dates locales');
+      return bookedDates;
+    }
+
+    try {
+      const response = await fetch(GOOGLE_SHEETS_URL);
+      if (!response.ok) throw new Error('Erreur réseau');
+
+      const data = await response.json();
+
+      // Transformer les données Google Sheets en format attendu
+      bookedDates = {
+        lodge: [],
+        nest: []
+      };
+
+      data.forEach(row => {
+        const property = row.property?.toLowerCase() || '';
+        const from = row.from || row.debut || row.arrivee;
+        const to = row.to || row.fin || row.depart;
+
+        if (from && to) {
+          if (property === 'lodge' || property === 'le grand lodge') {
+            bookedDates.lodge.push({ from, to });
+          } else if (property === 'nest' || property === 'the nest') {
+            bookedDates.nest.push({ from, to });
+          }
+        }
+      });
+
+      console.log('Réservations chargées depuis Google Sheets:', bookedDates);
+      return bookedDates;
+
+    } catch (error) {
+      console.error('Erreur chargement Google Sheets:', error);
+      console.log('Utilisation des dates locales en fallback');
+      return bookedDates;
+    }
+  }
+
+  // ============================================
+  // FONCTIONS UTILITAIRES
+  // ============================================
+
+  // Génère un tableau de toutes les dates dans une plage
+  function getDatesInRange(startDate, endDate) {
+    const dates = [];
+    let currentDate = new Date(startDate);
+    const end = new Date(endDate);
+
+    while (currentDate <= end) {
+      dates.push(new Date(currentDate).toISOString().split('T')[0]);
+      currentDate.setDate(currentDate.getDate() + 1);
+    }
+    return dates;
+  }
+
+  // Obtient toutes les dates réservées pour une propriété
+  function getDisabledDates(property) {
+    const bookings = bookedDates[property] || [];
+    let disabledDates = [];
+
+    bookings.forEach(booking => {
+      const rangeDates = getDatesInRange(booking.from, booking.to);
+      disabledDates = disabledDates.concat(rangeDates);
+    });
+
+    return disabledDates;
+  }
+
+  // Formate une date pour l'affichage
+  function formatDateFR(dateStr) {
+    if (!dateStr) return '';
+    const date = new Date(dateStr);
+    return date.toLocaleDateString('fr-FR', {
+      weekday: 'short',
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    });
+  }
+
+  // ============================================
+  // INITIALISATION DU CALENDRIER
+  // ============================================
+
+  let calendarInstance;
+  let selectedDates = [];
+
+  function initCalendar(property = 'lodge') {
+    const disabledDates = getDisabledDates(property);
+
+    if (calendarInstance) {
+      calendarInstance.destroy();
+    }
+
+    calendarInstance = flatpickr("#calendarContainer", {
+      inline: true,
+      mode: "range",
+      minDate: "today",
+      maxDate: new Date().fp_incr(365),
+      locale: "fr",
+      dateFormat: "Y-m-d",
+      disable: disabledDates,
+      showMonths: 1,
+      onChange: function(dates, dateStr) {
+        if (dates.length === 2) {
+          selectedDates = dates;
+          document.getElementById('checkin').value = formatDateFR(dates[0]);
+          document.getElementById('checkout').value = formatDateFR(dates[1]);
+          updateSummary();
+          updateContactButtons();
+        }
+      },
+      onDayCreate: function(dObj, dStr, fp, dayElem) {
+        const dateStr = dayElem.dateObj.toISOString().split('T')[0];
+        if (disabledDates.includes(dateStr)) {
+          dayElem.classList.add('booked');
+        }
+      }
+    });
+  }
+
+  // Initialisation au chargement
+  document.addEventListener('DOMContentLoaded', async function() {
+    // Charger les réservations depuis Google Sheets
+    await loadBookingsFromGoogleSheets();
+
+    // Initialiser le calendrier
+    initCalendar('lodge');
+
+    // Changement de propriété dans le calendrier
+    document.getElementById('calendarProperty').addEventListener('change', function() {
+      initCalendar(this.value);
+      // Reset les champs de date
+      document.getElementById('checkin').value = '';
+      document.getElementById('checkout').value = '';
+      selectedDates = [];
+      document.getElementById('bookingSummary').classList.add('hidden');
+      updateContactButtons();
+    });
+
+    // Écouter les changements sur adultes/enfants
+    document.getElementById('adults').addEventListener('change', updateContactButtons);
+    document.getElementById('children').addEventListener('change', updateContactButtons);
+    document.getElementById('bookingProperty').addEventListener('change', updateContactButtons);
+
+    // Initialiser les boutons
+    updateContactButtons();
+  });
+
+  // ============================================
+  // MISE À JOUR DU RÉCAPITULATIF
+  // ============================================
+
+  function updateSummary() {
+    const property = document.getElementById('bookingProperty').value;
+    const checkin = document.getElementById('checkin').value;
+    const checkout = document.getElementById('checkout').value;
+    const adults = document.getElementById('adults').value;
+    const children = document.getElementById('children').value;
+
+    if (checkin && checkout) {
+      const summaryEl = document.getElementById('bookingSummary');
+      const textEl = document.getElementById('summaryText');
+
+      // Calcul du nombre de nuits
+      let nights = 0;
+      if (selectedDates.length === 2) {
+        const diffTime = Math.abs(selectedDates[1] - selectedDates[0]);
+        nights = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      }
+
+      const childrenText = children > 0 ? ` + ${children} enfant${children > 1 ? 's' : ''}` : '';
+
+      textEl.innerHTML = `
+        <strong>${property}</strong><br>
+        Du ${checkin} au ${checkout}<br>
+        ${nights} nuit${nights > 1 ? 's' : ''} · ${adults} adulte${adults > 1 ? 's' : ''}${childrenText}
+      `;
+      summaryEl.classList.remove('hidden');
+    }
+  }
+
+  // ============================================
+  // GÉNÉRATION DU MESSAGE DE RÉSERVATION
+  // ============================================
+
+  function generateMessage() {
+    const property = document.getElementById('bookingProperty');
+    const checkin = document.getElementById('checkin').value;
+    const checkout = document.getElementById('checkout').value;
+    const adults = document.getElementById('adults').value;
+    const children = document.getElementById('children').value;
+
+    const propertyName = property.options[property.selectedIndex].text;
+    const childrenText = children > 0 ? ` et ${children} enfant${children > 1 ? 's' : ''}` : '';
+
+    let message = `Bonjour,\n\nJe souhaite réserver :\n`;
+    message += `- Hébergement : ${propertyName}\n`;
+    if (checkin) message += `- Arrivée : ${checkin}\n`;
+    if (checkout) message += `- Départ : ${checkout}\n`;
+    message += `- Voyageurs : ${adults} adulte${adults > 1 ? 's' : ''}${childrenText}\n\n`;
+    message += `Merci de me confirmer la disponibilité et le tarif.\n\nCordialement`;
+
+    return message;
+  }
+
+  // Mettre à jour les liens des boutons de contact
+  function updateContactButtons() {
+    const message = generateMessage();
+    const encodedMessage = encodeURIComponent(message);
+
+    // WhatsApp
+    const whatsappBtn = document.getElementById('whatsappBtn');
+    whatsappBtn.onclick = function() {
+      window.open(`https://wa.me/33676886769?text=${encodedMessage}`, '_blank');
+    };
+
+    // Email
+    const emailBtn = document.getElementById('emailBtn');
+    const subject = encodeURIComponent('Demande de réservation Maréa');
+    emailBtn.onclick = function() {
+      window.location.href = `mailto:contact@mareaferret.com?subject=${subject}&body=${encodedMessage}`;
+    };
+
+    // Mettre à jour le récapitulatif si dates sélectionnées
+    if (selectedDates.length === 2) {
+      updateSummary();
+    }
+  }
+</script>
 
 </body>
 </html>
