@@ -14,19 +14,24 @@
       theme: {
         extend: {
           colors: {
+            'ocean': '#2C4A62',
+            'ocean-dark': '#1A3B5C',
             'sunset-cream': '#FFF8E7',
             'sunset-yellow': '#F4C430',
             'sunset-orange': '#F28C28',
-            'sable': '#E8DED1',
-            'bois': '#8B5A2B',
-            'blanc': '#FAF9F7',
-            'ivoire': '#FFFEF9',
-            'navy': '#1E3A5F',
+            'brun': '#8B4513',
+            'sable': '#E8DCC8',
+            'sable-dark': '#C4A574',
+            'sable-medium': '#D4B594',
+            'blanc': '#F8F6F3',
+            'taupe': '#8B7355',
             'turquoise': '#4EC3C7',
             'turquoise-dark': '#2FA4A9',
+            'turquoise-light': '#6ED4D8',
+            'turquoise-pastel': '#A8E6E9',
           },
           fontFamily: {
-            'display': ['Recoleta', 'Georgia', 'serif'],
+            'display': ['Georgia', 'serif'],
             'sans': ['Montserrat', 'system-ui', 'sans-serif'],
           }
         }
@@ -34,25 +39,6 @@
     }
   </script>
   <style>
-    @font-face {
-      font-family: 'Recoleta';
-      src: url('https://db.onlinewebfonts.com/t/13b64fe3bc07c9cac3d617f7c359df4a.woff2') format('woff2');
-      font-weight: 400;
-      font-style: normal;
-    }
-    @font-face {
-      font-family: 'Recoleta';
-      src: url('https://db.onlinewebfonts.com/t/ddf1bafece52f4e7be89e19b0e771e10.woff2') format('woff2');
-      font-weight: 500;
-      font-style: normal;
-    }
-    @font-face {
-      font-family: 'Recoleta';
-      src: url('https://db.onlinewebfonts.com/t/a3ed769c4f9c8d8ae8ae03f12d3a9490.woff2') format('woff2');
-      font-weight: 600;
-      font-style: normal;
-    }
-
     html { scroll-behavior: smooth; }
 
     .hero-gradient {
@@ -105,26 +91,24 @@
     }
   </style>
 </head>
-<body class="font-sans text-bois bg-blanc">
+<body class="font-sans text-ocean bg-blanc">
 
 <!-- Navigation -->
 <nav class="fixed top-0 left-0 right-0 z-50 bg-blanc/95 backdrop-blur-sm border-b border-sable/20">
   <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
     <a href="index-en.html" class="flex items-center gap-3">
-      <svg class="w-12 h-12" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="sunsetGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" style="stop-color:#FFF8E7"/>
-            <stop offset="50%" style="stop-color:#F4C430"/>
-            <stop offset="100%" style="stop-color:#F28C28"/>
-          </linearGradient>
-        </defs>
-        <path d="M25 6C34.389 6 42 13.611 42 23H8C8 13.611 15.611 6 25 6Z" fill="url(#sunsetGradient)"/>
-        <path d="M6 27C6 27 12 30 25 30C38 30 44 27 44 27" stroke="#8B5A2B" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-        <path d="M10 33C10 33 15 35.5 25 35.5C35 35.5 40 33 40 33" stroke="#8B5A2B" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.7"/>
-        <path d="M14 39C14 39 18 41 25 41C32 41 36 39 36 39" stroke="#8B5A2B" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.4"/>
+      <svg class="w-10 h-10 md:w-12 md:h-12" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Sunset arcs -->
+        <path d="M25 8 A 17 17 0 0 1 42 25 H 8 A 17 17 0 0 1 25 8" fill="#F4C430"/>
+        <path d="M25 12 A 13 13 0 0 1 38 25 H 12 A 13 13 0 0 1 25 12" fill="#F28C28"/>
+        <path d="M25 18 A 7 7 0 0 1 32 25 H 18 A 7 17 0 0 1 25 18" fill="#8B4513"/>
+        <!-- Wave lines -->
+        <line x1="5" y1="25" x2="45" y2="25" stroke="#8B4513" stroke-width="2" stroke-linecap="round"/>
+        <line x1="7" y1="30" x2="43" y2="30" stroke="#C4A574" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="10" y1="35" x2="40" y2="35" stroke="#D4B594" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="14" y1="40" x2="36" y2="40" stroke="#E8DCC8" stroke-width="1.2" stroke-linecap="round"/>
       </svg>
-      <span class="font-display text-2xl font-medium tracking-wide text-bois">maréa</span>
+      <span class="font-display text-xl md:text-2xl italic font-semibold text-ocean" style="letter-spacing: -1px;">marea</span>
     </a>
 
     <div class="hidden md:flex items-center gap-8">
@@ -136,7 +120,7 @@
       <a href="lodge.html" class="font-sans text-sm tracking-wider font-light hover:text-sunset-orange transition-colors">FR</a>
     </div>
 
-    <button id="menuBtn" class="md:hidden p-2 text-bois" aria-label="Menu">
+    <button id="menuBtn" class="md:hidden p-2 text-ocean" aria-label="Menu">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
       </svg>
@@ -145,10 +129,10 @@
 
   <div id="mobileMenu" class="mobile-menu fixed inset-0 top-[65px] z-40 md:hidden" style="background-color: #FFFEF9;">
     <div class="flex flex-col items-center justify-center h-full gap-8">
-      <a href="index-en.html" class="font-sans text-lg tracking-wider font-medium text-bois hover:text-sunset-orange transition-colors">HOME</a>
+      <a href="index-en.html" class="font-sans text-lg tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">HOME</a>
       <a href="lodge-en.html" class="font-sans text-lg tracking-wider font-medium text-sunset-orange">THE LODGE</a>
-      <a href="thenest-en.html" class="font-sans text-lg tracking-wider font-medium text-bois hover:text-turquoise transition-colors">THE NEST</a>
-      <a href="contact-en.html" class="font-sans text-lg tracking-wider font-medium text-bois hover:text-sunset-orange transition-colors">CONTACT</a>
+      <a href="thenest-en.html" class="font-sans text-lg tracking-wider font-medium text-ocean hover:text-turquoise transition-colors">THE NEST</a>
+      <a href="contact-en.html" class="font-sans text-lg tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">CONTACT</a>
       <div class="border-t border-sable pt-8 mt-4 w-32 text-center">
         <a href="lodge.html" class="font-sans text-sm tracking-wider font-medium text-navy hover:text-sunset-orange transition-colors">FRANÇAIS</a>
       </div>
@@ -198,13 +182,13 @@
       <div>
         <div class="midcentury-line mb-8"></div>
         <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-4">LE GRAND LODGE</p>
-        <h2 class="font-display text-3xl md:text-5xl text-bois leading-tight mb-8">
+        <h2 class="font-display text-3xl md:text-5xl text-ocean leading-tight mb-8">
           Beautiful bright spaces to gather
         </h2>
-        <p class="text-base md:text-lg text-bois/70 leading-relaxed mb-6 font-light">
+        <p class="text-base md:text-lg text-ocean/70 leading-relaxed mb-6 font-light">
           Single-story, the 200m² apartment offers ideal comfort for family stays or gatherings with friends. An elegant and welcoming holiday home, ideally located in the heart of Petit Piquey, one of Cap Ferret's most sought-after villages.
         </p>
-        <p class="text-base md:text-lg text-bois/70 leading-relaxed font-light">
+        <p class="text-base md:text-lg text-ocean/70 leading-relaxed font-light">
           Perfect for car-free holidays, between the bay, beaches, cycling and the gentle Cap Ferret lifestyle.
         </p>
       </div>
@@ -221,7 +205,7 @@
     <div class="text-center mb-12 md:mb-16">
       <div class="midcentury-line mx-auto mb-8"></div>
       <p class="text-sunset-orange font-sans text-xs tracking-[0.2em] mb-4">5 BEDROOMS</p>
-      <h2 class="font-display text-3xl md:text-5xl text-bois">Sleeping spaces</h2>
+      <h2 class="font-display text-3xl md:text-5xl text-ocean">Sleeping spaces</h2>
     </div>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
@@ -232,7 +216,7 @@
           </svg>
         </div>
         <h3 class="font-display text-lg md:text-xl mb-2">La Suite Mimbeau</h3>
-        <p class="text-bois/60 text-xs md:text-sm">Queen size bed 160 (twinable), dressing room and en-suite bathroom</p>
+        <p class="text-ocean/60 text-xs md:text-sm">Queen size bed 160 (twinable), dressing room and en-suite bathroom</p>
       </div>
 
       <div class="bg-blanc p-5 md:p-6">
@@ -242,7 +226,7 @@
           </svg>
         </div>
         <h3 class="font-display text-lg md:text-xl mb-2">Le Canon</h3>
-        <p class="text-bois/60 text-xs md:text-sm">Queen size bed 160 (twinable), cozy en-suite shower room</p>
+        <p class="text-ocean/60 text-xs md:text-sm">Queen size bed 160 (twinable), cozy en-suite shower room</p>
       </div>
 
       <div class="bg-blanc p-5 md:p-6">
@@ -253,7 +237,7 @@
           </svg>
         </div>
         <h3 class="font-display text-lg md:text-xl mb-2">L'Horizon</h3>
-        <p class="text-bois/60 text-xs md:text-sm">Queen size bed 160 (twinable), en-suite bathroom</p>
+        <p class="text-ocean/60 text-xs md:text-sm">Queen size bed 160 (twinable), en-suite bathroom</p>
       </div>
 
       <div class="bg-blanc p-5 md:p-6">
@@ -263,7 +247,7 @@
           </svg>
         </div>
         <h3 class="font-display text-lg md:text-xl mb-2">Le Cabanon</h3>
-        <p class="text-bois/60 text-xs md:text-sm">Cozy office with queen size bed 160 (twinable) for 2 people</p>
+        <p class="text-ocean/60 text-xs md:text-sm">Cozy office with queen size bed 160 (twinable) for 2 people</p>
       </div>
 
       <div class="bg-blanc p-5 md:p-6 md:col-span-2 lg:col-span-2">
@@ -273,13 +257,13 @@
           </svg>
         </div>
         <h3 class="font-display text-lg md:text-xl mb-2">Les Moussaillons</h3>
-        <p class="text-bois/60 text-xs md:text-sm">Dormitory for 4 children with 2 bunk beds – paradise for little sailors!</p>
+        <p class="text-ocean/60 text-xs md:text-sm">Dormitory for 4 children with 2 bunk beds – paradise for little sailors!</p>
       </div>
     </div>
 
     <div class="mt-6 md:mt-8 p-4 md:p-6 bg-blanc border-l-4 border-sunset-orange">
-      <p class="text-bois/70 text-sm">
-        <span class="font-medium text-bois">4 bathrooms</span> fully equipped for optimal comfort
+      <p class="text-ocean/70 text-sm">
+        <span class="font-medium text-ocean">4 bathrooms</span> fully equipped for optimal comfort
       </p>
     </div>
   </div>
@@ -291,13 +275,13 @@
     <div class="text-center mb-12 md:mb-16">
       <div class="midcentury-line mx-auto mb-8"></div>
       <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-4">LIVING SPACES</p>
-      <h2 class="font-display text-3xl md:text-5xl text-bois">Indoor & Outdoor</h2>
+      <h2 class="font-display text-3xl md:text-5xl text-ocean">Indoor & Outdoor</h2>
     </div>
 
     <div class="grid md:grid-cols-2 gap-8 md:gap-12">
       <div>
         <h3 class="font-sans text-sm tracking-wider text-sunset-orange mb-6">INDOOR</h3>
-        <ul class="space-y-4 text-bois/70">
+        <ul class="space-y-4 text-ocean/70">
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-sunset-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -327,7 +311,7 @@
 
       <div>
         <h3 class="font-sans text-sm tracking-wider text-sunset-orange mb-6">OUTDOOR</h3>
-        <ul class="space-y-4 text-bois/70">
+        <ul class="space-y-4 text-ocean/70">
           <li class="flex items-start gap-3">
             <svg class="w-5 h-5 text-sunset-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -364,7 +348,7 @@
     <div class="text-center mb-12 md:mb-16">
       <div class="midcentury-line mx-auto mb-8"></div>
       <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-4">EXCEPTIONAL LOCATION</p>
-      <h2 class="font-display text-3xl md:text-5xl text-bois">Everything within walking distance</h2>
+      <h2 class="font-display text-3xl md:text-5xl text-ocean">Everything within walking distance</h2>
     </div>
 
     <div class="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
@@ -376,7 +360,7 @@
           </svg>
         </div>
         <h3 class="font-display text-lg md:text-xl mb-2">50m from the Bay</h3>
-        <p class="text-bois/60 text-xs md:text-sm">Petit Piquey beach and the beautiful Truquette beach</p>
+        <p class="text-ocean/60 text-xs md:text-sm">Petit Piquey beach and the beautiful Truquette beach</p>
       </div>
 
       <div class="text-center">
@@ -386,7 +370,7 @@
           </svg>
         </div>
         <h3 class="font-display text-lg md:text-xl mb-2">50m from Shops</h3>
-        <p class="text-bois/60 text-xs md:text-sm">Bakeries, supermarket, restaurants, services</p>
+        <p class="text-ocean/60 text-xs md:text-sm">Bakeries, supermarket, restaurants, services</p>
       </div>
 
       <div class="text-center col-span-2 md:col-span-1">
@@ -396,7 +380,7 @@
           </svg>
         </div>
         <h3 class="font-display text-lg md:text-xl mb-2">Cycling Paths</h3>
-        <p class="text-bois/60 text-xs md:text-sm">Immediate access to Cap Ferret's best spots</p>
+        <p class="text-ocean/60 text-xs md:text-sm">Immediate access to Cap Ferret's best spots</p>
       </div>
     </div>
   </div>
@@ -408,7 +392,7 @@
     <div class="text-center mb-12 md:mb-16">
       <div class="midcentury-line mx-auto mb-8"></div>
       <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-4">GALLERY</p>
-      <h2 class="font-display text-3xl md:text-5xl text-bois">Discover the Lodge</h2>
+      <h2 class="font-display text-3xl md:text-5xl text-ocean">Discover the Lodge</h2>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
       <div class="aspect-square overflow-hidden">
@@ -435,14 +419,14 @@
   <div class="max-w-4xl mx-auto text-center">
     <div class="midcentury-line mx-auto mb-8" style="background: linear-gradient(90deg, #4EC3C7, #2FA4A9);"></div>
     <p class="text-turquoise-dark font-sans text-xs tracking-[0.2em] mb-4">BONUS</p>
-    <h2 class="font-display text-3xl md:text-5xl text-bois mb-8">The Nest</h2>
-    <p class="text-base md:text-lg text-bois/70 mb-6 font-light">
+    <h2 class="font-display text-3xl md:text-5xl text-ocean mb-8">The Nest</h2>
+    <p class="text-base md:text-lg text-ocean/70 mb-6 font-light">
       Option to rent The Nest alongside Le Grand Lodge: independent studio that can sleep up to 4 people, perfect for grandparents or teens wanting their independence.
     </p>
-    <p class="text-bois/60 mb-10 text-sm">
+    <p class="text-ocean/60 mb-10 text-sm">
       <a href="contact-en.html" class="text-turquoise hover:underline">Contact us</a> for rates & availability.
     </p>
-    <a href="thenest-en.html" class="inline-flex items-center font-sans text-sm tracking-wider font-medium text-turquoise hover:text-bois transition-colors">
+    <a href="thenest-en.html" class="inline-flex items-center font-sans text-sm tracking-wider font-medium text-turquoise hover:text-ocean transition-colors">
       DISCOVER THE NEST
       <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -455,15 +439,15 @@
 <section class="py-8 md:py-12 px-6 bg-sable/20">
   <div class="max-w-4xl mx-auto">
     <div class="p-4 md:p-6 bg-blanc border-l-4 border-turquoise">
-      <p class="text-bois/70 text-xs md:text-sm">
-        <span class="font-medium text-bois">Please note:</span> Le Grand Lodge and The Nest are part of a property complex with 3 other apartments on the upper floor. To respect the peace of the premises and neighbors, parties and noise are not allowed.
+      <p class="text-ocean/70 text-xs md:text-sm">
+        <span class="font-medium text-ocean">Please note:</span> Le Grand Lodge and The Nest are part of a property complex with 3 other apartments on the upper floor. To respect the peace of the premises and neighbors, parties and noise are not allowed.
       </p>
     </div>
   </div>
 </section>
 
 <!-- Contact CTA -->
-<section id="contact" class="py-16 md:py-24 px-6 bg-bois text-blanc">
+<section id="contact" class="py-16 md:py-24 px-6 bg-ocean text-blanc">
   <div class="max-w-4xl mx-auto text-center">
     <div class="w-14 h-14 md:w-16 md:h-16 mx-auto mb-8">
       <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -487,7 +471,7 @@
     </p>
 
     <div class="flex flex-col sm:flex-row justify-center gap-4">
-      <a href="mailto:contact@mareaferret.com" class="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 border-2 border-blanc font-sans text-sm tracking-wider font-medium hover:bg-blanc hover:text-bois transition-all duration-300">
+      <a href="mailto:contact@mareaferret.com" class="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 border-2 border-blanc font-sans text-sm tracking-wider font-medium hover:bg-blanc hover:text-ocean transition-all duration-300">
         <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
         </svg>
@@ -504,25 +488,23 @@
 </section>
 
 <!-- Footer -->
-<footer class="py-12 md:py-16 px-6 bg-bois border-t border-blanc/10">
+<footer class="py-12 md:py-16 px-6 bg-ocean border-t border-blanc/10">
   <div class="max-w-6xl mx-auto">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12">
       <div class="col-span-2">
         <div class="flex items-center gap-3 mb-6">
           <svg class="w-10 h-10" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="sunsetGradientFooter" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" style="stop-color:#FFF8E7"/>
-                <stop offset="50%" style="stop-color:#F4C430"/>
-                <stop offset="100%" style="stop-color:#F28C28"/>
-              </linearGradient>
-            </defs>
-            <path d="M25 6C34.389 6 42 13.611 42 23H8C8 13.611 15.611 6 25 6Z" fill="url(#sunsetGradientFooter)"/>
-            <path d="M6 27C6 27 12 30 25 30C38 30 44 27 44 27" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.6"/>
-            <path d="M10 33C10 33 15 35.5 25 35.5C35 35.5 40 33 40 33" stroke="white" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.4"/>
-            <path d="M14 39C14 39 18 41 25 41C32 41 36 39 36 39" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.2"/>
+            <!-- Sunset arcs -->
+            <path d="M25 8 A 17 17 0 0 1 42 25 H 8 A 17 17 0 0 1 25 8" fill="#F4C430"/>
+            <path d="M25 12 A 13 13 0 0 1 38 25 H 12 A 13 13 0 0 1 25 12" fill="#F28C28"/>
+            <path d="M25 18 A 7 7 0 0 1 32 25 H 18 A 7 7 0 0 1 25 18" fill="#8B4513"/>
+            <!-- Wave lines (white for dark background) -->
+            <line x1="5" y1="25" x2="45" y2="25" stroke="#8B4513" stroke-width="2" stroke-linecap="round"/>
+            <line x1="7" y1="30" x2="43" y2="30" stroke="white" stroke-width="1.8" stroke-linecap="round" opacity="0.6"/>
+            <line x1="10" y1="35" x2="40" y2="35" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+            <line x1="14" y1="40" x2="36" y2="40" stroke="white" stroke-width="1.2" stroke-linecap="round" opacity="0.2"/>
           </svg>
-          <span class="font-display text-xl font-medium tracking-wide text-blanc">maréa</span>
+          <span class="font-display text-xl italic font-semibold text-blanc" style="letter-spacing: -1px;">marea</span>
         </div>
         <p class="text-blanc/60 text-sm leading-relaxed max-w-sm font-light">
           Chic surf lodge on the Arcachon Bay. Le Grand Lodge & The Nest in Petit Piquey, Cap Ferret. Natural elegance for unforgettable shared moments.

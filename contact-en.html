@@ -14,19 +14,24 @@
       theme: {
         extend: {
           colors: {
+            'ocean': '#2C4A62',
+            'ocean-dark': '#1A3B5C',
             'sunset-cream': '#FFF8E7',
             'sunset-yellow': '#F4C430',
             'sunset-orange': '#F28C28',
-            'sable': '#E8DED1',
-            'bois': '#8B5A2B',
-            'blanc': '#FAF9F7',
-            'ivoire': '#FFFEF9',
-            'navy': '#1E3A5F',
+            'brun': '#8B4513',
+            'sable': '#E8DCC8',
+            'sable-dark': '#C4A574',
+            'sable-medium': '#D4B594',
+            'blanc': '#F8F6F3',
+            'taupe': '#8B7355',
             'turquoise': '#4EC3C7',
             'turquoise-dark': '#2FA4A9',
+            'turquoise-light': '#6ED4D8',
+            'turquoise-pastel': '#A8E6E9',
           },
           fontFamily: {
-            'display': ['Recoleta', 'Georgia', 'serif'],
+            'display': ['Georgia', 'serif'],
             'sans': ['Montserrat', 'system-ui', 'sans-serif'],
           }
         }
@@ -34,25 +39,6 @@
     }
   </script>
   <style>
-    @font-face {
-      font-family: 'Recoleta';
-      src: url('https://db.onlinewebfonts.com/t/13b64fe3bc07c9cac3d617f7c359df4a.woff2') format('woff2');
-      font-weight: 400;
-      font-style: normal;
-    }
-    @font-face {
-      font-family: 'Recoleta';
-      src: url('https://db.onlinewebfonts.com/t/ddf1bafece52f4e7be89e19b0e771e10.woff2') format('woff2');
-      font-weight: 500;
-      font-style: normal;
-    }
-    @font-face {
-      font-family: 'Recoleta';
-      src: url('https://db.onlinewebfonts.com/t/a3ed769c4f9c8d8ae8ae03f12d3a9490.woff2') format('woff2');
-      font-weight: 600;
-      font-style: normal;
-    }
-
     html { scroll-behavior: smooth; }
 
     .nav-link {
@@ -98,27 +84,25 @@
     }
   </style>
 </head>
-<body class="font-sans text-bois bg-blanc">
+<body class="font-sans text-ocean bg-blanc">
 
 <!-- Navigation -->
 <nav class="fixed top-0 left-0 right-0 z-50 bg-blanc/95 backdrop-blur-sm border-b border-sable/20">
   <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
     <!-- Logo -->
     <a href="index-en.html" class="flex items-center gap-3">
-      <svg class="w-12 h-12" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="sunsetGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" style="stop-color:#FFF8E7"/>
-            <stop offset="50%" style="stop-color:#F4C430"/>
-            <stop offset="100%" style="stop-color:#F28C28"/>
-          </linearGradient>
-        </defs>
-        <path d="M25 6C34.389 6 42 13.611 42 23H8C8 13.611 15.611 6 25 6Z" fill="url(#sunsetGradient)"/>
-        <path d="M6 27C6 27 12 30 25 30C38 30 44 27 44 27" stroke="#8B5A2B" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-        <path d="M10 33C10 33 15 35.5 25 35.5C35 35.5 40 33 40 33" stroke="#8B5A2B" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.7"/>
-        <path d="M14 39C14 39 18 41 25 41C32 41 36 39 36 39" stroke="#8B5A2B" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.4"/>
+      <svg class="w-10 h-10 md:w-12 md:h-12" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Sunset arcs -->
+        <path d="M25 8 A 17 17 0 0 1 42 25 H 8 A 17 17 0 0 1 25 8" fill="#F4C430"/>
+        <path d="M25 12 A 13 13 0 0 1 38 25 H 12 A 13 13 0 0 1 25 12" fill="#F28C28"/>
+        <path d="M25 18 A 7 7 0 0 1 32 25 H 18 A 7 7 0 0 1 25 18" fill="#8B4513"/>
+        <!-- Wave lines -->
+        <line x1="5" y1="25" x2="45" y2="25" stroke="#8B4513" stroke-width="2" stroke-linecap="round"/>
+        <line x1="7" y1="30" x2="43" y2="30" stroke="#C4A574" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="10" y1="35" x2="40" y2="35" stroke="#D4B594" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="14" y1="40" x2="36" y2="40" stroke="#E8DCC8" stroke-width="1.2" stroke-linecap="round"/>
       </svg>
-      <span class="font-display text-2xl font-medium tracking-wide text-bois">maréa</span>
+      <span class="font-display text-xl md:text-2xl italic font-semibold text-ocean" style="letter-spacing: -1px;">marea</span>
     </a>
 
     <!-- Desktop Navigation -->
@@ -132,7 +116,7 @@
     </div>
 
     <!-- Mobile Menu Button -->
-    <button id="menuBtn" class="md:hidden p-2 text-bois" aria-label="Menu">
+    <button id="menuBtn" class="md:hidden p-2 text-ocean" aria-label="Menu">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
       </svg>
@@ -142,9 +126,9 @@
   <!-- Mobile Menu -->
   <div id="mobileMenu" class="mobile-menu fixed inset-0 top-[65px] z-40 md:hidden" style="background-color: #FFFEF9;">
     <div class="flex flex-col items-center justify-center h-full gap-8">
-      <a href="index-en.html" class="font-sans text-lg tracking-wider font-medium text-bois hover:text-sunset-orange transition-colors">HOME</a>
-      <a href="lodge-en.html" class="font-sans text-lg tracking-wider font-medium text-bois hover:text-sunset-orange transition-colors">THE LODGE</a>
-      <a href="thenest-en.html" class="font-sans text-lg tracking-wider font-medium text-bois hover:text-turquoise transition-colors">THE NEST</a>
+      <a href="index-en.html" class="font-sans text-lg tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">HOME</a>
+      <a href="lodge-en.html" class="font-sans text-lg tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">THE LODGE</a>
+      <a href="thenest-en.html" class="font-sans text-lg tracking-wider font-medium text-ocean hover:text-turquoise transition-colors">THE NEST</a>
       <a href="contact-en.html" class="font-sans text-lg tracking-wider font-medium text-sunset-orange">CONTACT</a>
       <div class="border-t border-sable pt-8 mt-4 w-32 text-center">
         <a href="contact.html" class="font-sans text-sm tracking-wider font-medium text-navy hover:text-sunset-orange transition-colors">FRENCH</a>
@@ -180,10 +164,10 @@
   <div class="max-w-4xl mx-auto text-center">
     <div class="midcentury-line mx-auto mb-8"></div>
     <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-6">GET IN TOUCH</p>
-    <h1 class="font-display text-4xl md:text-6xl text-bois leading-tight mb-6">
+    <h1 class="font-display text-4xl md:text-6xl text-ocean leading-tight mb-6">
       Ready to escape to Maréa?
     </h1>
-    <p class="text-base md:text-lg text-bois/70 leading-relaxed max-w-2xl mx-auto font-light">
+    <p class="text-base md:text-lg text-ocean/70 leading-relaxed max-w-2xl mx-auto font-light">
       We're here to answer your questions, check availability or help you plan your stay at Cap Ferret.
     </p>
   </div>
@@ -201,7 +185,7 @@
           </svg>
         </div>
         <h3 class="font-display text-xl md:text-2xl mb-2 group-hover:text-sunset-orange transition-colors">Email</h3>
-        <p class="text-bois/60 text-sm mb-4">For any enquiry</p>
+        <p class="text-ocean/60 text-sm mb-4">For any enquiry</p>
         <span class="font-sans text-sm text-sunset-orange font-medium">contact@mareaferret.com</span>
       </a>
 
@@ -213,7 +197,7 @@
           </svg>
         </div>
         <h3 class="font-display text-xl md:text-2xl mb-2 group-hover:text-turquoise transition-colors">WhatsApp</h3>
-        <p class="text-bois/60 text-sm mb-4">For a quick response</p>
+        <p class="text-ocean/60 text-sm mb-4">For a quick response</p>
         <span class="font-sans text-sm text-turquoise font-medium">+33 6 76 88 67 69</span>
       </a>
     </div>
@@ -226,8 +210,8 @@
     <div class="text-center mb-12">
       <div class="midcentury-line mx-auto mb-8"></div>
       <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-4">BOOKING REQUEST</p>
-      <h2 class="font-display text-3xl md:text-4xl text-bois mb-4">Book your stay</h2>
-      <p class="text-bois/60 text-sm md:text-base">Fill out the form below and we'll get back to you shortly.</p>
+      <h2 class="font-display text-3xl md:text-4xl text-ocean mb-4">Book your stay</h2>
+      <p class="text-ocean/60 text-sm md:text-base">Fill out the form below and we'll get back to you shortly.</p>
     </div>
 
     <!-- Form that submits to Google Form -->
@@ -235,17 +219,17 @@
       <div class="grid md:grid-cols-2 gap-6">
         <!-- Name -->
         <div>
-          <label for="name" class="block font-sans text-sm tracking-wider text-bois/70 mb-2">FULL NAME *</label>
+          <label for="name" class="block font-sans text-sm tracking-wider text-ocean/70 mb-2">FULL NAME *</label>
           <input type="text" id="name" name="entry.YOUR_NAME_FIELD" required
-            class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-bois placeholder-bois/40"
+            class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-ocean placeholder-bois/40"
             placeholder="Your name">
         </div>
 
         <!-- Email -->
         <div>
-          <label for="email" class="block font-sans text-sm tracking-wider text-bois/70 mb-2">EMAIL *</label>
+          <label for="email" class="block font-sans text-sm tracking-wider text-ocean/70 mb-2">EMAIL *</label>
           <input type="email" id="email" name="entry.YOUR_EMAIL_FIELD" required
-            class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-bois placeholder-bois/40"
+            class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-ocean placeholder-bois/40"
             placeholder="your@email.com">
         </div>
       </div>
@@ -253,17 +237,17 @@
       <div class="grid md:grid-cols-2 gap-6">
         <!-- Phone -->
         <div>
-          <label for="phone" class="block font-sans text-sm tracking-wider text-bois/70 mb-2">PHONE</label>
+          <label for="phone" class="block font-sans text-sm tracking-wider text-ocean/70 mb-2">PHONE</label>
           <input type="tel" id="phone" name="entry.YOUR_PHONE_FIELD"
-            class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-bois placeholder-bois/40"
+            class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-ocean placeholder-bois/40"
             placeholder="+33 6 XX XX XX XX">
         </div>
 
         <!-- Property -->
         <div>
-          <label for="property" class="block font-sans text-sm tracking-wider text-bois/70 mb-2">PROPERTY *</label>
+          <label for="property" class="block font-sans text-sm tracking-wider text-ocean/70 mb-2">PROPERTY *</label>
           <select id="property" name="entry.YOUR_PROPERTY_FIELD" required
-            class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-bois">
+            class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-ocean">
             <option value="">Select...</option>
             <option value="lodge">Le Grand Lodge (up to 12 guests)</option>
             <option value="nest">The Nest (2-4 guests)</option>
@@ -275,25 +259,25 @@
       <div class="grid md:grid-cols-2 gap-6">
         <!-- Check-in date -->
         <div>
-          <label for="checkin" class="block font-sans text-sm tracking-wider text-bois/70 mb-2">CHECK-IN DATE *</label>
+          <label for="checkin" class="block font-sans text-sm tracking-wider text-ocean/70 mb-2">CHECK-IN DATE *</label>
           <input type="date" id="checkin" name="entry.YOUR_CHECKIN_FIELD" required
-            class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-bois">
+            class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-ocean">
         </div>
 
         <!-- Check-out date -->
         <div>
-          <label for="checkout" class="block font-sans text-sm tracking-wider text-bois/70 mb-2">CHECK-OUT DATE *</label>
+          <label for="checkout" class="block font-sans text-sm tracking-wider text-ocean/70 mb-2">CHECK-OUT DATE *</label>
           <input type="date" id="checkout" name="entry.YOUR_CHECKOUT_FIELD" required
-            class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-bois">
+            class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-ocean">
         </div>
       </div>
 
       <div class="grid md:grid-cols-2 gap-6">
         <!-- Number of adults -->
         <div>
-          <label for="adults" class="block font-sans text-sm tracking-wider text-bois/70 mb-2">ADULTS *</label>
+          <label for="adults" class="block font-sans text-sm tracking-wider text-ocean/70 mb-2">ADULTS *</label>
           <select id="adults" name="entry.YOUR_ADULTS_FIELD" required
-            class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-bois">
+            class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-ocean">
             <option value="">Select...</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -312,9 +296,9 @@
 
         <!-- Number of children -->
         <div>
-          <label for="children" class="block font-sans text-sm tracking-wider text-bois/70 mb-2">CHILDREN</label>
+          <label for="children" class="block font-sans text-sm tracking-wider text-ocean/70 mb-2">CHILDREN</label>
           <select id="children" name="entry.YOUR_CHILDREN_FIELD"
-            class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-bois">
+            class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-ocean">
             <option value="0">0</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -328,9 +312,9 @@
 
       <!-- Message -->
       <div>
-        <label for="message" class="block font-sans text-sm tracking-wider text-bois/70 mb-2">MESSAGE</label>
+        <label for="message" class="block font-sans text-sm tracking-wider text-ocean/70 mb-2">MESSAGE</label>
         <textarea id="message" name="entry.YOUR_MESSAGE_FIELD" rows="4"
-          class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-bois placeholder-bois/40 resize-none"
+          class="w-full px-4 py-3 border border-sable/30 bg-blanc font-sans text-sm text-ocean placeholder-bois/40 resize-none"
           placeholder="Tell us about your trip plans, any questions..."></textarea>
       </div>
 
@@ -346,7 +330,7 @@
       </div>
     </form>
 
-    <p class="text-center text-bois/50 text-xs mt-8">
+    <p class="text-center text-ocean/50 text-xs mt-8">
       * Required fields. We'll respond within 24 hours.
     </p>
   </div>
@@ -358,7 +342,7 @@
     <div class="text-center mb-12">
       <div class="midcentury-line mx-auto mb-8"></div>
       <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-4">LOCATION</p>
-      <h2 class="font-display text-3xl md:text-4xl text-bois">Where to find us</h2>
+      <h2 class="font-display text-3xl md:text-4xl text-ocean">Where to find us</h2>
     </div>
 
     <div class="grid md:grid-cols-2 gap-8 items-center">
@@ -372,7 +356,7 @@
           </div>
           <div>
             <h3 class="font-display text-lg mb-1">Address</h3>
-            <p class="text-bois/60 text-sm">Petit Piquey<br>Cap Ferret, Arcachon Bay<br>33950 Lège-Cap-Ferret, France</p>
+            <p class="text-ocean/60 text-sm">Petit Piquey<br>Cap Ferret, Arcachon Bay<br>33950 Lège-Cap-Ferret, France</p>
           </div>
         </div>
 
@@ -384,7 +368,7 @@
           </div>
           <div>
             <h3 class="font-display text-lg mb-1">Access</h3>
-            <p class="text-bois/60 text-sm">50m from the Bay and local shops<br>Cycling paths right at your doorstep<br>Perfect for a car-free holiday</p>
+            <p class="text-ocean/60 text-sm">50m from the Bay and local shops<br>Cycling paths right at your doorstep<br>Perfect for a car-free holiday</p>
           </div>
         </div>
 
@@ -396,7 +380,7 @@
           </div>
           <div>
             <h3 class="font-display text-lg mb-1">From Bordeaux</h3>
-            <p class="text-bois/60 text-sm">~1 hour by car via A660<br>Shuttle available from Arcachon train station</p>
+            <p class="text-ocean/60 text-sm">~1 hour by car via A660<br>Shuttle available from Arcachon train station</p>
           </div>
         </div>
       </div>
@@ -404,10 +388,10 @@
       <!-- Map placeholder -->
       <div class="aspect-square bg-sable/30 flex items-center justify-center">
         <div class="text-center p-6">
-          <svg class="w-16 h-16 mx-auto mb-4 text-bois/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-16 h-16 mx-auto mb-4 text-ocean/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path>
           </svg>
-          <p class="text-bois/40 text-sm font-sans">Petit Piquey, Cap Ferret</p>
+          <p class="text-ocean/40 text-sm font-sans">Petit Piquey, Cap Ferret</p>
           <a href="https://maps.google.com/?q=Petit+Piquey+Cap+Ferret" target="_blank" class="inline-block mt-4 text-sunset-orange text-sm font-sans hover:underline">
             View on Google Maps →
           </a>
@@ -418,25 +402,23 @@
 </section>
 
 <!-- Footer -->
-<footer class="py-12 md:py-16 px-6 bg-bois border-t border-blanc/10">
+<footer class="py-12 md:py-16 px-6 bg-ocean border-t border-blanc/10">
   <div class="max-w-6xl mx-auto">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12">
       <div class="col-span-2">
         <div class="flex items-center gap-3 mb-6">
           <svg class="w-10 h-10" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="sunsetGradientFooter" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" style="stop-color:#FFF8E7"/>
-                <stop offset="50%" style="stop-color:#F4C430"/>
-                <stop offset="100%" style="stop-color:#F28C28"/>
-              </linearGradient>
-            </defs>
-            <path d="M25 6C34.389 6 42 13.611 42 23H8C8 13.611 15.611 6 25 6Z" fill="url(#sunsetGradientFooter)"/>
-            <path d="M6 27C6 27 12 30 25 30C38 30 44 27 44 27" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.6"/>
-            <path d="M10 33C10 33 15 35.5 25 35.5C35 35.5 40 33 40 33" stroke="white" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.4"/>
-            <path d="M14 39C14 39 18 41 25 41C32 41 36 39 36 39" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.2"/>
+            <!-- Sunset arcs -->
+            <path d="M25 8 A 17 17 0 0 1 42 25 H 8 A 17 17 0 0 1 25 8" fill="#F4C430"/>
+            <path d="M25 12 A 13 13 0 0 1 38 25 H 12 A 13 13 0 0 1 25 12" fill="#F28C28"/>
+            <path d="M25 18 A 7 7 0 0 1 32 25 H 18 A 7 7 0 0 1 25 18" fill="#8B4513"/>
+            <!-- Wave lines (white for dark background) -->
+            <line x1="5" y1="25" x2="45" y2="25" stroke="#8B4513" stroke-width="2" stroke-linecap="round"/>
+            <line x1="7" y1="30" x2="43" y2="30" stroke="white" stroke-width="1.8" stroke-linecap="round" opacity="0.6"/>
+            <line x1="10" y1="35" x2="40" y2="35" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+            <line x1="14" y1="40" x2="36" y2="40" stroke="white" stroke-width="1.2" stroke-linecap="round" opacity="0.2"/>
           </svg>
-          <span class="font-display text-xl font-medium tracking-wide text-blanc">maréa</span>
+          <span class="font-display text-xl italic font-semibold text-blanc" style="letter-spacing: -1px;">marea</span>
         </div>
         <p class="text-blanc/60 text-sm leading-relaxed max-w-sm font-light">
           Chic surf lodge on the Arcachon Bay. Le Grand Lodge & The Nest at Petit Piquey, Cap Ferret. Natural elegance for unforgettable shared moments.

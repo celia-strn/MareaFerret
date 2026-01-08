@@ -14,19 +14,24 @@
       theme: {
         extend: {
           colors: {
+            'ocean': '#2C4A62',
+            'ocean-dark': '#1A3B5C',
             'sunset-cream': '#FFF8E7',
             'sunset-yellow': '#F4C430',
             'sunset-orange': '#F28C28',
-            'sable': '#E8DED1',
-            'bois': '#8B5A2B',
-            'blanc': '#FAF9F7',
-            'ivoire': '#FFFEF9',
-            'navy': '#1E3A5F',
+            'brun': '#8B4513',
+            'sable': '#E8DCC8',
+            'sable-dark': '#C4A574',
+            'sable-medium': '#D4B594',
+            'blanc': '#F8F6F3',
+            'taupe': '#8B7355',
             'turquoise': '#4EC3C7',
             'turquoise-dark': '#2FA4A9',
+            'turquoise-light': '#6ED4D8',
+            'turquoise-pastel': '#A8E6E9',
           },
           fontFamily: {
-            'display': ['Recoleta', 'Georgia', 'serif'],
+            'display': ['Georgia', 'serif'],
             'sans': ['Montserrat', 'system-ui', 'sans-serif'],
           }
         }
@@ -34,25 +39,6 @@
     }
   </script>
   <style>
-    @font-face {
-      font-family: 'Recoleta';
-      src: url('https://db.onlinewebfonts.com/t/13b64fe3bc07c9cac3d617f7c359df4a.woff2') format('woff2');
-      font-weight: 400;
-      font-style: normal;
-    }
-    @font-face {
-      font-family: 'Recoleta';
-      src: url('https://db.onlinewebfonts.com/t/ddf1bafece52f4e7be89e19b0e771e10.woff2') format('woff2');
-      font-weight: 500;
-      font-style: normal;
-    }
-    @font-face {
-      font-family: 'Recoleta';
-      src: url('https://db.onlinewebfonts.com/t/a3ed769c4f9c8d8ae8ae03f12d3a9490.woff2') format('woff2');
-      font-weight: 600;
-      font-style: normal;
-    }
-
     html { scroll-behavior: smooth; }
 
     .hero-gradient {
@@ -105,28 +91,26 @@
     }
   </style>
 </head>
-<body class="font-sans text-bois bg-blanc">
+<body class="font-sans text-ocean bg-blanc">
 
 <!-- Navigation -->
 <nav class="fixed top-0 left-0 right-0 z-50 bg-blanc/95 backdrop-blur-sm border-b border-sable/20">
   <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
     <a href="index-en.html" class="flex items-center gap-3">
-      <svg class="w-12 h-12" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="nestGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" style="stop-color:#FFF8E7"/>
-            <stop offset="50%" style="stop-color:#4EC3C7"/>
-            <stop offset="100%" style="stop-color:#2FA4A9"/>
-          </linearGradient>
-        </defs>
-        <path d="M25 6C34.389 6 42 13.611 42 23H8C8 13.611 15.611 6 25 6Z" fill="url(#nestGradient)"/>
-        <path d="M6 27C6 27 12 30 25 30C38 30 44 27 44 27" stroke="#2FA4A9" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-        <path d="M10 33C10 33 15 35.5 25 35.5C35 35.5 40 33 40 33" stroke="#2FA4A9" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.7"/>
-        <path d="M14 39C14 39 18 41 25 41C32 41 36 39 36 39" stroke="#2FA4A9" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.4"/>
+      <svg class="w-10 h-10 md:w-12 md:h-12" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Turquoise sunset arcs (The Nest variant) -->
+        <path d="M25 8 A 17 17 0 0 1 42 25 H 8 A 17 17 0 0 1 25 8" fill="#6ED4D8"/>
+        <path d="M25 12 A 13 13 0 0 1 38 25 H 12 A 13 13 0 0 1 25 12" fill="#4EC3C7"/>
+        <path d="M25 18 A 7 7 0 0 1 32 25 H 18 A 7 7 0 0 1 25 18" fill="#2FA4A9"/>
+        <!-- Wave lines -->
+        <line x1="5" y1="25" x2="45" y2="25" stroke="#2FA4A9" stroke-width="2" stroke-linecap="round"/>
+        <line x1="7" y1="30" x2="43" y2="30" stroke="#4EC3C7" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="10" y1="35" x2="40" y2="35" stroke="#6ED4D8" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="14" y1="40" x2="36" y2="40" stroke="#A8E6E9" stroke-width="1.2" stroke-linecap="round"/>
       </svg>
       <div class="flex flex-col">
-        <span class="font-display text-lg font-medium text-turquoise-dark leading-tight">the nest</span>
-        <span class="font-sans text-[10px] tracking-wider text-bois/60">at Maréa</span>
+        <span class="font-display text-lg italic font-semibold text-turquoise-dark leading-tight" style="letter-spacing: -1px;">the nest</span>
+        <span class="font-sans text-[10px] tracking-wider text-ocean/60">at Marea</span>
       </div>
     </a>
 
@@ -139,7 +123,7 @@
       <a href="thenest.html" class="font-sans text-sm tracking-wider font-light hover:text-turquoise transition-colors">FR</a>
     </div>
 
-    <button id="menuBtn" class="md:hidden p-2 text-bois" aria-label="Menu">
+    <button id="menuBtn" class="md:hidden p-2 text-ocean" aria-label="Menu">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
       </svg>
@@ -148,10 +132,10 @@
 
   <div id="mobileMenu" class="mobile-menu fixed inset-0 top-[65px] z-40 md:hidden" style="background-color: #FFFEF9;">
     <div class="flex flex-col items-center justify-center h-full gap-8">
-      <a href="index-en.html" class="font-sans text-lg tracking-wider font-medium text-bois hover:text-turquoise transition-colors">HOME</a>
-      <a href="lodge-en.html" class="font-sans text-lg tracking-wider font-medium text-bois hover:text-sunset-orange transition-colors">THE LODGE</a>
+      <a href="index-en.html" class="font-sans text-lg tracking-wider font-medium text-ocean hover:text-turquoise transition-colors">HOME</a>
+      <a href="lodge-en.html" class="font-sans text-lg tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">THE LODGE</a>
       <a href="thenest-en.html" class="font-sans text-lg tracking-wider font-medium text-turquoise">THE NEST</a>
-      <a href="contact-en.html" class="font-sans text-lg tracking-wider font-medium text-bois hover:text-turquoise transition-colors">CONTACT</a>
+      <a href="contact-en.html" class="font-sans text-lg tracking-wider font-medium text-ocean hover:text-turquoise transition-colors">CONTACT</a>
       <div class="border-t border-sable pt-8 mt-4 w-32 text-center">
         <a href="thenest.html" class="font-sans text-sm tracking-wider font-medium text-navy hover:text-turquoise transition-colors">FRANÇAIS</a>
       </div>
@@ -190,17 +174,15 @@
 
     <div class="fade-in mb-6" style="animation-delay: 0.3s;">
       <svg class="w-16 h-16 md:w-20 md:h-20 mx-auto" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="nestGradientHero" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" style="stop-color:#FFF8E7"/>
-            <stop offset="50%" style="stop-color:#4EC3C7"/>
-            <stop offset="100%" style="stop-color:#2FA4A9"/>
-          </linearGradient>
-        </defs>
-        <path d="M25 6C34.389 6 42 13.611 42 23H8C8 13.611 15.611 6 25 6Z" fill="url(#nestGradientHero)"/>
-        <path d="M6 27C6 27 12 30 25 30C38 30 44 27 44 27" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.8"/>
-        <path d="M10 33C10 33 15 35.5 25 35.5C35 35.5 40 33 40 33" stroke="white" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6"/>
-        <path d="M14 39C14 39 18 41 25 41C32 41 36 39 36 39" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.4"/>
+        <!-- Turquoise sunset arcs -->
+        <path d="M25 8 A 17 17 0 0 1 42 25 H 8 A 17 17 0 0 1 25 8" fill="#6ED4D8"/>
+        <path d="M25 12 A 13 13 0 0 1 38 25 H 12 A 13 13 0 0 1 25 12" fill="#4EC3C7"/>
+        <path d="M25 18 A 7 7 0 0 1 32 25 H 18 A 7 7 0 0 1 25 18" fill="#2FA4A9"/>
+        <!-- Wave lines (white for hero) -->
+        <line x1="5" y1="25" x2="45" y2="25" stroke="#2FA4A9" stroke-width="2" stroke-linecap="round"/>
+        <line x1="7" y1="30" x2="43" y2="30" stroke="white" stroke-width="1.8" stroke-linecap="round" opacity="0.7"/>
+        <line x1="10" y1="35" x2="40" y2="35" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+        <line x1="14" y1="40" x2="36" y2="40" stroke="white" stroke-width="1.2" stroke-linecap="round" opacity="0.3"/>
       </svg>
     </div>
 
@@ -222,13 +204,13 @@
       <div class="order-1 md:order-2">
         <div class="midcentury-line mb-8"></div>
         <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-4">THE NEST</p>
-        <h2 class="font-display text-3xl md:text-5xl text-bois leading-tight mb-8">
+        <h2 class="font-display text-3xl md:text-5xl text-ocean leading-tight mb-8">
           A peaceful escape
         </h2>
-        <p class="text-base md:text-lg text-bois/70 leading-relaxed mb-6 font-light">
+        <p class="text-base md:text-lg text-ocean/70 leading-relaxed mb-6 font-light">
           The Nest is a bright and cozy cocoon, ideal for 2 to 4 guests. A pied-à-terre steps from the Bay, it welcomes couples, families or friends in an independent and elegant space.
         </p>
-        <p class="text-base md:text-lg text-bois/70 leading-relaxed font-light">
+        <p class="text-base md:text-lg text-ocean/70 leading-relaxed font-light">
           Enjoy a comfortable, intimate and fully equipped stay in the heart of Cap Ferret at Petit Piquey. The slow life spirit for a rejuvenating escape.
         </p>
       </div>
@@ -242,7 +224,7 @@
     <div class="text-center mb-12 md:mb-16">
       <div class="midcentury-line mx-auto mb-8"></div>
       <p class="text-turquoise-dark font-sans text-xs tracking-[0.2em] mb-4">AMENITIES</p>
-      <h2 class="font-display text-3xl md:text-5xl text-bois">What awaits you</h2>
+      <h2 class="font-display text-3xl md:text-5xl text-ocean">What awaits you</h2>
     </div>
 
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
@@ -253,7 +235,7 @@
           </svg>
         </div>
         <h3 class="font-display text-lg md:text-xl mb-2">Independent space</h3>
-        <p class="text-bois/60 text-xs md:text-sm">Private entrance</p>
+        <p class="text-ocean/60 text-xs md:text-sm">Private entrance</p>
       </div>
 
       <div class="text-center">
@@ -263,7 +245,7 @@
           </svg>
         </div>
         <h3 class="font-display text-lg md:text-xl mb-2">Cozy & Bright</h3>
-        <p class="text-bois/60 text-xs md:text-sm">Warm atmosphere</p>
+        <p class="text-ocean/60 text-xs md:text-sm">Warm atmosphere</p>
       </div>
 
       <div class="text-center">
@@ -274,7 +256,7 @@
           </svg>
         </div>
         <h3 class="font-display text-lg md:text-xl mb-2">50m from the Bay</h3>
-        <p class="text-bois/60 text-xs md:text-sm">Truquette Beach</p>
+        <p class="text-ocean/60 text-xs md:text-sm">Truquette Beach</p>
       </div>
 
       <div class="text-center">
@@ -284,7 +266,7 @@
           </svg>
         </div>
         <h3 class="font-display text-lg md:text-xl mb-2">Fully equipped</h3>
-        <p class="text-bois/60 text-xs md:text-sm">Kitchen & bathroom</p>
+        <p class="text-ocean/60 text-xs md:text-sm">Kitchen & bathroom</p>
       </div>
     </div>
   </div>
@@ -296,7 +278,7 @@
     <div class="text-center mb-12 md:mb-16">
       <div class="midcentury-line mx-auto mb-8"></div>
       <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-4">GALLERY</p>
-      <h2 class="font-display text-3xl md:text-5xl text-bois">Discover The Nest</h2>
+      <h2 class="font-display text-3xl md:text-5xl text-ocean">Discover The Nest</h2>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
       <div class="aspect-square overflow-hidden">
@@ -317,14 +299,14 @@
   <div class="max-w-4xl mx-auto text-center">
     <div class="midcentury-line mx-auto mb-8" style="background: linear-gradient(90deg, #F28C28, #F4C430);"></div>
     <p class="text-sunset-orange font-sans text-xs tracking-[0.2em] mb-4">ALSO DISCOVER</p>
-    <h2 class="font-display text-3xl md:text-5xl text-bois mb-8">Le Grand Lodge</h2>
-    <p class="text-base md:text-lg text-bois/70 mb-6 font-light">
+    <h2 class="font-display text-3xl md:text-5xl text-ocean mb-8">Le Grand Lodge</h2>
+    <p class="text-base md:text-lg text-ocean/70 mb-6 font-light">
       For larger groups up to 12 guests, with 5 bedrooms, private garden and heated pool. The perfect horizon to gather together.
     </p>
-    <p class="text-bois/60 mb-10 text-sm">
+    <p class="text-ocean/60 mb-10 text-sm">
       You can rent The Nest alongside the Lodge to accommodate up to 16 guests.
     </p>
-    <a href="lodge-en.html" class="inline-flex items-center font-sans text-sm tracking-wider font-medium text-sunset-orange hover:text-bois transition-colors">
+    <a href="lodge-en.html" class="inline-flex items-center font-sans text-sm tracking-wider font-medium text-sunset-orange hover:text-ocean transition-colors">
       DISCOVER THE LODGE
       <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -338,17 +320,15 @@
   <div class="max-w-4xl mx-auto text-center">
     <div class="w-14 h-14 md:w-16 md:h-16 mx-auto mb-8">
       <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="nestGradientCTA" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" style="stop-color:#FFF8E7"/>
-            <stop offset="50%" style="stop-color:#4EC3C7"/>
-            <stop offset="100%" style="stop-color:#2FA4A9"/>
-          </linearGradient>
-        </defs>
-        <path d="M25 6C34.389 6 42 13.611 42 23H8C8 13.611 15.611 6 25 6Z" fill="url(#nestGradientCTA)"/>
-        <path d="M6 27C6 27 12 30 25 30C38 30 44 27 44 27" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.6"/>
-        <path d="M10 33C10 33 15 35.5 25 35.5C35 35.5 40 33 40 33" stroke="white" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.4"/>
-        <path d="M14 39C14 39 18 41 25 41C32 41 36 39 36 39" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.2"/>
+        <!-- Turquoise sunset arcs -->
+        <path d="M25 8 A 17 17 0 0 1 42 25 H 8 A 17 17 0 0 1 25 8" fill="#6ED4D8"/>
+        <path d="M25 12 A 13 13 0 0 1 38 25 H 12 A 13 13 0 0 1 25 12" fill="#4EC3C7"/>
+        <path d="M25 18 A 7 7 0 0 1 32 25 H 18 A 7 7 0 0 1 25 18" fill="#2FA4A9"/>
+        <!-- Wave lines (white for dark background) -->
+        <line x1="5" y1="25" x2="45" y2="25" stroke="#2FA4A9" stroke-width="2" stroke-linecap="round"/>
+        <line x1="7" y1="30" x2="43" y2="30" stroke="white" stroke-width="1.8" stroke-linecap="round" opacity="0.6"/>
+        <line x1="10" y1="35" x2="40" y2="35" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+        <line x1="14" y1="40" x2="36" y2="40" stroke="white" stroke-width="1.2" stroke-linecap="round" opacity="0.2"/>
       </svg>
     </div>
     <p class="text-blanc/60 font-sans text-xs tracking-[0.2em] mb-4">BOOK THE NEST</p>
@@ -375,25 +355,23 @@
 </section>
 
 <!-- Footer -->
-<footer class="py-12 md:py-16 px-6 bg-bois border-t border-blanc/10">
+<footer class="py-12 md:py-16 px-6 bg-ocean border-t border-blanc/10">
   <div class="max-w-6xl mx-auto">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12">
       <div class="col-span-2">
         <div class="flex items-center gap-3 mb-6">
           <svg class="w-10 h-10" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="sunsetGradientFooter" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" style="stop-color:#FFF8E7"/>
-                <stop offset="50%" style="stop-color:#F4C430"/>
-                <stop offset="100%" style="stop-color:#F28C28"/>
-              </linearGradient>
-            </defs>
-            <path d="M25 6C34.389 6 42 13.611 42 23H8C8 13.611 15.611 6 25 6Z" fill="url(#sunsetGradientFooter)"/>
-            <path d="M6 27C6 27 12 30 25 30C38 30 44 27 44 27" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.6"/>
-            <path d="M10 33C10 33 15 35.5 25 35.5C35 35.5 40 33 40 33" stroke="white" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.4"/>
-            <path d="M14 39C14 39 18 41 25 41C32 41 36 39 36 39" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.2"/>
+            <!-- Sunset arcs -->
+            <path d="M25 8 A 17 17 0 0 1 42 25 H 8 A 17 17 0 0 1 25 8" fill="#F4C430"/>
+            <path d="M25 12 A 13 13 0 0 1 38 25 H 12 A 13 13 0 0 1 25 12" fill="#F28C28"/>
+            <path d="M25 18 A 7 7 0 0 1 32 25 H 18 A 7 7 0 0 1 25 18" fill="#8B4513"/>
+            <!-- Wave lines (white for dark background) -->
+            <line x1="5" y1="25" x2="45" y2="25" stroke="#8B4513" stroke-width="2" stroke-linecap="round"/>
+            <line x1="7" y1="30" x2="43" y2="30" stroke="white" stroke-width="1.8" stroke-linecap="round" opacity="0.6"/>
+            <line x1="10" y1="35" x2="40" y2="35" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+            <line x1="14" y1="40" x2="36" y2="40" stroke="white" stroke-width="1.2" stroke-linecap="round" opacity="0.2"/>
           </svg>
-          <span class="font-display text-xl font-medium tracking-wide text-blanc">maréa</span>
+          <span class="font-display text-xl italic font-semibold text-blanc" style="letter-spacing: -1px;">marea</span>
         </div>
         <p class="text-blanc/60 text-sm leading-relaxed max-w-sm font-light">
           Chic surf lodge on the Arcachon Bay. Le Grand Lodge & The Nest in Petit Piquey, Cap Ferret. Natural elegance for unforgettable shared moments.
