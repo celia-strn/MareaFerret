@@ -3,16 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Réservez votre séjour à Maréa - Surf Lodge au Cap Ferret. Vérifiez les disponibilités du Grand Lodge et The Nest. Contact direct par WhatsApp ou email.">
-  <meta name="keywords" content="réservation cap ferret, location vacances bassin arcachon, disponibilités maréa, contact lodge cap ferret">
-  <title>Réservation & Contact – Maréa Surf Lodge Cap Ferret</title>
+  <meta name="description" content="Contactez Maréa - Surf Lodge au Cap Ferret. Email, WhatsApp, téléphone. Nous sommes à votre écoute pour toute question sur le Grand Lodge et The Nest.">
+  <meta name="keywords" content="contact maréa cap ferret, contacter lodge cap ferret, whatsapp maréa, email lodge bassin arcachon">
+  <title>Contact – Maréa Surf Lodge Cap Ferret</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <!-- Flatpickr pour le calendrier -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/light.css">
   <script>
     tailwind.config = {
       theme: {
@@ -104,110 +101,6 @@
     .cta-pulse {
       animation: pulse-cta 2s infinite;
     }
-
-    /* Flatpickr Custom Styles */
-    .flatpickr-calendar {
-      font-family: 'Montserrat', sans-serif;
-      border: 1px solid #E8DCC8;
-      box-shadow: 0 4px 20px rgba(44, 74, 98, 0.1);
-    }
-    .flatpickr-day.selected,
-    .flatpickr-day.startRange,
-    .flatpickr-day.endRange {
-      background: #F28C28 !important;
-      border-color: #F28C28 !important;
-    }
-    .flatpickr-day.inRange {
-      background: rgba(242, 140, 40, 0.2) !important;
-      border-color: transparent !important;
-      box-shadow: none !important;
-    }
-    .flatpickr-day:hover {
-      background: #E8DED1 !important;
-      border-color: #E8DED1 !important;
-    }
-    .flatpickr-day.disabled,
-    .flatpickr-day.disabled:hover {
-      background: #f0f0f0 !important;
-      color: #ccc !important;
-      text-decoration: line-through;
-      cursor: not-allowed;
-    }
-    .flatpickr-day.booked {
-      background: repeating-linear-gradient(
-        45deg,
-        #f5f5f5,
-        #f5f5f5 2px,
-        #e8e8e8 2px,
-        #e8e8e8 4px
-      ) !important;
-      color: #999 !important;
-      cursor: not-allowed;
-    }
-    .flatpickr-months .flatpickr-month {
-      background: #2C4A62;
-      color: white;
-    }
-    .flatpickr-current-month .flatpickr-monthDropdown-months,
-    .flatpickr-current-month input.cur-year {
-      color: white;
-      font-weight: 500;
-    }
-    .flatpickr-weekdays {
-      background: #F8F6F3;
-    }
-    span.flatpickr-weekday {
-      color: #2C4A62;
-      font-weight: 500;
-    }
-    .flatpickr-months .flatpickr-prev-month,
-    .flatpickr-months .flatpickr-next-month {
-      fill: white;
-    }
-    .flatpickr-months .flatpickr-prev-month:hover,
-    .flatpickr-months .flatpickr-next-month:hover {
-      fill: #F28C28;
-    }
-
-    /* Calendar Legend */
-    .calendar-legend {
-      display: flex;
-      gap: 16px;
-      font-size: 12px;
-      color: #2C4A62;
-    }
-    .legend-item {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .legend-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 2px;
-    }
-    .legend-available { background: white; border: 1px solid #E8DED1; }
-    .legend-selected { background: #F28C28; }
-    .legend-booked {
-      background: repeating-linear-gradient(
-        45deg,
-        #f5f5f5,
-        #f5f5f5 2px,
-        #e8e8e8 2px,
-        #e8e8e8 4px
-      );
-      border: 1px solid #ddd;
-    }
-
-    /* Form styling */
-    input, select, textarea {
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    }
-    input:focus, select:focus, textarea:focus {
-      outline: none;
-      border-color: #F28C28;
-      box-shadow: 0 0 0 3px rgba(242, 140, 40, 0.1);
-    }
   </style>
 </head>
 <body class="font-sans text-ocean bg-blanc">
@@ -239,7 +132,7 @@
       <a href="contact.html" class="nav-link font-sans text-sm tracking-wider font-medium text-sunset-orange">CONTACT</a>
       <span class="text-sable/30">|</span>
       <a href="contact-en.html" class="font-sans text-sm tracking-wider font-light hover:text-sunset-orange transition-colors">EN</a>
-      <a href="#reservation" class="ml-2 bg-sunset-orange text-white px-5 py-2.5 font-sans text-sm tracking-wider font-semibold hover:bg-sunset-orange/90 transition-all cta-pulse">
+      <a href="reserver.html" class="ml-2 bg-sunset-orange text-white px-5 py-2.5 font-sans text-sm tracking-wider font-semibold hover:bg-sunset-orange/90 transition-all cta-pulse">
         RÉSERVER
       </a>
     </div>
@@ -263,7 +156,7 @@
     <div class="border-t border-sable pt-8 mt-4 w-32 text-center">
       <a href="contact-en.html" class="font-sans text-sm tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">ENGLISH</a>
     </div>
-    <a href="#reservation" class="mt-4 bg-sunset-orange text-white px-8 py-3 font-sans text-sm tracking-wider font-semibold hover:bg-sunset-orange/90 transition-all">
+    <a href="reserver.html" class="mt-4 bg-sunset-orange text-white px-8 py-3 font-sans text-sm tracking-wider font-semibold hover:bg-sunset-orange/90 transition-all">
       RÉSERVER
     </a>
   </div>
@@ -298,164 +191,22 @@
 <section class="pt-32 pb-12 md:pt-40 md:pb-16 px-6 bg-blanc">
   <div class="max-w-4xl mx-auto text-center">
     <div class="midcentury-line mx-auto mb-8"></div>
-    <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-6">RÉSERVATION & CONTACT</p>
+    <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-6">CONTACT</p>
     <h1 class="font-display text-4xl md:text-5xl lg:text-6xl text-ocean leading-tight mb-6">
-      Réservez votre séjour à Maréa
+      Nous contacter
     </h1>
     <p class="text-base md:text-lg text-ocean/70 leading-relaxed max-w-2xl mx-auto font-light">
-      Vérifiez les disponibilités, sélectionnez vos dates et contactez-nous directement pour organiser votre séjour au Cap Ferret.
+      Une question sur nos hébergements ? Besoin d'informations ? Nous sommes à votre écoute.
     </p>
   </div>
 </section>
 
-<!-- Reservation Section -->
-<section id="reservation" class="py-12 md:py-20 px-6 bg-sable/30">
-  <div class="max-w-5xl mx-auto">
-    <div class="text-center mb-10">
-      <p class="text-sunset-orange font-sans text-xs tracking-[0.2em] mb-3">VÉRIFIEZ LES DISPONIBILITÉS</p>
-      <h2 class="font-display text-2xl md:text-3xl lg:text-4xl text-ocean">Planifiez votre séjour</h2>
-    </div>
-
-    <div class="grid lg:grid-cols-2 gap-8">
-      <!-- Calendrier visuel -->
-      <div class="bg-blanc p-6 border border-sable/30 shadow-sm">
-        <h3 class="font-display text-xl text-ocean mb-4">Disponibilités</h3>
-
-        <!-- Sélecteur de propriété pour le calendrier -->
-        <div class="mb-4">
-          <label class="block text-sm font-medium text-ocean/70 mb-2">Voir les disponibilités pour :</label>
-          <select id="calendarProperty" class="w-full px-4 py-3 border border-sable bg-white text-ocean text-sm focus:outline-none focus:border-sunset-orange">
-            <option value="lodge">Le Grand Lodge (12 pers.)</option>
-            <option value="nest">The Nest (4 pers.)</option>
-          </select>
-        </div>
-
-        <!-- Calendrier Flatpickr -->
-        <div id="calendarContainer" class="mb-4"></div>
-
-        <!-- Légende -->
-        <div class="calendar-legend flex-wrap justify-center mt-4">
-          <div class="legend-item">
-            <div class="legend-dot legend-available"></div>
-            <span>Disponible</span>
-          </div>
-          <div class="legend-item">
-            <div class="legend-dot legend-selected"></div>
-            <span>Sélectionné</span>
-          </div>
-          <div class="legend-item">
-            <div class="legend-dot legend-booked"></div>
-            <span>Réservé</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Formulaire de réservation -->
-      <div class="bg-blanc p-6 border border-sable/30 shadow-sm">
-        <h3 class="font-display text-xl text-ocean mb-4">Votre demande</h3>
-
-        <form id="bookingForm" class="space-y-4">
-          <!-- Hébergement -->
-          <div>
-            <label class="block text-sm font-medium text-ocean/70 mb-2">Hébergement</label>
-            <select id="bookingProperty" class="w-full px-4 py-3 border border-sable bg-white text-ocean text-sm focus:outline-none focus:border-sunset-orange">
-              <option value="Le Grand Lodge (12 pers.)">Le Grand Lodge (12 pers.)</option>
-              <option value="The Nest (4 pers.)">The Nest (4 pers.)</option>
-              <option value="Lodge + Nest (16 pers.)">Les deux (16 pers.)</option>
-            </select>
-          </div>
-
-          <!-- Dates -->
-          <div class="grid grid-cols-2 gap-4">
-            <div>
-              <label class="block text-sm font-medium text-ocean/70 mb-2">Arrivée</label>
-              <input type="text" id="checkin" placeholder="Sélectionner" readonly class="w-full px-4 py-3 border border-sable bg-sable/20 text-ocean text-sm cursor-default">
-            </div>
-            <div>
-              <label class="block text-sm font-medium text-ocean/70 mb-2">Départ</label>
-              <input type="text" id="checkout" placeholder="Sélectionner" readonly class="w-full px-4 py-3 border border-sable bg-sable/20 text-ocean text-sm cursor-default">
-            </div>
-          </div>
-
-          <!-- Voyageurs : Adultes + Enfants -->
-          <div class="grid grid-cols-2 gap-4">
-            <div>
-              <label class="block text-sm font-medium text-ocean/70 mb-2">Adultes</label>
-              <select id="adults" class="w-full px-4 py-3 border border-sable bg-white text-ocean text-sm focus:outline-none focus:border-sunset-orange">
-                <option value="1">1 adulte</option>
-                <option value="2" selected>2 adultes</option>
-                <option value="3">3 adultes</option>
-                <option value="4">4 adultes</option>
-                <option value="5">5 adultes</option>
-                <option value="6">6 adultes</option>
-                <option value="7">7 adultes</option>
-                <option value="8">8 adultes</option>
-                <option value="9">9 adultes</option>
-                <option value="10">10 adultes</option>
-                <option value="11">11 adultes</option>
-                <option value="12">12 adultes</option>
-              </select>
-            </div>
-            <div>
-              <label class="block text-sm font-medium text-ocean/70 mb-2">Enfants</label>
-              <select id="children" class="w-full px-4 py-3 border border-sable bg-white text-ocean text-sm focus:outline-none focus:border-sunset-orange">
-                <option value="0" selected>0 enfant</option>
-                <option value="1">1 enfant</option>
-                <option value="2">2 enfants</option>
-                <option value="3">3 enfants</option>
-                <option value="4">4 enfants</option>
-                <option value="5">5 enfants</option>
-                <option value="6">6 enfants</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- Tarifs indicatifs -->
-          <div class="bg-sable/30 p-4 text-sm">
-            <p class="font-sans text-xs tracking-wider text-ocean/60 mb-1">TARIFS INDICATIFS</p>
-            <p class="text-ocean">
-              <span class="text-sunset-orange font-semibold">Le Lodge</span> à partir de 500€/nuit ·
-              <span class="text-turquoise font-semibold">The Nest</span> à partir de 100€/nuit
-            </p>
-          </div>
-
-          <!-- Résumé de la sélection -->
-          <div id="bookingSummary" class="hidden bg-sable/20 p-4 border border-sunset-orange/30 text-sm">
-            <p class="font-medium text-ocean mb-2">Récapitulatif :</p>
-            <p id="summaryText" class="text-ocean/70"></p>
-          </div>
-
-          <!-- CTAs -->
-          <div class="space-y-3 pt-2">
-            <button type="button" id="whatsappBtn" class="w-full inline-flex items-center justify-center bg-[#25D366] text-white px-6 py-4 font-sans text-sm tracking-wider font-semibold hover:bg-[#22c55e] transition-all">
-              <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-              </svg>
-              ENVOYER VIA WHATSAPP
-            </button>
-            <button type="button" id="emailBtn" class="w-full inline-flex items-center justify-center border-2 border-ocean text-ocean px-6 py-4 font-sans text-sm tracking-wider font-medium hover:bg-ocean hover:text-white transition-all">
-              <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-              </svg>
-              ENVOYER PAR EMAIL
-            </button>
-          </div>
-
-          <p class="text-center text-ocean/50 text-xs">
-            Nous vous répondrons dans les 24h.
-          </p>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- Contact Options -->
-<section class="py-12 md:py-16 px-6 bg-blanc">
+<section class="py-12 md:py-16 px-6 bg-sable/20">
   <div class="max-w-4xl mx-auto">
     <div class="text-center mb-10">
       <div class="midcentury-line mx-auto mb-6"></div>
-      <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-3">AUTRES MOYENS DE CONTACT</p>
+      <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-3">CONTACTEZ-NOUS</p>
       <h2 class="font-display text-2xl md:text-3xl text-ocean">Nous sommes à votre écoute</h2>
     </div>
 
@@ -500,7 +251,7 @@
 </section>
 
 <!-- Location Section -->
-<section class="py-12 md:py-20 px-6 bg-sable/20">
+<section class="py-12 md:py-20 px-6 bg-blanc">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-10">
       <div class="midcentury-line mx-auto mb-6"></div>
@@ -671,267 +422,10 @@
 
 <!-- Mobile Sticky CTA -->
 <div class="fixed bottom-0 left-0 right-0 p-4 bg-blanc/95 backdrop-blur-sm border-t border-sable/20 lg:hidden z-50">
-  <a href="#reservation" class="block w-full bg-sunset-orange text-white text-center py-3 font-sans text-sm tracking-wider font-semibold cta-pulse">
+  <a href="reserver.html" class="block w-full bg-sunset-orange text-white text-center py-3 font-sans text-sm tracking-wider font-semibold cta-pulse">
     RÉSERVER MAINTENANT
   </a>
 </div>
-
-<!-- Flatpickr Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/fr.js"></script>
-
-<!-- Booking Script -->
-<script>
-  // ============================================
-  // CONFIGURATION GOOGLE SHEETS
-  // ============================================
-  const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwIGsc2nzwAmioJwR2P1vflUNiusSnXapmKu9Yw1uYDz--H37P4gXPZqDLApOZWL0kt/exec';
-
-  // ============================================
-  // DATES RÉSERVÉES (fallback si Google Sheets non configuré)
-  // ============================================
-  let bookedDates = {
-    lodge: [],
-    nest: []
-  };
-
-  // ============================================
-  // CHARGEMENT DEPUIS GOOGLE SHEETS
-  // ============================================
-  async function loadBookingsFromGoogleSheets() {
-    if (!GOOGLE_SHEETS_URL) {
-      console.log('Google Sheets non configuré, utilisation des dates locales');
-      return bookedDates;
-    }
-
-    try {
-      const response = await fetch(GOOGLE_SHEETS_URL);
-      if (!response.ok) throw new Error('Erreur réseau');
-
-      const data = await response.json();
-
-      // Transformer les données Google Sheets en format attendu
-      bookedDates = {
-        lodge: [],
-        nest: []
-      };
-
-      data.forEach(row => {
-        const property = row.property?.toLowerCase() || '';
-        const from = row.from || row.debut || row.arrivee;
-        const to = row.to || row.fin || row.depart;
-
-        if (from && to) {
-          if (property === 'lodge' || property === 'le grand lodge') {
-            bookedDates.lodge.push({ from, to });
-          } else if (property === 'nest' || property === 'the nest') {
-            bookedDates.nest.push({ from, to });
-          }
-        }
-      });
-
-      console.log('Réservations chargées depuis Google Sheets:', bookedDates);
-      return bookedDates;
-
-    } catch (error) {
-      console.error('Erreur chargement Google Sheets:', error);
-      console.log('Utilisation des dates locales en fallback');
-      return bookedDates;
-    }
-  }
-
-  // ============================================
-  // FONCTIONS UTILITAIRES
-  // ============================================
-
-  // Génère un tableau de toutes les dates dans une plage
-  function getDatesInRange(startDate, endDate) {
-    const dates = [];
-    let currentDate = new Date(startDate);
-    const end = new Date(endDate);
-
-    while (currentDate <= end) {
-      dates.push(new Date(currentDate).toISOString().split('T')[0]);
-      currentDate.setDate(currentDate.getDate() + 1);
-    }
-    return dates;
-  }
-
-  // Obtient toutes les dates réservées pour une propriété
-  function getDisabledDates(property) {
-    const bookings = bookedDates[property] || [];
-    let disabledDates = [];
-
-    bookings.forEach(booking => {
-      const rangeDates = getDatesInRange(booking.from, booking.to);
-      disabledDates = disabledDates.concat(rangeDates);
-    });
-
-    return disabledDates;
-  }
-
-  // Formate une date pour l'affichage
-  function formatDateFR(dateStr) {
-    if (!dateStr) return '';
-    const date = new Date(dateStr);
-    return date.toLocaleDateString('fr-FR', {
-      weekday: 'short',
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric'
-    });
-  }
-
-  // ============================================
-  // INITIALISATION DU CALENDRIER
-  // ============================================
-
-  let calendarInstance;
-  let selectedDates = [];
-
-  function initCalendar(property = 'lodge') {
-    const disabledDates = getDisabledDates(property);
-
-    if (calendarInstance) {
-      calendarInstance.destroy();
-    }
-
-    calendarInstance = flatpickr("#calendarContainer", {
-      inline: true,
-      mode: "range",
-      minDate: "today",
-      maxDate: new Date().fp_incr(365),
-      locale: "fr",
-      dateFormat: "Y-m-d",
-      disable: disabledDates,
-      showMonths: 1,
-      onChange: function(dates, dateStr) {
-        if (dates.length === 2) {
-          selectedDates = dates;
-          document.getElementById('checkin').value = formatDateFR(dates[0]);
-          document.getElementById('checkout').value = formatDateFR(dates[1]);
-          updateSummary();
-          updateContactButtons();
-        }
-      },
-      onDayCreate: function(dObj, dStr, fp, dayElem) {
-        const dateStr = dayElem.dateObj.toISOString().split('T')[0];
-        if (disabledDates.includes(dateStr)) {
-          dayElem.classList.add('booked');
-        }
-      }
-    });
-  }
-
-  // Initialisation au chargement
-  document.addEventListener('DOMContentLoaded', async function() {
-    // Charger les réservations depuis Google Sheets
-    await loadBookingsFromGoogleSheets();
-
-    // Initialiser le calendrier
-    initCalendar('lodge');
-
-    // Changement de propriété dans le calendrier
-    document.getElementById('calendarProperty').addEventListener('change', function() {
-      initCalendar(this.value);
-      // Reset les champs de date
-      document.getElementById('checkin').value = '';
-      document.getElementById('checkout').value = '';
-      selectedDates = [];
-      document.getElementById('bookingSummary').classList.add('hidden');
-      updateContactButtons();
-    });
-
-    // Écouter les changements sur adultes/enfants
-    document.getElementById('adults').addEventListener('change', updateContactButtons);
-    document.getElementById('children').addEventListener('change', updateContactButtons);
-    document.getElementById('bookingProperty').addEventListener('change', updateContactButtons);
-
-    // Initialiser les boutons
-    updateContactButtons();
-  });
-
-  // ============================================
-  // MISE À JOUR DU RÉCAPITULATIF
-  // ============================================
-
-  function updateSummary() {
-    const property = document.getElementById('bookingProperty').value;
-    const checkin = document.getElementById('checkin').value;
-    const checkout = document.getElementById('checkout').value;
-    const adults = document.getElementById('adults').value;
-    const children = document.getElementById('children').value;
-
-    if (checkin && checkout) {
-      const summaryEl = document.getElementById('bookingSummary');
-      const textEl = document.getElementById('summaryText');
-
-      // Calcul du nombre de nuits
-      let nights = 0;
-      if (selectedDates.length === 2) {
-        const diffTime = Math.abs(selectedDates[1] - selectedDates[0]);
-        nights = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-      }
-
-      const childrenText = children > 0 ? ` + ${children} enfant${children > 1 ? 's' : ''}` : '';
-
-      textEl.innerHTML = `
-        <strong>${property}</strong><br>
-        Du ${checkin} au ${checkout}<br>
-        ${nights} nuit${nights > 1 ? 's' : ''} · ${adults} adulte${adults > 1 ? 's' : ''}${childrenText}
-      `;
-      summaryEl.classList.remove('hidden');
-    }
-  }
-
-  // ============================================
-  // GÉNÉRATION DU MESSAGE DE RÉSERVATION
-  // ============================================
-
-  function generateMessage() {
-    const property = document.getElementById('bookingProperty');
-    const checkin = document.getElementById('checkin').value;
-    const checkout = document.getElementById('checkout').value;
-    const adults = document.getElementById('adults').value;
-    const children = document.getElementById('children').value;
-
-    const propertyName = property.options[property.selectedIndex].text;
-    const childrenText = children > 0 ? ` et ${children} enfant${children > 1 ? 's' : ''}` : '';
-
-    let message = `Bonjour,\n\nJe souhaite réserver :\n`;
-    message += `- Hébergement : ${propertyName}\n`;
-    if (checkin) message += `- Arrivée : ${checkin}\n`;
-    if (checkout) message += `- Départ : ${checkout}\n`;
-    message += `- Voyageurs : ${adults} adulte${adults > 1 ? 's' : ''}${childrenText}\n\n`;
-    message += `Merci de me confirmer la disponibilité et le tarif.\n\nCordialement`;
-
-    return message;
-  }
-
-  // Mettre à jour les liens des boutons de contact
-  function updateContactButtons() {
-    const message = generateMessage();
-    const encodedMessage = encodeURIComponent(message);
-
-    // WhatsApp
-    const whatsappBtn = document.getElementById('whatsappBtn');
-    whatsappBtn.onclick = function() {
-      window.open(`https://wa.me/33676886769?text=${encodedMessage}`, '_blank');
-    };
-
-    // Email
-    const emailBtn = document.getElementById('emailBtn');
-    const subject = encodeURIComponent('Demande de réservation Maréa');
-    emailBtn.onclick = function() {
-      window.location.href = `mailto:contact@mareaferret.com?subject=${subject}&body=${encodedMessage}`;
-    };
-
-    // Mettre à jour le récapitulatif si dates sélectionnées
-    if (selectedDates.length === 2) {
-      updateSummary();
-    }
-  }
-</script>
 
 </body>
 </html>

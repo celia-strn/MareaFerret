@@ -9,6 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Flatpickr pour le calendrier -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/light.css">
   <script>
     tailwind.config = {
       theme: {
@@ -131,6 +134,84 @@
       border-top: 1px solid #E8DED1;
       box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
     }
+
+    /* Flatpickr Custom Styles */
+    .flatpickr-calendar {
+      font-family: 'Montserrat', sans-serif;
+      border: 1px solid #E8DCC8;
+      box-shadow: 0 4px 20px rgba(44, 74, 98, 0.1);
+    }
+    .flatpickr-day.disabled,
+    .flatpickr-day.disabled:hover {
+      background: #f0f0f0 !important;
+      color: #ccc !important;
+      text-decoration: line-through;
+      cursor: not-allowed;
+    }
+    .flatpickr-day.booked {
+      background: repeating-linear-gradient(
+        45deg,
+        #f5f5f5,
+        #f5f5f5 2px,
+        #e8e8e8 2px,
+        #e8e8e8 4px
+      ) !important;
+      color: #999 !important;
+      cursor: not-allowed;
+    }
+    .flatpickr-months .flatpickr-month {
+      background: #2C4A62;
+      color: white;
+    }
+    .flatpickr-current-month .flatpickr-monthDropdown-months,
+    .flatpickr-current-month input.cur-year {
+      color: white;
+      font-weight: 500;
+    }
+    .flatpickr-weekdays {
+      background: #F8F6F3;
+    }
+    span.flatpickr-weekday {
+      color: #2C4A62;
+      font-weight: 500;
+    }
+    .flatpickr-months .flatpickr-prev-month,
+    .flatpickr-months .flatpickr-next-month {
+      fill: white;
+    }
+    .flatpickr-months .flatpickr-prev-month:hover,
+    .flatpickr-months .flatpickr-next-month:hover {
+      fill: #4EC3C7;
+    }
+
+    /* Calendar Legend */
+    .calendar-legend {
+      display: flex;
+      gap: 16px;
+      font-size: 12px;
+      color: #2C4A62;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 2px;
+    }
+    .legend-available { background: white; border: 1px solid #E8DED1; }
+    .legend-booked {
+      background: repeating-linear-gradient(
+        45deg,
+        #f5f5f5,
+        #f5f5f5 2px,
+        #e8e8e8 2px,
+        #e8e8e8 4px
+      );
+      border: 1px solid #ddd;
+    }
   </style>
 </head>
 <body class="font-sans text-ocean bg-blanc pb-16 lg:pb-0">
@@ -166,14 +247,14 @@
       <a href="contact.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-turquoise transition-colors">CONTACT</a>
       <span class="text-sable">|</span>
       <a href="thenest-en.html" class="font-sans text-sm tracking-wider font-light hover:text-turquoise transition-colors">EN</a>
-      <a href="contact.html#reservation" class="ml-2 bg-turquoise text-white px-5 py-2.5 font-sans text-sm tracking-wider font-semibold hover:bg-turquoise/90 transition-all cta-pulse">
+      <a href="reserver.html" class="ml-2 bg-turquoise text-white px-5 py-2.5 font-sans text-sm tracking-wider font-semibold hover:bg-turquoise/90 transition-all cta-pulse">
         RÉSERVER
       </a>
     </div>
 
     <!-- Mobile Menu Button -->
     <div class="flex items-center gap-3 lg:hidden">
-      <a href="contact.html#reservation" class="bg-turquoise text-white px-4 py-2 font-sans text-xs tracking-wider font-semibold">
+      <a href="reserver.html" class="bg-turquoise text-white px-4 py-2 font-sans text-xs tracking-wider font-semibold">
         RÉSERVER
       </a>
       <button id="menuBtn" class="p-2 text-ocean" aria-label="Menu">
@@ -195,7 +276,7 @@
     <div class="border-t border-sable pt-8 mt-4 w-40 text-center">
       <a href="thenest-en.html" class="font-sans text-base tracking-wider font-medium text-navy hover:text-turquoise transition-colors">ENGLISH</a>
     </div>
-    <a href="contact.html#reservation" class="mt-4 bg-turquoise text-white px-8 py-4 font-sans text-sm tracking-wider font-semibold">
+    <a href="reserver.html" class="mt-4 bg-turquoise text-white px-8 py-4 font-sans text-sm tracking-wider font-semibold">
       RÉSERVER
     </a>
   </div>
@@ -376,6 +457,42 @@
   </div>
 </section>
 
+<!-- Availability Calendar -->
+<section class="py-12 md:py-20 px-6 bg-blanc">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-10">
+      <div class="midcentury-line mx-auto mb-6" style="background: linear-gradient(90deg, #4EC3C7, #2FA4A9);"></div>
+      <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-3">DISPONIBILITÉS</p>
+      <h2 class="font-display text-2xl md:text-3xl lg:text-4xl text-ocean">Calendrier de The Nest</h2>
+      <p class="text-ocean/70 text-sm mt-4">Les dates barrées sont déjà réservées</p>
+    </div>
+
+    <div class="bg-blanc p-6 border border-sable/30 shadow-sm max-w-md mx-auto">
+      <!-- Calendrier Flatpickr -->
+      <div id="nestCalendar" class="mb-4"></div>
+
+      <!-- Légende -->
+      <div class="calendar-legend flex-wrap justify-center mt-6">
+        <div class="legend-item">
+          <div class="legend-dot legend-available"></div>
+          <span>Disponible</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot legend-booked"></div>
+          <span>Réservé</span>
+        </div>
+      </div>
+
+      <!-- CTA vers réservation -->
+      <div class="mt-6 text-center">
+        <a href="reserver.html" class="inline-block bg-turquoise text-white px-6 py-3 font-sans text-sm tracking-wider font-semibold hover:bg-turquoise/90 transition-all">
+          RÉSERVER THE NEST
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Contact CTA -->
 <section id="contact" class="py-16 md:py-24 px-6 bg-turquoise-dark text-blanc">
   <div class="max-w-4xl mx-auto text-center">
@@ -491,10 +608,113 @@
 
 <!-- Mobile Sticky CTA -->
 <div class="mobile-sticky-cta lg:hidden">
-  <a href="contact.html#reservation" class="block w-full bg-turquoise text-white py-3 font-sans text-sm tracking-wider font-semibold text-center">
+  <a href="reserver.html" class="block w-full bg-turquoise text-white py-3 font-sans text-sm tracking-wider font-semibold text-center">
     RÉSERVER THE NEST
   </a>
 </div>
+
+<!-- Flatpickr Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/fr.js"></script>
+
+<script>
+  // Configuration Google Sheets
+  const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwIGsc2nzwAmioJwR2P1vflUNiusSnXapmKu9Yw1uYDz--H37P4gXPZqDLApOZWL0kt/exec';
+
+  // Dates réservées (fallback)
+  let bookedDates = {
+    lodge: [],
+    nest: []
+  };
+
+  // Chargement depuis Google Sheets
+  async function loadBookingsFromGoogleSheets() {
+    if (!GOOGLE_SHEETS_URL) return bookedDates;
+
+    try {
+      const response = await fetch(GOOGLE_SHEETS_URL);
+      if (!response.ok) throw new Error('Erreur réseau');
+
+      const data = await response.json();
+
+      bookedDates = {
+        lodge: [],
+        nest: []
+      };
+
+      data.forEach(row => {
+        const property = row.property?.toLowerCase() || '';
+        const from = row.from || row.debut || row.arrivee;
+        const to = row.to || row.fin || row.depart;
+
+        if (from && to) {
+          if (property === 'lodge' || property === 'le grand lodge') {
+            bookedDates.lodge.push({ from, to });
+          } else if (property === 'nest' || property === 'the nest') {
+            bookedDates.nest.push({ from, to });
+          }
+        }
+      });
+
+      return bookedDates;
+
+    } catch (error) {
+      console.error('Erreur chargement Google Sheets:', error);
+      return bookedDates;
+    }
+  }
+
+  // Génère un tableau de toutes les dates dans une plage
+  function getDatesInRange(startDate, endDate) {
+    const dates = [];
+    let currentDate = new Date(startDate);
+    const end = new Date(endDate);
+
+    while (currentDate <= end) {
+      dates.push(new Date(currentDate).toISOString().split('T')[0]);
+      currentDate.setDate(currentDate.getDate() + 1);
+    }
+    return dates;
+  }
+
+  // Obtient toutes les dates réservées pour une propriété
+  function getDisabledDates(property) {
+    const bookings = bookedDates[property] || [];
+    let disabledDates = [];
+
+    bookings.forEach(booking => {
+      const rangeDates = getDatesInRange(booking.from, booking.to);
+      disabledDates = disabledDates.concat(rangeDates);
+    });
+
+    return disabledDates;
+  }
+
+  // Initialisation au chargement
+  document.addEventListener('DOMContentLoaded', async function() {
+    await loadBookingsFromGoogleSheets();
+
+    const disabledDates = getDisabledDates('nest');
+
+    flatpickr("#nestCalendar", {
+      inline: true,
+      mode: "single",
+      minDate: "today",
+      maxDate: new Date().fp_incr(365),
+      locale: "fr",
+      dateFormat: "Y-m-d",
+      disable: disabledDates,
+      showMonths: 1,
+      clickOpens: false,
+      onDayCreate: function(dObj, dStr, fp, dayElem) {
+        const dateStr = dayElem.dateObj.toISOString().split('T')[0];
+        if (disabledDates.includes(dateStr)) {
+          dayElem.classList.add('booked');
+        }
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
