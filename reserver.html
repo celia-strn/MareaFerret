@@ -11,12 +11,13 @@
   <link rel="canonical" href="https://celia-strn.github.io/MareaFerret/reserver.html">
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Flatpickr Calendar -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/light.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Flatpickr Calendar - Preload for faster loading -->
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" as="style">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/light.css">
   <script>
     tailwind.config = {
       theme: {
@@ -230,11 +231,13 @@
     <a href="index.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">ACCUEIL</a>
     <a href="lodge.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">LE LODGE</a>
     <a href="thenest.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-turquoise transition-colors">THE NEST</a>
-    <a href="reserver.html" class="font-sans text-xl tracking-wider font-medium text-sunset-orange">RÉSERVER</a>
     <a href="contact.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">CONTACT</a>
     <div class="border-t border-sable pt-8 mt-4 w-40 text-center">
       <a href="reserver-en.html" class="font-sans text-base tracking-wider font-medium text-navy hover:text-sunset-orange transition-colors">ENGLISH</a>
     </div>
+    <a href="reserver.html" class="mt-4 bg-sunset-orange text-white px-8 py-4 font-sans text-sm tracking-wider font-semibold">
+      RÉSERVER
+    </a>
   </div>
 </div>
 
@@ -292,7 +295,15 @@
         </div>
 
         <!-- Calendrier Flatpickr -->
-        <div id="calendarContainer" class="mb-4"></div>
+        <div id="calendarContainer" class="mb-4">
+          <div id="calendarLoader" class="text-center py-8 text-ocean/60">
+            <svg class="animate-spin h-8 w-8 mx-auto mb-3 text-sunset-orange" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            <p class="text-sm">Chargement des disponibilités...</p>
+          </div>
+        </div>
 
         <!-- Légende -->
         <div class="calendar-legend flex-wrap justify-center mt-4">
@@ -575,9 +586,9 @@
   </div>
 </footer>
 
-<!-- Flatpickr JS -->
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/fr.js"></script>
+<!-- Flatpickr JS - Load with defer for better performance -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/fr.js" defer></script>
 
 <!-- Script pour le système de réservation -->
 <script>
@@ -681,6 +692,21 @@
   let calendarInstance;
   let selectedDates = [];
 
+  // Fonction pour obtenir la date par défaut (avril 2026 ou mois en cours)
+  function getDefaultDate() {
+    const now = new Date();
+    const currentYear = now.getFullYear();
+    const currentMonth = now.getMonth(); // 0 = janvier, 3 = avril
+
+    // Si nous sommes avant avril 2026, ouvrir sur avril 2026
+    if (currentYear < 2026 || (currentYear === 2026 && currentMonth < 3)) {
+      return new Date(2026, 3, 1); // 1er avril 2026
+    }
+
+    // Sinon, ouvrir sur le mois en cours
+    return now;
+  }
+
   function initCalendar(property = 'lodge') {
     const disabledDates = getDisabledDates(property);
 
@@ -693,6 +719,7 @@
       mode: "range",
       minDate: "today",
       maxDate: new Date().fp_incr(365),
+      defaultDate: getDefaultDate(),
       locale: "fr",
       dateFormat: "Y-m-d",
       disable: disabledDates,
@@ -716,8 +743,17 @@
 
   // Initialisation au chargement
   document.addEventListener('DOMContentLoaded', async function() {
+    // Charger les réservations depuis Google Sheets
     await loadBookingsFromGoogleSheets();
+
+    // Initialiser le calendrier
     initCalendar('lodge');
+
+    // Masquer le loader une fois le calendrier chargé
+    const loader = document.getElementById('calendarLoader');
+    if (loader) {
+      loader.style.display = 'none';
+    }
   });
 
   // Changement de propriété dans le calendrier
