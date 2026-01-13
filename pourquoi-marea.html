@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="L'histoire de Maréa - Une famille de voyageurs qui a trouvé son havre de paix au Cap Ferret. Découvrez pourquoi nous avons créé ce lieu unique à Petit Piquey.">
+  <title>Qui sommes-nous | Maréa Cap Ferret - Notre histoire</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'ocean': '#2C4A62',
+            'ocean-dark': '#1A3B5C',
+            'sunset-cream': '#FFF8E7',
+            'sunset-yellow': '#F4C430',
+            'sunset-orange': '#F28C28',
+            'brun': '#8B4513',
+            'sable': '#E8DCC8',
+            'sable-dark': '#C4A574',
+            'sable-medium': '#D4B594',
+            'blanc': '#F8F6F3',
+            'taupe': '#8B7355',
+            'turquoise': '#4EC3C7',
+            'turquoise-dark': '#2FA4A9',
+            'turquoise-light': '#6ED4D8',
+            'turquoise-pastel': '#A8E6E9',
+          },
+          fontFamily: {
+            'display': ['Georgia', 'serif'],
+            'sans': ['Montserrat', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #F28C28;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .mobile-menu {
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+    }
+    .mobile-menu.open {
+      transform: translateX(0);
+    }
+
+    .midcentury-line {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, #F28C28, #4EC3C7);
+    }
+
+    .fade-in {
+      animation: fadeInUp 0.8s ease-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+    }
+  </style>
+</head>
+<body class="font-sans text-ocean bg-blanc">
+
+<!-- Navigation -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-blanc/95 backdrop-blur-sm border-b border-sable/20">
+  <div class="max-w-6xl mx-auto px-4 md:px-6 py-3 md:py-4 flex justify-between items-center">
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center gap-2 md:gap-3">
+      <svg class="w-10 h-10 md:w-12 md:h-12" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M25 8 A 17 17 0 0 1 42 25 H 8 A 17 17 0 0 1 25 8" fill="#F4C430"/>
+        <path d="M25 12 A 13 13 0 0 1 38 25 H 12 A 13 13 0 0 1 25 12" fill="#F28C28"/>
+        <path d="M25 18 A 7 7 0 0 1 32 25 H 18 A 7 7 0 0 1 25 18" fill="#8B4513"/>
+        <line x1="5" y1="25" x2="45" y2="25" stroke="#8B4513" stroke-width="2" stroke-linecap="round"/>
+        <line x1="7" y1="30" x2="43" y2="30" stroke="#C4A574" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="10" y1="35" x2="40" y2="35" stroke="#D4B594" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="14" y1="40" x2="36" y2="40" stroke="#E8DCC8" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>
+      <span class="font-display text-xl md:text-2xl italic font-semibold text-ocean" style="letter-spacing: -1px;">marea</span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <div class="hidden lg:flex items-center gap-6">
+      <a href="index.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">ACCUEIL</a>
+      <a href="lodge.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">LE LODGE</a>
+      <a href="thenest.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-turquoise transition-colors">THE NEST</a>
+      <a href="reserver.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">RÉSERVER</a>
+      <a href="contact.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">CONTACT</a>
+      <span class="text-sable/30">|</span>
+      <a href="pourquoi-marea.html" class="nav-link font-sans text-sm tracking-wider font-medium text-sunset-orange">QUI SOMMES-NOUS</a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <div class="flex items-center gap-3 lg:hidden">
+      <a href="reserver.html" class="bg-sunset-orange text-white px-4 py-2 font-sans text-xs tracking-wider font-semibold">
+        RÉSERVER
+      </a>
+      <button id="menuBtn" class="p-2 text-ocean" aria-label="Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="mobile-menu fixed inset-0 top-[57px] z-[100] lg:hidden bg-blanc">
+  <div class="flex flex-col items-center justify-center h-full gap-8 bg-blanc">
+    <a href="index.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">ACCUEIL</a>
+    <a href="lodge.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">LE LODGE</a>
+    <a href="thenest.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-turquoise transition-colors">THE NEST</a>
+    <a href="contact.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">CONTACT</a>
+    <a href="pourquoi-marea.html" class="font-sans text-xl tracking-wider font-medium text-sunset-orange">QUI SOMMES-NOUS</a>
+    <a href="reserver.html" class="mt-4 bg-sunset-orange text-white px-8 py-4 font-sans text-sm tracking-wider font-semibold">
+      RÉSERVER
+    </a>
+  </div>
+</div>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuIcon = document.getElementById('menuIcon');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+    if (mobileMenu.classList.contains('open')) {
+      menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+    } else {
+      menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+    }
+  });
+
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+    });
+  });
+</script>
+
+<!-- Hero -->
+<section class="pt-32 pb-16 md:pt-40 md:pb-24 px-6 bg-blanc">
+  <div class="max-w-4xl mx-auto text-center">
+    <div class="midcentury-line mx-auto mb-8"></div>
+    <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-6">POURQUOI MARÉA</p>
+    <h1 class="font-display text-4xl md:text-6xl text-ocean leading-tight mb-8">
+      Qui sommes-nous
+    </h1>
+    <p class="text-xl md:text-2xl text-ocean/60 font-light leading-relaxed italic">
+      Une famille de voyageurs qui a trouvé son havre de paix
+    </p>
+  </div>
+</section>
+
+<!-- Section 1: Photo + Texte -->
+<section class="py-12 md:py-20 px-6 bg-sable/20">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+      <div class="aspect-[3/4] overflow-hidden">
+        <img src="images/famille1.jpg" alt="Notre famille voyageuse" class="w-full h-full object-cover">
+      </div>
+      <div class="space-y-6">
+        <p class="text-sunset-orange font-sans text-xs tracking-[0.2em]">UNE FAMILLE DE VOYAGEURS</p>
+        <h2 class="font-display text-3xl md:text-4xl text-ocean leading-tight">
+          Plus de 30 pays<br>découverts ensemble
+        </h2>
+        <div class="space-y-4 text-ocean/70 leading-relaxed">
+          <p>
+            Depuis plus de quinze ans, nous parcourons le monde avec nos enfants.
+            Des cultures différentes, des paysages marquants, des souvenirs précieux.
+          </p>
+          <p>
+            Voyager a toujours été pour nous une manière de nous ouvrir au monde, de ralentir, de nous reconnecter à l'essentiel.
+          </p>
+          <p>
+            <strong class="text-ocean">Mais surtout</strong>, nous avons appris ce qui fait qu'un lieu reste gravé : le sentiment d'être bien accueilli, la simplicité, la justesse, l'âme d'un endroit.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 2: Le jour où tout s'est arrêté -->
+<section class="py-16 md:py-24 px-6 bg-blanc">
+  <div class="max-w-3xl mx-auto text-center space-y-8">
+    <div class="midcentury-line mx-auto"></div>
+    <h2 class="font-display text-3xl md:text-5xl text-ocean leading-tight">
+      Le jour où tout<br>s'est arrêté
+    </h2>
+    <div class="space-y-6 text-ocean/70 text-lg leading-relaxed">
+      <p>
+        Au fil de nos voyages, nous avons continué à explorer…<br>
+        Et puis un jour, presque sans le chercher, nous avons découvert une plage paradisiaque, à quelques pas de la maison.
+      </p>
+      <p class="text-xl text-ocean font-light italic">
+        Une lumière particulière.<br>
+        Une eau calme et claire.<br>
+        Un endroit encore préservé.
+      </p>
+      <p>
+        C'est ici que nous avons ressenti ce que nous cherchions partout ailleurs.<br>
+        <strong class="text-ocean">Un lieu simple, beau, apaisant.</strong><br>
+        Un lieu où l'on a envie de revenir.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Section 3: Photo + Maréa est née -->
+<section class="py-12 md:py-20 px-6 bg-sable/20">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+      <div class="order-2 md:order-1 space-y-6">
+        <p class="text-turquoise font-sans text-xs tracking-[0.2em]">NOTRE PROJET</p>
+        <h2 class="font-display text-3xl md:text-4xl text-ocean leading-tight">
+          Pourquoi Maréa<br>est née
+        </h2>
+        <div class="space-y-4 text-ocean/70 leading-relaxed">
+          <p>
+            Maréa est née de cette évidence.<br>
+            De l'envie de <strong class="text-ocean">partager ce petit paradis</strong> avec d'autres voyageurs.
+          </p>
+          <p>
+            Nous n'avons pas pensé Maréa comme une simple location saisonnière, mais comme <strong class="text-ocean">un lieu de vie</strong>, pensé pour accueillir des familles, des amis, des voyageurs curieux, des amoureux du Bassin.
+          </p>
+          <p>
+            Chaque espace a été conçu comme si nous recevions des proches.<br>
+            Avec attention, simplicité et soin du détail.
+          </p>
+        </div>
+      </div>
+      <div class="order-1 md:order-2 aspect-[3/4] overflow-hidden">
+        <img src="images/famille2.jpg" alt="Notre projet Maréa" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 4: Accueillir comme nous aimons voyager -->
+<section class="py-16 md:py-24 px-6 bg-blanc">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-12">
+      <div class="midcentury-line mx-auto mb-8"></div>
+      <h2 class="font-display text-3xl md:text-5xl text-ocean mb-6">
+        Accueillir comme<br>nous aimons voyager
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-sable/30 p-8 space-y-4">
+        <p class="text-ocean/70 leading-relaxed">
+          En tant que voyageurs, nous savons ce qui compte vraiment :
+        </p>
+        <ul class="space-y-3 text-ocean/70">
+          <li class="flex items-start gap-3">
+            <span class="text-turquoise mt-1">✓</span>
+            <span>Arriver dans un lieu où l'on se sent attendu</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-turquoise mt-1">✓</span>
+            <span>Se repérer facilement</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-turquoise mt-1">✓</span>
+            <span>Avoir les bons conseils au bon moment</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-turquoise mt-1">✓</span>
+            <span>Se sentir libre, sans contraintes inutiles</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-turquoise/10 p-8 space-y-4">
+        <p class="text-sunset-orange font-sans text-xs tracking-[0.2em]">UN LIEU POUR RALENTIR</p>
+        <p class="text-ocean/70 leading-relaxed">
+          À Maréa, on vient pour :
+        </p>
+        <ul class="space-y-3 text-ocean/70 italic font-light">
+          <li>Poser les valises</li>
+          <li>Marcher pieds nus</li>
+          <li>Profiter de la plage du Bassin</li>
+          <li>Vivre au rythme des marées</li>
+          <li>Savourer des moments simples</li>
+        </ul>
+        <p class="text-ocean font-medium pt-4">
+          Ici, on ne court pas.<br>
+          On prend le temps.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 5: Pourquoi le nom Maréa -->
+<section class="py-16 md:py-24 px-6 bg-sable/20">
+  <div class="max-w-3xl mx-auto text-center space-y-8">
+    <div class="midcentury-line mx-auto"></div>
+    <h2 class="font-display text-3xl md:text-5xl text-ocean">
+      Pourquoi le nom<br><span class="italic text-sunset-orange">Maréa</span>
+    </h2>
+    <div class="space-y-6 text-ocean/70 text-lg leading-relaxed">
+      <p>
+        Maréa évoque la marée, le mouvement naturel du Bassin,<br>
+        le lien permanent entre la terre et l'océan.
+      </p>
+      <p>
+        Mais aussi une invitation à vivre au rythme de la nature,<br>
+        à laisser les journées s'écouler doucement.
+      </p>
+      <p class="text-xl text-ocean font-medium">
+        C'est un nom doux, lumineux, qui nous ressemble.<br>
+        Et qui raconte ce lieu mieux que de longs discours.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Section 6: Nous avons hâte -->
+<section class="py-16 md:py-24 px-6 bg-blanc">
+  <div class="max-w-3xl mx-auto text-center space-y-8">
+    <h2 class="font-display text-3xl md:text-5xl text-ocean leading-tight">
+      Nous avons hâte<br>de vous accueillir
+    </h2>
+    <p class="text-lg text-ocean/70 leading-relaxed max-w-2xl mx-auto">
+      Si vous êtes arrivés jusqu'ici, c'est peut-être que vous recherchez plus qu'un simple hébergement.<br>
+      <strong class="text-ocean">Un endroit où l'on se sent bien, vraiment.</strong>
+    </p>
+    <p class="text-ocean/70 leading-relaxed">
+      Nous serons ravis de vous accueillir à Maréa,<br>
+      et de vous faire découvrir ce coin de Bassin que nous aimons tant.
+    </p>
+
+    <!-- Phrase signature -->
+    <div class="pt-8 mt-8 border-t border-sable">
+      <p class="font-display text-2xl md:text-3xl text-ocean/60 italic leading-relaxed">
+        Maréa n'est pas une destination.<br>
+        C'est une parenthèse.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CTAs finaux -->
+<section class="py-12 md:py-16 px-6 bg-sable/20">
+  <div class="max-w-4xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-6">
+      <a href="lodge.html" class="group bg-blanc p-8 hover:shadow-lg transition-all duration-300">
+        <p class="text-sunset-orange font-sans text-xs tracking-[0.2em] mb-4">JUSQU'À 12 PERSONNES</p>
+        <h3 class="font-display text-2xl text-ocean mb-4 group-hover:text-sunset-orange transition-colors">
+          Découvrir<br>Le Grand Lodge
+        </h3>
+        <span class="inline-flex items-center text-sm text-ocean/60 group-hover:text-sunset-orange transition-colors">
+          En savoir plus
+          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </span>
+      </a>
+
+      <a href="thenest.html" class="group bg-blanc p-8 hover:shadow-lg transition-all duration-300">
+        <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-4">STUDIO COSY 2-4 PERS</p>
+        <h3 class="font-display text-2xl text-ocean mb-4 group-hover:text-turquoise transition-colors">
+          Découvrir<br>The Nest
+        </h3>
+        <span class="inline-flex items-center text-sm text-ocean/60 group-hover:text-turquoise transition-colors">
+          En savoir plus
+          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-12 md:py-16 px-6 bg-ocean border-t border-blanc/10">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12">
+      <div class="col-span-2">
+        <div class="flex items-center gap-3 mb-6">
+          <svg class="w-10 h-10" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M25 8 A 17 17 0 0 1 42 25 H 8 A 17 17 0 0 1 25 8" fill="#F4C430"/>
+            <path d="M25 12 A 13 13 0 0 1 38 25 H 12 A 13 13 0 0 1 25 12" fill="#F28C28"/>
+            <path d="M25 18 A 7 7 0 0 1 32 25 H 18 A 7 7 0 0 1 25 18" fill="#8B4513"/>
+            <line x1="5" y1="25" x2="45" y2="25" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+            <line x1="7" y1="30" x2="43" y2="30" stroke="white" stroke-width="1.8" stroke-linecap="round" opacity="0.6"/>
+            <line x1="10" y1="35" x2="40" y2="35" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+            <line x1="14" y1="40" x2="36" y2="40" stroke="white" stroke-width="1.2" stroke-linecap="round" opacity="0.2"/>
+          </svg>
+          <span class="font-display text-xl italic font-semibold text-blanc" style="letter-spacing: -1px;">marea</span>
+        </div>
+        <p class="text-blanc/60 text-sm leading-relaxed max-w-sm font-light mb-6">
+          Surf lodge au Bassin d'Arcachon. Le Grand Lodge & The Nest à Petit Piquey, Cap Ferret.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-blanc font-sans text-sm tracking-wider mb-4">NAVIGATION</h4>
+        <ul class="space-y-2">
+          <li><a href="index.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Accueil</a></li>
+          <li><a href="lodge.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Le Grand Lodge</a></li>
+          <li><a href="thenest.html" class="text-blanc/60 hover:text-turquoise transition-colors text-sm">The Nest</a></li>
+          <li><a href="reserver.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Réserver</a></li>
+          <li><a href="contact.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Contact</a></li>
+          <li><a href="pourquoi-marea.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Qui sommes-nous</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-blanc font-sans text-sm tracking-wider mb-4">CONTACT</h4>
+        <ul class="space-y-2 text-sm text-blanc/60">
+          <li>3 rue Berthelot</li>
+          <li>33950 Lège-Cap-Ferret</li>
+          <li class="pt-2">
+            <a href="mailto:contact@mareaferret.com" class="hover:text-sunset-orange transition-colors">contact@mareaferret.com</a>
+          </li>
+          <li>
+            <a href="tel:+33676886769" class="hover:text-sunset-orange transition-colors">+33 6 76 88 67 69</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-blanc/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-blanc/40 text-sm">© 2025 Maréa – Tous droits réservés</p>
+      <p class="text-blanc/40 text-xs">Le Grand Lodge et The Nest à Petit Piquey, Cap Ferret</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
