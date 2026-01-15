@@ -112,16 +112,24 @@
 
     <!-- Desktop Navigation -->
     <div class="hidden lg:flex items-center gap-6">
-      <a href="index.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">HOME</a>
-      <a href="lodge.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">THE LODGE</a>
-      <a href="thenest.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-turquoise transition-colors">THE NEST</a>
-      <a href="reserver.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">BOOK</a>
-      <a href="contact.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">CONTACT</a>
-      <span class="text-sable/30">|</span>
+      <a href="index-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">HOME</a>
+      <a href="lodge-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">THE LODGE</a>
+      <a href="thenest-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-turquoise transition-colors">THE NEST</a>
+      <a href="reserver-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">BOOK</a>
+      <a href="contact-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">CONTACT</a>
       <a href="pourquoi-marea-en.html" class="nav-link font-sans text-sm tracking-wider font-medium text-sunset-orange">ABOUT US</a>
-      <span class="text-sable/30">|</span>
+      <span class="text-sable">|</span>
       <a href="pourquoi-marea.html" class="font-sans text-sm tracking-wider font-light hover:text-sunset-orange transition-colors">FR</a>
+      <a href="reserver-en.html" class="ml-2 bg-sunset-orange text-white px-5 py-2.5 font-sans text-sm tracking-wider font-semibold hover:bg-sunset-orange/90 transition-all cta-pulse">
+        BOOK
+      </a>
     </div>
+
+    <!-- Mobile Menu Button -->
+    <div class="flex items-center gap-3 lg:hidden">
+      <a href="reserver-en.html" class="bg-sunset-orange text-white px-4 py-2 font-sans text-xs tracking-wider font-semibold">
+        BOOK
+      </a>
 
     <!-- Mobile Menu Button -->
     <div class="flex items-center gap-3 lg:hidden">
@@ -130,21 +138,24 @@
       </a>
       <button id="menuBtn" class="p-2 text-ocean" aria-label="Menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
-    </div>
-  </div>
-</nav>
 
-<!-- Mobile Menu -->
+<!-- Mobile Menu (outside nav for proper z-index) -->
 <div id="mobileMenu" class="mobile-menu fixed inset-0 top-[57px] z-[100] lg:hidden bg-blanc">
   <div class="flex flex-col items-center justify-center h-full gap-8 bg-blanc">
-    <a href="index.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">HOME</a>
-    <a href="lodge.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">THE LODGE</a>
-    <a href="thenest.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-turquoise transition-colors">THE NEST</a>
-    <a href="contact.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">CONTACT</a>
+    <a href="index-en.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">HOME</a>
+    <a href="lodge-en.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">THE LODGE</a>
+    <a href="thenest-en.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-turquoise transition-colors">THE NEST</a>
+    <a href="reserver-en.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">BOOK</a>
+    <a href="contact-en.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">CONTACT</a>
     <a href="pourquoi-marea-en.html" class="font-sans text-xl tracking-wider font-medium text-sunset-orange">ABOUT US</a>
+    <div class="border-t border-sable pt-8 mt-4 w-32 text-center">
+      <a href="pourquoi-marea.html" class="font-sans text-sm tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">FRANÇAIS</a>
+    </div>
+    <a href="reserver-en.html" class="bg-sunset-orange text-white px-6 py-3 font-sans text-sm tracking-wider font-semibold">
+      BOOK
+    </a>
+  </div>
+</div>
     <div class="border-t border-sable pt-8 mt-4 w-40 text-center">
       <a href="pourquoi-marea.html" class="font-sans text-base tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">FRANÇAIS</a>
     </div>
@@ -428,12 +439,15 @@
               <line x1="-85" y1="12" x2="85" y2="12" stroke="#E8DCC8" stroke-width="2.5" stroke-linecap="round"/>
               <line x1="-70" y1="24" x2="70" y2="24" stroke="#D4C5B0" stroke-width="2.5" stroke-linecap="round"/>
               <line x1="-50" y1="36" x2="50" y2="36" stroke="#F8F6F3" stroke-width="2.5" stroke-linecap="round"/>
-            </g>
-            <text x="150" y="170" font-family="Georgia, serif" font-size="72" font-style="italic" font-weight="600" fill="#F8F6F3" text-anchor="middle" letter-spacing="-2">marea</text>
-            <text x="150" y="200" font-family="Montserrat, sans-serif" font-size="16" font-weight="500" fill="#D4C5B0" text-anchor="middle" letter-spacing="3">PIQUEY · CAP FERRET</text>
-          </svg>
-        </div>
-        <p class="text-blanc/60 text-sm leading-relaxed max-w-sm font-light mb-6">
+        <h4 class="text-blanc font-sans text-sm tracking-wider mb-4">NAVIGATION</h4>
+        <ul class="space-y-2">
+          <li><a href="index-en.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Home</a></li>
+          <li><a href="lodge-en.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Le Grand Lodge</a></li>
+          <li><a href="thenest-en.html" class="text-blanc/60 hover:text-turquoise transition-colors text-sm">The Nest</a></li>
+          <li><a href="reserver-en.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Book</a></li>
+          <li><a href="contact-en.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Contact</a></li>
+          <li><a href="pourquoi-marea-en.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">About Us</a></li>
+        </ul>
           Vacation rental at Cap Ferret. Le Grand Lodge & The Nest in Petit Piquey, Bassin d'Arcachon.
         </p>
       </div>
