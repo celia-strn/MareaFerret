@@ -126,6 +126,16 @@
     <div class="flex items-center gap-3 lg:hidden">
       <a href="reserver-en.html" class="bg-sunset-orange text-white px-4 py-2 font-sans text-xs tracking-wider font-semibold">
         BOOK
+      </a>
+      <button id="menuBtn" class="p-2 text-ocean" aria-label="Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+</nav>
 
 <!-- Mobile Menu (outside nav for proper z-index) -->
 <div id="mobileMenu" class="mobile-menu fixed inset-0 top-[57px] z-[100] lg:hidden bg-blanc">
@@ -144,18 +154,6 @@
     </a>
   </div>
 </div>
-  <div id="mobileMenu" class="mobile-menu fixed inset-0 top-[65px] z-40 md:hidden" style="background-color: #FFFEF9;">
-    <div class="flex flex-col items-center justify-center h-full gap-8">
-      <a href="index-en.html" class="font-sans text-lg tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">HOME</a>
-      <a href="lodge-en.html" class="font-sans text-lg tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">THE LODGE</a>
-      <a href="thenest-en.html" class="font-sans text-lg tracking-wider font-medium text-ocean hover:text-turquoise transition-colors">THE NEST</a>
-      <a href="contact-en.html" class="font-sans text-lg tracking-wider font-medium text-sunset-orange">CONTACT</a>
-      <div class="border-t border-sable pt-8 mt-4 w-32 text-center">
-        <a href="contact.html" class="font-sans text-sm tracking-wider font-medium text-navy hover:text-sunset-orange transition-colors">FRENCH</a>
-      </div>
-    </div>
-  </div>
-</nav>
 
 <script>
   const menuBtn = document.getElementById('menuBtn');
