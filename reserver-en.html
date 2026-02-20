@@ -15,7 +15,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <!-- Flatpickr Calendar - Preload for faster loading -->
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" as="style">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
@@ -25,25 +25,25 @@
       theme: {
         extend: {
           colors: {
-            'ocean': '#2C4A62',
-            'ocean-dark': '#1A3B5C',
-            'sunset-cream': '#FFF8E7',
-            'sunset-yellow': '#F4C430',
-            'sunset-orange': '#F28C28',
-            'brun': '#8B4513',
-            'sable': '#E8DCC8',
-            'sable-dark': '#C4A574',
-            'sable-medium': '#D4B594',
-            'blanc': '#F8F6F3',
-            'taupe': '#8B7355',
-            'turquoise': '#4EC3C7',
-            'turquoise-dark': '#2FA4A9',
-            'turquoise-light': '#6ED4D8',
-            'turquoise-pastel': '#A8E6E9',
+            'navy': '#1E3A5F',
+            'navy-dark': '#152D4A',
+            'sand-light': '#FAF7F0',
+            'ocean-accent': '#005F9A',
+            'terra': '#C3785A',
+            'terra-dark': '#A66B4D',
+            'sand': '#F5EFE0',
+            'warm-gray': '#E8E4DD',
+            'terra-light': '#F5EDEA',
+            'offwhite': '#FAFAF7',
+            'text-light': '#5A7A96',
+            'ocean': '#005F9A',
+            'ocean-dark': '#004A78',
+            'ocean-light': '#3A8BC2',
+            'ocean-pastel': '#B8D4E8',
           },
           fontFamily: {
-            'display': ['Georgia', 'serif'],
-            'sans': ['Montserrat', 'system-ui', 'sans-serif'],
+            'display': ['Playfair Display', 'Georgia', 'serif'],
+            'sans': ['DM Sans', 'system-ui', 'sans-serif'],
           }
         }
       }
@@ -62,7 +62,7 @@
       left: 0;
       width: 0;
       height: 2px;
-      background: #F28C28;
+      background: #C3785A;
       transition: width 0.3s ease;
     }
     .nav-link:hover::after {
@@ -72,7 +72,7 @@
     .midcentury-line {
       width: 60px;
       height: 2px;
-      background: linear-gradient(90deg, #F28C28, #4EC3C7);
+      background: linear-gradient(90deg, #C3785A, #005F9A);
     }
 
     /* Mobile menu */
@@ -89,30 +89,30 @@
       animation: pulse 2s infinite;
     }
     @keyframes pulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(242, 140, 40, 0.4); }
-      50% { box-shadow: 0 0 0 10px rgba(242, 140, 40, 0); }
+      0%, 100% { box-shadow: 0 0 0 0 rgba(195, 120, 90, 0.4); }
+      50% { box-shadow: 0 0 0 10px rgba(195, 120, 90, 0); }
     }
 
     /* Flatpickr Custom Styles */
     .flatpickr-calendar {
       font-family: 'Montserrat', sans-serif;
-      border: 1px solid #E8DCC8;
+      border: 1px solid #F5EFE0;
       box-shadow: 0 4px 20px rgba(44, 74, 98, 0.1);
     }
     .flatpickr-day.selected,
     .flatpickr-day.startRange,
     .flatpickr-day.endRange {
-      background: #F28C28 !important;
-      border-color: #F28C28 !important;
+      background: #C3785A !important;
+      border-color: #C3785A !important;
     }
     .flatpickr-day.inRange {
-      background: rgba(242, 140, 40, 0.2) !important;
+      background: rgba(195, 120, 90, 0.2) !important;
       border-color: transparent !important;
       box-shadow: none !important;
     }
     .flatpickr-day:hover {
-      background: #E8DCC8 !important;
-      border-color: #E8DCC8 !important;
+      background: #F5EFE0 !important;
+      border-color: #F5EFE0 !important;
     }
     .flatpickr-day.disabled,
     .flatpickr-day.disabled:hover {
@@ -133,7 +133,7 @@
       cursor: not-allowed;
     }
     .flatpickr-months .flatpickr-month {
-      background: #2C4A62;
+      background: #1E3A5F;
       color: white;
     }
     .flatpickr-current-month .flatpickr-monthDropdown-months,
@@ -142,10 +142,10 @@
       font-weight: 500;
     }
     .flatpickr-weekdays {
-      background: #F8F6F3;
+      background: #FAFAF7;
     }
     span.flatpickr-weekday {
-      color: #2C4A62;
+      color: #1E3A5F;
       font-weight: 500;
     }
     .flatpickr-months .flatpickr-prev-month,
@@ -154,7 +154,7 @@
     }
     .flatpickr-months .flatpickr-prev-month:hover,
     .flatpickr-months .flatpickr-next-month:hover {
-      fill: #F28C28;
+      fill: #C3785A;
     }
 
     /* Calendar Legend */
@@ -162,7 +162,7 @@
       display: flex;
       gap: 16px;
       font-size: 12px;
-      color: #2C4A62;
+      color: #1E3A5F;
     }
     .legend-item {
       display: flex;
@@ -174,8 +174,8 @@
       height: 12px;
       border-radius: 2px;
     }
-    .legend-available { background: white; border: 1px solid #E8DCC8; }
-    .legend-selected { background: #F28C28; }
+    .legend-available { background: white; border: 1px solid #F5EFE0; }
+    .legend-selected { background: #C3785A; }
     .legend-booked {
       background: repeating-linear-gradient(
         45deg,
@@ -188,46 +188,37 @@
     }
   </style>
 </head>
-<body class="font-sans text-ocean bg-blanc">
+<body class="font-sans text-navy bg-offwhite">
 
 <!-- Navigation -->
-<nav class="fixed top-0 left-0 right-0 z-50 bg-blanc/95 backdrop-blur-sm border-b border-sable/20">
+<nav class="fixed top-0 left-0 right-0 z-50 bg-offwhite/95 backdrop-blur-sm border-b border-sand/20">
   <div class="max-w-6xl mx-auto px-4 md:px-6 py-3 md:py-4 flex justify-between items-center">
     <!-- Logo -->
-    <a href="index-en.html" class="flex items-center gap-2 md:gap-3">
-      <svg class="w-10 h-10 md:w-12 md:h-12" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M25 8 A 17 17 0 0 1 42 25 H 8 A 17 17 0 0 1 25 8" fill="#F4C430"/>
-        <path d="M25 12 A 13 13 0 0 1 38 25 H 12 A 13 13 0 0 1 25 12" fill="#F28C28"/>
-        <path d="M25 18 A 7 7 0 0 1 32 25 H 18 A 7 7 0 0 1 25 18" fill="#8B4513"/>
-        <line x1="5" y1="25" x2="45" y2="25" stroke="#8B4513" stroke-width="2" stroke-linecap="round"/>
-        <line x1="7" y1="30" x2="43" y2="30" stroke="#C4A574" stroke-width="1.8" stroke-linecap="round"/>
-        <line x1="10" y1="35" x2="40" y2="35" stroke="#D4B594" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="14" y1="40" x2="36" y2="40" stroke="#E8DCC8" stroke-width="1.2" stroke-linecap="round"/>
-      </svg>
-      <span class="font-display text-xl md:text-2xl italic font-semibold text-ocean" style="letter-spacing: -1px;">marea</span>
+    <a href="index-en.html" class="flex items-center">
+      <img src="images/logo-bicolor.png" alt="Marea" class="h-10 md:h-12 w-auto">
     </a>
 
     <!-- Desktop Navigation -->
     <div class="hidden lg:flex items-center gap-6">
-      <a href="index-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">HOME</a>
-      <a href="lodge-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">THE LODGE</a>
-      <a href="thenest-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-turquoise transition-colors">THE NEST</a>
-      <a href="reserver-en.html" class="nav-link font-sans text-sm tracking-wider font-medium text-sunset-orange">BOOK</a>
-      <a href="contact-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">CONTACT</a>
-      <a href="pourquoi-marea-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">ABOUT US</a>
-      <span class="text-sable">|</span>
-      <a href="reserver.html" class="font-sans text-sm tracking-wider font-light hover:text-sunset-orange transition-colors">FR</a>
-      <a href="reserver-en.html" class="ml-2 bg-sunset-orange text-white px-5 py-2.5 font-sans text-sm tracking-wider font-semibold hover:bg-sunset-orange/90 transition-all cta-pulse">
+      <a href="index-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-terra transition-colors">HOME</a>
+      <a href="lodge-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-terra transition-colors">THE LODGE</a>
+      <a href="thenest-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-ocean transition-colors">THE NEST</a>
+      <a href="reserver-en.html" class="nav-link font-sans text-sm tracking-wider font-medium text-terra">BOOK</a>
+      <a href="contact-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-terra transition-colors">CONTACT</a>
+      <a href="pourquoi-marea-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-terra transition-colors">ABOUT US</a>
+      <span class="text-sand">|</span>
+      <a href="reserver.html" class="font-sans text-sm tracking-wider font-light hover:text-terra transition-colors">FR</a>
+      <a href="reserver-en.html" class="ml-2 bg-terra text-white px-5 py-2.5 font-sans text-sm tracking-wider font-semibold hover:bg-terra/90 transition-all cta-pulse">
         BOOK
       </a>
     </div>
 
     <!-- Mobile Menu Button -->
     <div class="flex items-center gap-3 lg:hidden">
-      <a href="reserver-en.html" class="bg-sunset-orange text-white px-4 py-2 font-sans text-xs tracking-wider font-semibold">
+      <a href="reserver-en.html" class="bg-terra text-white px-4 py-2 font-sans text-xs tracking-wider font-semibold">
         BOOK
       </a>
-      <button id="menuBtn" class="p-2 text-ocean" aria-label="Menu">
+      <button id="menuBtn" class="p-2 text-navy" aria-label="Menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
@@ -238,18 +229,18 @@
 </nav>
 
 <!-- Mobile Menu (outside nav for proper z-index) -->
-<div id="mobileMenu" class="mobile-menu fixed inset-0 top-[57px] z-[100] lg:hidden bg-blanc">
-  <div class="flex flex-col items-center justify-center h-full gap-8 bg-blanc">
-    <a href="index-en.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">HOME</a>
-    <a href="lodge-en.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">THE LODGE</a>
-    <a href="thenest-en.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-turquoise transition-colors">THE NEST</a>
-    <a href="reserver-en.html" class="font-sans text-xl tracking-wider font-medium text-sunset-orange">BOOK</a>
-    <a href="contact-en.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">CONTACT</a>
-    <a href="pourquoi-marea-en.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">ABOUT US</a>
-    <div class="border-t border-sable pt-8 mt-4 w-32 text-center">
-      <a href="reserver.html" class="font-sans text-sm tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">FRANÇAIS</a>
+<div id="mobileMenu" class="mobile-menu fixed inset-0 top-[57px] z-[100] lg:hidden bg-offwhite">
+  <div class="flex flex-col items-center justify-center h-full gap-8 bg-offwhite">
+    <a href="index-en.html" class="font-sans text-xl tracking-wider font-medium text-navy hover:text-terra transition-colors">HOME</a>
+    <a href="lodge-en.html" class="font-sans text-xl tracking-wider font-medium text-navy hover:text-terra transition-colors">THE LODGE</a>
+    <a href="thenest-en.html" class="font-sans text-xl tracking-wider font-medium text-navy hover:text-ocean transition-colors">THE NEST</a>
+    <a href="reserver-en.html" class="font-sans text-xl tracking-wider font-medium text-terra">BOOK</a>
+    <a href="contact-en.html" class="font-sans text-xl tracking-wider font-medium text-navy hover:text-terra transition-colors">CONTACT</a>
+    <a href="pourquoi-marea-en.html" class="font-sans text-xl tracking-wider font-medium text-navy hover:text-terra transition-colors">ABOUT US</a>
+    <div class="border-t border-sand pt-8 mt-4 w-32 text-center">
+      <a href="reserver.html" class="font-sans text-sm tracking-wider font-medium text-navy hover:text-terra transition-colors">FRANÇAIS</a>
     </div>
-    <a href="reserver-en.html" class="bg-sunset-orange text-white px-6 py-3 font-sans text-sm tracking-wider font-semibold">
+    <a href="reserver-en.html" class="bg-terra text-white px-6 py-3 font-sans text-sm tracking-wider font-semibold">
       BOOK
     </a>
   </div>
@@ -278,31 +269,31 @@
 </script>
 
 <!-- Header -->
-<section class="pt-28 pb-12 md:pt-36 md:pb-16 px-6 bg-blanc">
+<section class="pt-28 pb-12 md:pt-36 md:pb-16 px-6 bg-offwhite">
   <div class="max-w-4xl mx-auto text-center">
     <div class="midcentury-line mx-auto mb-8"></div>
-    <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-4">AVAILABILITY & BOOKING</p>
-    <h1 class="font-display italic text-4xl md:text-6xl text-ocean leading-tight mb-6">
+    <p class="text-ocean font-sans text-xs tracking-[0.2em] mb-4">AVAILABILITY & BOOKING</p>
+    <h1 class="font-display italic text-4xl md:text-6xl text-navy leading-tight mb-6">
       Book your stay
     </h1>
-    <p class="text-base md:text-lg text-ocean/70 leading-relaxed max-w-2xl mx-auto font-light">
+    <p class="text-base md:text-lg text-navy/70 leading-relaxed max-w-2xl mx-auto font-light">
       Check availability and send us your booking request. We respond within 24 hours.
     </p>
   </div>
 </section>
 
 <!-- Section Réservation -->
-<section class="py-12 md:py-16 px-6 bg-sable/20">
+<section class="py-12 md:py-16 px-6 bg-sand/20">
   <div class="max-w-5xl mx-auto">
     <div class="grid lg:grid-cols-2 gap-8">
       <!-- Calendrier visuel -->
-      <div class="bg-blanc p-6 border border-sable/50">
-        <h2 class="font-display italic text-xl text-ocean mb-4">Availability</h2>
+      <div class="bg-offwhite p-6 border border-sand/50">
+        <h2 class="font-display italic text-xl text-navy mb-4">Availability</h2>
 
         <!-- Sélecteur de propriété pour le calendrier -->
         <div class="mb-4">
-          <label class="block text-sm font-medium text-ocean/70 mb-2">View availability for :</label>
-          <select id="calendarProperty" class="w-full px-4 py-3 border border-sable bg-white text-ocean text-sm focus:outline-none focus:border-sunset-orange">
+          <label class="block text-sm font-medium text-navy/70 mb-2">View availability for :</label>
+          <select id="calendarProperty" class="w-full px-4 py-3 border border-sand bg-white text-navy text-sm focus:outline-none focus:border-terra">
             <option value="lodge">The Grand Lodge (12 pers.)</option>
             <option value="nest">The Nest (4 pers.)</option>
           </select>
@@ -310,8 +301,8 @@
 
         <!-- Calendrier Flatpickr -->
         <div id="calendarContainer" class="mb-4">
-          <div id="calendarLoader" class="text-center py-8 text-ocean/60">
-            <svg class="animate-spin h-8 w-8 mx-auto mb-3 text-sunset-orange" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <div id="calendarLoader" class="text-center py-8 text-navy/60">
+            <svg class="animate-spin h-8 w-8 mx-auto mb-3 text-terra" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
               <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
               <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
             </svg>
@@ -337,14 +328,14 @@
       </div>
 
       <!-- Formulaire de réservation -->
-      <div class="bg-blanc p-6 border border-sable/50">
-        <h2 class="font-display italic text-xl text-ocean mb-4">Your request</h2>
+      <div class="bg-offwhite p-6 border border-sand/50">
+        <h2 class="font-display italic text-xl text-navy mb-4">Your request</h2>
 
         <form id="quickBookingForm" class="space-y-4">
           <!-- Accommodation -->
           <div>
-            <label class="block text-sm font-medium text-ocean/70 mb-2">Accommodation</label>
-            <select id="property" class="w-full px-4 py-3 border border-sable bg-white text-ocean text-sm focus:outline-none focus:border-sunset-orange">
+            <label class="block text-sm font-medium text-navy/70 mb-2">Accommodation</label>
+            <select id="property" class="w-full px-4 py-3 border border-sand bg-white text-navy text-sm focus:outline-none focus:border-terra">
               <option value="The Grand Lodge (12 pers.)">The Grand Lodge (12 pers.)</option>
               <option value="The Nest (4 pers.)">The Nest (4 pers.)</option>
               <option value="Lodge + Nest (16 pers.)">Both (16 pers.)</option>
@@ -354,20 +345,20 @@
           <!-- Dates -->
           <div class="grid grid-cols-2 gap-4">
             <div>
-              <label class="block text-sm font-medium text-ocean/70 mb-2">Check-in</label>
-              <input type="text" id="checkin" placeholder="Select" readonly class="w-full px-4 py-3 border border-sable bg-white text-ocean text-sm focus:outline-none focus:border-sunset-orange cursor-pointer">
+              <label class="block text-sm font-medium text-navy/70 mb-2">Check-in</label>
+              <input type="text" id="checkin" placeholder="Select" readonly class="w-full px-4 py-3 border border-sand bg-white text-navy text-sm focus:outline-none focus:border-terra cursor-pointer">
             </div>
             <div>
-              <label class="block text-sm font-medium text-ocean/70 mb-2">Check-out</label>
-              <input type="text" id="checkout" placeholder="Select" readonly class="w-full px-4 py-3 border border-sable bg-white text-ocean text-sm focus:outline-none focus:border-sunset-orange cursor-pointer">
+              <label class="block text-sm font-medium text-navy/70 mb-2">Check-out</label>
+              <input type="text" id="checkout" placeholder="Select" readonly class="w-full px-4 py-3 border border-sand bg-white text-navy text-sm focus:outline-none focus:border-terra cursor-pointer">
             </div>
           </div>
 
           <!-- Guests : Adults + Children -->
           <div class="grid grid-cols-2 gap-4">
             <div>
-              <label class="block text-sm font-medium text-ocean/70 mb-2">Adults</label>
-              <select id="adults" class="w-full px-4 py-3 border border-sable bg-white text-ocean text-sm focus:outline-none focus:border-sunset-orange">
+              <label class="block text-sm font-medium text-navy/70 mb-2">Adults</label>
+              <select id="adults" class="w-full px-4 py-3 border border-sand bg-white text-navy text-sm focus:outline-none focus:border-terra">
                 <option value="1">1 adult</option>
                 <option value="2" selected>2 adults</option>
                 <option value="3">3 adults</option>
@@ -383,8 +374,8 @@
               </select>
             </div>
             <div>
-              <label class="block text-sm font-medium text-ocean/70 mb-2">Children</label>
-              <select id="children" class="w-full px-4 py-3 border border-sable bg-white text-ocean text-sm focus:outline-none focus:border-sunset-orange">
+              <label class="block text-sm font-medium text-navy/70 mb-2">Children</label>
+              <select id="children" class="w-full px-4 py-3 border border-sand bg-white text-navy text-sm focus:outline-none focus:border-terra">
                 <option value="0" selected>0 child</option>
                 <option value="1">1 child</option>
                 <option value="2">2 childs</option>
@@ -397,20 +388,20 @@
           </div>
 
           <!-- Résumé de la sélection -->
-          <div id="bookingSummary" class="hidden bg-sable/30 p-4 border border-sunset-orange/30 text-sm">
-            <p class="font-medium text-ocean mb-2">Summary :</p>
-            <p id="summaryText" class="text-ocean/70"></p>
+          <div id="bookingSummary" class="hidden bg-sand/30 p-4 border border-terra/30 text-sm">
+            <p class="font-medium text-navy mb-2">Summary :</p>
+            <p id="summaryText" class="text-navy/70"></p>
           </div>
 
           <!-- CTAs -->
           <div class="space-y-3 pt-2">
-            <button type="button" id="whatsappBtn" class="w-full inline-flex items-center justify-center bg-sunset-orange text-white px-6 py-4 font-sans text-sm tracking-wider font-semibold hover:bg-sunset-orange/90 transition-all">
+            <button type="button" id="whatsappBtn" class="w-full inline-flex items-center justify-center bg-terra text-white px-6 py-4 font-sans text-sm tracking-wider font-semibold hover:bg-terra/90 transition-all">
               <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
               </svg>
               SEND VIA WHATSAPP
             </button>
-            <button type="button" id="emailBtn" class="w-full inline-flex items-center justify-center border-2 border-ocean text-ocean px-6 py-4 font-sans text-sm tracking-wider font-medium hover:bg-ocean hover:text-white transition-all">
+            <button type="button" id="emailBtn" class="w-full inline-flex items-center justify-center border-2 border-navy text-navy px-6 py-4 font-sans text-sm tracking-wider font-medium hover:bg-navy hover:text-white transition-all">
               <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
               </svg>
@@ -420,16 +411,16 @@
         </form>
 
         <!-- Indicative rates -->
-        <div class="mt-6 pt-4 border-t border-sable/50">
-          <p class="text-xs text-ocean/50 mb-3">Indicative rates (per season)</p>
+        <div class="mt-6 pt-4 border-t border-sand/50">
+          <p class="text-xs text-navy/50 mb-3">Indicative rates (per season)</p>
           <div class="grid grid-cols-2 gap-3 text-sm">
             <div>
-              <p class="font-medium text-ocean">The Grand Lodge</p>
-              <p class="text-sunset-orange text-xs">from 500€/night</p>
+              <p class="font-medium text-navy">The Grand Lodge</p>
+              <p class="text-terra text-xs">from 500€/night</p>
             </div>
             <div>
-              <p class="font-medium text-ocean">The Nest</p>
-              <p class="text-turquoise text-xs">from 100€/night</p>
+              <p class="font-medium text-navy">The Nest</p>
+              <p class="text-ocean text-xs">from 100€/night</p>
             </div>
           </div>
         </div>
@@ -439,162 +430,150 @@
 </section>
 
 <!-- Section Réassurance -->
-<section class="py-12 md:py-16 px-6 bg-blanc">
+<section class="py-12 md:py-16 px-6 bg-offwhite">
   <div class="max-w-5xl mx-auto">
     <div class="text-center mb-10">
-      <h2 class="font-display italic text-2xl md:text-3xl text-ocean">Direct booking, simple and secure</h2>
+      <h2 class="font-display italic text-2xl md:text-3xl text-navy">Direct booking, simple and secure</h2>
     </div>
 
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
       <!-- Response 24h -->
       <div class="text-center">
-        <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center bg-sunset-orange/10 rounded-full">
-          <svg class="w-7 h-7 text-sunset-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center bg-terra/10 rounded-full">
+          <svg class="w-7 h-7 text-terra" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
           </svg>
         </div>
-        <p class="font-semibold text-ocean text-sm md:text-base">Response within 24h</p>
-        <p class="text-xs text-ocean/60 mt-1">Fast confirmation</p>
+        <p class="font-semibold text-navy text-sm md:text-base">Response within 24h</p>
+        <p class="text-xs text-navy/60 mt-1">Fast confirmation</p>
       </div>
 
       <!-- Contract -->
       <div class="text-center">
-        <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center bg-turquoise/10 rounded-full">
-          <svg class="w-7 h-7 text-turquoise" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center bg-ocean/10 rounded-full">
+          <svg class="w-7 h-7 text-ocean" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
           </svg>
         </div>
-        <p class="font-semibold text-ocean text-sm md:text-base">Secure contract</p>
-        <p class="text-xs text-ocean/60 mt-1">Direct rental</p>
+        <p class="font-semibold text-navy text-sm md:text-base">Secure contract</p>
+        <p class="text-xs text-navy/60 mt-1">Direct rental</p>
       </div>
 
       <!-- Payment -->
       <div class="text-center">
-        <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center bg-sunset-orange/10 rounded-full">
-          <svg class="w-7 h-7 text-sunset-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center bg-terra/10 rounded-full">
+          <svg class="w-7 h-7 text-terra" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
           </svg>
         </div>
-        <p class="font-semibold text-ocean text-sm md:text-base">Secure payment</p>
-        <p class="text-xs text-ocean/60 mt-1">Bank transfer or card</p>
+        <p class="font-semibold text-navy text-sm md:text-base">Secure payment</p>
+        <p class="text-xs text-navy/60 mt-1">Bank transfer or card</p>
       </div>
 
       <!-- Cancellation -->
       <div class="text-center">
-        <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center bg-turquoise/10 rounded-full">
-          <svg class="w-7 h-7 text-turquoise" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center bg-ocean/10 rounded-full">
+          <svg class="w-7 h-7 text-ocean" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
           </svg>
         </div>
-        <p class="font-semibold text-ocean text-sm md:text-base">Flexible conditions</p>
-        <p class="text-xs text-ocean/60 mt-1">Clear cancellation</p>
+        <p class="font-semibold text-navy text-sm md:text-base">Flexible conditions</p>
+        <p class="text-xs text-navy/60 mt-1">Clear cancellation</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Section Nos Maisons -->
-<section class="py-12 md:py-16 px-6 bg-sable/20">
+<section class="py-12 md:py-16 px-6 bg-sand/20">
   <div class="max-w-5xl mx-auto">
     <div class="text-center mb-10">
-      <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-4">OUR ACCOMMODATIONS</p>
-      <h2 class="font-display italic text-2xl md:text-3xl text-ocean">Discover our houses</h2>
+      <p class="text-ocean font-sans text-xs tracking-[0.2em] mb-4">OUR ACCOMMODATIONS</p>
+      <h2 class="font-display italic text-2xl md:text-3xl text-navy">Discover our houses</h2>
     </div>
 
     <div class="grid md:grid-cols-2 gap-6">
       <!-- Lodge Card Mini -->
-      <a href="lodge-en.html" class="group bg-blanc border border-sable/30 overflow-hidden hover:border-sunset-orange/50 transition-colors">
+      <a href="lodge-en.html" class="group bg-offwhite border border-sand/30 overflow-hidden hover:border-terra/50 transition-colors">
         <div class="aspect-[16/9] overflow-hidden">
           <img src="images/lodge1.jpg" alt="The Grand Lodge" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
         </div>
         <div class="p-5">
-          <h3 class="font-display text-xl text-ocean group-hover:text-sunset-orange transition-colors mb-2">The Grand Lodge</h3>
-          <p class="text-sm text-ocean/70 mb-3">200m² · 5 bedrooms · Jusqu'à 12 guests</p>
+          <h3 class="font-display text-xl text-navy group-hover:text-terra transition-colors mb-2">The Grand Lodge</h3>
+          <p class="text-sm text-navy/70 mb-3">200m² · 5 bedrooms · Jusqu'à 12 guests</p>
           <div class="flex flex-wrap gap-2 text-xs">
-            <span class="bg-sable/50 text-ocean/70 px-2 py-1">Heated pool</span>
-            <span class="bg-sable/50 text-ocean/70 px-2 py-1">Garden 250m²</span>
-            <span class="bg-sable/50 text-ocean/70 px-2 py-1">Single-story</span>
+            <span class="bg-sand/50 text-navy/70 px-2 py-1">Heated pool</span>
+            <span class="bg-sand/50 text-navy/70 px-2 py-1">Garden 250m²</span>
+            <span class="bg-sand/50 text-navy/70 px-2 py-1">Single-story</span>
           </div>
         </div>
       </a>
 
       <!-- Nest Card Mini -->
-      <a href="thenest-en.html" class="group bg-blanc border border-sable/30 overflow-hidden hover:border-turquoise/50 transition-colors">
+      <a href="thenest-en.html" class="group bg-offwhite border border-sand/30 overflow-hidden hover:border-ocean/50 transition-colors">
         <div class="aspect-[16/9] overflow-hidden">
           <img src="images/studio1.jpg" alt="The Nest" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
         </div>
         <div class="p-5">
-          <h3 class="font-display text-xl text-ocean group-hover:text-turquoise transition-colors mb-2">The Nest</h3>
-          <p class="text-sm text-ocean/70 mb-3">Studio indépendant · 2 à 4 guests</p>
+          <h3 class="font-display text-xl text-navy group-hover:text-ocean transition-colors mb-2">The Nest</h3>
+          <p class="text-sm text-navy/70 mb-3">Studio indépendant · 2 à 4 guests</p>
           <div class="flex flex-wrap gap-2 text-xs">
-            <span class="bg-sable/50 text-ocean/70 px-2 py-1">Independent</span>
-            <span class="bg-sable/50 text-ocean/70 px-2 py-1">Cuisine équipée</span>
-            <span class="bg-sable/50 text-ocean/70 px-2 py-1">Terrasse</span>
+            <span class="bg-sand/50 text-navy/70 px-2 py-1">Independent</span>
+            <span class="bg-sand/50 text-navy/70 px-2 py-1">Cuisine équipée</span>
+            <span class="bg-sand/50 text-navy/70 px-2 py-1">Terrasse</span>
           </div>
         </div>
       </a>
     </div>
 
-    <div class="mt-8 p-5 bg-blanc border border-sunset-orange/30 text-center">
-      <p class="text-ocean/80 text-sm">
-        <span class="text-sunset-orange font-semibold">Bon à savoir :</span> Louez Le Lodge + The Nest ensemble pour accueillir jusqu'à <strong>16 guests</strong>.
+    <div class="mt-8 p-5 bg-offwhite border border-terra/30 text-center">
+      <p class="text-navy/80 text-sm">
+        <span class="text-terra font-semibold">Bon à savoir :</span> Louez Le Lodge + The Nest ensemble pour accueillir jusqu'à <strong>16 guests</strong>.
       </p>
     </div>
   </div>
 </section>
 
 <!-- Footer -->
-<footer class="py-12 md:py-16 px-6 bg-ocean border-t border-blanc/10">
+<footer class="py-12 md:py-16 px-6 bg-navy border-t border-blanc/10">
   <div class="max-w-6xl mx-auto">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12">
       <div class="col-span-2">
         <div class="mb-6">
-          <svg class="w-32 h-auto" viewBox="0 0 300 280" xmlns="http://www.w3.org/2000/svg">
-            <g transform="translate(150, 80)">
-              <path d="M -70 0 A 70 70 0 0 1 70 0" fill="#F4C430" stroke="none"/>
-              <path d="M -50 0 A 50 50 0 0 1 50 0" fill="#F28C28" stroke="none"/>
-              <path d="M -25 0 A 25 25 0 0 1 25 0" fill="#8B4513" stroke="none"/>
-              <line x1="-90" y1="0" x2="90" y2="0" stroke="#8B4513" stroke-width="3" stroke-linecap="round"/>
-              <line x1="-85" y1="12" x2="85" y2="12" stroke="#E8DCC8" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="-70" y1="24" x2="70" y2="24" stroke="#D4C5B0" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="-50" y1="36" x2="50" y2="36" stroke="#F8F6F3" stroke-width="2.5" stroke-linecap="round"/>
-            </g>
-            <text x="150" y="170" font-family="Georgia, serif" font-size="72" font-style="italic" font-weight="600" fill="#F8F6F3" text-anchor="middle" letter-spacing="-2">marea</text>
-            <text x="150" y="200" font-family="Montserrat, sans-serif" font-size="16" font-weight="500" fill="#D4C5B0" text-anchor="middle" letter-spacing="3">PIQUEY · CAP FERRET</text>
-          </svg>
+          <img src="images/logo-dark-bg.png" alt="Marea" class="w-32 h-auto">
         </div>
-        <p class="text-blanc/60 text-sm leading-relaxed max-w-sm font-light">
+        <p class="text-offwhite/60 text-sm leading-relaxed max-w-sm font-light">
           Holiday rental in Cap Ferret. Le Grand Lodge & The Nest in Petit Piquey, Arcachon Bay.
         </p>
       </div>
 
       <div>
-        <h4 class="text-blanc font-sans text-sm tracking-wider mb-4">NAVIGATION</h4>
+        <h4 class="text-offwhite font-sans text-sm tracking-wider mb-4">NAVIGATION</h4>
         <ul class="space-y-2">
-          <li><a href="index-en.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Home</a></li>
-          <li><a href="lodge-en.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Le Grand Lodge</a></li>
-          <li><a href="thenest-en.html" class="text-blanc/60 hover:text-turquoise transition-colors text-sm">The Nest</a></li>
-          <li><a href="reserver-en.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Book</a></li>
-          <li><a href="contact-en.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Contact</a></li>
-          <li><a href="pourquoi-marea-en.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">About Us</a></li>
+          <li><a href="index-en.html" class="text-offwhite/60 hover:text-terra transition-colors text-sm">Home</a></li>
+          <li><a href="lodge-en.html" class="text-offwhite/60 hover:text-terra transition-colors text-sm">Le Grand Lodge</a></li>
+          <li><a href="thenest-en.html" class="text-offwhite/60 hover:text-ocean transition-colors text-sm">The Nest</a></li>
+          <li><a href="reserver-en.html" class="text-offwhite/60 hover:text-terra transition-colors text-sm">Book</a></li>
+          <li><a href="contact-en.html" class="text-offwhite/60 hover:text-terra transition-colors text-sm">Contact</a></li>
+          <li><a href="pourquoi-marea-en.html" class="text-offwhite/60 hover:text-terra transition-colors text-sm">About Us</a></li>
         </ul>
       </div>
 
       <div>
-        <h4 class="text-blanc font-sans text-sm tracking-wider mb-4">CONTACT</h4>
-        <ul class="space-y-2 text-sm text-blanc/60">
+        <h4 class="text-offwhite font-sans text-sm tracking-wider mb-4">CONTACT</h4>
+        <ul class="space-y-2 text-sm text-offwhite/60">
           <li>Petit Piquey, Cap Ferret</li>
           <li>Arcachon Bay, France</li>
           <li class="pt-2">
-            <a href="mailto:mareaferret@gmail.com" class="hover:text-sunset-orange transition-colors">mareaferret@gmail.com</a>
+            <a href="mailto:mareaferret@gmail.com" class="hover:text-terra transition-colors">mareaferret@gmail.com</a>
           </li>
         </ul>
       </div>
     </div>
 
     <div class="border-t border-blanc/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-blanc/40 text-sm">© 2025 Maréa – All rights reserved</p>
-      <p class="text-blanc/40 text-xs">Le Grand Lodge and The Nest are part of a property complex</p>
+      <p class="text-offwhite/40 text-sm">© 2025 Maréa – All rights reserved</p>
+      <p class="text-offwhite/40 text-xs">Le Grand Lodge and The Nest are part of a property complex</p>
     </div>
   </div>
 </footer>

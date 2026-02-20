@@ -16,25 +16,25 @@
       theme: {
         extend: {
           colors: {
-            'ocean': '#2C4A62',
-            'ocean-dark': '#1A3B5C',
-            'sunset-cream': '#FFF8E7',
-            'sunset-yellow': '#F4C430',
-            'sunset-orange': '#F28C28',
-            'brun': '#8B4513',
-            'sable': '#E8DCC8',
-            'sable-dark': '#C4A574',
-            'sable-medium': '#D4B594',
-            'blanc': '#F8F6F3',
-            'taupe': '#8B7355',
-            'turquoise': '#4EC3C7',
-            'turquoise-dark': '#2FA4A9',
-            'turquoise-light': '#6ED4D8',
-            'turquoise-pastel': '#A8E6E9',
+            'navy': '#1E3A5F',
+            'navy-dark': '#152D4A',
+            'sand-light': '#FAF7F0',
+            'ocean-accent': '#005F9A',
+            'terra': '#C3785A',
+            'terra-dark': '#A66B4D',
+            'sand': '#F5EFE0',
+            'warm-gray': '#E8E4DD',
+            'terra-light': '#F5EDEA',
+            'offwhite': '#FAFAF7',
+            'text-light': '#5A7A96',
+            'ocean': '#005F9A',
+            'ocean-dark': '#004A78',
+            'ocean-light': '#3A8BC2',
+            'ocean-pastel': '#B8D4E8',
           },
           fontFamily: {
-            'display': ['Georgia', 'serif'],
-            'sans': ['Montserrat', 'system-ui', 'sans-serif'],
+            'display': ['Playfair Display', 'Georgia', 'serif'],
+            'sans': ['DM Sans', 'system-ui', 'sans-serif'],
           }
         }
       }
@@ -46,7 +46,7 @@
     .hero-gradient {
       background: linear-gradient(to bottom,
         rgba(244, 196, 48, 0.1) 0%,
-        rgba(139, 90, 43, 0.5) 100%);
+        rgba(30, 58, 95, 0.5) 100%);
     }
 
     .nav-link {
@@ -59,7 +59,7 @@
       left: 0;
       width: 0;
       height: 2px;
-      background: #F28C28;
+      background: #C3785A;
       transition: width 0.3s ease;
     }
     .nav-link:hover::after {
@@ -81,7 +81,7 @@
     .midcentury-line {
       width: 60px;
       height: 2px;
-      background: linear-gradient(90deg, #F28C28, #4EC3C7);
+      background: linear-gradient(90deg, #C3785A, #005F9A);
     }
 
     .mobile-menu {
@@ -93,47 +93,36 @@
     }
   </style>
 </head>
-<body class="font-sans text-ocean bg-blanc">
+<body class="font-sans text-navy bg-offwhite">
 
 <!-- Navigation -->
-<nav class="fixed top-0 left-0 right-0 z-50 bg-blanc/95 backdrop-blur-sm border-b border-sable/20">
+<nav class="fixed top-0 left-0 right-0 z-50 bg-offwhite/95 backdrop-blur-sm border-b border-sand/20">
   <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-    <a href="index-en.html" class="flex items-center gap-3">
-      <svg class="w-10 h-10 md:w-12 md:h-12" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Sunset arcs -->
-        <path d="M25 8 A 17 17 0 0 1 42 25 H 8 A 17 17 0 0 1 25 8" fill="#F4C430"/>
-        <path d="M25 12 A 13 13 0 0 1 38 25 H 12 A 13 13 0 0 1 25 12" fill="#F28C28"/>
-        <path d="M25 18 A 7 7 0 0 1 32 25 H 18 A 7 17 0 0 1 25 18" fill="#8B4513"/>
-        <!-- Wave lines -->
-        <line x1="5" y1="25" x2="45" y2="25" stroke="#8B4513" stroke-width="2" stroke-linecap="round"/>
-        <line x1="7" y1="30" x2="43" y2="30" stroke="#C4A574" stroke-width="1.8" stroke-linecap="round"/>
-        <line x1="10" y1="35" x2="40" y2="35" stroke="#D4B594" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="14" y1="40" x2="36" y2="40" stroke="#E8DCC8" stroke-width="1.2" stroke-linecap="round"/>
-      </svg>
-      <span class="font-display text-xl md:text-2xl italic font-semibold text-ocean" style="letter-spacing: -1px;">marea</span>
+    <a href="index-en.html" class="flex items-center">
+      <img src="images/logo-bicolor.png" alt="Marea" class="h-10 md:h-12 w-auto">
     </a>
 
     <!-- Desktop Navigation -->
     <div class="hidden lg:flex items-center gap-6">
-      <a href="index-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">HOME</a>
-      <a href="lodge-en.html" class="nav-link font-sans text-sm tracking-wider font-medium text-sunset-orange">THE LODGE</a>
-      <a href="thenest-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-turquoise transition-colors">THE NEST</a>
-      <a href="reserver-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">BOOK</a>
-      <a href="contact-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">CONTACT</a>
-      <a href="pourquoi-marea-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">ABOUT US</a>
-      <span class="text-sable">|</span>
-      <a href="lodge.html" class="font-sans text-sm tracking-wider font-light hover:text-sunset-orange transition-colors">FR</a>
-      <a href="reserver-en.html" class="ml-2 bg-sunset-orange text-white px-5 py-2.5 font-sans text-sm tracking-wider font-semibold hover:bg-sunset-orange/90 transition-all cta-pulse">
+      <a href="index-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-terra transition-colors">HOME</a>
+      <a href="lodge-en.html" class="nav-link font-sans text-sm tracking-wider font-medium text-terra">THE LODGE</a>
+      <a href="thenest-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-ocean transition-colors">THE NEST</a>
+      <a href="reserver-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-terra transition-colors">BOOK</a>
+      <a href="contact-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-terra transition-colors">CONTACT</a>
+      <a href="pourquoi-marea-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-terra transition-colors">ABOUT US</a>
+      <span class="text-sand">|</span>
+      <a href="lodge.html" class="font-sans text-sm tracking-wider font-light hover:text-terra transition-colors">FR</a>
+      <a href="reserver-en.html" class="ml-2 bg-terra text-white px-5 py-2.5 font-sans text-sm tracking-wider font-semibold hover:bg-terra/90 transition-all cta-pulse">
         BOOK
       </a>
     </div>
 
     <!-- Mobile Menu Button -->
     <div class="flex items-center gap-3 lg:hidden">
-      <a href="reserver-en.html" class="bg-sunset-orange text-white px-4 py-2 font-sans text-xs tracking-wider font-semibold">
+      <a href="reserver-en.html" class="bg-terra text-white px-4 py-2 font-sans text-xs tracking-wider font-semibold">
         BOOK
       </a>
-      <button id="menuBtn" class="p-2 text-ocean" aria-label="Menu">
+      <button id="menuBtn" class="p-2 text-navy" aria-label="Menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
@@ -144,18 +133,18 @@
 </nav>
 
 <!-- Mobile Menu (outside nav for proper z-index) -->
-<div id="mobileMenu" class="mobile-menu fixed inset-0 top-[57px] z-[100] lg:hidden bg-blanc">
-  <div class="flex flex-col items-center justify-center h-full gap-8 bg-blanc">
-    <a href="index-en.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">HOME</a>
-    <a href="lodge-en.html" class="font-sans text-xl tracking-wider font-medium text-sunset-orange">THE LODGE</a>
-    <a href="thenest-en.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-turquoise transition-colors">THE NEST</a>
-    <a href="reserver-en.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">BOOK</a>
-    <a href="contact-en.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">CONTACT</a>
-    <a href="pourquoi-marea-en.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">ABOUT US</a>
-    <div class="border-t border-sable pt-8 mt-4 w-40 text-center">
-      <a href="lodge.html" class="font-sans text-base tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">FRENCH</a>
+<div id="mobileMenu" class="mobile-menu fixed inset-0 top-[57px] z-[100] lg:hidden bg-offwhite">
+  <div class="flex flex-col items-center justify-center h-full gap-8 bg-offwhite">
+    <a href="index-en.html" class="font-sans text-xl tracking-wider font-medium text-navy hover:text-terra transition-colors">HOME</a>
+    <a href="lodge-en.html" class="font-sans text-xl tracking-wider font-medium text-terra">THE LODGE</a>
+    <a href="thenest-en.html" class="font-sans text-xl tracking-wider font-medium text-navy hover:text-ocean transition-colors">THE NEST</a>
+    <a href="reserver-en.html" class="font-sans text-xl tracking-wider font-medium text-navy hover:text-terra transition-colors">BOOK</a>
+    <a href="contact-en.html" class="font-sans text-xl tracking-wider font-medium text-navy hover:text-terra transition-colors">CONTACT</a>
+    <a href="pourquoi-marea-en.html" class="font-sans text-xl tracking-wider font-medium text-navy hover:text-terra transition-colors">ABOUT US</a>
+    <div class="border-t border-sand pt-8 mt-4 w-40 text-center">
+      <a href="lodge.html" class="font-sans text-base tracking-wider font-medium text-navy hover:text-terra transition-colors">FRENCH</a>
     </div>
-    <a href="reserver-en.html" class="mt-4 bg-sunset-orange text-white px-8 py-4 font-sans text-sm tracking-wider font-semibold">
+    <a href="reserver-en.html" class="mt-4 bg-terra text-white px-8 py-4 font-sans text-sm tracking-wider font-semibold">
       BOOK
     </a>
   </div>
@@ -188,28 +177,28 @@
   <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/lodge1.jpg');"></div>
   <div class="absolute inset-0 hero-gradient"></div>
   <div class="relative h-full flex flex-col justify-center items-center text-center px-6">
-    <p class="text-blanc/90 font-sans text-xs md:text-sm tracking-[0.3em] mb-6 fade-in" style="animation-delay: 0.2s;">200 M² · SINGLE-STORY · POOL</p>
-    <h1 class="text-blanc text-4xl md:text-7xl font-display italic font-semibold tracking-wide mb-6 fade-in" style="animation-delay: 0.4s;">Le Grand Lodge</h1>
-    <p class="text-blanc/90 text-lg md:text-2xl font-light max-w-2xl fade-in" style="animation-delay: 0.6s;">
+    <p class="text-offwhite/90 font-sans text-xs md:text-sm tracking-[0.3em] mb-6 fade-in" style="animation-delay: 0.2s;">200 M² · SINGLE-STORY · POOL</p>
+    <h1 class="text-offwhite text-4xl md:text-7xl font-display italic font-semibold tracking-wide mb-6 fade-in" style="animation-delay: 0.4s;">Le Grand Lodge</h1>
+    <p class="text-offwhite/90 text-lg md:text-2xl font-light max-w-2xl fade-in" style="animation-delay: 0.6s;">
       Up to 12 guests · 5 bedrooms · 50m from the Bay
     </p>
   </div>
 </section>
 
 <!-- Description -->
-<section class="py-16 md:py-24 px-6 bg-blanc">
+<section class="py-16 md:py-24 px-6 bg-offwhite">
   <div class="max-w-5xl mx-auto">
     <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
       <div>
         <div class="midcentury-line mb-8"></div>
-        <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-4">LE GRAND LODGE</p>
-        <h2 class="font-display italic text-3xl md:text-5xl text-ocean leading-tight mb-8">
+        <p class="text-ocean font-sans text-xs tracking-[0.2em] mb-4">LE GRAND LODGE</p>
+        <h2 class="font-display italic text-3xl md:text-5xl text-navy leading-tight mb-8">
           Beautiful bright spaces to gather
         </h2>
-        <p class="text-base md:text-lg text-ocean/70 leading-relaxed mb-6 font-light">
+        <p class="text-base md:text-lg text-navy/70 leading-relaxed mb-6 font-light">
           Single-story, the 200m² apartment offers ideal comfort for family stays or gatherings with friends. An elegant and welcoming holiday home, ideally located in the heart of Petit Piquey, one of Cap Ferret's most sought-after villages.
         </p>
-        <p class="text-base md:text-lg text-ocean/70 leading-relaxed font-light">
+        <p class="text-base md:text-lg text-navy/70 leading-relaxed font-light">
           Perfect for car-free holidays, between the bay, beaches, cycling and the gentle Cap Ferret lifestyle.
         </p>
       </div>
@@ -221,108 +210,108 @@
 </section>
 
 <!-- Rooms Section -->
-<section class="py-16 md:py-24 px-6 bg-sunset-orange/10">
+<section class="py-16 md:py-24 px-6 bg-terra/10">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-12 md:mb-16">
       <div class="midcentury-line mx-auto mb-8"></div>
-      <p class="text-sunset-orange font-sans text-xs tracking-[0.2em] mb-4">5 BEDROOMS</p>
-      <h2 class="font-display italic text-3xl md:text-5xl text-ocean">Sleeping spaces</h2>
+      <p class="text-terra font-sans text-xs tracking-[0.2em] mb-4">5 BEDROOMS</p>
+      <h2 class="font-display italic text-3xl md:text-5xl text-navy">Sleeping spaces</h2>
     </div>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-      <div class="bg-blanc p-5 md:p-6">
-        <div class="w-10 h-10 md:w-12 md:h-12 mb-4 flex items-center justify-center border border-sunset-orange/30 rounded-full">
-          <svg class="w-5 h-5 md:w-6 md:h-6 text-sunset-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="bg-offwhite p-5 md:p-6">
+        <div class="w-10 h-10 md:w-12 md:h-12 mb-4 flex items-center justify-center border border-terra/30 rounded-full">
+          <svg class="w-5 h-5 md:w-6 md:h-6 text-terra" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
           </svg>
         </div>
         <h3 class="font-display text-lg md:text-xl mb-2">La Suite Mimbeau</h3>
-        <p class="text-ocean/60 text-xs md:text-sm">Queen size bed 160 (twinable), dressing room and en-suite bathroom</p>
+        <p class="text-navy/60 text-xs md:text-sm">Queen size bed 160 (twinable), dressing room and en-suite bathroom</p>
       </div>
 
-      <div class="bg-blanc p-5 md:p-6">
-        <div class="w-10 h-10 md:w-12 md:h-12 mb-4 flex items-center justify-center border border-sunset-orange/30 rounded-full">
-          <svg class="w-5 h-5 md:w-6 md:h-6 text-sunset-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="bg-offwhite p-5 md:p-6">
+        <div class="w-10 h-10 md:w-12 md:h-12 mb-4 flex items-center justify-center border border-terra/30 rounded-full">
+          <svg class="w-5 h-5 md:w-6 md:h-6 text-terra" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
           </svg>
         </div>
         <h3 class="font-display text-lg md:text-xl mb-2">Le Canon</h3>
-        <p class="text-ocean/60 text-xs md:text-sm">Queen size bed 160 (twinable), cozy en-suite shower room</p>
+        <p class="text-navy/60 text-xs md:text-sm">Queen size bed 160 (twinable), cozy en-suite shower room</p>
       </div>
 
-      <div class="bg-blanc p-5 md:p-6">
-        <div class="w-10 h-10 md:w-12 md:h-12 mb-4 flex items-center justify-center border border-sunset-orange/30 rounded-full">
-          <svg class="w-5 h-5 md:w-6 md:h-6 text-sunset-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="bg-offwhite p-5 md:p-6">
+        <div class="w-10 h-10 md:w-12 md:h-12 mb-4 flex items-center justify-center border border-terra/30 rounded-full">
+          <svg class="w-5 h-5 md:w-6 md:h-6 text-terra" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
           </svg>
         </div>
         <h3 class="font-display text-lg md:text-xl mb-2">L'Horizon</h3>
-        <p class="text-ocean/60 text-xs md:text-sm">Queen size bed 160 (twinable), en-suite bathroom</p>
+        <p class="text-navy/60 text-xs md:text-sm">Queen size bed 160 (twinable), en-suite bathroom</p>
       </div>
 
-      <div class="bg-blanc p-5 md:p-6">
-        <div class="w-10 h-10 md:w-12 md:h-12 mb-4 flex items-center justify-center border border-sunset-orange/30 rounded-full">
-          <svg class="w-5 h-5 md:w-6 md:h-6 text-sunset-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="bg-offwhite p-5 md:p-6">
+        <div class="w-10 h-10 md:w-12 md:h-12 mb-4 flex items-center justify-center border border-terra/30 rounded-full">
+          <svg class="w-5 h-5 md:w-6 md:h-6 text-terra" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
           </svg>
         </div>
         <h3 class="font-display text-lg md:text-xl mb-2">Le Cabanon</h3>
-        <p class="text-ocean/60 text-xs md:text-sm">Cozy office with queen size bed 160 (twinable) for 2 people</p>
+        <p class="text-navy/60 text-xs md:text-sm">Cozy office with queen size bed 160 (twinable) for 2 people</p>
       </div>
 
-      <div class="bg-blanc p-5 md:p-6 md:col-span-2 lg:col-span-2">
-        <div class="w-10 h-10 md:w-12 md:h-12 mb-4 flex items-center justify-center border border-sunset-orange/30 rounded-full">
-          <svg class="w-5 h-5 md:w-6 md:h-6 text-sunset-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="bg-offwhite p-5 md:p-6 md:col-span-2 lg:col-span-2">
+        <div class="w-10 h-10 md:w-12 md:h-12 mb-4 flex items-center justify-center border border-terra/30 rounded-full">
+          <svg class="w-5 h-5 md:w-6 md:h-6 text-terra" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
           </svg>
         </div>
         <h3 class="font-display text-lg md:text-xl mb-2">Les Moussaillons</h3>
-        <p class="text-ocean/60 text-xs md:text-sm">Dormitory for 4 children with 2 bunk beds – paradise for little sailors!</p>
+        <p class="text-navy/60 text-xs md:text-sm">Dormitory for 4 children with 2 bunk beds – paradise for little sailors!</p>
       </div>
     </div>
 
-    <div class="mt-6 md:mt-8 p-4 md:p-6 bg-blanc border-l-4 border-sunset-orange">
-      <p class="text-ocean/70 text-sm">
-        <span class="font-medium text-ocean">4 bathrooms</span> fully equipped for optimal comfort
+    <div class="mt-6 md:mt-8 p-4 md:p-6 bg-offwhite border-l-4 border-terra">
+      <p class="text-navy/70 text-sm">
+        <span class="font-medium text-navy">4 bathrooms</span> fully equipped for optimal comfort
       </p>
     </div>
   </div>
 </section>
 
 <!-- Spaces Section -->
-<section class="py-16 md:py-24 px-6 bg-blanc">
+<section class="py-16 md:py-24 px-6 bg-offwhite">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-12 md:mb-16">
       <div class="midcentury-line mx-auto mb-8"></div>
-      <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-4">LIVING SPACES</p>
-      <h2 class="font-display italic text-3xl md:text-5xl text-ocean">Indoor & Outdoor</h2>
+      <p class="text-ocean font-sans text-xs tracking-[0.2em] mb-4">LIVING SPACES</p>
+      <h2 class="font-display italic text-3xl md:text-5xl text-navy">Indoor & Outdoor</h2>
     </div>
 
     <div class="grid md:grid-cols-2 gap-8 md:gap-12">
       <div>
-        <h3 class="font-sans text-sm tracking-wider text-sunset-orange mb-6">INDOOR</h3>
-        <ul class="space-y-4 text-ocean/70">
+        <h3 class="font-sans text-sm tracking-wider text-terra mb-6">INDOOR</h3>
+        <ul class="space-y-4 text-navy/70">
           <li class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-sunset-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-5 h-5 text-terra mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
             </svg>
             <span class="text-sm md:text-base">Large living/dining room open to the terrace and garden</span>
           </li>
           <li class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-sunset-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-5 h-5 text-terra mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
             </svg>
             <span class="text-sm md:text-base">Fully equipped kitchen</span>
           </li>
           <li class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-sunset-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-5 h-5 text-terra mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
             </svg>
             <span class="text-sm md:text-base">Laundry and storage areas</span>
           </li>
           <li class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-sunset-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-5 h-5 text-terra mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
             </svg>
             <span class="text-sm md:text-base">Single-story – ideal for families</span>
@@ -331,28 +320,28 @@
       </div>
 
       <div>
-        <h3 class="font-sans text-sm tracking-wider text-sunset-orange mb-6">OUTDOOR</h3>
-        <ul class="space-y-4 text-ocean/70">
+        <h3 class="font-sans text-sm tracking-wider text-terra mb-6">OUTDOOR</h3>
+        <ul class="space-y-4 text-navy/70">
           <li class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-sunset-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-5 h-5 text-terra mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
             </svg>
             <span class="text-sm md:text-base">Private heated pool from April to October</span>
           </li>
           <li class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-sunset-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-5 h-5 text-terra mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
             </svg>
             <span class="text-sm md:text-base">Summer kitchen and large terrace for dining</span>
           </li>
           <li class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-sunset-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-5 h-5 text-terra mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
             </svg>
             <span class="text-sm md:text-base">Peaceful, tree-lined garden</span>
           </li>
           <li class="flex items-start gap-3">
-            <svg class="w-5 h-5 text-sunset-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-5 h-5 text-terra mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
             </svg>
             <span class="text-sm md:text-base">Immediate access to cycling paths</span>
@@ -364,56 +353,56 @@
 </section>
 
 <!-- Location Section -->
-<section class="py-16 md:py-24 px-6 bg-sable/20">
+<section class="py-16 md:py-24 px-6 bg-sand/20">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-12 md:mb-16">
       <div class="midcentury-line mx-auto mb-8"></div>
-      <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-4">EXCEPTIONAL LOCATION</p>
-      <h2 class="font-display italic text-3xl md:text-5xl text-ocean">Everything within walking distance</h2>
+      <p class="text-ocean font-sans text-xs tracking-[0.2em] mb-4">EXCEPTIONAL LOCATION</p>
+      <h2 class="font-display italic text-3xl md:text-5xl text-navy">Everything within walking distance</h2>
     </div>
 
     <div class="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
       <div class="text-center">
-        <div class="w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 flex items-center justify-center border border-turquoise/30 rounded-full">
-          <svg class="w-6 h-6 md:w-8 md:h-8 text-sunset-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 flex items-center justify-center border border-ocean/30 rounded-full">
+          <svg class="w-6 h-6 md:w-8 md:h-8 text-terra" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
           </svg>
         </div>
         <h3 class="font-display text-lg md:text-xl mb-2">50m from the Bay</h3>
-        <p class="text-ocean/60 text-xs md:text-sm">Petit Piquey beach and the beautiful Truquette beach</p>
+        <p class="text-navy/60 text-xs md:text-sm">Petit Piquey beach and the beautiful Truquette beach</p>
       </div>
 
       <div class="text-center">
-        <div class="w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 flex items-center justify-center border border-turquoise/30 rounded-full">
-          <svg class="w-6 h-6 md:w-8 md:h-8 text-sunset-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 flex items-center justify-center border border-ocean/30 rounded-full">
+          <svg class="w-6 h-6 md:w-8 md:h-8 text-terra" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
           </svg>
         </div>
         <h3 class="font-display text-lg md:text-xl mb-2">50m from Shops</h3>
-        <p class="text-ocean/60 text-xs md:text-sm">Bakeries, supermarket, restaurants, services</p>
+        <p class="text-navy/60 text-xs md:text-sm">Bakeries, supermarket, restaurants, services</p>
       </div>
 
       <div class="text-center col-span-2 md:col-span-1">
-        <div class="w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 flex items-center justify-center border border-turquoise/30 rounded-full">
-          <svg class="w-6 h-6 md:w-8 md:h-8 text-sunset-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 flex items-center justify-center border border-ocean/30 rounded-full">
+          <svg class="w-6 h-6 md:w-8 md:h-8 text-terra" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
           </svg>
         </div>
         <h3 class="font-display text-lg md:text-xl mb-2">Cycling Paths</h3>
-        <p class="text-ocean/60 text-xs md:text-sm">Immediate access to Cap Ferret's best spots</p>
+        <p class="text-navy/60 text-xs md:text-sm">Immediate access to Cap Ferret's best spots</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Gallery -->
-<section class="py-16 md:py-24 px-6 bg-blanc">
+<section class="py-16 md:py-24 px-6 bg-offwhite">
   <div class="max-w-7xl mx-auto">
     <div class="text-center mb-12 md:mb-16">
       <div class="midcentury-line mx-auto mb-8"></div>
-      <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-4">GALLERY</p>
-      <h2 class="font-display italic text-3xl md:text-5xl text-ocean">Discover the Lodge</h2>
+      <p class="text-ocean font-sans text-xs tracking-[0.2em] mb-4">GALLERY</p>
+      <h2 class="font-display italic text-3xl md:text-5xl text-navy">Discover the Lodge</h2>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
       <div class="aspect-square overflow-hidden">
@@ -436,18 +425,18 @@
 </section>
 
 <!-- Bonus - The Nest -->
-<section class="py-16 md:py-24 px-6 bg-turquoise/10">
+<section class="py-16 md:py-24 px-6 bg-ocean/10">
   <div class="max-w-4xl mx-auto text-center">
-    <div class="midcentury-line mx-auto mb-8" style="background: linear-gradient(90deg, #4EC3C7, #2FA4A9);"></div>
-    <p class="text-turquoise-dark font-sans text-xs tracking-[0.2em] mb-4">BONUS</p>
-    <h2 class="font-display italic text-3xl md:text-5xl text-ocean mb-8">The Nest</h2>
-    <p class="text-base md:text-lg text-ocean/70 mb-6 font-light">
+    <div class="midcentury-line mx-auto mb-8" style="background: linear-gradient(90deg, #005F9A, #004A78);"></div>
+    <p class="text-ocean-dark font-sans text-xs tracking-[0.2em] mb-4">BONUS</p>
+    <h2 class="font-display italic text-3xl md:text-5xl text-navy mb-8">The Nest</h2>
+    <p class="text-base md:text-lg text-navy/70 mb-6 font-light">
       Option to rent The Nest alongside Le Grand Lodge: independent studio that can sleep up to 4 people, perfect for grandparents or teens wanting their independence.
     </p>
-    <p class="text-ocean/60 mb-10 text-sm">
-      <a href="contact-en.html" class="text-turquoise hover:underline">Contact us</a> for rates & availability.
+    <p class="text-navy/60 mb-10 text-sm">
+      <a href="contact-en.html" class="text-ocean hover:underline">Contact us</a> for rates & availability.
     </p>
-    <a href="thenest-en.html" class="inline-flex items-center font-sans text-sm tracking-wider font-medium text-turquoise hover:text-ocean transition-colors">
+    <a href="thenest-en.html" class="inline-flex items-center font-sans text-sm tracking-wider font-medium text-ocean hover:text-navy transition-colors">
       DISCOVER THE NEST
       <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -457,45 +446,35 @@
 </section>
 
 <!-- Important Info -->
-<section class="py-8 md:py-12 px-6 bg-sable/20">
+<section class="py-8 md:py-12 px-6 bg-sand/20">
   <div class="max-w-4xl mx-auto">
-    <div class="p-4 md:p-6 bg-blanc border-l-4 border-turquoise">
-      <p class="text-ocean/70 text-xs md:text-sm">
-        <span class="font-medium text-ocean">Please note:</span> Le Grand Lodge and The Nest are part of a property complex with 3 other apartments on the upper floor. To respect the peace of the premises and neighbors, parties and noise are not allowed.
+    <div class="p-4 md:p-6 bg-offwhite border-l-4 border-ocean">
+      <p class="text-navy/70 text-xs md:text-sm">
+        <span class="font-medium text-navy">Please note:</span> Le Grand Lodge and The Nest are part of a property complex with 3 other apartments on the upper floor. To respect the peace of the premises and neighbors, parties and noise are not allowed.
       </p>
     </div>
   </div>
 </section>
 
 <!-- Contact CTA -->
-<section id="contact" class="py-16 md:py-24 px-6 bg-ocean text-blanc">
+<section id="contact" class="py-16 md:py-24 px-6 bg-navy text-offwhite">
   <div class="max-w-4xl mx-auto text-center">
     <div class="mx-auto mb-8 flex justify-center">
-      <svg class="w-16 h-auto md:w-20 md:h-auto" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Official brand kit logo with sunset arcs -->
-        <path d="M25 8 A 17 17 0 0 1 42 25 H 8 A 17 17 0 0 1 25 8" fill="#F4C430"/>
-        <path d="M25 12 A 13 13 0 0 1 38 25 H 12 A 13 13 0 0 1 25 12" fill="#F28C28"/>
-        <path d="M25 18 A 7 7 0 0 1 32 25 H 18 A 7 7 0 0 1 25 18" fill="#8B4513"/>
-        <!-- Wave lines -->
-        <line x1="5" y1="25" x2="45" y2="25" stroke="#8B4513" stroke-width="2" stroke-linecap="round"/>
-        <line x1="7" y1="30" x2="43" y2="30" stroke="white" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/>
-        <line x1="10" y1="35" x2="40" y2="35" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-        <line x1="14" y1="40" x2="36" y2="40" stroke="white" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
-      </svg>
+      <img src="images/logo-icon-white.png" alt="Marea" class="w-16 h-auto md:w-20">
     </div>
-    <p class="text-blanc/60 font-sans text-xs tracking-[0.2em] mb-4">BOOK LE GRAND LODGE</p>
+    <p class="text-offwhite/60 font-sans text-xs tracking-[0.2em] mb-4">BOOK LE GRAND LODGE</p>
     <h2 class="font-display text-3xl md:text-5xl mb-6 italic">Interested in the Lodge?</h2>
-    <p class="text-blanc/70 text-base md:text-lg mb-10 max-w-xl mx-auto font-light">
+    <p class="text-offwhite/70 text-base md:text-lg mb-10 max-w-xl mx-auto font-light">
       Up to 12 guests in a house designed for holiday living. Check availability and contact us.
     </p>
     <div class="flex flex-col sm:flex-row justify-center gap-4">
-      <a href="reserver-en.html" class="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-sunset-orange text-blanc font-sans text-sm tracking-wider font-semibold hover:bg-sunset-orange/90 transition-all duration-300">
+      <a href="reserver-en.html" class="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-terra text-offwhite font-sans text-sm tracking-wider font-semibold hover:bg-terra/90 transition-all duration-300">
         <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
         </svg>
         CHECK AVAILABILITY
       </a>
-      <a href="mailto:mareaferret@gmail.com" class="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 border-2 border-blanc font-sans text-sm tracking-wider font-medium hover:bg-blanc hover:text-ocean transition-all duration-300">
+      <a href="mailto:mareaferret@gmail.com" class="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 border-2 border-blanc font-sans text-sm tracking-wider font-medium hover:bg-offwhite hover:text-navy transition-all duration-300">
         <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
         </svg>
@@ -506,57 +485,45 @@
 </section>
 
 <!-- Footer -->
-<footer class="py-12 md:py-16 px-6 bg-ocean border-t border-blanc/10">
+<footer class="py-12 md:py-16 px-6 bg-navy border-t border-blanc/10">
   <div class="max-w-6xl mx-auto">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12">
       <div class="col-span-2">
                 <div class="mb-6">
-          <svg class="w-32 h-auto" viewBox="0 0 300 280" xmlns="http://www.w3.org/2000/svg">
-            <g transform="translate(150, 80)">
-              <path d="M -70 0 A 70 70 0 0 1 70 0" fill="#F4C430" stroke="none"/>
-              <path d="M -50 0 A 50 50 0 0 1 50 0" fill="#F28C28" stroke="none"/>
-              <path d="M -25 0 A 25 25 0 0 1 25 0" fill="#8B4513" stroke="none"/>
-              <line x1="-90" y1="0" x2="90" y2="0" stroke="#8B4513" stroke-width="3" stroke-linecap="round"/>
-              <line x1="-85" y1="12" x2="85" y2="12" stroke="#E8DCC8" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="-70" y1="24" x2="70" y2="24" stroke="#D4C5B0" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="-50" y1="36" x2="50" y2="36" stroke="#F8F6F3" stroke-width="2.5" stroke-linecap="round"/>
-            </g>
-            <text x="150" y="170" font-family="Georgia, serif" font-size="72" font-style="italic" font-weight="600" fill="#F8F6F3" text-anchor="middle" letter-spacing="-2">marea</text>
-            <text x="150" y="200" font-family="Montserrat, sans-serif" font-size="16" font-weight="500" fill="#D4C5B0" text-anchor="middle" letter-spacing="3">PIQUEY · CAP FERRET</text>
-          </svg>
+          <img src="images/logo-dark-bg.png" alt="Marea" class="w-32 h-auto">
         </div>
-        <p class="text-blanc/60 text-sm leading-relaxed max-w-sm font-light">
+        <p class="text-offwhite/60 text-sm leading-relaxed max-w-sm font-light">
           Holiday rental in Cap Ferret. Le Grand Lodge & The Nest in Petit Piquey, Arcachon Bay.
         </p>
       </div>
 
       <div>
-        <h4 class="text-blanc font-sans text-sm tracking-wider mb-4">NAVIGATION</h4>
+        <h4 class="text-offwhite font-sans text-sm tracking-wider mb-4">NAVIGATION</h4>
         <ul class="space-y-2">
-          <li><a href="index-en.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Home</a></li>
-          <li><a href="lodge-en.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Le Grand Lodge</a></li>
-          <li><a href="thenest-en.html" class="text-blanc/60 hover:text-turquoise transition-colors text-sm">The Nest</a></li>
-          <li><a href="reserver-en.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Book</a></li>
-          <li><a href="contact-en.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Contact</a></li>
-          <li><a href="pourquoi-marea-en.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">About Us</a></li>
+          <li><a href="index-en.html" class="text-offwhite/60 hover:text-terra transition-colors text-sm">Home</a></li>
+          <li><a href="lodge-en.html" class="text-offwhite/60 hover:text-terra transition-colors text-sm">Le Grand Lodge</a></li>
+          <li><a href="thenest-en.html" class="text-offwhite/60 hover:text-ocean transition-colors text-sm">The Nest</a></li>
+          <li><a href="reserver-en.html" class="text-offwhite/60 hover:text-terra transition-colors text-sm">Book</a></li>
+          <li><a href="contact-en.html" class="text-offwhite/60 hover:text-terra transition-colors text-sm">Contact</a></li>
+          <li><a href="pourquoi-marea-en.html" class="text-offwhite/60 hover:text-terra transition-colors text-sm">About Us</a></li>
         </ul>
       </div>
 
       <div>
-        <h4 class="text-blanc font-sans text-sm tracking-wider mb-4">CONTACT</h4>
-        <ul class="space-y-2 text-sm text-blanc/60">
+        <h4 class="text-offwhite font-sans text-sm tracking-wider mb-4">CONTACT</h4>
+        <ul class="space-y-2 text-sm text-offwhite/60">
           <li>Petit Piquey, Cap Ferret</li>
           <li>Arcachon Bay, France</li>
           <li class="pt-2">
-            <a href="mailto:mareaferret@gmail.com" class="hover:text-sunset-orange transition-colors">mareaferret@gmail.com</a>
+            <a href="mailto:mareaferret@gmail.com" class="hover:text-terra transition-colors">mareaferret@gmail.com</a>
           </li>
         </ul>
       </div>
     </div>
 
     <div class="border-t border-blanc/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-blanc/40 text-sm">© 2025 Maréa – All rights reserved</p>
-      <p class="text-blanc/40 text-xs">Le Grand Lodge and The Nest are part of a property complex</p>
+      <p class="text-offwhite/40 text-sm">© 2025 Maréa – All rights reserved</p>
+      <p class="text-offwhite/40 text-xs">Le Grand Lodge and The Nest are part of a property complex</p>
     </div>
   </div>
 </footer>

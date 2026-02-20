@@ -16,25 +16,25 @@
       theme: {
         extend: {
           colors: {
-            'ocean': '#2C4A62',
-            'ocean-dark': '#1A3B5C',
-            'sunset-cream': '#FFF8E7',
-            'sunset-yellow': '#F4C430',
-            'sunset-orange': '#F28C28',
-            'brun': '#8B4513',
-            'sable': '#E8DCC8',
-            'sable-dark': '#C4A574',
-            'sable-medium': '#D4B594',
-            'blanc': '#F8F6F3',
-            'taupe': '#8B7355',
-            'turquoise': '#4EC3C7',
-            'turquoise-dark': '#2FA4A9',
-            'turquoise-light': '#6ED4D8',
-            'turquoise-pastel': '#A8E6E9',
+            'navy': '#1E3A5F',
+            'navy-dark': '#152D4A',
+            'sand-light': '#FAF7F0',
+            'ocean-accent': '#005F9A',
+            'terra': '#C3785A',
+            'terra-dark': '#A66B4D',
+            'sand': '#F5EFE0',
+            'warm-gray': '#E8E4DD',
+            'terra-light': '#F5EDEA',
+            'offwhite': '#FAFAF7',
+            'text-light': '#5A7A96',
+            'ocean': '#005F9A',
+            'ocean-dark': '#004A78',
+            'ocean-light': '#3A8BC2',
+            'ocean-pastel': '#B8D4E8',
           },
           fontFamily: {
-            'display': ['Georgia', 'serif'],
-            'sans': ['Montserrat', 'system-ui', 'sans-serif'],
+            'display': ['Playfair Display', 'Georgia', 'serif'],
+            'sans': ['DM Sans', 'system-ui', 'sans-serif'],
           }
         }
       }
@@ -53,7 +53,7 @@
       left: 0;
       width: 0;
       height: 2px;
-      background: #F28C28;
+      background: #C3785A;
       transition: width 0.3s ease;
     }
     .nav-link:hover::after {
@@ -63,7 +63,7 @@
     .midcentury-line {
       width: 60px;
       height: 2px;
-      background: linear-gradient(90deg, #F28C28, #4EC3C7);
+      background: linear-gradient(90deg, #C3785A, #005F9A);
     }
 
     /* Mobile menu */
@@ -81,53 +81,42 @@
     }
     input:focus, select:focus, textarea:focus {
       outline: none;
-      border-color: #F28C28;
-      box-shadow: 0 0 0 3px rgba(242, 140, 40, 0.1);
+      border-color: #C3785A;
+      box-shadow: 0 0 0 3px rgba(195, 120, 90, 0.1);
     }
   </style>
 </head>
-<body class="font-sans text-ocean bg-blanc">
+<body class="font-sans text-navy bg-offwhite">
 
 <!-- Navigation -->
-<nav class="fixed top-0 left-0 right-0 z-50 bg-blanc/95 backdrop-blur-sm border-b border-sable/20">
+<nav class="fixed top-0 left-0 right-0 z-50 bg-offwhite/95 backdrop-blur-sm border-b border-sand/20">
   <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
     <!-- Logo -->
-    <a href="index-en.html" class="flex items-center gap-3">
-      <svg class="w-10 h-10 md:w-12 md:h-12" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Sunset arcs -->
-        <path d="M25 8 A 17 17 0 0 1 42 25 H 8 A 17 17 0 0 1 25 8" fill="#F4C430"/>
-        <path d="M25 12 A 13 13 0 0 1 38 25 H 12 A 13 13 0 0 1 25 12" fill="#F28C28"/>
-        <path d="M25 18 A 7 7 0 0 1 32 25 H 18 A 7 7 0 0 1 25 18" fill="#8B4513"/>
-        <!-- Wave lines -->
-        <line x1="5" y1="25" x2="45" y2="25" stroke="#8B4513" stroke-width="2" stroke-linecap="round"/>
-        <line x1="7" y1="30" x2="43" y2="30" stroke="#C4A574" stroke-width="1.8" stroke-linecap="round"/>
-        <line x1="10" y1="35" x2="40" y2="35" stroke="#D4B594" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="14" y1="40" x2="36" y2="40" stroke="#E8DCC8" stroke-width="1.2" stroke-linecap="round"/>
-      </svg>
-      <span class="font-display text-xl md:text-2xl italic font-semibold text-ocean" style="letter-spacing: -1px;">marea</span>
+    <a href="index-en.html" class="flex items-center">
+      <img src="images/logo-bicolor.png" alt="Marea" class="h-10 md:h-12 w-auto">
     </a>
 
     <!-- Desktop Navigation -->
     <div class="hidden lg:flex items-center gap-6">
-      <a href="index-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">HOME</a>
-      <a href="lodge-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">THE LODGE</a>
-      <a href="thenest-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-turquoise transition-colors">THE NEST</a>
-      <a href="reserver-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">BOOK</a>
-      <a href="contact-en.html" class="nav-link font-sans text-sm tracking-wider font-medium text-sunset-orange">CONTACT</a>
-      <a href="pourquoi-marea-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">ABOUT US</a>
-      <span class="text-sable">|</span>
-      <a href="contact.html" class="font-sans text-sm tracking-wider font-light hover:text-sunset-orange transition-colors">FR</a>
-      <a href="reserver-en.html" class="ml-2 bg-sunset-orange text-white px-5 py-2.5 font-sans text-sm tracking-wider font-semibold hover:bg-sunset-orange/90 transition-all cta-pulse">
+      <a href="index-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-terra transition-colors">HOME</a>
+      <a href="lodge-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-terra transition-colors">THE LODGE</a>
+      <a href="thenest-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-ocean transition-colors">THE NEST</a>
+      <a href="reserver-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-terra transition-colors">BOOK</a>
+      <a href="contact-en.html" class="nav-link font-sans text-sm tracking-wider font-medium text-terra">CONTACT</a>
+      <a href="pourquoi-marea-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-terra transition-colors">ABOUT US</a>
+      <span class="text-sand">|</span>
+      <a href="contact.html" class="font-sans text-sm tracking-wider font-light hover:text-terra transition-colors">FR</a>
+      <a href="reserver-en.html" class="ml-2 bg-terra text-white px-5 py-2.5 font-sans text-sm tracking-wider font-semibold hover:bg-terra/90 transition-all cta-pulse">
         BOOK
       </a>
     </div>
 
     <!-- Mobile Menu Button -->
     <div class="flex items-center gap-3 lg:hidden">
-      <a href="reserver-en.html" class="bg-sunset-orange text-white px-4 py-2 font-sans text-xs tracking-wider font-semibold">
+      <a href="reserver-en.html" class="bg-terra text-white px-4 py-2 font-sans text-xs tracking-wider font-semibold">
         BOOK
       </a>
-      <button id="menuBtn" class="p-2 text-ocean" aria-label="Menu">
+      <button id="menuBtn" class="p-2 text-navy" aria-label="Menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
@@ -138,18 +127,18 @@
 </nav>
 
 <!-- Mobile Menu (outside nav for proper z-index) -->
-<div id="mobileMenu" class="mobile-menu fixed inset-0 top-[57px] z-[100] lg:hidden bg-blanc">
-  <div class="flex flex-col items-center justify-center h-full gap-8 bg-blanc">
-    <a href="index-en.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">HOME</a>
-    <a href="lodge-en.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">THE LODGE</a>
-    <a href="thenest-en.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-turquoise transition-colors">THE NEST</a>
-    <a href="reserver-en.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">BOOK</a>
-    <a href="contact-en.html" class="font-sans text-xl tracking-wider font-medium text-sunset-orange">CONTACT</a>
-    <a href="pourquoi-marea-en.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">ABOUT US</a>
-    <div class="border-t border-sable pt-8 mt-4 w-32 text-center">
-      <a href="contact.html" class="font-sans text-sm tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">FRANÇAIS</a>
+<div id="mobileMenu" class="mobile-menu fixed inset-0 top-[57px] z-[100] lg:hidden bg-offwhite">
+  <div class="flex flex-col items-center justify-center h-full gap-8 bg-offwhite">
+    <a href="index-en.html" class="font-sans text-xl tracking-wider font-medium text-navy hover:text-terra transition-colors">HOME</a>
+    <a href="lodge-en.html" class="font-sans text-xl tracking-wider font-medium text-navy hover:text-terra transition-colors">THE LODGE</a>
+    <a href="thenest-en.html" class="font-sans text-xl tracking-wider font-medium text-navy hover:text-ocean transition-colors">THE NEST</a>
+    <a href="reserver-en.html" class="font-sans text-xl tracking-wider font-medium text-navy hover:text-terra transition-colors">BOOK</a>
+    <a href="contact-en.html" class="font-sans text-xl tracking-wider font-medium text-terra">CONTACT</a>
+    <a href="pourquoi-marea-en.html" class="font-sans text-xl tracking-wider font-medium text-navy hover:text-terra transition-colors">ABOUT US</a>
+    <div class="border-t border-sand pt-8 mt-4 w-32 text-center">
+      <a href="contact.html" class="font-sans text-sm tracking-wider font-medium text-navy hover:text-terra transition-colors">FRANÇAIS</a>
     </div>
-    <a href="reserver-en.html" class="bg-sunset-orange text-white px-6 py-3 font-sans text-sm tracking-wider font-semibold">
+    <a href="reserver-en.html" class="bg-terra text-white px-6 py-3 font-sans text-sm tracking-wider font-semibold">
       BOOK
     </a>
   </div>
@@ -178,107 +167,107 @@
 </script>
 
 <!-- Header -->
-<section class="pt-32 pb-16 md:pt-40 md:pb-24 px-6 bg-blanc">
+<section class="pt-32 pb-16 md:pt-40 md:pb-24 px-6 bg-offwhite">
   <div class="max-w-4xl mx-auto text-center">
     <div class="midcentury-line mx-auto mb-8"></div>
-    <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-6">GET IN TOUCH</p>
-    <h1 class="font-display italic text-4xl md:text-6xl text-ocean leading-tight mb-6">
+    <p class="text-ocean font-sans text-xs tracking-[0.2em] mb-6">GET IN TOUCH</p>
+    <h1 class="font-display italic text-4xl md:text-6xl text-navy leading-tight mb-6">
       Ready to escape to Maréa?
     </h1>
-    <p class="text-base md:text-lg text-ocean/70 leading-relaxed max-w-2xl mx-auto font-light">
+    <p class="text-base md:text-lg text-navy/70 leading-relaxed max-w-2xl mx-auto font-light">
       We're here to answer your questions, check availability or help you plan your stay at Cap Ferret.
     </p>
   </div>
 </section>
 
 <!-- Contact Options -->
-<section class="py-12 md:py-16 px-6 bg-sable/20">
+<section class="py-12 md:py-16 px-6 bg-sand/20">
   <div class="max-w-4xl mx-auto">
     <div class="grid md:grid-cols-2 gap-6">
       <!-- Email -->
-      <a href="mailto:mareaferret@gmail.com" class="group bg-blanc p-6 md:p-8 border border-sable/20 hover:border-sunset-orange/30 transition-all duration-300 text-center">
-        <div class="w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 flex items-center justify-center border border-sunset-orange/30 rounded-full group-hover:bg-sunset-orange/10 transition-colors">
-          <svg class="w-6 h-6 md:w-7 md:h-7 text-sunset-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <a href="mailto:mareaferret@gmail.com" class="group bg-offwhite p-6 md:p-8 border border-sand/20 hover:border-terra/30 transition-all duration-300 text-center">
+        <div class="w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 flex items-center justify-center border border-terra/30 rounded-full group-hover:bg-terra/10 transition-colors">
+          <svg class="w-6 h-6 md:w-7 md:h-7 text-terra" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
           </svg>
         </div>
-        <h3 class="font-display text-xl md:text-2xl mb-2 group-hover:text-sunset-orange transition-colors">Email</h3>
-        <p class="text-ocean/60 text-sm mb-4">For any enquiry</p>
-        <span class="font-sans text-sm text-sunset-orange font-medium">mareaferret@gmail.com</span>
+        <h3 class="font-display text-xl md:text-2xl mb-2 group-hover:text-terra transition-colors">Email</h3>
+        <p class="text-navy/60 text-sm mb-4">For any enquiry</p>
+        <span class="font-sans text-sm text-terra font-medium">mareaferret@gmail.com</span>
       </a>
 
       <!-- WhatsApp -->
-      <a href="https://wa.me/33676886769" target="_blank" class="group bg-blanc p-6 md:p-8 border border-sable/20 hover:border-turquoise/30 transition-all duration-300 text-center">
-        <div class="w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 flex items-center justify-center border border-turquoise/30 rounded-full group-hover:bg-turquoise/10 transition-colors">
-          <svg class="w-6 h-6 md:w-7 md:h-7 text-turquoise" fill="currentColor" viewBox="0 0 24 24">
+      <a href="https://wa.me/33676886769" target="_blank" class="group bg-offwhite p-6 md:p-8 border border-sand/20 hover:border-ocean/30 transition-all duration-300 text-center">
+        <div class="w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 flex items-center justify-center border border-ocean/30 rounded-full group-hover:bg-ocean/10 transition-colors">
+          <svg class="w-6 h-6 md:w-7 md:h-7 text-ocean" fill="currentColor" viewBox="0 0 24 24">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
           </svg>
         </div>
-        <h3 class="font-display text-xl md:text-2xl mb-2 group-hover:text-turquoise transition-colors">WhatsApp</h3>
-        <p class="text-ocean/60 text-sm mb-4">For a quick response</p>
-        <span class="font-sans text-sm text-turquoise font-medium">+33 6 76 88 67 69</span>
+        <h3 class="font-display text-xl md:text-2xl mb-2 group-hover:text-ocean transition-colors">WhatsApp</h3>
+        <p class="text-navy/60 text-sm mb-4">For a quick response</p>
+        <span class="font-sans text-sm text-ocean font-medium">+33 6 76 88 67 69</span>
       </a>
     </div>
   </div>
 </section>
 
 <!-- Location Info -->
-<section class="py-16 md:py-24 px-6 bg-sable/20">
+<section class="py-16 md:py-24 px-6 bg-sand/20">
   <div class="max-w-4xl mx-auto">
     <div class="text-center mb-12">
       <div class="midcentury-line mx-auto mb-8"></div>
-      <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-4">LOCATION</p>
-      <h2 class="font-display italic text-3xl md:text-4xl text-ocean">Where to find us</h2>
+      <p class="text-ocean font-sans text-xs tracking-[0.2em] mb-4">LOCATION</p>
+      <h2 class="font-display italic text-3xl md:text-4xl text-navy">Where to find us</h2>
     </div>
 
     <div class="grid md:grid-cols-2 gap-8 items-center">
       <div class="space-y-6">
         <div class="flex items-start gap-4">
-          <div class="w-10 h-10 flex items-center justify-center border border-sunset-orange/30 rounded-full flex-shrink-0">
-            <svg class="w-5 h-5 text-sunset-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="w-10 h-10 flex items-center justify-center border border-terra/30 rounded-full flex-shrink-0">
+            <svg class="w-5 h-5 text-terra" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
             </svg>
           </div>
           <div>
             <h3 class="font-display text-lg mb-1">Address</h3>
-            <p class="text-ocean/60 text-sm">Petit Piquey<br>Cap Ferret, Arcachon Bay<br>33950 Lège-Cap-Ferret, France</p>
+            <p class="text-navy/60 text-sm">Petit Piquey<br>Cap Ferret, Arcachon Bay<br>33950 Lège-Cap-Ferret, France</p>
           </div>
         </div>
 
         <div class="flex items-start gap-4">
-          <div class="w-10 h-10 flex items-center justify-center border border-sunset-orange/30 rounded-full flex-shrink-0">
-            <svg class="w-5 h-5 text-sunset-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="w-10 h-10 flex items-center justify-center border border-terra/30 rounded-full flex-shrink-0">
+            <svg class="w-5 h-5 text-terra" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
             </svg>
           </div>
           <div>
             <h3 class="font-display text-lg mb-1">Access</h3>
-            <p class="text-ocean/60 text-sm">50m from the Bay and local shops<br>Cycling paths right at your doorstep<br>Perfect for a car-free holiday</p>
+            <p class="text-navy/60 text-sm">50m from the Bay and local shops<br>Cycling paths right at your doorstep<br>Perfect for a car-free holiday</p>
           </div>
         </div>
 
         <div class="flex items-start gap-4">
-          <div class="w-10 h-10 flex items-center justify-center border border-sunset-orange/30 rounded-full flex-shrink-0">
-            <svg class="w-5 h-5 text-sunset-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="w-10 h-10 flex items-center justify-center border border-terra/30 rounded-full flex-shrink-0">
+            <svg class="w-5 h-5 text-terra" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
           </div>
           <div>
             <h3 class="font-display text-lg mb-1">From Bordeaux</h3>
-            <p class="text-ocean/60 text-sm">~1 hour by car via A660<br>Shuttle available from Arcachon train station</p>
+            <p class="text-navy/60 text-sm">~1 hour by car via A660<br>Shuttle available from Arcachon train station</p>
           </div>
         </div>
       </div>
 
       <!-- Map placeholder -->
-      <div class="aspect-square bg-sable/30 flex items-center justify-center">
+      <div class="aspect-square bg-sand/30 flex items-center justify-center">
         <div class="text-center p-6">
-          <svg class="w-16 h-16 mx-auto mb-4 text-ocean/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-16 h-16 mx-auto mb-4 text-navy/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path>
           </svg>
-          <p class="text-ocean/40 text-sm font-sans">Petit Piquey, Cap Ferret</p>
-          <a href="https://maps.google.com/?q=Petit+Piquey+Cap+Ferret" target="_blank" class="inline-block mt-4 text-sunset-orange text-sm font-sans hover:underline">
+          <p class="text-navy/40 text-sm font-sans">Petit Piquey, Cap Ferret</p>
+          <a href="https://maps.google.com/?q=Petit+Piquey+Cap+Ferret" target="_blank" class="inline-block mt-4 text-terra text-sm font-sans hover:underline">
             View on Google Maps →
           </a>
         </div>
@@ -288,58 +277,43 @@
 </section>
 
 <!-- Footer -->
-<footer class="py-12 md:py-16 px-6 bg-ocean border-t border-blanc/10">
+<footer class="py-12 md:py-16 px-6 bg-navy border-t border-blanc/10">
   <div class="max-w-6xl mx-auto">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12">
       <div class="col-span-2">
                 <div class="mb-6">
-          <svg class="w-32 h-auto" viewBox="0 0 300 280" xmlns="http://www.w3.org/2000/svg">
-            <g transform="translate(150, 80)">
-        <h4 class="text-blanc font-sans text-sm tracking-wider mb-4">NAVIGATION</h4>
-        <ul class="space-y-2">
-          <li><a href="index-en.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Home</a></li>
-          <li><a href="lodge-en.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Le Grand Lodge</a></li>
-          <li><a href="thenest-en.html" class="text-blanc/60 hover:text-turquoise transition-colors text-sm">The Nest</a></li>
-          <li><a href="reserver-en.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Book</a></li>
-          <li><a href="contact-en.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Contact</a></li>
-          <li><a href="pourquoi-marea-en.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">About Us</a></li>
-        </ul>
-              <line x1="-50" y1="36" x2="50" y2="36" stroke="#F8F6F3" stroke-width="2.5" stroke-linecap="round"/>
-            </g>
-            <text x="150" y="170" font-family="Georgia, serif" font-size="72" font-style="italic" font-weight="600" fill="#F8F6F3" text-anchor="middle" letter-spacing="-2">marea</text>
-            <text x="150" y="200" font-family="Montserrat, sans-serif" font-size="16" font-weight="500" fill="#D4C5B0" text-anchor="middle" letter-spacing="3">PIQUEY · CAP FERRET</text>
-          </svg>
+          <img src="images/logo-dark-bg.png" alt="Marea" class="w-32 h-auto">
         </div>
-        <p class="text-blanc/60 text-sm leading-relaxed max-w-sm font-light">
+        <p class="text-offwhite/60 text-sm leading-relaxed max-w-sm font-light">
           Holiday rental in Cap Ferret. Le Grand Lodge & The Nest in Petit Piquey, Arcachon Bay.
         </p>
       </div>
 
       <div>
-        <h4 class="text-blanc font-sans text-sm tracking-wider mb-4">NAVIGATION</h4>
+        <h4 class="text-offwhite font-sans text-sm tracking-wider mb-4">NAVIGATION</h4>
         <ul class="space-y-2">
-          <li><a href="index-en.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Home</a></li>
-          <li><a href="lodge-en.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Le Grand Lodge</a></li>
-          <li><a href="thenest-en.html" class="text-blanc/60 hover:text-turquoise transition-colors text-sm">The Nest</a></li>
-          <li><a href="contact-en.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Contact</a></li>
+          <li><a href="index-en.html" class="text-offwhite/60 hover:text-terra transition-colors text-sm">Home</a></li>
+          <li><a href="lodge-en.html" class="text-offwhite/60 hover:text-terra transition-colors text-sm">Le Grand Lodge</a></li>
+          <li><a href="thenest-en.html" class="text-offwhite/60 hover:text-ocean transition-colors text-sm">The Nest</a></li>
+          <li><a href="contact-en.html" class="text-offwhite/60 hover:text-terra transition-colors text-sm">Contact</a></li>
         </ul>
       </div>
 
       <div>
-        <h4 class="text-blanc font-sans text-sm tracking-wider mb-4">CONTACT</h4>
-        <ul class="space-y-2 text-sm text-blanc/60">
+        <h4 class="text-offwhite font-sans text-sm tracking-wider mb-4">CONTACT</h4>
+        <ul class="space-y-2 text-sm text-offwhite/60">
           <li>Petit Piquey, Cap Ferret</li>
           <li>Arcachon Bay, France</li>
           <li class="pt-2">
-            <a href="mailto:mareaferret@gmail.com" class="hover:text-sunset-orange transition-colors">mareaferret@gmail.com</a>
+            <a href="mailto:mareaferret@gmail.com" class="hover:text-terra transition-colors">mareaferret@gmail.com</a>
           </li>
         </ul>
       </div>
     </div>
 
     <div class="border-t border-blanc/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-blanc/40 text-sm">© 2025 Maréa – All rights reserved</p>
-      <p class="text-blanc/40 text-xs">Le Grand Lodge and The Nest are part of the same property</p>
+      <p class="text-offwhite/40 text-sm">© 2025 Maréa – All rights reserved</p>
+      <p class="text-offwhite/40 text-xs">Le Grand Lodge and The Nest are part of the same property</p>
     </div>
   </div>
 </footer>

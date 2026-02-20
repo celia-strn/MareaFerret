@@ -21,50 +21,31 @@
       theme: {
         extend: {
           colors: {
-            'ocean': '#2C4A62',
-            'ocean-dark': '#1A3B5C',
-            'sunset-cream': '#FFF8E7',
-            'sunset-yellow': '#F4C430',
-            'sunset-orange': '#F28C28',
-            'brun': '#8B4513',
-            'sable': '#E8DCC8',
-            'sable-dark': '#C4A574',
-            'sable-medium': '#D4B594',
-            'blanc': '#F8F6F3',
-            'taupe': '#8B7355',
-            'turquoise': '#4EC3C7',
-            'turquoise-dark': '#2FA4A9',
-            'turquoise-light': '#6ED4D8',
-            'turquoise-pastel': '#A8E6E9',
+            'navy': '#1E3A5F',
+            'navy-dark': '#152D4A',
+            'sand-light': '#FAF7F0',
+            'ocean-accent': '#005F9A',
+            'terra': '#C3785A',
+            'terra-dark': '#A66B4D',
+            'sand': '#F5EFE0',
+            'warm-gray': '#E8E4DD',
+            'terra-light': '#F5EDEA',
+            'offwhite': '#FAFAF7',
+            'text-light': '#5A7A96',
+            'ocean': '#005F9A',
+            'ocean-dark': '#004A78',
+            'ocean-light': '#3A8BC2',
+            'ocean-pastel': '#B8D4E8',
           },
           fontFamily: {
-            'display': ['Georgia', 'serif'],
-            'sans': ['Montserrat', 'system-ui', 'sans-serif'],
+            'display': ['Playfair Display', 'Georgia', 'serif'],
+            'sans': ['DM Sans', 'system-ui', 'sans-serif'],
           }
         }
       }
     }
   </script>
   <style>
-    @font-face {
-      font-family: 'Recoleta';
-      src: url('https://db.onlinewebfonts.com/t/13b64fe3bc07c9cac3d617f7c359df4a.woff2') format('woff2');
-      font-weight: 400;
-      font-style: normal;
-    }
-    @font-face {
-      font-family: 'Recoleta';
-      src: url('https://db.onlinewebfonts.com/t/ddf1bafece52f4e7be89e19b0e771e10.woff2') format('woff2');
-      font-weight: 500;
-      font-style: normal;
-    }
-    @font-face {
-      font-family: 'Recoleta';
-      src: url('https://db.onlinewebfonts.com/t/a3ed769c4f9c8d8ae8ae03f12d3a9490.woff2') format('woff2');
-      font-weight: 600;
-      font-style: normal;
-    }
-
     html { scroll-behavior: smooth; }
 
     .hero-gradient {
@@ -83,7 +64,7 @@
       left: 0;
       width: 0;
       height: 2px;
-      background: #4EC3C7;
+      background: #005F9A;
       transition: width 0.3s ease;
     }
     .nav-link:hover::after {
@@ -105,7 +86,7 @@
     .midcentury-line {
       width: 60px;
       height: 2px;
-      background: linear-gradient(90deg, #4EC3C7, #2FA4A9);
+      background: linear-gradient(90deg, #005F9A, #004A78);
     }
 
     /* Mobile menu */
@@ -142,7 +123,7 @@
     /* Flatpickr Custom Styles */
     .flatpickr-calendar {
       font-family: 'Montserrat', sans-serif;
-      border: 1px solid #E8DCC8;
+      border: 1px solid #F5EFE0;
       box-shadow: 0 4px 20px rgba(44, 74, 98, 0.1);
     }
     .flatpickr-day.disabled,
@@ -164,7 +145,7 @@
       cursor: not-allowed;
     }
     .flatpickr-months .flatpickr-month {
-      background: #2C4A62;
+      background: #1E3A5F;
       color: white;
     }
     .flatpickr-current-month .flatpickr-monthDropdown-months,
@@ -173,10 +154,10 @@
       font-weight: 500;
     }
     .flatpickr-weekdays {
-      background: #F8F6F3;
+      background: #FAFAF7;
     }
     span.flatpickr-weekday {
-      color: #2C4A62;
+      color: #1E3A5F;
       font-weight: 500;
     }
     .flatpickr-months .flatpickr-prev-month,
@@ -185,7 +166,7 @@
     }
     .flatpickr-months .flatpickr-prev-month:hover,
     .flatpickr-months .flatpickr-next-month:hover {
-      fill: #4EC3C7;
+      fill: #005F9A;
     }
 
     /* Calendar Legend */
@@ -193,7 +174,7 @@
       display: flex;
       gap: 16px;
       font-size: 12px;
-      color: #2C4A62;
+      color: #1E3A5F;
     }
     .legend-item {
       display: flex;
@@ -218,50 +199,37 @@
     }
   </style>
 </head>
-<body class="font-sans text-ocean bg-blanc pb-16 lg:pb-0">
+<body class="font-sans text-navy bg-offwhite pb-16 lg:pb-0">
 
 <!-- Navigation -->
-<nav class="fixed top-0 left-0 right-0 z-50 bg-blanc/95 backdrop-blur-sm border-b border-sable/20">
+<nav class="fixed top-0 left-0 right-0 z-50 bg-offwhite/95 backdrop-blur-sm border-b border-sand/20">
   <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
     <!-- Logo -->
     <a href="index.html" class="flex items-center">
-      <!-- Logo Horizontal The Nest -->
-      <svg class="h-12" viewBox="0 0 500 120" xmlns="http://www.w3.org/2000/svg">
-        <g transform="translate(110, 60)">
-          <path d="M -45 0 A 45 45 0 0 1 45 0" fill="#F4C430" stroke="none"/>
-          <path d="M -32 0 A 32 32 0 0 1 32 0" fill="#F28C28" stroke="none"/>
-          <path d="M -16 0 A 16 16 0 0 1 16 0" fill="#8B4513" stroke="none"/>
-          <line x1="-58" y1="0" x2="58" y2="0" stroke="#8B4513" stroke-width="2.2" stroke-linecap="round"/>
-          <line x1="-54" y1="8" x2="54" y2="8" stroke="#4EC3C7" stroke-width="2" stroke-linecap="round"/>
-          <line x1="-45" y1="16" x2="45" y2="16" stroke="#6ED4D8" stroke-width="2" stroke-linecap="round"/>
-          <line x1="-32" y1="24" x2="32" y2="24" stroke="#A8E6E9" stroke-width="1.8" stroke-linecap="round"/>
-        </g>
-        <text x="185" y="66" font-family="Montserrat, sans-serif" font-size="40" font-weight="300" fill="#2FA4A9" text-anchor="start" letter-spacing="1">the nest</text>
-        <text x="185" y="86" font-family="Montserrat, sans-serif" font-size="11" font-weight="400" fill="#4EC3C7" text-anchor="start" letter-spacing="2">at Marea</text>
-      </svg>
+      <img src="images/logo-bicolor.png" alt="Marea" class="h-10 md:h-12 w-auto">
     </a>
 
     <!-- Desktop Navigation -->
     <div class="hidden lg:flex items-center gap-6">
-      <a href="index.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">ACCUEIL</a>
-      <a href="lodge.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">LE LODGE</a>
-      <a href="thenest.html" class="nav-link font-sans text-sm tracking-wider font-medium text-sunset-orange">THE NEST</a>
-      <a href="reserver.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">RÉSERVER</a>
-      <a href="contact.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">CONTACT</a>
-      <a href="pourquoi-marea.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-sunset-orange transition-colors">QUI SOMMES-NOUS</a>
-      <span class="text-sable">|</span>
-      <a href="thenest-en.html" class="font-sans text-sm tracking-wider font-light hover:text-sunset-orange transition-colors">EN</a>
-      <a href="reserver.html" class="ml-2 bg-sunset-orange text-white px-5 py-2.5 font-sans text-sm tracking-wider font-semibold hover:bg-sunset-orange/90 transition-all cta-pulse">
+      <a href="index.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-terra transition-colors">ACCUEIL</a>
+      <a href="lodge.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-terra transition-colors">LE LODGE</a>
+      <a href="thenest.html" class="nav-link font-sans text-sm tracking-wider font-medium text-terra">THE NEST</a>
+      <a href="reserver.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-terra transition-colors">RÉSERVER</a>
+      <a href="contact.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-terra transition-colors">CONTACT</a>
+      <a href="pourquoi-marea.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-terra transition-colors">QUI SOMMES-NOUS</a>
+      <span class="text-sand">|</span>
+      <a href="thenest-en.html" class="font-sans text-sm tracking-wider font-light hover:text-terra transition-colors">EN</a>
+      <a href="reserver.html" class="ml-2 bg-terra text-white px-5 py-2.5 font-sans text-sm tracking-wider font-semibold hover:bg-terra/90 transition-all cta-pulse">
         RÉSERVER
       </a>
     </div>
 
     <!-- Mobile Menu Button -->
     <div class="flex items-center gap-3 lg:hidden">
-      <a href="reserver.html" class="bg-sunset-orange text-white px-4 py-2 font-sans text-xs tracking-wider font-semibold">
+      <a href="reserver.html" class="bg-terra text-white px-4 py-2 font-sans text-xs tracking-wider font-semibold">
         RÉSERVER
       </a>
-      <button id="menuBtn" class="p-2 text-ocean" aria-label="Menu">
+      <button id="menuBtn" class="p-2 text-navy" aria-label="Menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
@@ -271,18 +239,18 @@
 </nav>
 
 <!-- Mobile Menu (outside nav for proper z-index) -->
-<div id="mobileMenu" class="mobile-menu fixed inset-0 top-[57px] z-[100] lg:hidden bg-blanc">
-  <div class="flex flex-col items-center justify-center h-full gap-8 bg-blanc">
-    <a href="index.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">ACCUEIL</a>
-    <a href="lodge.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">LE LODGE</a>
-    <a href="thenest.html" class="font-sans text-xl tracking-wider font-medium text-sunset-orange">THE NEST</a>
-    <a href="reserver.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">RÉSERVER</a>
-    <a href="contact.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">CONTACT</a>
-    <a href="pourquoi-marea.html" class="font-sans text-xl tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">QUI SOMMES-NOUS</a>
-    <div class="border-t border-sable pt-8 mt-4 w-40 text-center">
-      <a href="thenest-en.html" class="font-sans text-base tracking-wider font-medium text-ocean hover:text-sunset-orange transition-colors">EN</a>
+<div id="mobileMenu" class="mobile-menu fixed inset-0 top-[57px] z-[100] lg:hidden bg-offwhite">
+  <div class="flex flex-col items-center justify-center h-full gap-8 bg-offwhite">
+    <a href="index.html" class="font-sans text-xl tracking-wider font-medium text-navy hover:text-terra transition-colors">ACCUEIL</a>
+    <a href="lodge.html" class="font-sans text-xl tracking-wider font-medium text-navy hover:text-terra transition-colors">LE LODGE</a>
+    <a href="thenest.html" class="font-sans text-xl tracking-wider font-medium text-terra">THE NEST</a>
+    <a href="reserver.html" class="font-sans text-xl tracking-wider font-medium text-navy hover:text-terra transition-colors">RÉSERVER</a>
+    <a href="contact.html" class="font-sans text-xl tracking-wider font-medium text-navy hover:text-terra transition-colors">CONTACT</a>
+    <a href="pourquoi-marea.html" class="font-sans text-xl tracking-wider font-medium text-navy hover:text-terra transition-colors">QUI SOMMES-NOUS</a>
+    <div class="border-t border-sand pt-8 mt-4 w-40 text-center">
+      <a href="thenest-en.html" class="font-sans text-base tracking-wider font-medium text-navy hover:text-terra transition-colors">EN</a>
     </div>
-    <a href="reserver.html" class="mt-4 bg-sunset-orange text-white px-8 py-4 font-sans text-sm tracking-wider font-semibold">
+    <a href="reserver.html" class="mt-4 bg-terra text-white px-8 py-4 font-sans text-sm tracking-wider font-semibold">
       RÉSERVER
     </a>
   </div>
@@ -315,34 +283,21 @@
   <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/studio-hero.jpg');"></div>
   <div class="absolute inset-0 hero-gradient"></div>
   <div class="relative h-full flex flex-col justify-center items-center text-center px-6">
-    <p class="text-blanc/90 font-sans text-xs md:text-sm tracking-[0.3em] mb-8 fade-in" style="animation-delay: 0.2s;">2 À 4 PERSONNES · INDÉPENDANT</p>
+    <p class="text-offwhite/90 font-sans text-xs md:text-sm tracking-[0.3em] mb-8 fade-in" style="animation-delay: 0.2s;">2 À 4 PERSONNES · INDÉPENDANT</p>
 
     <!-- Logo Vertical The Nest Complet -->
     <div class="fade-in mb-8" style="animation-delay: 0.3s;">
-      <svg class="w-48 h-auto md:w-64 md:h-auto mx-auto" viewBox="0 0 300 280" xmlns="http://www.w3.org/2000/svg">
-        <g transform="translate(150, 80)">
-          <path d="M -70 0 A 70 70 0 0 1 70 0" fill="#F4C430" stroke="none"/>
-          <path d="M -50 0 A 50 50 0 0 1 50 0" fill="#F28C28" stroke="none"/>
-          <path d="M -25 0 A 25 25 0 0 1 25 0" fill="#8B4513" stroke="none"/>
-          <line x1="-90" y1="0" x2="90" y2="0" stroke="#8B4513" stroke-width="3" stroke-linecap="round"/>
-          <!-- Lignes turquoise = différenciation The Nest -->
-          <line x1="-85" y1="12" x2="85" y2="12" stroke="#6ED4D8" stroke-width="2.5" stroke-linecap="round"/>
-          <line x1="-70" y1="24" x2="70" y2="24" stroke="#A8E6E9" stroke-width="2.5" stroke-linecap="round"/>
-          <line x1="-50" y1="36" x2="50" y2="36" stroke="#D4F0F2" stroke-width="2.5" stroke-linecap="round"/>
-        </g>
-        <text x="150" y="165" font-family="Montserrat, sans-serif" font-size="48" font-weight="300" fill="#F8F6F3" text-anchor="middle" letter-spacing="1">the nest</text>
-        <text x="150" y="192" font-family="Montserrat, sans-serif" font-size="13" font-weight="400" fill="#D4C5B0" text-anchor="middle" letter-spacing="2">at Marea</text>
-      </svg>
+      <img src="images/logo-icon-white.png" alt="Marea" class="w-48 h-auto md:w-64 mx-auto">
     </div>
 
-    <p class="text-blanc/90 text-lg md:text-2xl font-light max-w-2xl fade-in" style="animation-delay: 0.5s;">
+    <p class="text-offwhite/90 text-lg md:text-2xl font-light max-w-2xl fade-in" style="animation-delay: 0.5s;">
       Un cocon élégant au cœur du Cap Ferret
     </p>
   </div>
 </section>
 
 <!-- Description -->
-<section class="py-16 md:py-24 px-6 bg-blanc">
+<section class="py-16 md:py-24 px-6 bg-offwhite">
   <div class="max-w-5xl mx-auto">
     <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
       <div class="order-2 md:order-1 aspect-[4/5] overflow-hidden">
@@ -350,14 +305,14 @@
       </div>
       <div class="order-1 md:order-2">
         <div class="midcentury-line mb-8"></div>
-        <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-4">THE NEST</p>
-        <h2 class="font-display text-3xl md:text-5xl text-ocean leading-tight mb-8">
+        <p class="text-ocean font-sans text-xs tracking-[0.2em] mb-4">THE NEST</p>
+        <h2 class="font-display text-3xl md:text-5xl text-navy leading-tight mb-8">
           Une parenthèse de douceur
         </h2>
-        <p class="text-base md:text-lg text-ocean/70 leading-relaxed mb-6 font-light">
+        <p class="text-base md:text-lg text-navy/70 leading-relaxed mb-6 font-light">
           The Nest est un cocon lumineux et cosy, idéal pour 2 à 4 personnes. Pied-à-terre à deux pas du Bassin, il accueille couples, familles ou amis dans un espace indépendant et élégant.
         </p>
-        <p class="text-base md:text-lg text-ocean/70 leading-relaxed font-light">
+        <p class="text-base md:text-lg text-navy/70 leading-relaxed font-light">
           Profitez d'un séjour confortable, intime et parfaitement équipé, au cœur du Cap Ferret à Petit Piquey. L'esprit slow life pour une escapade ressourçante.
         </p>
       </div>
@@ -366,97 +321,97 @@
 </section>
 
 <!-- Features -->
-<section class="py-16 md:py-24 px-6 bg-turquoise/10">
+<section class="py-16 md:py-24 px-6 bg-ocean/10">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-12 md:mb-16">
       <div class="midcentury-line mx-auto mb-8"></div>
-      <p class="text-turquoise-dark font-sans text-xs tracking-[0.2em] mb-4">ÉQUIPEMENTS</p>
-      <h2 class="font-display text-3xl md:text-5xl text-ocean">Ce qui vous attend</h2>
+      <p class="text-ocean-dark font-sans text-xs tracking-[0.2em] mb-4">ÉQUIPEMENTS</p>
+      <h2 class="font-display text-3xl md:text-5xl text-navy">Ce qui vous attend</h2>
     </div>
 
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
       <div class="text-center">
-        <div class="w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 flex items-center justify-center border border-turquoise/30 rounded-full">
-          <svg class="w-6 h-6 md:w-8 md:h-8 text-turquoise" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 flex items-center justify-center border border-ocean/30 rounded-full">
+          <svg class="w-6 h-6 md:w-8 md:h-8 text-ocean" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
           </svg>
         </div>
         <h3 class="font-display text-lg md:text-xl mb-2">Espace indépendant</h3>
-        <p class="text-ocean/60 text-xs md:text-sm">Entrée privée</p>
+        <p class="text-navy/60 text-xs md:text-sm">Entrée privée</p>
       </div>
 
       <div class="text-center">
-        <div class="w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 flex items-center justify-center border border-turquoise/30 rounded-full">
-          <svg class="w-6 h-6 md:w-8 md:h-8 text-turquoise" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 flex items-center justify-center border border-ocean/30 rounded-full">
+          <svg class="w-6 h-6 md:w-8 md:h-8 text-ocean" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
           </svg>
         </div>
         <h3 class="font-display text-lg md:text-xl mb-2">Cosy & Lumineux</h3>
-        <p class="text-ocean/60 text-xs md:text-sm">Ambiance chaleureuse</p>
+        <p class="text-navy/60 text-xs md:text-sm">Ambiance chaleureuse</p>
       </div>
 
       <div class="text-center">
-        <div class="w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 flex items-center justify-center border border-turquoise/30 rounded-full">
-          <svg class="w-6 h-6 md:w-8 md:h-8 text-turquoise" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 flex items-center justify-center border border-ocean/30 rounded-full">
+          <svg class="w-6 h-6 md:w-8 md:h-8 text-ocean" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
           </svg>
         </div>
         <h3 class="font-display text-lg md:text-xl mb-2">50m du Bassin</h3>
-        <p class="text-ocean/60 text-xs md:text-sm">Plage de la Truquette</p>
+        <p class="text-navy/60 text-xs md:text-sm">Plage de la Truquette</p>
       </div>
 
       <div class="text-center">
-        <div class="w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 flex items-center justify-center border border-turquoise/30 rounded-full">
-          <svg class="w-6 h-6 md:w-8 md:h-8 text-turquoise" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 flex items-center justify-center border border-ocean/30 rounded-full">
+          <svg class="w-6 h-6 md:w-8 md:h-8 text-ocean" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
           </svg>
         </div>
         <h3 class="font-display text-lg md:text-xl mb-2">Tout équipé</h3>
-        <p class="text-ocean/60 text-xs md:text-sm">Cuisine & salle de bain</p>
+        <p class="text-navy/60 text-xs md:text-sm">Cuisine & salle de bain</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Spaces Section - Les Espaces -->
-<section class="py-16 md:py-24 px-6 bg-blanc">
+<section class="py-16 md:py-24 px-6 bg-offwhite">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-12 md:mb-16">
       <div class="midcentury-line mx-auto mb-8"></div>
-      <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-4">LES ESPACES</p>
-      <h2 class="font-display text-3xl md:text-5xl text-ocean">Un studio pensé pour votre confort</h2>
+      <p class="text-ocean font-sans text-xs tracking-[0.2em] mb-4">LES ESPACES</p>
+      <h2 class="font-display text-3xl md:text-5xl text-navy">Un studio pensé pour votre confort</h2>
     </div>
 
     <div class="grid md:grid-cols-2 gap-6 md:gap-8">
       <!-- Coin Chambre -->
-      <div class="bg-turquoise/5 p-6 md:p-8">
-        <div class="w-12 h-12 mb-6 flex items-center justify-center border border-turquoise/30 rounded-full">
-          <svg class="w-6 h-6 text-turquoise" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="bg-ocean/5 p-6 md:p-8">
+        <div class="w-12 h-12 mb-6 flex items-center justify-center border border-ocean/30 rounded-full">
+          <svg class="w-6 h-6 text-ocean" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
           </svg>
         </div>
-        <h3 class="font-display text-xl md:text-2xl text-ocean mb-4">Le Coin Chambre</h3>
-        <p class="text-ocean/70 leading-relaxed mb-4">
+        <h3 class="font-display text-xl md:text-2xl text-navy mb-4">Le Coin Chambre</h3>
+        <p class="text-navy/70 leading-relaxed mb-4">
           Un espace nuit lumineux et apaisant avec <strong>lit double confortable</strong>, rangements pratiques et fenêtre donnant sur l'extérieur.
         </p>
-        <p class="text-ocean/60 text-sm">
+        <p class="text-navy/60 text-sm">
           Literie de qualité • Volets occultants • Rangement dressing
         </p>
       </div>
 
       <!-- Salon Convertible -->
-      <div class="bg-turquoise/5 p-6 md:p-8">
-        <div class="w-12 h-12 mb-6 flex items-center justify-center border border-turquoise/30 rounded-full">
-          <svg class="w-6 h-6 text-turquoise" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="bg-ocean/5 p-6 md:p-8">
+        <div class="w-12 h-12 mb-6 flex items-center justify-center border border-ocean/30 rounded-full">
+          <svg class="w-6 h-6 text-ocean" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
           </svg>
         </div>
-        <h3 class="font-display text-xl md:text-2xl text-ocean mb-4">Le Salon</h3>
-        <p class="text-ocean/70 leading-relaxed mb-4">
+        <h3 class="font-display text-xl md:text-2xl text-navy mb-4">Le Salon</h3>
+        <p class="text-navy/70 leading-relaxed mb-4">
           Un espace de vie chaleureux avec <strong>canapé convertible de qualité</strong> pour accueillir 2 personnes supplémentaires. Coin repas et cuisine équipée à disposition.
         </p>
-        <p class="text-ocean/60 text-sm">
+        <p class="text-navy/60 text-sm">
           Canapé-lit 2 personnes • Table à manger • Coin salon cosy
         </p>
       </div>
@@ -465,24 +420,24 @@
 </section>
 
 <!-- Detailed Amenities -->
-<section class="py-16 md:py-24 px-6 bg-turquoise/5">
+<section class="py-16 md:py-24 px-6 bg-ocean/5">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-12 md:mb-16">
       <div class="midcentury-line mx-auto mb-8"></div>
-      <p class="text-turquoise-dark font-sans text-xs tracking-[0.2em] mb-4">ÉQUIPEMENTS DÉTAILLÉS</p>
-      <h2 class="font-display text-3xl md:text-5xl text-ocean">Tout le nécessaire pour un séjour parfait</h2>
+      <p class="text-ocean-dark font-sans text-xs tracking-[0.2em] mb-4">ÉQUIPEMENTS DÉTAILLÉS</p>
+      <h2 class="font-display text-3xl md:text-5xl text-navy">Tout le nécessaire pour un séjour parfait</h2>
     </div>
 
     <div class="grid md:grid-cols-3 gap-6 md:gap-8">
       <!-- Cuisine -->
-      <div class="bg-blanc p-6">
-        <div class="w-12 h-12 mb-4 flex items-center justify-center border border-turquoise/30 rounded-full">
-          <svg class="w-6 h-6 text-turquoise" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="bg-offwhite p-6">
+        <div class="w-12 h-12 mb-4 flex items-center justify-center border border-ocean/30 rounded-full">
+          <svg class="w-6 h-6 text-ocean" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
           </svg>
         </div>
         <h3 class="font-display text-lg mb-3">Cuisine équipée</h3>
-        <ul class="text-ocean/60 text-sm space-y-2">
+        <ul class="text-navy/60 text-sm space-y-2">
           <li>• Réfrigérateur</li>
           <li>• Plaques de cuisson</li>
           <li>• Lave-vaisselle</li>
@@ -493,14 +448,14 @@
       </div>
 
       <!-- Salle de bain -->
-      <div class="bg-blanc p-6">
-        <div class="w-12 h-12 mb-4 flex items-center justify-center border border-turquoise/30 rounded-full">
-          <svg class="w-6 h-6 text-turquoise" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="bg-offwhite p-6">
+        <div class="w-12 h-12 mb-4 flex items-center justify-center border border-ocean/30 rounded-full">
+          <svg class="w-6 h-6 text-ocean" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
           </svg>
         </div>
         <h3 class="font-display text-lg mb-3">Salle de bain</h3>
-        <ul class="text-ocean/60 text-sm space-y-2">
+        <ul class="text-navy/60 text-sm space-y-2">
           <li>• Douche italienne</li>
           <li>• Vasque moderne</li>
           <li>• WC indépendant</li>
@@ -511,14 +466,14 @@
       </div>
 
       <!-- Extérieur & Autres -->
-      <div class="bg-blanc p-6">
-        <div class="w-12 h-12 mb-4 flex items-center justify-center border border-turquoise/30 rounded-full">
-          <svg class="w-6 h-6 text-turquoise" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="bg-offwhite p-6">
+        <div class="w-12 h-12 mb-4 flex items-center justify-center border border-ocean/30 rounded-full">
+          <svg class="w-6 h-6 text-ocean" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
           </svg>
         </div>
         <h3 class="font-display text-lg mb-3">Extérieur & Plus</h3>
-        <ul class="text-ocean/60 text-sm space-y-2">
+        <ul class="text-navy/60 text-sm space-y-2">
           <li>• Terrasse privative</li>
           <li>• Table d'été & chaises</li>
           <li>• Wifi haut débit</li>
@@ -530,14 +485,14 @@
     </div>
 
     <!-- CTA + Positionnement Cocon -->
-    <div class="mt-16 md:mt-20 bg-turquoise/10 p-8 md:p-12 text-center">
-      <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-4">VOTRE COCON AU CAP FERRET</p>
-      <h3 class="font-display text-2xl md:text-3xl text-ocean mb-6">L'intimité d'un studio, le charme du Bassin</h3>
-      <p class="text-ocean/70 max-w-2xl mx-auto mb-8 leading-relaxed">
+    <div class="mt-16 md:mt-20 bg-ocean/10 p-8 md:p-12 text-center">
+      <p class="text-ocean font-sans text-xs tracking-[0.2em] mb-4">VOTRE COCON AU CAP FERRET</p>
+      <h3 class="font-display text-2xl md:text-3xl text-navy mb-6">L'intimité d'un studio, le charme du Bassin</h3>
+      <p class="text-navy/70 max-w-2xl mx-auto mb-8 leading-relaxed">
         The Nest est <strong>l'échappée idéale pour les couples</strong> en quête de tranquillité, ou les petites familles.
         Indépendant, chaleureux et à deux pas de la plage, c'est le refuge parfait pour se ressourcer.
       </p>
-      <a href="reserver.html" class="inline-flex items-center justify-center bg-turquoise text-white px-8 py-4 font-sans text-sm tracking-wider font-semibold hover:bg-turquoise/90 transition-all">
+      <a href="reserver.html" class="inline-flex items-center justify-center bg-ocean text-white px-8 py-4 font-sans text-sm tracking-wider font-semibold hover:bg-ocean/90 transition-all">
         RÉSERVER THE NEST
         <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -548,12 +503,12 @@
 </section>
 
 <!-- Gallery -->
-<section class="py-16 md:py-24 px-6 bg-blanc">
+<section class="py-16 md:py-24 px-6 bg-offwhite">
   <div class="max-w-7xl mx-auto">
     <div class="text-center mb-12 md:mb-16">
       <div class="midcentury-line mx-auto mb-8"></div>
-      <p class="text-turquoise font-sans text-xs tracking-[0.2em] mb-4">GALERIE</p>
-      <h2 class="font-display text-3xl md:text-5xl text-ocean">Découvrez The Nest</h2>
+      <p class="text-ocean font-sans text-xs tracking-[0.2em] mb-4">GALERIE</p>
+      <h2 class="font-display text-3xl md:text-5xl text-navy">Découvrez The Nest</h2>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
       <div class="aspect-square overflow-hidden">
@@ -570,18 +525,18 @@
 </section>
 
 <!-- Also Discover -->
-<section class="py-16 md:py-24 px-6 bg-sunset-orange/10">
+<section class="py-16 md:py-24 px-6 bg-terra/10">
   <div class="max-w-4xl mx-auto text-center">
-    <div class="midcentury-line mx-auto mb-8" style="background: linear-gradient(90deg, #F28C28, #F4C430);"></div>
-    <p class="text-sunset-orange font-sans text-xs tracking-[0.2em] mb-4">À DÉCOUVRIR AUSSI</p>
-    <h2 class="font-display text-3xl md:text-5xl text-ocean mb-8">Le Grand Lodge</h2>
-    <p class="text-base md:text-lg text-ocean/70 mb-6 font-light">
+    <div class="midcentury-line mx-auto mb-8" style="background: linear-gradient(90deg, #C3785A, #005F9A);"></div>
+    <p class="text-terra font-sans text-xs tracking-[0.2em] mb-4">À DÉCOUVRIR AUSSI</p>
+    <h2 class="font-display text-3xl md:text-5xl text-navy mb-8">Le Grand Lodge</h2>
+    <p class="text-base md:text-lg text-navy/70 mb-6 font-light">
       Pour les grands groupes jusqu'à 12 personnes, avec 5 chambres, jardin privatif et piscine chauffée. L'horizon parfait pour se retrouver.
     </p>
-    <p class="text-ocean/60 mb-10 text-sm">
+    <p class="text-navy/60 mb-10 text-sm">
       Possibilité de louer The Nest en complément du Lodge pour accueillir jusqu'à 16 personnes.
     </p>
-    <a href="lodge.html" class="inline-flex items-center font-sans text-sm tracking-wider font-medium text-sunset-orange hover:text-ocean transition-colors">
+    <a href="lodge.html" class="inline-flex items-center font-sans text-sm tracking-wider font-medium text-terra hover:text-navy transition-colors">
       DÉCOUVRIR LE LODGE
       <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -592,34 +547,24 @@
 
 
 <!-- Contact CTA -->
-<section id="contact" class="py-16 md:py-24 px-6 bg-turquoise-dark text-blanc">
+<section id="contact" class="py-16 md:py-24 px-6 bg-ocean-dark text-offwhite">
   <div class="max-w-4xl mx-auto text-center">
     <div class="mx-auto mb-8 flex justify-center">
-      <svg class="w-16 h-auto md:w-20 md:h-auto" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Official brand kit logo with sunset arcs -->
-        <path d="M25 8 A 17 17 0 0 1 42 25 H 8 A 17 17 0 0 1 25 8" fill="#F4C430"/>
-        <path d="M25 12 A 13 13 0 0 1 38 25 H 12 A 13 13 0 0 1 25 12" fill="#F28C28"/>
-        <path d="M25 18 A 7 7 0 0 1 32 25 H 18 A 7 7 0 0 1 25 18" fill="#8B4513"/>
-        <!-- Wave lines -->
-        <line x1="5" y1="25" x2="45" y2="25" stroke="#8B4513" stroke-width="2" stroke-linecap="round"/>
-        <line x1="7" y1="30" x2="43" y2="30" stroke="white" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/>
-        <line x1="10" y1="35" x2="40" y2="35" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-        <line x1="14" y1="40" x2="36" y2="40" stroke="white" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
-      </svg>
+      <img src="images/logo-icon-white.png" alt="Marea" class="w-16 h-auto md:w-20">
     </div>
-    <p class="text-blanc/60 font-sans text-xs tracking-[0.2em] mb-4">RÉSERVER THE NEST</p>
+    <p class="text-offwhite/60 font-sans text-xs tracking-[0.2em] mb-4">RÉSERVER THE NEST</p>
     <h2 class="font-display text-3xl md:text-5xl mb-6 italic">Intéressé par The Nest ?</h2>
-    <p class="text-blanc/70 text-base md:text-lg mb-10 max-w-xl mx-auto font-light">
+    <p class="text-offwhite/70 text-base md:text-lg mb-10 max-w-xl mx-auto font-light">
       Un cocon pour 2 à 4 personnes, intime et confortable. Vérifiez les disponibilités et contactez-nous.
     </p>
     <div class="flex flex-col sm:flex-row justify-center gap-4">
-      <a href="reserver.html" class="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-turquoise text-blanc font-sans text-sm tracking-wider font-semibold hover:bg-turquoise/90 transition-all duration-300">
+      <a href="reserver.html" class="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-ocean text-offwhite font-sans text-sm tracking-wider font-semibold hover:bg-ocean/90 transition-all duration-300">
         <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
         </svg>
         VOIR LES DISPONIBILITÉS
       </a>
-      <a href="mailto:mareaferret@gmail.com" class="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 border-2 border-blanc font-sans text-sm tracking-wider font-medium hover:bg-blanc hover:text-turquoise-dark transition-all duration-300">
+      <a href="mailto:mareaferret@gmail.com" class="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 border-2 border-blanc font-sans text-sm tracking-wider font-medium hover:bg-offwhite hover:text-ocean-dark transition-all duration-300">
         <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
         </svg>
@@ -630,37 +575,24 @@
 </section>
 
 <!-- Footer -->
-<footer class="py-12 md:py-16 px-6 bg-ocean border-t border-blanc/10">
+<footer class="py-12 md:py-16 px-6 bg-navy border-t border-blanc/10">
   <div class="max-w-6xl mx-auto">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12">
       <div class="col-span-2">
         <div class="mb-6">
-          <svg class="w-32 h-auto" viewBox="0 0 300 280" xmlns="http://www.w3.org/2000/svg">
-            <g transform="translate(150, 80)">
-              <path d="M -70 0 A 70 70 0 0 1 70 0" fill="#F4C430" stroke="none"/>
-              <path d="M -50 0 A 50 50 0 0 1 50 0" fill="#F28C28" stroke="none"/>
-              <path d="M -25 0 A 25 25 0 0 1 25 0" fill="#8B4513" stroke="none"/>
-              <line x1="-90" y1="0" x2="90" y2="0" stroke="#8B4513" stroke-width="3" stroke-linecap="round"/>
-              <!-- Lignes turquoise = différenciation The Nest -->
-              <line x1="-85" y1="12" x2="85" y2="12" stroke="#6ED4D8" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="-70" y1="24" x2="70" y2="24" stroke="#A8E6E9" stroke-width="2.5" stroke-linecap="round"/>
-              <line x1="-50" y1="36" x2="50" y2="36" stroke="#D4F0F2" stroke-width="2.5" stroke-linecap="round"/>
-            </g>
-            <text x="150" y="165" font-family="Montserrat, sans-serif" font-size="48" font-weight="300" fill="#F8F6F3" text-anchor="middle" letter-spacing="1">the nest</text>
-            <text x="150" y="192" font-family="Montserrat, sans-serif" font-size="13" font-weight="400" fill="#D4C5B0" text-anchor="middle" letter-spacing="2">at Marea</text>
-          </svg>
+          <img src="images/logo-dark-bg.png" alt="Marea" class="w-32 h-auto">
         </div>
-        <p class="text-blanc/60 text-sm leading-relaxed max-w-sm font-light mb-6">
+        <p class="text-offwhite/60 text-sm leading-relaxed max-w-sm font-light mb-6">
           Location de vacances au Cap Ferret. Le Grand Lodge & The Nest à Petit Piquey, Bassin d'Arcachon.
         </p>
         <!-- Réseaux sociaux -->
         <div class="flex gap-4">
-          <a href="#" class="w-10 h-10 flex items-center justify-center border border-white/20 hover:border-turquoise hover:text-turquoise text-white/60 transition-colors" aria-label="Instagram">
+          <a href="#" class="w-10 h-10 flex items-center justify-center border border-white/20 hover:border-ocean hover:text-ocean text-white/60 transition-colors" aria-label="Instagram">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
             </svg>
           </a>
-          <a href="#" class="w-10 h-10 flex items-center justify-center border border-white/20 hover:border-turquoise hover:text-turquoise text-white/60 transition-colors" aria-label="Facebook">
+          <a href="#" class="w-10 h-10 flex items-center justify-center border border-white/20 hover:border-ocean hover:text-ocean text-white/60 transition-colors" aria-label="Facebook">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
             </svg>
@@ -669,35 +601,35 @@
       </div>
 
       <div>
-        <h4 class="text-blanc font-sans text-sm tracking-wider mb-4">NAVIGATION</h4>
+        <h4 class="text-offwhite font-sans text-sm tracking-wider mb-4">NAVIGATION</h4>
         <ul class="space-y-2">
-          <li><a href="index.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Accueil</a></li>
-          <li><a href="lodge.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Le Grand Lodge</a></li>
-          <li><a href="thenest.html" class="text-blanc/60 hover:text-turquoise transition-colors text-sm">The Nest</a></li>
-          <li><a href="reserver.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Réserver</a></li>
-          <li><a href="contact.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Contact</a></li>
-          <li><a href="pourquoi-marea.html" class="text-blanc/60 hover:text-sunset-orange transition-colors text-sm">Qui sommes-nous</a></li>
+          <li><a href="index.html" class="text-offwhite/60 hover:text-terra transition-colors text-sm">Accueil</a></li>
+          <li><a href="lodge.html" class="text-offwhite/60 hover:text-terra transition-colors text-sm">Le Grand Lodge</a></li>
+          <li><a href="thenest.html" class="text-offwhite/60 hover:text-ocean transition-colors text-sm">The Nest</a></li>
+          <li><a href="reserver.html" class="text-offwhite/60 hover:text-terra transition-colors text-sm">Réserver</a></li>
+          <li><a href="contact.html" class="text-offwhite/60 hover:text-terra transition-colors text-sm">Contact</a></li>
+          <li><a href="pourquoi-marea.html" class="text-offwhite/60 hover:text-terra transition-colors text-sm">Qui sommes-nous</a></li>
         </ul>
       </div>
 
       <div>
-        <h4 class="text-blanc font-sans text-sm tracking-wider mb-4">CONTACT</h4>
-        <ul class="space-y-2 text-sm text-blanc/60">
+        <h4 class="text-offwhite font-sans text-sm tracking-wider mb-4">CONTACT</h4>
+        <ul class="space-y-2 text-sm text-offwhite/60">
           <li>Petit Piquey, Cap Ferret</li>
           <li>Bassin d'Arcachon, France</li>
           <li class="pt-2">
-            <a href="mailto:mareaferret@gmail.com" class="hover:text-turquoise transition-colors">mareaferret@gmail.com</a>
+            <a href="mailto:mareaferret@gmail.com" class="hover:text-ocean transition-colors">mareaferret@gmail.com</a>
           </li>
           <li>
-            <a href="tel:+33676886769" class="hover:text-turquoise transition-colors">+33 6 76 88 67 69</a>
+            <a href="tel:+33676886769" class="hover:text-ocean transition-colors">+33 6 76 88 67 69</a>
           </li>
         </ul>
       </div>
     </div>
 
     <div class="border-t border-blanc/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-blanc/40 text-sm">© 2025 Maréa – Tous droits réservés</p>
-      <div class="flex gap-6 text-sm text-blanc/40">
+      <p class="text-offwhite/40 text-sm">© 2025 Maréa – Tous droits réservés</p>
+      <div class="flex gap-6 text-sm text-offwhite/40">
         <a href="#" class="hover:text-white transition-colors">Mentions légales</a>
         <a href="thenest-en.html" class="hover:text-white transition-colors">English</a>
       </div>
@@ -707,7 +639,7 @@
 
 <!-- Mobile Sticky CTA -->
 <div class="mobile-sticky-cta lg:hidden">
-  <a href="reserver.html" class="block w-full bg-turquoise text-white py-3 font-sans text-sm tracking-wider font-semibold text-center">
+  <a href="reserver.html" class="block w-full bg-ocean text-white py-3 font-sans text-sm tracking-wider font-semibold text-center">
     RÉSERVER THE NEST
   </a>
 </div>
