@@ -3,12 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contactez les propriétaires de Maréa à Petit Piquey, Cap Ferret. WhatsApp, email ou téléphone. Réponse rapide pour Le Grand Lodge et The Nest, Bassin d'Arcachon.">
-  <meta name="keywords" content="contact propriétaires maréa cap ferret, petit piquey, whatsapp location cap ferret, email lodge bassin arcachon">
-  <title>Contact Propriétaires | Maréa Petit Piquey Cap Ferret Bassin Arcachon</title>
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
-  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <meta name="description" content="Contactez Maréa - Surf Lodge au Cap Ferret. Email, WhatsApp, téléphone. Nous sommes à votre écoute pour toute question sur le Grand Lodge et The Nest.">
+  <meta name="keywords" content="contact maréa cap ferret, contacter lodge cap ferret, whatsapp maréa, email lodge bassin arcachon">
+  <title>Contact – Maréa Surf Lodge Cap Ferret</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -77,14 +74,13 @@
       transform: translateX(0);
     }
 
-    /* Form styling */
-    input, select, textarea {
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    /* CTA Pulse animation */
+    @keyframes pulse-cta {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(195, 120, 90, 0.4); }
+      50% { box-shadow: 0 0 0 8px rgba(195, 120, 90, 0); }
     }
-    input:focus, select:focus, textarea:focus {
-      outline: none;
-      border-color: #C3785A;
-      box-shadow: 0 0 0 3px rgba(195, 120, 90, 0.1);
+    .cta-pulse {
+      animation: pulse-cta 2s infinite;
     }
   </style>
 </head>
@@ -103,10 +99,8 @@
       <a href="index.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-terra transition-colors">ACCUEIL</a>
       <a href="lodge.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-terra transition-colors">LE LODGE</a>
       <a href="thenest.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-ocean transition-colors">THE NEST</a>
-      <a href="reserver.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-terra transition-colors">RÉSERVER</a>
       <a href="contact.html" class="nav-link font-sans text-sm tracking-wider font-medium text-terra">CONTACT</a>
-      <a href="pourquoi-marea.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-terra transition-colors">QUI SOMMES-NOUS</a>
-      <span class="text-sand">|</span>
+      <span class="text-sand/30">|</span>
       <a href="contact-en.html" class="font-sans text-sm tracking-wider font-light hover:text-terra transition-colors">EN</a>
       <a href="reserver.html" class="ml-2 bg-terra text-white px-5 py-2.5 font-sans text-sm tracking-wider font-semibold hover:bg-terra/90 transition-all cta-pulse">
         RÉSERVER
@@ -114,32 +108,25 @@
     </div>
 
     <!-- Mobile Menu Button -->
-    <div class="flex items-center gap-3 lg:hidden">
-      <a href="reserver.html" class="bg-terra text-white px-4 py-2 font-sans text-xs tracking-wider font-semibold">
-        RÉSERVER
-      </a>
-      <button id="menuBtn" class="p-2 text-navy" aria-label="Menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
-    </div>
+    <button id="menuBtn" class="lg:hidden p-2 text-navy" aria-label="Menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
   </div>
 </nav>
 
 <!-- Mobile Menu (outside nav for z-index) -->
-<div id="mobileMenu" class="mobile-menu fixed inset-0 top-[57px] z-[100] lg:hidden bg-offwhite">
-  <div class="flex flex-col items-center justify-center h-full gap-8 bg-offwhite">
+<div id="mobileMenu" class="mobile-menu fixed inset-0 top-[73px] z-[100] lg:hidden bg-offwhite">
+  <div class="flex flex-col items-center justify-center h-full gap-8 px-6">
     <a href="index.html" class="font-sans text-xl tracking-wider font-medium text-navy hover:text-terra transition-colors">ACCUEIL</a>
     <a href="lodge.html" class="font-sans text-xl tracking-wider font-medium text-navy hover:text-terra transition-colors">LE LODGE</a>
     <a href="thenest.html" class="font-sans text-xl tracking-wider font-medium text-navy hover:text-ocean transition-colors">THE NEST</a>
-    <a href="reserver.html" class="font-sans text-xl tracking-wider font-medium text-navy hover:text-terra transition-colors">RÉSERVER</a>
     <a href="contact.html" class="font-sans text-xl tracking-wider font-medium text-terra">CONTACT</a>
-    <a href="pourquoi-marea.html" class="font-sans text-xl tracking-wider font-medium text-navy hover:text-terra transition-colors">QUI SOMMES-NOUS</a>
-    <div class="border-t border-sand pt-8 mt-4 w-40 text-center">
-      <a href="contact-en.html" class="font-sans text-base tracking-wider font-medium text-navy hover:text-terra transition-colors">ENGLISH</a>
+    <div class="border-t border-sand pt-8 mt-4 w-32 text-center">
+      <a href="contact-en.html" class="font-sans text-sm tracking-wider font-medium text-navy hover:text-terra transition-colors">ENGLISH</a>
     </div>
-    <a href="reserver.html" class="mt-4 bg-terra text-white px-8 py-4 font-sans text-sm tracking-wider font-semibold">
+    <a href="reserver.html" class="mt-4 bg-terra text-white px-8 py-3 font-sans text-sm tracking-wider font-semibold hover:bg-terra/90 transition-all">
       RÉSERVER
     </a>
   </div>
@@ -175,28 +162,22 @@
   <div class="max-w-4xl mx-auto text-center">
     <div class="midcentury-line mx-auto mb-8"></div>
     <p class="text-ocean font-sans text-xs tracking-[0.2em] mb-6">CONTACT</p>
-    <h1 class="font-display italic text-4xl md:text-5xl lg:text-6xl text-navy leading-tight mb-6">
-      Contactez-nous
+    <h1 class="font-display text-4xl md:text-5xl lg:text-6xl text-navy leading-tight mb-6">
+      Nous contacter
     </h1>
     <p class="text-base md:text-lg text-navy/70 leading-relaxed max-w-2xl mx-auto font-light">
-      Une question sur nos hébergements ? Besoin d'informations sur le Cap Ferret ? Nous sommes là pour vous aider.
+      Une question sur nos hébergements ? Besoin d'informations ? Nous sommes à votre écoute.
     </p>
-    <a href="reserver.html" class="inline-flex items-center gap-2 mt-6 text-terra font-medium text-sm hover:underline">
-      Pour réserver, consultez les disponibilités
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-      </svg>
-    </a>
   </div>
 </section>
 
 <!-- Contact Options -->
-<section class="py-12 md:py-16 px-6 bg-offwhite">
+<section class="py-12 md:py-16 px-6 bg-sand/20">
   <div class="max-w-4xl mx-auto">
     <div class="text-center mb-10">
       <div class="midcentury-line mx-auto mb-6"></div>
-      <p class="text-ocean font-sans text-xs tracking-[0.2em] mb-3">NOUS CONTACTER</p>
-      <h2 class="font-display italic text-2xl md:text-3xl text-navy">Nous sommes à votre écoute</h2>
+      <p class="text-ocean font-sans text-xs tracking-[0.2em] mb-3">CONTACTEZ-NOUS</p>
+      <h2 class="font-display text-2xl md:text-3xl text-navy">Nous sommes à votre écoute</h2>
     </div>
 
     <div class="grid md:grid-cols-3 gap-6">
@@ -240,12 +221,12 @@
 </section>
 
 <!-- Location Section -->
-<section class="py-12 md:py-20 px-6 bg-sand/20">
+<section class="py-12 md:py-20 px-6 bg-offwhite">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-10">
       <div class="midcentury-line mx-auto mb-6"></div>
       <p class="text-ocean font-sans text-xs tracking-[0.2em] mb-3">LOCALISATION</p>
-      <h2 class="font-display italic text-2xl md:text-3xl text-navy">Où nous trouver</h2>
+      <h2 class="font-display text-2xl md:text-3xl text-navy">Où nous trouver</h2>
     </div>
 
     <div class="grid lg:grid-cols-2 gap-8 items-start">
@@ -345,11 +326,12 @@
   <div class="max-w-6xl mx-auto">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12">
       <div class="col-span-2">
-        <div class="mb-6">
-          <img src="images/logo-dark-bg.png" alt="Marea" class="w-32 h-auto">
+        <div class="flex items-center gap-3 mb-6">
+          <img src="images/logo-icon.png" alt="Marea" class="w-10 h-10">
+          <span class="font-display text-xl italic font-semibold text-offwhite" style="letter-spacing: -1px;">marea</span>
         </div>
         <p class="text-offwhite/60 text-sm leading-relaxed max-w-sm font-light mb-6">
-          Location de vacances au Cap Ferret. Le Grand Lodge & The Nest à Petit Piquey, Bassin d'Arcachon.
+          Surf lodge au Bassin d'Arcachon. Le Grand Lodge & The Nest à Petit Piquey, Cap Ferret.
         </p>
         <!-- Social Links -->
         <div class="flex items-center gap-4">
@@ -372,9 +354,7 @@
           <li><a href="index.html" class="text-offwhite/60 hover:text-terra transition-colors text-sm">Accueil</a></li>
           <li><a href="lodge.html" class="text-offwhite/60 hover:text-terra transition-colors text-sm">Le Grand Lodge</a></li>
           <li><a href="thenest.html" class="text-offwhite/60 hover:text-ocean transition-colors text-sm">The Nest</a></li>
-          <li><a href="reserver.html" class="text-offwhite/60 hover:text-terra transition-colors text-sm">Réserver</a></li>
           <li><a href="contact.html" class="text-offwhite/60 hover:text-terra transition-colors text-sm">Contact</a></li>
-          <li><a href="pourquoi-marea.html" class="text-offwhite/60 hover:text-terra transition-colors text-sm">Qui sommes-nous</a></li>
         </ul>
       </div>
 
@@ -399,6 +379,13 @@
     </div>
   </div>
 </footer>
+
+<!-- Mobile Sticky CTA -->
+<div class="fixed bottom-0 left-0 right-0 p-4 bg-offwhite/95 backdrop-blur-sm border-t border-sand/20 lg:hidden z-50">
+  <a href="reserver.html" class="block w-full bg-terra text-white text-center py-3 font-sans text-sm tracking-wider font-semibold cta-pulse">
+    RÉSERVER MAINTENANT
+  </a>
+</div>
 
 </body>
 </html>
