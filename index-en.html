@@ -25,6 +25,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- GLightbox -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
   <script>
     tailwind.config = {
       theme: {
@@ -163,7 +165,6 @@
       <a href="index-en.html" class="nav-link font-sans text-sm tracking-wider font-medium text-terra">HOME</a>
       <a href="lodge-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-terra transition-colors">THE LODGE</a>
       <a href="thenest-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-ocean transition-colors">THE NEST</a>
-      <a href="reserver-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-terra transition-colors">BOOK</a>
       <a href="contact-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-terra transition-colors">CONTACT</a>
       <a href="pourquoi-marea-en.html" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-terra transition-colors">ABOUT US</a>
       <span class="text-sand">|</span>
@@ -194,7 +195,6 @@
     <a href="index-en.html" class="font-sans text-xl tracking-wider font-medium text-terra">HOME</a>
     <a href="lodge-en.html" class="font-sans text-xl tracking-wider font-medium text-navy hover:text-terra transition-colors">THE LODGE</a>
     <a href="thenest-en.html" class="font-sans text-xl tracking-wider font-medium text-navy hover:text-ocean transition-colors">THE NEST</a>
-    <a href="reserver-en.html" class="font-sans text-xl tracking-wider font-medium text-navy hover:text-terra transition-colors">BOOK</a>
     <a href="contact-en.html" class="font-sans text-xl tracking-wider font-medium text-navy hover:text-terra transition-colors">CONTACT</a>
     <a href="pourquoi-marea-en.html" class="font-sans text-xl tracking-wider font-medium text-navy hover:text-terra transition-colors">ABOUT US</a>
     <div class="border-t border-sand pt-8 mt-4 w-40 text-center">
@@ -459,23 +459,33 @@
       <h2 class="font-display italic text-3xl md:text-5xl text-navy">Moments of light</h2>
     </div>
 
-    <!-- Asymmetric Layout -->
+    <!-- Asymmetric Layout with lightbox -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
       <!-- Large image -->
       <div class="col-span-2 row-span-2 aspect-square md:aspect-auto overflow-hidden">
-        <img src="images/lodge2.jpg" alt="Bright living room Le Grand Lodge" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+        <a href="images/lodge2.jpg" class="glightbox cursor-pointer" data-gallery="gallery" data-description="Bright living room Le Grand Lodge">
+          <img src="images/lodge2.jpg" alt="Bright living room Le Grand Lodge" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+        </a>
       </div>
       <div class="aspect-square overflow-hidden">
-        <img src="images/img1.jpg" alt="Marea Cap Ferret" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+        <a href="images/img1.jpg" class="glightbox cursor-pointer" data-gallery="gallery" data-description="Marea Cap Ferret">
+          <img src="images/img1.jpg" alt="Marea Cap Ferret" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+        </a>
       </div>
       <div class="aspect-square overflow-hidden">
-        <img src="images/img2.jpg" alt="Marea Pool" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+        <a href="images/img2.jpg" class="glightbox cursor-pointer" data-gallery="gallery" data-description="Marea Pool">
+          <img src="images/img2.jpg" alt="Marea Pool" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+        </a>
       </div>
       <div class="aspect-square overflow-hidden">
-        <img src="images/img3.jpg" alt="Marea Bedroom" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+        <a href="images/img3.jpg" class="glightbox cursor-pointer" data-gallery="gallery" data-description="Marea Bedroom">
+          <img src="images/img3.jpg" alt="Marea Bedroom" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+        </a>
       </div>
       <div class="aspect-square overflow-hidden">
-        <img src="images/studio3.jpg" alt="The Nest interior" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+        <a href="images/studio3.jpg" class="glightbox cursor-pointer" data-gallery="gallery" data-description="The Nest interior">
+          <img src="images/studio3.jpg" alt="The Nest interior" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+        </a>
       </div>
     </div>
   </div>
@@ -690,16 +700,26 @@
     </div>
 
     <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-white/40 text-sm">© 2025 Marea - All rights reserved</p>
+      <p class="text-white/40 text-sm">© 2026 Marea - All rights reserved</p>
       <div class="flex gap-6 text-sm text-white/40">
         <a href="#" class="hover:text-white transition-colors">Legal</a>
-        <a href="#" class="hover:text-white transition-colors">Terms</a>
+        <a href="cgv.html" class="hover:text-white transition-colors">Terms</a>
         <a href="index.html" class="hover:text-white transition-colors">Francais</a>
       </div>
     </div>
   </div>
 </footer>
 
+
+<!-- GLightbox Script -->
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script>
+  const lightbox = GLightbox({
+    touchNavigation: true,
+    loop: true,
+    closeButton: true
+  });
+</script>
 
 </body>
 </html>
