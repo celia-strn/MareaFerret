@@ -12,6 +12,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- GLightbox -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
   <script>
     tailwind.config = {
       theme: {
@@ -269,15 +271,27 @@
       <p class="text-ocean font-sans text-xs tracking-[0.2em] mb-4">GALLERY</p>
       <h2 class="font-display italic text-3xl md:text-5xl text-navy">Discover The Nest</h2>
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
-      <div class="aspect-square overflow-hidden">
-        <img src="images/studio1.jpg" alt="The Nest living room" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+    <!-- Asymmetric layout with GLightbox – replace divs with <a class="glightbox"> when photos are ready -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
+      <div class="col-span-2 row-span-2 aspect-square md:aspect-auto flex flex-col items-center justify-center gap-5" style="background: repeating-linear-gradient(135deg, #E8F0F5 0px, #E8F0F5 8px, #F0F6FA 8px, #F0F6FA 16px); min-height: 260px;">
+        <img src="images/logo-bicolor.png" alt="Marea" class="w-28 h-auto opacity-40">
+        <p class="font-sans text-xs tracking-[0.3em] text-navy/30">COMING SOON</p>
       </div>
-      <div class="aspect-square overflow-hidden">
-        <img src="images/studio3.jpg" alt="The Nest bedroom" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+      <div class="aspect-square flex flex-col items-center justify-center gap-4" style="background: repeating-linear-gradient(135deg, #E8F0F5 0px, #E8F0F5 8px, #F0F6FA 8px, #F0F6FA 16px);">
+        <img src="images/logo-bicolor.png" alt="Marea" class="w-16 h-auto opacity-40">
+        <p class="font-sans text-xs tracking-[0.3em] text-navy/30">COMING SOON</p>
       </div>
-      <div class="aspect-square overflow-hidden">
-        <img src="images/studio-hero.jpg" alt="The Nest view" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+      <div class="aspect-square flex flex-col items-center justify-center gap-4" style="background: repeating-linear-gradient(135deg, #E8F0F5 0px, #E8F0F5 8px, #F0F6FA 8px, #F0F6FA 16px);">
+        <img src="images/logo-bicolor.png" alt="Marea" class="w-16 h-auto opacity-40">
+        <p class="font-sans text-xs tracking-[0.3em] text-navy/30">COMING SOON</p>
+      </div>
+      <div class="aspect-square flex flex-col items-center justify-center gap-4" style="background: repeating-linear-gradient(135deg, #E8F0F5 0px, #E8F0F5 8px, #F0F6FA 8px, #F0F6FA 16px);">
+        <img src="images/logo-bicolor.png" alt="Marea" class="w-16 h-auto opacity-40">
+        <p class="font-sans text-xs tracking-[0.3em] text-navy/30">COMING SOON</p>
+      </div>
+      <div class="aspect-square flex flex-col items-center justify-center gap-4" style="background: repeating-linear-gradient(135deg, #E8F0F5 0px, #E8F0F5 8px, #F0F6FA 8px, #F0F6FA 16px);">
+        <img src="images/logo-bicolor.png" alt="Marea" class="w-16 h-auto opacity-40">
+        <p class="font-sans text-xs tracking-[0.3em] text-navy/30">COMING SOON</p>
       </div>
     </div>
   </div>
@@ -377,6 +391,12 @@
     </div>
   </div>
 </footer>
+
+<!-- GLightbox Script -->
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script>
+  const lightbox = GLightbox({ touchNavigation: true, loop: true, closeButton: true });
+</script>
 
 </body>
 </html>
