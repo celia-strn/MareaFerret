@@ -501,7 +501,7 @@
         </div>
         <div class="p-5">
           <h3 class="font-display text-xl text-navy group-hover:text-terra transition-colors mb-2">Le Grand Lodge</h3>
-          <p class="text-sm text-navy/70 mb-3">200m² · 5 bedrooms · Jusqu'à 12 guests</p>
+          <p class="text-sm text-navy/70 mb-3">200m² · 5 bedrooms · Up to 12 guests</p>
           <div class="flex flex-wrap gap-2 text-xs">
             <span class="bg-sand/50 text-navy/70 px-2 py-1">Heated pool</span>
             <span class="bg-sand/50 text-navy/70 px-2 py-1">Garden 250m²</span>
@@ -517,11 +517,11 @@
         </div>
         <div class="p-5">
           <h3 class="font-display text-xl text-navy group-hover:text-ocean transition-colors mb-2">The Nest</h3>
-          <p class="text-sm text-navy/70 mb-3">Studio indépendant · 2 à 4 guests</p>
+          <p class="text-sm text-navy/70 mb-3">Independent studio · 2 to 4 guests</p>
           <div class="flex flex-wrap gap-2 text-xs">
             <span class="bg-sand/50 text-navy/70 px-2 py-1">Independent</span>
-            <span class="bg-sand/50 text-navy/70 px-2 py-1">Cuisine équipée</span>
-            <span class="bg-sand/50 text-navy/70 px-2 py-1">Terrasse</span>
+            <span class="bg-sand/50 text-navy/70 px-2 py-1">Equipped kitchen</span>
+            <span class="bg-sand/50 text-navy/70 px-2 py-1">Terrace</span>
           </div>
         </div>
       </a>
@@ -529,7 +529,7 @@
 
     <div class="mt-8 p-5 bg-offwhite border border-terra/30 text-center">
       <p class="text-navy/80 text-sm">
-        <span class="text-terra font-semibold">Bon à savoir :</span> Louez Le Lodge + The Nest ensemble pour accueillir jusqu'à <strong>16 guests</strong>.
+        <span class="text-terra font-semibold">Good to know:</span> Book Le Lodge + The Nest together to accommodate up to <strong>16 guests</strong>.
       </p>
     </div>
   </div>
@@ -761,8 +761,8 @@
   // ============================================
   function generateMessage() {
     const property = document.getElementById('property').value;
-    const checkin = document.getElementById('checkin').value || 'Non sélectionné';
-    const checkout = document.getElementById('checkout').value || 'Non sélectionné';
+    const checkin = document.getElementById('checkin').value || 'Not selected';
+    const checkout = document.getElementById('checkout').value || 'Not selected';
     const adults = document.getElementById('adults').value;
     const children = document.getElementById('children').value;
 
@@ -779,17 +779,17 @@
 
     return `Hello,
 
-Je souhaite faire une demande de réservation pour Marea :
+I would like to make a booking request for Marea:
 
-🏠 Accommodation : ${property}
-📅 Check-in : ${checkin}
-📅 Check-out : ${checkout}
-🌙 Durée : ${nights} night${nights > 1 ? 's' : ''}
-👥 Guests : ${guestsText}
+🏠 Accommodation: ${property}
+📅 Check-in: ${checkin}
+📅 Check-out: ${checkout}
+🌙 Duration: ${nights} night${nights > 1 ? 's' : ''}
+👥 Guests: ${guestsText}
 
-Pouvez-vous me confirmer la disponibilité et le tarif ?
+Could you confirm availability and pricing?
 
-Merci !`;
+Thank you!`;
   }
 
   document.getElementById('whatsappBtn').addEventListener('click', function() {
@@ -801,8 +801,8 @@ Merci !`;
 
   document.getElementById('emailBtn').addEventListener('click', function() {
     const property = document.getElementById('property').value;
-    const checkin = document.getElementById('checkin').value || 'Non sélectionné';
-    const checkout = document.getElementById('checkout').value || 'Non sélectionné';
+    const checkin = document.getElementById('checkin').value || 'Not selected';
+    const checkout = document.getElementById('checkout').value || 'Not selected';
 
     const subject = `Booking request - ${property} - ${checkin} to ${checkout}`;
     const body = generateMessage();
