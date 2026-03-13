@@ -3,12 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Location studio cosy The Nest à Petit Piquey. 2-4 personnes, indépendant et intimiste. Parfait couples et petites familles au Cap Ferret, Bassin d'Arcachon.">
-  <title>Studio Cosy 2-4 pers Cap Ferret | The Nest Marea Petit Piquey</title>
+  <meta name="description" content="Studio indépendant et lumineux à Petit Piquey, à 50m du Bassin. Idéal pour un couple ou une petite famille. Location directe sans frais de plateforme dès 100€/nuit.">
+  <title>Studio Location Cap Ferret · The Nest Marea — 2 à 4 Personnes</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+  <!-- SEO -->
+  <link rel="canonical" href="https://mareaferret.fr/thenest.html" />
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="fr" href="https://mareaferret.fr/thenest.html" />
+  <link rel="alternate" hreflang="en" href="https://mareaferret.fr/thenest-en.html" />
+  <link rel="alternate" hreflang="x-default" href="https://mareaferret.fr/thenest.html" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mareaferret.fr/thenest.html" />
+  <meta property="og:title" content="Studio Location Cap Ferret · The Nest Marea — 2 à 4 Personnes" />
+  <meta property="og:description" content="Studio indépendant et lumineux à Petit Piquey, à 50m du Bassin. Idéal pour un couple ou une petite famille. Location directe dès 100€/nuit." />
+  <meta property="og:image" content="https://mareaferret.fr/images/og-cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Marea — Location Cap Ferret" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Studio Location Cap Ferret · The Nest Marea — 2 à 4 Personnes" />
+  <meta name="twitter:description" content="Studio indépendant à Petit Piquey, à 50m du Bassin. Location directe sans frais de plateforme dès 100€/nuit." />
+  <meta name="twitter:image" content="https://mareaferret.fr/images/og-cover.jpg" />
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -210,7 +232,7 @@
   <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
     <!-- Logo -->
     <a href="index.html" class="flex items-center">
-      <img src="images/logo-bicolor.png" alt="Marea" class="h-10 md:h-12 w-auto">
+      <img src="images/logo-bicolor.png" alt="Logo Marea - Location vacances Cap Ferret" class="h-10 md:h-12 w-auto">
     </a>
 
     <!-- Desktop Navigation -->
@@ -559,7 +581,7 @@
 <section id="contact" class="py-16 md:py-24 px-6 bg-ocean-dark text-offwhite">
   <div class="max-w-4xl mx-auto text-center">
     <div class="mx-auto mb-8 flex justify-center">
-      <img src="images/logo-icon-white.png" alt="Marea" class="w-16 h-auto md:w-20">
+      <img src="images/logo-icon-white.png" alt="Marea icône" class="w-16 h-auto md:w-20">
     </div>
     <p class="text-offwhite/60 font-sans text-xs tracking-[0.2em] mb-4">RÉSERVER THE NEST</p>
     <h2 class="font-display text-3xl md:text-5xl mb-6 italic">Intéressé par The Nest ?</h2>
@@ -704,5 +726,46 @@
 
 <script src="footer.js"></script>
 <script>renderFooter('fr', 'thenest-en.html');</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Accommodation",
+  "name": "The Nest — Studio Marea Cap Ferret",
+  "description": "Studio indépendant et lumineux pour 2 à 4 personnes à Petit Piquey. Terrasse privative, cuisine équipée, à 50m du Bassin d'Arcachon.",
+  "url": "https://mareaferret.fr/thenest.html",
+  "numberOfRooms": 1,
+  "occupancy": { "@type": "QuantitativeValue", "maxValue": 4 },
+  "amenityFeature": [
+    { "@type": "LocationFeatureSpecification", "name": "Terrasse privative", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Cuisine équipée", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Entrée indépendante", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "WiFi", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Parking", "value": true }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "3 rue Berthelot",
+    "addressLocality": "Lège-Cap-Ferret",
+    "postalCode": "33950",
+    "addressCountry": "FR"
+  },
+  "image": "https://mareaferret.fr/images/studio1.jpg",
+  "containedInPlace": {
+    "@type": "LodgingBusiness",
+    "name": "Marea — Location Cap Ferret",
+    "url": "https://mareaferret.fr"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://mareaferret.fr/" },
+    { "@type": "ListItem", "position": 2, "name": "The Nest", "item": "https://mareaferret.fr/thenest.html" }
+  ]
+}
+</script>
 </body>
 </html>
