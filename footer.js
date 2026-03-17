@@ -22,19 +22,19 @@
       : "Holiday rental in Cap Ferret. Le Grand Lodge &amp; The Nest in Petit Piquey, Arcachon Bay.";
 
     var nav = fr ? [
-      '<li><a href="index.html" class="text-white/60 hover:text-terra transition-colors text-sm">Accueil</a></li>',
-      '<li><a href="lodge.html" class="text-white/60 hover:text-terra transition-colors text-sm">Le Grand Lodge</a></li>',
-      '<li><a href="thenest.html" class="text-white/60 hover:text-ocean transition-colors text-sm">The Nest</a></li>',
-      '<li><a href="reserver.html" class="text-white/60 hover:text-terra transition-colors text-sm">Réserver</a></li>',
-      '<li><a href="contact.html" class="text-white/60 hover:text-terra transition-colors text-sm">Contact</a></li>',
-      '<li><a href="pourquoi-marea.html" class="text-white/60 hover:text-terra transition-colors text-sm">Qui sommes-nous</a></li>'
+      '<li><a href="/" class="text-white/60 hover:text-terra transition-colors text-sm">Accueil</a></li>',
+      '<li><a href="/lodge/" class="text-white/60 hover:text-terra transition-colors text-sm">Le Grand Lodge</a></li>',
+      '<li><a href="/thenest/" class="text-white/60 hover:text-ocean transition-colors text-sm">The Nest</a></li>',
+      '<li><a href="/reserver/" class="text-white/60 hover:text-terra transition-colors text-sm">Réserver</a></li>',
+      '<li><a href="/contact/" class="text-white/60 hover:text-terra transition-colors text-sm">Contact</a></li>',
+      '<li><a href="/pourquoi-marea/" class="text-white/60 hover:text-terra transition-colors text-sm">Qui sommes-nous</a></li>'
     ].join('\n') : [
-      '<li><a href="index-en.html" class="text-white/60 hover:text-terra transition-colors text-sm">Home</a></li>',
-      '<li><a href="lodge-en.html" class="text-white/60 hover:text-terra transition-colors text-sm">Le Grand Lodge</a></li>',
-      '<li><a href="thenest-en.html" class="text-white/60 hover:text-ocean transition-colors text-sm">The Nest</a></li>',
-      '<li><a href="reserver-en.html" class="text-white/60 hover:text-terra transition-colors text-sm">Book</a></li>',
-      '<li><a href="contact-en.html" class="text-white/60 hover:text-terra transition-colors text-sm">Contact</a></li>',
-      '<li><a href="pourquoi-marea-en.html" class="text-white/60 hover:text-terra transition-colors text-sm">About Us</a></li>'
+      '<li><a href="/index-en/" class="text-white/60 hover:text-terra transition-colors text-sm">Home</a></li>',
+      '<li><a href="/lodge-en/" class="text-white/60 hover:text-terra transition-colors text-sm">Le Grand Lodge</a></li>',
+      '<li><a href="/thenest-en/" class="text-white/60 hover:text-ocean transition-colors text-sm">The Nest</a></li>',
+      '<li><a href="/reserver-en/" class="text-white/60 hover:text-terra transition-colors text-sm">Book</a></li>',
+      '<li><a href="/contact-en/" class="text-white/60 hover:text-terra transition-colors text-sm">Contact</a></li>',
+      '<li><a href="/pourquoi-marea-en/" class="text-white/60 hover:text-terra transition-colors text-sm">About Us</a></li>'
     ].join('\n');
 
     var location2 = fr ? "Bassin d'Arcachon, France" : "Arcachon Bay, France";
@@ -49,7 +49,7 @@
       '    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12">',
       '',
       '      <div class="col-span-2">',
-      '        <div class="mb-6"><img src="images/logo-dark-bg.png" alt="Marea" class="w-32 h-auto"></div>',
+      '        <div class="mb-6"><img src="/images/logo-dark-bg.png" alt="Marea" class="w-32 h-auto"></div>',
       '        <p class="text-white/60 text-sm leading-relaxed max-w-sm font-light mb-6">' + desc + '</p>',
       '        ' + SOCIAL,
       '      </div>',
@@ -73,8 +73,8 @@
       '    <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">',
       '      <p class="text-white/40 text-sm">' + copyright + '</p>',
       '      <div class="flex gap-6 text-sm text-white/40">',
-      '        <a href="mentions-legales.html" class="hover:text-white transition-colors">' + legalLabel + '</a>',
-      '        <a href="cgv.html" class="hover:text-white transition-colors">' + cgvLabel + '</a>',
+      '        <a href="/mentions-legales/" class="hover:text-white transition-colors">' + legalLabel + '</a>',
+      '        <a href="/cgv/" class="hover:text-white transition-colors">' + cgvLabel + '</a>',
       '        <a href="' + langSwitchUrl + '" class="hover:text-white transition-colors">' + langLabel + '</a>',
       '      </div>',
       '    </div>',

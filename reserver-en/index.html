@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Book your Stay · Marea Cap Ferret — Availability</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <meta name="description" content="Check availability for Le Grand Lodge and The Nest at Cap Ferret. Book directly with the owners, reply within 24h. No platform fees.">
+  <meta name="keywords" content="book cap ferret, vacation rental bassin arcachon, cap ferret availability">
+  <link rel="canonical" href="https://mareaferret.fr/reserver-en/" />
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="fr" href="https://mareaferret.fr/reserver/" />
+  <link rel="alternate" hreflang="en" href="https://mareaferret.fr/reserver-en/" />
+  <link rel="alternate" hreflang="x-default" href="https://mareaferret.fr/reserver/" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mareaferret.fr/reserver-en/" />
+  <meta property="og:title" content="Book your Stay · Marea Cap Ferret — Availability" />
+  <meta property="og:description" content="Check availability for Le Grand Lodge and The Nest at Cap Ferret. Book directly with the owners, reply within 24h. No platform fees." />
+  <meta property="og:image" content="https://mareaferret.fr/images/og-cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:site_name" content="Marea — Location Cap Ferret" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Book your Stay · Marea Cap Ferret — Availability" />
+  <meta name="twitter:description" content="Check availability for Le Grand Lodge and The Nest. Book directly with the owners, no platform fees." />
+  <meta name="twitter:image" content="https://mareaferret.fr/images/og-cover.jpg" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- Flatpickr Calendar - Preload for faster loading -->
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" as="style">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/light.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'navy': '#1E3A5F',
+            'navy-dark': '#152D4A',
+            'sand-light': '#FAF7F0',
+            'ocean-accent': '#005F9A',
+            'terra': '#C3785A',
+            'terra-dark': '#A66B4D',
+            'sand': '#F5EFE0',
+            'warm-gray': '#E8E4DD',
+            'terra-light': '#F5EDEA',
+            'offwhite': '#FAFAF7',
+            'text-light': '#5A7A96',
+            'ocean': '#005F9A',
+            'ocean-dark': '#004A78',
+            'ocean-light': '#3A8BC2',
+            'ocean-pastel': '#B8D4E8',
+          },
+          fontFamily: {
+            'display': ['Playfair Display', 'Georgia', 'serif'],
+            'sans': ['DM Sans', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #C3785A;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .midcentury-line {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, #C3785A, #005F9A);
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+    }
+    .mobile-menu.open {
+      transform: translateX(0);
+    }
+
+    /* CTA Pulse */
+    .cta-pulse {
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(195, 120, 90, 0.4); }
+      50% { box-shadow: 0 0 0 10px rgba(195, 120, 90, 0); }
+    }
+
+    /* Flatpickr Custom Styles */
+    .flatpickr-calendar {
+      font-family: 'Montserrat', sans-serif;
+      border: 1px solid #F5EFE0;
+      box-shadow: 0 4px 20px rgba(44, 74, 98, 0.1);
+    }
+    .flatpickr-day.selected,
+    .flatpickr-day.startRange,
+    .flatpickr-day.endRange {
+      background: #C3785A !important;
+      border-color: #C3785A !important;
+    }
+    .flatpickr-day.inRange {
+      background: rgba(195, 120, 90, 0.2) !important;
+      border-color: transparent !important;
+      box-shadow: none !important;
+    }
+    .flatpickr-day:hover {
+      background: #F5EFE0 !important;
+      border-color: #F5EFE0 !important;
+    }
+    .flatpickr-day.disabled,
+    .flatpickr-day.disabled:hover {
+      background: #f0f0f0 !important;
+      color: #ccc !important;
+      text-decoration: line-through;
+      cursor: not-allowed;
+    }
+    .flatpickr-day.booked {
+      background: repeating-linear-gradient(
+        45deg,
+        #f5f5f5,
+        #f5f5f5 2px,
+        #e8e8e8 2px,
+        #e8e8e8 4px
+      ) !important;
+      color: #999 !important;
+      cursor: not-allowed;
+    }
+    .flatpickr-months .flatpickr-month {
+      background: #1E3A5F;
+      color: white;
+    }
+    .flatpickr-current-month .flatpickr-monthDropdown-months,
+    .flatpickr-current-month input.cur-year {
+      color: white;
+      font-weight: 500;
+    }
+    .flatpickr-weekdays {
+      background: #FAFAF7;
+    }
+    span.flatpickr-weekday {
+      color: #1E3A5F;
+      font-weight: 500;
+    }
+    .flatpickr-months .flatpickr-prev-month,
+    .flatpickr-months .flatpickr-next-month {
+      fill: white;
+    }
+    .flatpickr-months .flatpickr-prev-month:hover,
+    .flatpickr-months .flatpickr-next-month:hover {
+      fill: #C3785A;
+    }
+
+    /* Calendar Legend */
+    .calendar-legend {
+      display: flex;
+      gap: 16px;
+      font-size: 12px;
+      color: #1E3A5F;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 2px;
+    }
+    .legend-available { background: white; border: 1px solid #F5EFE0; }
+    .legend-selected { background: #C3785A; }
+    .legend-booked {
+      background: repeating-linear-gradient(
+        45deg,
+        #f5f5f5,
+        #f5f5f5 2px,
+        #e8e8e8 2px,
+        #e8e8e8 4px
+      );
+      border: 1px solid #ddd;
+    }
+  </style>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="5baeb35c-3571-49d3-af95-c8b676af7f81"></script>
+</head>
+<body class="font-sans text-navy bg-offwhite">
+
+<!-- Navigation -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-offwhite/95 backdrop-blur-sm border-b border-sand/20">
+  <div class="max-w-6xl mx-auto px-4 md:px-6 py-3 md:py-4 flex justify-between items-center">
+    <!-- Logo -->
+    <a href="/index-en/" class="flex items-center">
+      <img src="/images/logo-bicolor.png" alt="Logo Marea - Location vacances Cap Ferret" class="h-10 md:h-12 w-auto">
+    </a>
+
+    <!-- Desktop Navigation -->
+    <div class="hidden lg:flex items-center gap-6">
+      <a href="/index-en/" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-terra transition-colors">HOME</a>
+      <a href="/lodge-en/" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-terra transition-colors">LE LODGE</a>
+      <a href="/thenest-en/" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-ocean transition-colors">THE NEST</a>
+      <a href="/reserver-en/" class="nav-link font-sans text-sm tracking-wider font-medium text-terra">BOOK</a>
+      <a href="/contact-en/" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-terra transition-colors">CONTACT</a>
+      <a href="/pourquoi-marea-en/" class="nav-link font-sans text-sm tracking-wider font-medium hover:text-terra transition-colors">ABOUT US</a>
+      <span class="text-sand">|</span>
+      <a href="/reserver/" class="font-sans text-sm tracking-wider font-light hover:text-terra transition-colors">FR</a>
+      <a href="/reserver-en/" class="ml-2 bg-terra text-white px-5 py-2.5 font-sans text-sm tracking-wider font-semibold hover:bg-terra/90 transition-all cta-pulse">
+        BOOK
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <div class="flex items-center gap-3 lg:hidden">
+      <a href="/reserver-en/" class="bg-terra text-white px-4 py-2 font-sans text-xs tracking-wider font-semibold">
+        BOOK
+      </a>
+      <button id="menuBtn" class="p-2 text-navy" aria-label="Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+</nav>
+
+<!-- Mobile Menu (outside nav for proper z-index) -->
+<div id="mobileMenu" class="mobile-menu fixed inset-0 top-[57px] z-[100] lg:hidden bg-offwhite">
+  <div class="flex flex-col items-center justify-center h-full gap-8 bg-offwhite">
+    <a href="/index-en/" class="font-sans text-xl tracking-wider font-medium text-navy hover:text-terra transition-colors">HOME</a>
+    <a href="/lodge-en/" class="font-sans text-xl tracking-wider font-medium text-navy hover:text-terra transition-colors">LE LODGE</a>
+    <a href="/thenest-en/" class="font-sans text-xl tracking-wider font-medium text-navy hover:text-ocean transition-colors">THE NEST</a>
+    <a href="/reserver-en/" class="font-sans text-xl tracking-wider font-medium text-terra">BOOK</a>
+    <a href="/contact-en/" class="font-sans text-xl tracking-wider font-medium text-navy hover:text-terra transition-colors">CONTACT</a>
+    <a href="/pourquoi-marea-en/" class="font-sans text-xl tracking-wider font-medium text-navy hover:text-terra transition-colors">ABOUT US</a>
+    <div class="border-t border-sand pt-8 mt-4 w-32 text-center">
+      <a href="/reserver/" class="font-sans text-sm tracking-wider font-medium text-navy hover:text-terra transition-colors">FRANÇAIS</a>
+    </div>
+    <a href="/reserver-en/" class="bg-terra text-white px-6 py-3 font-sans text-sm tracking-wider font-semibold">
+      BOOK
+    </a>
+  </div>
+</div>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuIcon = document.getElementById('menuIcon');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+    if (mobileMenu.classList.contains('open')) {
+      menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+    } else {
+      menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+    }
+  });
+
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+    });
+  });
+</script>
+
+<!-- Header -->
+<section class="pt-28 pb-12 md:pt-36 md:pb-16 px-6 bg-offwhite">
+  <div class="max-w-4xl mx-auto text-center">
+    <div class="midcentury-line mx-auto mb-8"></div>
+    <p class="text-ocean font-sans text-xs tracking-[0.2em] mb-4">AVAILABILITY & BOOKING</p>
+    <h1 class="font-display italic text-4xl md:text-6xl text-navy leading-tight mb-6">
+      Book your stay
+    </h1>
+    <p class="text-base md:text-lg text-navy/70 leading-relaxed max-w-2xl mx-auto font-light">
+      Check availability and send us your booking request. We respond within 24 hours.
+    </p>
+  </div>
+</section>
+
+<!-- Section Réservation -->
+<section class="py-12 md:py-16 px-6 bg-sand/20">
+  <div class="max-w-5xl mx-auto">
+    <div class="grid lg:grid-cols-2 gap-8">
+      <!-- Calendrier visuel -->
+      <div class="bg-offwhite p-6 border border-sand/50">
+        <h2 class="font-display italic text-xl text-navy mb-4">Availability</h2>
+
+        <!-- Sélecteur de propriété pour le calendrier -->
+        <div class="mb-4">
+          <label class="block text-sm font-medium text-navy/70 mb-2">View availability for :</label>
+          <select id="calendarProperty" class="w-full px-4 py-3 border border-sand bg-white text-navy text-sm focus:outline-none focus:border-terra">
+            <option value="lodge">Le Grand Lodge (12 pers.)</option>
+            <option value="nest">The Nest (4 pers.)</option>
+          </select>
+        </div>
+
+        <!-- Calendrier Flatpickr -->
+        <div id="calendarContainer" class="mb-4">
+          <div id="calendarLoader" class="text-center py-8 text-navy/60">
+            <svg class="animate-spin h-8 w-8 mx-auto mb-3 text-terra" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            <p class="text-sm">Loading availability...</p>
+          </div>
+        </div>
+
+        <!-- Légende -->
+        <div class="calendar-legend flex-wrap justify-center mt-4">
+          <div class="legend-item">
+            <div class="legend-dot legend-available"></div>
+            <span>Available</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot legend-selected"></div>
+            <span>Selected</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot legend-booked"></div>
+            <span>Booked</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulaire de réservation -->
+      <div class="bg-offwhite p-6 border border-sand/50">
+        <h2 class="font-display italic text-xl text-navy mb-4">Your request</h2>
+
+        <form id="quickBookingForm" class="space-y-4">
+          <!-- Accommodation -->
+          <div>
+            <label class="block text-sm font-medium text-navy/70 mb-2">Accommodation</label>
+            <select id="property" class="w-full px-4 py-3 border border-sand bg-white text-navy text-sm focus:outline-none focus:border-terra">
+              <option value="Le Grand Lodge (12 pers.)">Le Grand Lodge (12 pers.)</option>
+              <option value="The Nest (4 pers.)">The Nest (4 pers.)</option>
+              <option value="Lodge + Nest (16 pers.)">Both (16 pers.)</option>
+            </select>
+          </div>
+
+          <!-- Dates -->
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-navy/70 mb-2">Check-in</label>
+              <input type="text" id="checkin" placeholder="Select" readonly class="w-full px-4 py-3 border border-sand bg-white text-navy text-sm focus:outline-none focus:border-terra cursor-pointer">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-navy/70 mb-2">Check-out</label>
+              <input type="text" id="checkout" placeholder="Select" readonly class="w-full px-4 py-3 border border-sand bg-white text-navy text-sm focus:outline-none focus:border-terra cursor-pointer">
+            </div>
+          </div>
+
+          <!-- Guests : Adults + Children -->
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-navy/70 mb-2">Adults</label>
+              <select id="adults" class="w-full px-4 py-3 border border-sand bg-white text-navy text-sm focus:outline-none focus:border-terra">
+                <option value="1">1 adult</option>
+                <option value="2" selected>2 adults</option>
+                <option value="3">3 adults</option>
+                <option value="4">4 adults</option>
+                <option value="5">5 adults</option>
+                <option value="6">6 adults</option>
+                <option value="7">7 adults</option>
+                <option value="8">8 adults</option>
+                <option value="9">9 adults</option>
+                <option value="10">10 adults</option>
+                <option value="11">11 adults</option>
+                <option value="12">12 adults</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-navy/70 mb-2">Children</label>
+              <select id="children" class="w-full px-4 py-3 border border-sand bg-white text-navy text-sm focus:outline-none focus:border-terra">
+                <option value="0" selected>0 child</option>
+                <option value="1">1 child</option>
+                <option value="2">2 childs</option>
+                <option value="3">3 childs</option>
+                <option value="4">4 childs</option>
+                <option value="5">5 childs</option>
+                <option value="6">6 childs</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Résumé de la sélection -->
+          <div id="bookingSummary" class="hidden bg-sand/30 p-4 border border-terra/30 text-sm">
+            <p class="font-medium text-navy mb-2">Summary :</p>
+            <p id="summaryText" class="text-navy/70"></p>
+          </div>
+
+          <!-- CTAs -->
+          <div class="space-y-3 pt-2">
+            <button type="button" id="whatsappBtn" class="w-full inline-flex items-center justify-center bg-terra text-white px-6 py-4 font-sans text-sm tracking-wider font-semibold hover:bg-terra/90 transition-all">
+              <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              SEND VIA WHATSAPP
+            </button>
+            <button type="button" id="emailBtn" class="w-full inline-flex items-center justify-center border-2 border-navy text-navy px-6 py-4 font-sans text-sm tracking-wider font-medium hover:bg-navy hover:text-white transition-all">
+              <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+              SEND BY EMAIL
+            </button>
+          </div>
+        </form>
+
+        <!-- Indicative rates -->
+        <div class="mt-6 pt-4 border-t border-sand/50">
+          <p class="text-xs text-navy/50 mb-3">Indicative rates (per season)</p>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div>
+              <p class="font-medium text-navy">Le Grand Lodge</p>
+              <p class="text-terra text-xs">from 500€/night</p>
+            </div>
+            <div>
+              <p class="font-medium text-navy">The Nest</p>
+              <p class="text-ocean text-xs">from 100€/night</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section Réassurance -->
+<section class="py-12 md:py-16 px-6 bg-offwhite">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-10">
+      <h2 class="font-display italic text-2xl md:text-3xl text-navy">Direct booking, simple and secure</h2>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+      <!-- Response 24h -->
+      <div class="text-center">
+        <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center bg-terra/10 rounded-full">
+          <svg class="w-7 h-7 text-terra" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+        <p class="font-semibold text-navy text-sm md:text-base">Response within 24h</p>
+        <p class="text-xs text-navy/60 mt-1">Fast confirmation</p>
+      </div>
+
+      <!-- Contract -->
+      <div class="text-center">
+        <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center bg-ocean/10 rounded-full">
+          <svg class="w-7 h-7 text-ocean" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+          </svg>
+        </div>
+        <p class="font-semibold text-navy text-sm md:text-base">Secure contract</p>
+        <p class="text-xs text-navy/60 mt-1">Direct rental</p>
+      </div>
+
+      <!-- Payment -->
+      <div class="text-center">
+        <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center bg-terra/10 rounded-full">
+          <svg class="w-7 h-7 text-terra" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+          </svg>
+        </div>
+        <p class="font-semibold text-navy text-sm md:text-base">Secure payment</p>
+        <p class="text-xs text-navy/60 mt-1">Bank transfer or card</p>
+      </div>
+
+      <!-- Cancellation -->
+      <div class="text-center">
+        <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center bg-ocean/10 rounded-full">
+          <svg class="w-7 h-7 text-ocean" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+          </svg>
+        </div>
+        <p class="font-semibold text-navy text-sm md:text-base">Flexible conditions</p>
+        <p class="text-xs text-navy/60 mt-1">Clear cancellation</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section Nos Maisons -->
+<section class="py-12 md:py-16 px-6 bg-sand/20">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-10">
+      <p class="text-ocean font-sans text-xs tracking-[0.2em] mb-4">OUR ACCOMMODATIONS</p>
+      <h2 class="font-display italic text-2xl md:text-3xl text-navy">Discover our houses</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <!-- Lodge Card Mini -->
+      <a href="/lodge-en/" class="group bg-offwhite border border-sand/30 overflow-hidden hover:border-terra/50 transition-colors">
+        <div class="aspect-[16/9] overflow-hidden">
+          <img src="/images/lodge1.jpg" alt="Le Grand Lodge" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        </div>
+        <div class="p-5">
+          <h3 class="font-display text-xl text-navy group-hover:text-terra transition-colors mb-2">Le Grand Lodge</h3>
+          <p class="text-sm text-navy/70 mb-3">200m² · 5 bedrooms · Up to 12 guests</p>
+          <div class="flex flex-wrap gap-2 text-xs">
+            <span class="bg-sand/50 text-navy/70 px-2 py-1">Heated pool</span>
+            <span class="bg-sand/50 text-navy/70 px-2 py-1">Garden 250m²</span>
+            <span class="bg-sand/50 text-navy/70 px-2 py-1">Single-story</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Nest Card Mini -->
+      <a href="/thenest-en/" class="group bg-offwhite border border-sand/30 overflow-hidden hover:border-ocean/50 transition-colors">
+        <div class="aspect-[16/9] overflow-hidden">
+          <img src="/images/studio1.jpg" alt="The Nest" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+        </div>
+        <div class="p-5">
+          <h3 class="font-display text-xl text-navy group-hover:text-ocean transition-colors mb-2">The Nest</h3>
+          <p class="text-sm text-navy/70 mb-3">Independent studio · 2 to 4 guests</p>
+          <div class="flex flex-wrap gap-2 text-xs">
+            <span class="bg-sand/50 text-navy/70 px-2 py-1">Independent</span>
+            <span class="bg-sand/50 text-navy/70 px-2 py-1">Equipped kitchen</span>
+            <span class="bg-sand/50 text-navy/70 px-2 py-1">Terrace</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="mt-8 p-5 bg-offwhite border border-terra/30 text-center">
+      <p class="text-navy/80 text-sm">
+        <span class="text-terra font-semibold">Good to know:</span> Book Le Lodge + The Nest together to accommodate up to <strong>16 guests</strong>.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<div id="site-footer"></div>
+
+<!-- Flatpickr JS - Load with defer for better performance -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/fr.js" defer></script>
+
+<!-- Script pour le système de réservation -->
+<script>
+  // ============================================
+  // CONFIGURATION GOOGLE SHEETS
+  // ============================================
+  const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwIGsc2nzwAmioJwR2P1vflUNiusSnXapmKu9Yw1uYDz--H37P4gXPZqDLApOZWL0kt/exec';
+
+  // ============================================
+  // DATES RÉSERVÉES (fallback)
+  // ============================================
+  let bookedDates = {
+    lodge: [],
+    nest: []
+  };
+
+  // ============================================
+  // CHARGEMENT DEPUIS GOOGLE SHEETS
+  // ============================================
+  async function loadBookingsFromGoogleSheets() {
+    if (!GOOGLE_SHEETS_URL) {
+      console.log('Google Sheets non configuré, utilisation des dates locales');
+      return bookedDates;
+    }
+
+    try {
+      const response = await fetch(GOOGLE_SHEETS_URL);
+      if (!response.ok) throw new Error('Erreur réseau');
+
+      const data = await response.json();
+
+      bookedDates = {
+        lodge: [],
+        nest: []
+      };
+
+      data.forEach(row => {
+        const property = row.property?.toLowerCase() || '';
+        const from = row.from || row.debut || row.arrivee;
+        const to = row.to || row.fin || row.depart;
+
+        if (from && to) {
+          if (property === 'lodge' || property === 'le grand lodge') {
+            bookedDates.lodge.push({ from, to });
+          } else if (property === 'nest' || property === 'the nest') {
+            bookedDates.nest.push({ from, to });
+          }
+        }
+      });
+
+      console.log('Réservations chargées depuis Google Sheets:', bookedDates);
+      return bookedDates;
+
+    } catch (error) {
+      console.error('Erreur chargement Google Sheets:', error);
+      return bookedDates;
+    }
+  }
+
+  // ============================================
+  // FONCTIONS UTILITAIRES
+  // ============================================
+  function getDatesInRange(startDate, endDate) {
+    const dates = [];
+    let currentDate = new Date(startDate);
+    const end = new Date(endDate);
+
+    while (currentDate <= end) {
+      dates.push(new Date(currentDate).toISOString().split('T')[0]);
+      currentDate.setDate(currentDate.getDate() + 1);
+    }
+    return dates;
+  }
+
+  function getDisabledDates(property) {
+    const bookings = bookedDates[property] || [];
+    let disabledDates = [];
+
+    bookings.forEach(booking => {
+      const rangeDates = getDatesInRange(booking.from, booking.to);
+      disabledDates = disabledDates.concat(rangeDates);
+    });
+
+    return disabledDates;
+  }
+
+  function formatDateEN(dateStr) {
+    if (!dateStr) return '';
+    const date = new Date(dateStr);
+    return date.toLocaleDateString('fr-FR', {
+      weekday: 'short',
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    });
+  }
+
+  // ============================================
+  // INITIALISATION DU CALENDRIER
+  // ============================================
+  let calendarInstance;
+  let selectedDates = [];
+
+  // Function to get the default date (April 2026 or current month)
+  function getDefaultDate() {
+    const now = new Date();
+    const currentYear = now.getFullYear();
+    const currentMonth = now.getMonth(); // 0 = January, 3 = April
+
+    // If before April 2026, open on April 2026
+    if (currentYear < 2026 || (currentYear === 2026 && currentMonth < 3)) {
+      return new Date(2026, 3, 1); // April 1, 2026
+    }
+
+    // Otherwise, open on current month
+    return now;
+  }
+
+  function initCalendar(property = 'lodge') {
+    const disabledDates = getDisabledDates(property);
+
+    if (calendarInstance) {
+      calendarInstance.destroy();
+    }
+
+    calendarInstance = flatpickr("#calendarContainer", {
+      inline: true,
+      mode: "range",
+      minDate: "today",
+      maxDate: new Date().fp_incr(365),
+      defaultDate: getDefaultDate(),
+      locale: "default",
+      dateFormat: "Y-m-d",
+      disable: disabledDates,
+      showMonths: 1,
+      onChange: function(dates, dateStr) {
+        if (dates.length === 2) {
+          selectedDates = dates;
+          document.getElementById('checkin').value = formatDateEN(dates[0]);
+          document.getElementById('checkout').value = formatDateEN(dates[1]);
+          updateSummary();
+        }
+      },
+      onDayCreate: function(dObj, dStr, fp, dayElem) {
+        const dateStr = dayElem.dateObj.toISOString().split('T')[0];
+        if (disabledDates.includes(dateStr)) {
+          dayElem.classList.add('booked');
+        }
+      }
+    });
+  }
+
+  // Initialisation on page load
+  document.addEventListener('DOMContentLoaded', async function() {
+    // Load bookings from Google Sheets
+    await loadBookingsFromGoogleSheets();
+
+    // Initialize calendar
+    initCalendar('lodge');
+
+    // Hide loader once calendar is loaded
+    const loader = document.getElementById('calendarLoader');
+    if (loader) {
+      loader.style.display = 'none';
+    }
+  });
+
+  // Changement de propriété dans le calendrier
+  document.getElementById('calendarProperty').addEventListener('change', function() {
+    initCalendar(this.value);
+    document.getElementById('checkin').value = '';
+    document.getElementById('checkout').value = '';
+    selectedDates = [];
+    document.getElementById('bookingSummary').classList.add('hidden');
+  });
+
+  // ============================================
+  // MISE À JOUR DU RÉCAPITULATIF
+  // ============================================
+  function updateSummary() {
+    const property = document.getElementById('property').value;
+    const checkin = document.getElementById('checkin').value;
+    const checkout = document.getElementById('checkout').value;
+    const adults = document.getElementById('adults').value;
+    const children = document.getElementById('children').value;
+    const totalGuests = parseInt(adults) + parseInt(children);
+
+    if (checkin && checkout) {
+      const summaryEl = document.getElementById('bookingSummary');
+      const textEl = document.getElementById('summaryText');
+
+      let nights = 0;
+      if (selectedDates.length === 2) {
+        const diffTime = Math.abs(selectedDates[1] - selectedDates[0]);
+        nights = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      }
+
+      let guestsText = `${adults} adult${adults > 1 ? 's' : ''}`;
+      if (children > 0) {
+        guestsText += ` + ${children} child${children > 1 ? 's' : ''}`;
+      }
+
+      textEl.innerHTML = `
+        <strong>${property}</strong><br>
+        From ${checkin} to ${checkout}<br>
+        ${nights} night${nights > 1 ? 's' : ''} · ${guestsText}
+      `;
+      summaryEl.classList.remove('hidden');
+    }
+  }
+
+  ['property', 'adults', 'children'].forEach(id => {
+    document.getElementById(id).addEventListener('change', updateSummary);
+  });
+
+  // ============================================
+  // ENVOI WHATSAPP / EMAIL
+  // ============================================
+  function generateMessage() {
+    const property = document.getElementById('property').value;
+    const checkin = document.getElementById('checkin').value || 'Not selected';
+    const checkout = document.getElementById('checkout').value || 'Not selected';
+    const adults = document.getElementById('adults').value;
+    const children = document.getElementById('children').value;
+
+    let nights = 0;
+    if (selectedDates.length === 2) {
+      const diffTime = Math.abs(selectedDates[1] - selectedDates[0]);
+      nights = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    }
+
+    let guestsText = `${adults} adult${adults > 1 ? 's' : ''}`;
+    if (children > 0) {
+      guestsText += ` + ${children} child${children > 1 ? 's' : ''}`;
+    }
+
+    return `Hello,
+
+I would like to make a booking request for Marea:
+
+🏠 Accommodation: ${property}
+📅 Check-in: ${checkin}
+📅 Check-out: ${checkout}
+🌙 Duration: ${nights} night${nights > 1 ? 's' : ''}
+👥 Guests: ${guestsText}
+
+Could you confirm availability and pricing?
+
+Thank you!`;
+  }
+
+  document.getElementById('whatsappBtn').addEventListener('click', function() {
+    const message = generateMessage();
+    const phoneNumber = '33676886769';
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  });
+
+  document.getElementById('emailBtn').addEventListener('click', function() {
+    const property = document.getElementById('property').value;
+    const checkin = document.getElementById('checkin').value || 'Not selected';
+    const checkout = document.getElementById('checkout').value || 'Not selected';
+
+    const subject = `Booking request - ${property} - ${checkin} to ${checkout}`;
+    const body = generateMessage();
+    const mailtoUrl = `mailto:mareaferret@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoUrl;
+  });
+</script>
+
+<script src="/footer.js"></script>
+<script>renderFooter('en', '/reserver/');</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mareaferret.fr/index-en/" },
+    { "@type": "ListItem", "position": 2, "name": "Book", "item": "https://mareaferret.fr/reserver-en/" }
+  ]
+}
+</script>
+</body>
+</html>
