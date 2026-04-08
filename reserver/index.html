@@ -115,9 +115,10 @@
 
     /* Flatpickr Custom Styles */
     .flatpickr-calendar {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'DM Sans', sans-serif;
       border: 1px solid #F5EFE0;
       box-shadow: 0 4px 20px rgba(44, 74, 98, 0.1);
+      width: 100% !important;
     }
     .flatpickr-day.selected,
     .flatpickr-day.startRange,
@@ -130,7 +131,7 @@
       border-color: transparent !important;
       box-shadow: none !important;
     }
-    .flatpickr-day:hover {
+    .flatpickr-day:hover:not(.disabled):not(.booked) {
       background: #F5EFE0 !important;
       border-color: #F5EFE0 !important;
     }
@@ -149,17 +150,52 @@
         #e8e8e8 2px,
         #e8e8e8 4px
       ) !important;
-      color: #999 !important;
+      color: #bbb !important;
       cursor: not-allowed;
+      pointer-events: none;
     }
+    /* Checkout day: left half striped (morning = guests checking out), right half free (new arrivals welcome) */
+    .flatpickr-day.checkout-day {
+      position: relative;
+      background: white !important;
+      color: #555 !important;
+      cursor: pointer;
+      overflow: hidden;
+    }
+    .flatpickr-day.checkout-day::before {
+      content: '';
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      bottom: 1px;
+      width: calc(50% - 1px);
+      background: repeating-linear-gradient(135deg, #f0f0f0, #f0f0f0 2px, #e0e0e0 2px, #e0e0e0 4px);
+      border-radius: 100% 0 0 100%;
+      pointer-events: none;
+    }
+    .flatpickr-day.checkout-day:hover {
+      background: #F5EFE0 !important;
+      color: #1E3A5F !important;
+    }
+    .flatpickr-day.checkout-day:hover::before {
+      opacity: 0;
+    }
+    /* Month header — force navy on all screen sizes */
     .flatpickr-months .flatpickr-month {
-      background: #1E3A5F;
-      color: white;
+      background: #1E3A5F !important;
+      color: white !important;
     }
     .flatpickr-current-month .flatpickr-monthDropdown-months,
     .flatpickr-current-month input.cur-year {
-      color: white;
+      color: white !important;
       font-weight: 500;
+    }
+    .flatpickr-current-month .flatpickr-monthDropdown-months:hover {
+      background: rgba(255,255,255,0.15) !important;
+    }
+    .numInputWrapper span svg path,
+    .numInputWrapper span svg line {
+      stroke: rgba(255,255,255,0.8) !important;
     }
     .flatpickr-weekdays {
       background: #FAFAF7;
@@ -170,31 +206,34 @@
     }
     .flatpickr-months .flatpickr-prev-month,
     .flatpickr-months .flatpickr-next-month {
-      fill: white;
+      fill: white !important;
     }
-    .flatpickr-months .flatpickr-prev-month:hover,
-    .flatpickr-months .flatpickr-next-month:hover {
-      fill: #C3785A;
+    .flatpickr-months .flatpickr-prev-month:hover svg,
+    .flatpickr-months .flatpickr-next-month:hover svg {
+      fill: #C3785A !important;
     }
 
     /* Calendar Legend */
     .calendar-legend {
       display: flex;
-      gap: 16px;
-      font-size: 12px;
+      gap: 12px;
+      font-size: 11px;
       color: #1E3A5F;
+      flex-wrap: wrap;
+      justify-content: center;
     }
     .legend-item {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
     }
     .legend-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 2px;
+      width: 14px;
+      height: 14px;
+      border-radius: 3px;
+      flex-shrink: 0;
     }
-    .legend-available { background: white; border: 1px solid #F5EFE0; }
+    .legend-available { background: white; border: 1px solid #d0cfc8; }
     .legend-selected { background: #C3785A; }
     .legend-booked {
       background: repeating-linear-gradient(
@@ -204,6 +243,10 @@
         #e8e8e8 2px,
         #e8e8e8 4px
       );
+      border: 1px solid #ddd;
+    }
+    .legend-checkout {
+      background: linear-gradient(to right, #e0e0e0 50%, white 50%);
       border: 1px solid #ddd;
     }
   </style>
@@ -338,6 +381,10 @@
           <div class="legend-item">
             <div class="legend-dot legend-booked"></div>
             <span>Réservé</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot legend-checkout"></div>
+            <span>Départ possible</span>
           </div>
         </div>
       </div>
@@ -617,13 +664,26 @@
   // ============================================
   // FONCTIONS UTILITAIRES
   // ============================================
+
+  // Format a Date as local YYYY-MM-DD (avoids UTC timezone shift from toISOString)
+  function toLocalDateStr(date) {
+    const y = date.getFullYear();
+    const m = String(date.getMonth() + 1).padStart(2, '0');
+    const d = String(date.getDate()).padStart(2, '0');
+    return `${y}-${m}-${d}`;
+  }
+
   function getDatesInRange(startDate, endDate) {
     const dates = [];
-    let currentDate = new Date(startDate);
+    const start = new Date(startDate);
     const end = new Date(endDate);
+    // Normalize to local midnight to avoid timezone issues with CET/CEST dates
+    let currentDate = new Date(start.getFullYear(), start.getMonth(), start.getDate());
+    const endNorm = new Date(end.getFullYear(), end.getMonth(), end.getDate());
 
-    while (currentDate <= end) {
-      dates.push(new Date(currentDate).toISOString().split('T')[0]);
+    // Use < (not <=) so checkout day is excluded and available for new check-ins
+    while (currentDate < endNorm) {
+      dates.push(toLocalDateStr(currentDate));
       currentDate.setDate(currentDate.getDate() + 1);
     }
     return dates;
@@ -632,19 +692,48 @@
   function getDisabledDates(property) {
     const bookings = bookedDates[property] || [];
     let disabledDates = [];
-
     bookings.forEach(booking => {
       const rangeDates = getDatesInRange(booking.from, booking.to);
       disabledDates = disabledDates.concat(rangeDates);
     });
-
     return disabledDates;
   }
 
-  function formatDateFR(dateStr) {
-    if (!dateStr) return '';
-    const date = new Date(dateStr);
-    return date.toLocaleDateString('fr-FR', {
+  // Returns checkout days (= to date of each booking) — shown as half-reserved
+  function getCheckoutDates(property) {
+    const bookings = bookedDates[property] || [];
+    return bookings.map(booking => {
+      const end = new Date(booking.to);
+      return toLocalDateStr(new Date(end.getFullYear(), end.getMonth(), end.getDate()));
+    });
+  }
+
+  // Returns the first date that is free (skips over any active bookings from today)
+  function getFirstAvailableDate(property) {
+    const today = new Date();
+    let firstFree = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    const bookings = bookedDates[property] || [];
+    let changed = true;
+    while (changed) {
+      changed = false;
+      bookings.forEach(booking => {
+        const start = new Date(booking.from);
+        const startNorm = new Date(start.getFullYear(), start.getMonth(), start.getDate());
+        const end = new Date(booking.to);
+        const endNorm = new Date(end.getFullYear(), end.getMonth(), end.getDate());
+        if (startNorm <= firstFree && endNorm > firstFree) {
+          firstFree = new Date(endNorm);
+          changed = true;
+        }
+      });
+    }
+    return firstFree;
+  }
+
+  function formatDateFR(date) {
+    if (!date) return '';
+    const d = date instanceof Date ? date : new Date(date);
+    return d.toLocaleDateString('fr-FR', {
       weekday: 'short',
       day: 'numeric',
       month: 'long',
@@ -658,23 +747,9 @@
   let calendarInstance;
   let selectedDates = [];
 
-  // Fonction pour obtenir la date par défaut (avril 2026 ou mois en cours)
-  function getDefaultDate() {
-    const now = new Date();
-    const currentYear = now.getFullYear();
-    const currentMonth = now.getMonth(); // 0 = janvier, 3 = avril
-
-    // Si nous sommes avant avril 2026, ouvrir sur avril 2026
-    if (currentYear < 2026 || (currentYear === 2026 && currentMonth < 3)) {
-      return new Date(2026, 3, 1); // 1er avril 2026
-    }
-
-    // Sinon, ouvrir sur le mois en cours
-    return now;
-  }
-
   function initCalendar(property = 'lodge') {
     const disabledDates = getDisabledDates(property);
+    const checkoutDates = getCheckoutDates(property);
 
     if (calendarInstance) {
       calendarInstance.destroy();
@@ -685,23 +760,30 @@
       mode: "range",
       minDate: "today",
       maxDate: new Date().fp_incr(365),
-      defaultDate: getDefaultDate(),
+      defaultDate: getFirstAvailableDate(property),
       locale: "fr",
       dateFormat: "Y-m-d",
       disable: disabledDates,
       showMonths: 1,
-      onChange: function(dates, dateStr) {
+      onChange: function(dates) {
+        if (dates.length >= 1) {
+          document.getElementById('checkin').value = formatDateFR(dates[0]);
+        }
         if (dates.length === 2) {
           selectedDates = dates;
-          document.getElementById('checkin').value = formatDateFR(dates[0]);
           document.getElementById('checkout').value = formatDateFR(dates[1]);
           updateSummary();
+        } else {
+          document.getElementById('checkout').value = '';
+          document.getElementById('bookingSummary').classList.add('hidden');
         }
       },
       onDayCreate: function(dObj, dStr, fp, dayElem) {
-        const dateStr = dayElem.dateObj.toISOString().split('T')[0];
+        const dateStr = toLocalDateStr(dayElem.dateObj);
         if (disabledDates.includes(dateStr)) {
           dayElem.classList.add('booked');
+        } else if (checkoutDates.includes(dateStr)) {
+          dayElem.classList.add('checkout-day');
         }
       }
     });
@@ -709,26 +791,43 @@
 
   // Initialisation au chargement
   document.addEventListener('DOMContentLoaded', async function() {
-    // Charger les réservations depuis Google Sheets
     await loadBookingsFromGoogleSheets();
 
-    // Initialiser le calendrier
     initCalendar('lodge');
 
-    // Masquer le loader une fois le calendrier chargé
     const loader = document.getElementById('calendarLoader');
-    if (loader) {
-      loader.style.display = 'none';
-    }
+    if (loader) loader.style.display = 'none';
   });
 
-  // Changement de propriété dans le calendrier
+  // Sync: calendar property selector → form property selector
   document.getElementById('calendarProperty').addEventListener('change', function() {
-    initCalendar(this.value);
+    const prop = this.value;
+    initCalendar(prop);
     document.getElementById('checkin').value = '';
     document.getElementById('checkout').value = '';
     selectedDates = [];
     document.getElementById('bookingSummary').classList.add('hidden');
+    if (prop === 'lodge') {
+      document.getElementById('property').value = 'Le Grand Lodge (12 pers.)';
+    } else if (prop === 'nest') {
+      document.getElementById('property').value = 'The Nest (4 pers.)';
+    }
+  });
+
+  // Sync: form property selector → calendar property selector
+  document.getElementById('property').addEventListener('change', function() {
+    const val = this.value;
+    const calProp = val.toLowerCase().includes('nest') ? 'nest' : 'lodge';
+    const calSelect = document.getElementById('calendarProperty');
+    if (calSelect.value !== calProp) {
+      calSelect.value = calProp;
+      initCalendar(calProp);
+      document.getElementById('checkin').value = '';
+      document.getElementById('checkout').value = '';
+      selectedDates = [];
+      document.getElementById('bookingSummary').classList.add('hidden');
+    }
+    updateSummary();
   });
 
   // ============================================
@@ -766,7 +865,7 @@
     }
   }
 
-  ['property', 'adults', 'children'].forEach(id => {
+  ['adults', 'children'].forEach(id => {
     document.getElementById(id).addEventListener('change', updateSummary);
   });
 
