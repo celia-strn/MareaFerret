@@ -180,6 +180,32 @@
     .flatpickr-day.checkout-day:hover::before {
       opacity: 0;
     }
+    /* Check-in day: right half striped (new guests arriving afternoon, morning free for departing guests) */
+    .flatpickr-day.checkin-day {
+      position: relative;
+      background: white !important;
+      color: #555 !important;
+      cursor: pointer;
+      overflow: hidden;
+    }
+    .flatpickr-day.checkin-day::after {
+      content: '';
+      position: absolute;
+      top: 1px;
+      right: 1px;
+      bottom: 1px;
+      width: calc(50% - 1px);
+      background: repeating-linear-gradient(135deg, #f0f0f0, #f0f0f0 2px, #e0e0e0 2px, #e0e0e0 4px);
+      border-radius: 0 100% 100% 0;
+      pointer-events: none;
+    }
+    .flatpickr-day.checkin-day:hover {
+      background: #F5EFE0 !important;
+      color: #1E3A5F !important;
+    }
+    .flatpickr-day.checkin-day:hover::after {
+      opacity: 0;
+    }
     /* Month header — force navy on all screen sizes */
     .flatpickr-months .flatpickr-month {
       background: #1E3A5F !important;
@@ -381,10 +407,6 @@
           <div class="legend-item">
             <div class="legend-dot legend-booked"></div>
             <span>Réservé</span>
-          </div>
-          <div class="legend-item">
-            <div class="legend-dot legend-checkout"></div>
-            <span>Départ possible</span>
           </div>
         </div>
       </div>
@@ -677,11 +699,10 @@
     const dates = [];
     const start = new Date(startDate);
     const end = new Date(endDate);
-    // Normalize to local midnight to avoid timezone issues with CET/CEST dates
-    let currentDate = new Date(start.getFullYear(), start.getMonth(), start.getDate());
+    // Start from from+1 so the arrival day itself is a selectable checkin-day, not disabled
+    let currentDate = new Date(start.getFullYear(), start.getMonth(), start.getDate() + 1);
     const endNorm = new Date(end.getFullYear(), end.getMonth(), end.getDate());
-
-    // Use < (not <=) so checkout day is excluded and available for new check-ins
+    // Use < so the checkout day is excluded (available as new arrival)
     while (currentDate < endNorm) {
       dates.push(toLocalDateStr(currentDate));
       currentDate.setDate(currentDate.getDate() + 1);
@@ -693,22 +714,28 @@
     const bookings = bookedDates[property] || [];
     let disabledDates = [];
     bookings.forEach(booking => {
-      const rangeDates = getDatesInRange(booking.from, booking.to);
-      disabledDates = disabledDates.concat(rangeDates);
+      disabledDates = disabledDates.concat(getDatesInRange(booking.from, booking.to));
     });
     return disabledDates;
   }
 
-  // Returns checkout days (= to date of each booking) — shown as half-reserved
+  // Checkout days (= to date): left-half striped, can be used as arrival
   function getCheckoutDates(property) {
-    const bookings = bookedDates[property] || [];
-    return bookings.map(booking => {
-      const end = new Date(booking.to);
-      return toLocalDateStr(new Date(end.getFullYear(), end.getMonth(), end.getDate()));
+    return (bookedDates[property] || []).map(booking => {
+      const d = new Date(booking.to);
+      return toLocalDateStr(new Date(d.getFullYear(), d.getMonth(), d.getDate()));
     });
   }
 
-  // Returns the first date that is free (skips over any active bookings from today)
+  // Checkin days (= from date): right-half striped, can be used as departure only
+  function getCheckinDates(property) {
+    return (bookedDates[property] || []).map(booking => {
+      const d = new Date(booking.from);
+      return toLocalDateStr(new Date(d.getFullYear(), d.getMonth(), d.getDate()));
+    });
+  }
+
+  // First bookable date: skip forward past any booking that covers today
   function getFirstAvailableDate(property) {
     const today = new Date();
     let firstFree = new Date(today.getFullYear(), today.getMonth(), today.getDate());
@@ -717,14 +744,11 @@
     while (changed) {
       changed = false;
       bookings.forEach(booking => {
-        const start = new Date(booking.from);
-        const startNorm = new Date(start.getFullYear(), start.getMonth(), start.getDate());
-        const end = new Date(booking.to);
-        const endNorm = new Date(end.getFullYear(), end.getMonth(), end.getDate());
-        if (startNorm <= firstFree && endNorm > firstFree) {
-          firstFree = new Date(endNorm);
-          changed = true;
-        }
+        const s = new Date(booking.from);
+        const sn = new Date(s.getFullYear(), s.getMonth(), s.getDate());
+        const e = new Date(booking.to);
+        const en = new Date(e.getFullYear(), e.getMonth(), e.getDate());
+        if (sn <= firstFree && en > firstFree) { firstFree = new Date(en); changed = true; }
       });
     }
     return firstFree;
@@ -733,26 +757,31 @@
   function formatDateFR(date) {
     if (!date) return '';
     const d = date instanceof Date ? date : new Date(date);
-    return d.toLocaleDateString('fr-FR', {
-      weekday: 'short',
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric'
-    });
+    return d.toLocaleDateString('fr-FR', { weekday: 'short', day: 'numeric', month: 'long', year: 'numeric' });
+  }
+
+  function resetDateFields() {
+    document.getElementById('checkin').value = '';
+    document.getElementById('checkout').value = '';
+    selectedDates = [];
+    document.getElementById('bookingSummary').classList.add('hidden');
   }
 
   // ============================================
   // INITIALISATION DU CALENDRIER
   // ============================================
-  let calendarInstance;
+  let calendarInstance = null;
   let selectedDates = [];
 
   function initCalendar(property = 'lodge') {
-    const disabledDates = getDisabledDates(property);
-    const checkoutDates = getCheckoutDates(property);
+    const disabledDates  = getDisabledDates(property);
+    const disabledSet    = new Set(disabledDates);
+    const checkoutSet    = new Set(getCheckoutDates(property));
+    const checkinSet     = new Set(getCheckinDates(property));
 
     if (calendarInstance) {
       calendarInstance.destroy();
+      calendarInstance = null;
     }
 
     calendarInstance = flatpickr("#calendarContainer", {
@@ -766,68 +795,87 @@
       disable: disabledDates,
       showMonths: 1,
       onChange: function(dates) {
-        if (dates.length >= 1) {
+        if (!dates.length) return;
+
+        if (dates.length === 1) {
+          const ds = toLocalDateStr(new Date(dates[0].getFullYear(), dates[0].getMonth(), dates[0].getDate()));
+          // Arrival on a checkin-day is not allowed (new guests arriving that evening)
+          if (checkinSet.has(ds)) {
+            setTimeout(() => { if (calendarInstance) calendarInstance.clear(); }, 0);
+            return;
+          }
           document.getElementById('checkin').value = formatDateFR(dates[0]);
-        }
-        if (dates.length === 2) {
-          selectedDates = dates;
-          document.getElementById('checkout').value = formatDateFR(dates[1]);
-          updateSummary();
-        } else {
           document.getElementById('checkout').value = '';
           document.getElementById('bookingSummary').classList.add('hidden');
+          return;
+        }
+
+        if (dates.length === 2) {
+          const start = new Date(dates[0].getFullYear(), dates[0].getMonth(), dates[0].getDate());
+          const end   = new Date(dates[1].getFullYear(), dates[1].getMonth(), dates[1].getDate());
+          // Validate: no disabled day strictly between arrival (excl.) and departure (excl.)
+          let cur = new Date(start.getFullYear(), start.getMonth(), start.getDate() + 1);
+          while (cur < end) {
+            if (disabledSet.has(toLocalDateStr(cur))) {
+              setTimeout(() => { if (calendarInstance) calendarInstance.clear(); }, 0);
+              return;
+            }
+            cur.setDate(cur.getDate() + 1);
+          }
+          selectedDates = dates;
+          document.getElementById('checkin').value  = formatDateFR(dates[0]);
+          document.getElementById('checkout').value = formatDateFR(dates[1]);
+          updateSummary();
         }
       },
       onDayCreate: function(dObj, dStr, fp, dayElem) {
-        const dateStr = toLocalDateStr(dayElem.dateObj);
-        if (disabledDates.includes(dateStr)) {
-          dayElem.classList.add('booked');
-        } else if (checkoutDates.includes(dateStr)) {
-          dayElem.classList.add('checkout-day');
-        }
+        const ds = toLocalDateStr(dayElem.dateObj);
+        if (disabledSet.has(ds))      dayElem.classList.add('booked');
+        else if (checkoutSet.has(ds)) dayElem.classList.add('checkout-day');
+        else if (checkinSet.has(ds))  dayElem.classList.add('checkin-day');
       }
     });
   }
 
-  // Initialisation au chargement
+  // ============================================
+  // INITIALISATION AU CHARGEMENT
+  // Listeners attached AFTER data loads to avoid race condition where
+  // a quick property switch fires before bookedDates is populated.
+  // ============================================
   document.addEventListener('DOMContentLoaded', async function() {
-    await loadBookingsFromGoogleSheets();
+    // Disable selectors while data loads
+    document.getElementById('calendarProperty').disabled = true;
+    document.getElementById('property').disabled = true;
 
+    await loadBookingsFromGoogleSheets();
     initCalendar('lodge');
 
     const loader = document.getElementById('calendarLoader');
     if (loader) loader.style.display = 'none';
-  });
 
-  // Sync: calendar property selector → form property selector
-  document.getElementById('calendarProperty').addEventListener('change', function() {
-    const prop = this.value;
-    initCalendar(prop);
-    document.getElementById('checkin').value = '';
-    document.getElementById('checkout').value = '';
-    selectedDates = [];
-    document.getElementById('bookingSummary').classList.add('hidden');
-    if (prop === 'lodge') {
-      document.getElementById('property').value = 'Le Grand Lodge (12 pers.)';
-    } else if (prop === 'nest') {
-      document.getElementById('property').value = 'The Nest (4 pers.)';
-    }
-  });
+    // Re-enable and attach listeners now that data is ready
+    document.getElementById('calendarProperty').disabled = false;
+    document.getElementById('property').disabled = false;
 
-  // Sync: form property selector → calendar property selector
-  document.getElementById('property').addEventListener('change', function() {
-    const val = this.value;
-    const calProp = val.toLowerCase().includes('nest') ? 'nest' : 'lodge';
-    const calSelect = document.getElementById('calendarProperty');
-    if (calSelect.value !== calProp) {
-      calSelect.value = calProp;
-      initCalendar(calProp);
-      document.getElementById('checkin').value = '';
-      document.getElementById('checkout').value = '';
-      selectedDates = [];
-      document.getElementById('bookingSummary').classList.add('hidden');
-    }
-    updateSummary();
+    document.getElementById('calendarProperty').addEventListener('change', function() {
+      const prop = this.value;
+      resetDateFields();
+      initCalendar(prop);
+      // Keep form select in sync
+      document.getElementById('property').value =
+        prop === 'nest' ? 'The Nest (4 pers.)' : 'Le Grand Lodge (12 pers.)';
+    });
+
+    document.getElementById('property').addEventListener('change', function() {
+      const calProp = this.value.toLowerCase().includes('nest') ? 'nest' : 'lodge';
+      const calSelect = document.getElementById('calendarProperty');
+      if (calSelect.value !== calProp) {
+        calSelect.value = calProp;
+        resetDateFields();
+        initCalendar(calProp);
+      }
+      updateSummary();
+    });
   });
 
   // ============================================
