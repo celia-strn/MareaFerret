@@ -11,6 +11,7 @@
   <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
 
   <!-- SEO -->
+  <link rel="preload" as="image" href="/images/nest-salon.jpg">
   <link rel="canonical" href="https://mareaferret.fr/thenest/" />
   <!-- Hreflang -->
   <link rel="alternate" hreflang="fr" href="https://mareaferret.fr/thenest/" />
@@ -32,44 +33,18 @@
   <meta name="twitter:description" content="Studio indépendant à Petit Piquey, à 50m du Bassin. Location directe sans frais de plateforme dès 100€/nuit." />
   <meta name="twitter:image" content="https://mareaferret.fr/images/og-cover.jpg" />
 
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/css/tailwind.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap"></noscript>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"></noscript>
   <!-- Flatpickr pour le calendrier -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/light.css">
   <!-- GLightbox -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'navy': '#1E3A5F',
-            'navy-dark': '#152D4A',
-            'sand-light': '#FAF7F0',
-            'ocean-accent': '#005F9A',
-            'terra': '#C3785A',
-            'terra-dark': '#A66B4D',
-            'sand': '#F5EFE0',
-            'warm-gray': '#E8E4DD',
-            'terra-light': '#F5EDEA',
-            'offwhite': '#FAFAF7',
-            'text-light': '#5A7A96',
-            'ocean': '#005F9A',
-            'ocean-dark': '#004A78',
-            'ocean-light': '#3A8BC2',
-            'ocean-pastel': '#B8D4E8',
-          },
-          fontFamily: {
-            'display': ['Playfair Display', 'Georgia', 'serif'],
-            'sans': ['DM Sans', 'system-ui', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" media="print" onload="this.media='all'">
   <style>
     html { scroll-behavior: smooth; }
 
